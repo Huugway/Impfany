@@ -112,3 +112,6 @@
 - Owner 4 (Merlin) is responsible for Flow, UI & audio
 - -> Start, HUD, pause, game over, restart, sound
 - (Link to Merlin.md)
+
+- Everything should be single responsibility, so we are able to quickly swap out mechanics
+- Due to the same reason avoid unnecessary dependancys
