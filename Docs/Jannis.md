@@ -1,6 +1,8 @@
 # Jannis — Weapons & upgrades
 
-**Planned work:** weapons → card upgrades → Soul Lantern → item bonuses. Nothing implemented yet.
+**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Weapon settings, a placeholder hammer prefab and a private sandbox scene exist. Attacks and upgrades are not implemented yet.
+
+**Player/weapon integration:** [German handoff for Hugo](Handoff-Hugo-Waffen.md). The ownership split is agreed with Janis; Hugo still needs to confirm the proposed trigger calls and aim handoff.
 
 ## Planned weapon attributes
 
@@ -43,24 +45,24 @@ During Attack: a pistol fires once, a burst fires several shots, a flamethrower 
 
 ## How this connects to your work
 
-**Proposed division of work:**
+**Player/weapon responsibilities agreed with Janis:**
 
 | Who | What I provide | What you handle |
 | --- | --- | --- |
-| Hugo — Player | Equipped weapon, upgraded stats, phase settings | Input, aiming, attack timing/animation, hit detection, movement/aim restrictions |
+| Hugo — Player | Weapon prefabs, stats, phase settings and weapon-specific attack behaviour | Holding/equipping, slots and cycling, input/buffer, aiming, phase timing, dash and movement/aim restrictions |
 | Maxim — Enemies | Damage, stun and knockback for each hit | Apply hits to enemies; report damage actually dealt |
 | Merlin — UI & flow | Weapon details, card rules, upgrade results | Menus, HUD, shop/table screens, when upgrades are allowed |
 
-**One hit:** Hugo attacks → Maxim reports actual damage → I spawn souls that briefly float, then fly to the player → collected souls charge the lantern → Merlin updates the HUD.
+**One hit:** Hugo triggers the weapon → my weapon detects a hit (or spawns its projectile) → Maxim applies the hit and reports actual damage → I spawn souls that briefly float, then fly to the player → collected souls charge the lantern → Merlin updates the HUD.
 
 **I define the weapon settings; Hugo’s player controller applies them.**
 
 ## Building separately in Unity
 
-- My files, test scene and dummy enemy live in `Assets/Features/Progression/`.
-- I deliver a weapon module prefab and editable settings per weapon. Each weapon copy keeps its own upgrades.
-- Hugo/Merlin attach the module once. I edit my module/settings; they edit the player/scenes.
-- Agree the handoff above before connecting. Coordinate edits to shared prefabs, scenes and settings.
+- My files and `WeaponSandbox` scene live in `Assets/Features/Progression/`; a dummy enemy will be added later.
+- I deliver weapon prefabs with a `Weapon` component and editable `WeaponDefinition` settings. Each weapon copy will keep its own upgrades.
+- Hugo puts my weapon instances under his `WeaponSlot1`–`WeaponSlot3` objects and triggers them. I edit my weapons/settings; he edits the player/scenes.
+- Confirm trigger calls and aim handoff before implementing attacks. Coordinate edits to shared prefabs, scenes and settings.
 
 ## Upgrades come next
 
