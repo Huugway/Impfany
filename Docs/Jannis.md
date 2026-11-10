@@ -2,7 +2,7 @@
 
 **Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Weapon settings, a placeholder hammer prefab and a private sandbox scene exist. Attacks and upgrades are not implemented yet.
 
-**Player/weapon integration:** [German handoff for Hugo](Handoff-Hugo-Waffen.md). The ownership split is agreed with Janis; Hugo still needs to confirm the proposed trigger calls and aim handoff.
+**Player/weapon integration agreed with Hugo:** the player controls phases and rotates the weapon slot; the weapon supplies settings and performs its attack through `BeginAttack()` / `EndAttack()`. These methods are not implemented yet. See the [German handoff for Hugo](Handoff-Hugo-Waffen.md).
 
 ## Planned weapon attributes
 
@@ -45,7 +45,7 @@ During Attack: a pistol fires once, a burst fires several shots, a flamethrower 
 
 ## How this connects to your work
 
-**Player/weapon responsibilities agreed with Janis:**
+**Player/weapon responsibilities agreed with Hugo:**
 
 | Who | What I provide | What you handle |
 | --- | --- | --- |
@@ -62,7 +62,9 @@ During Attack: a pistol fires once, a burst fires several shots, a flamethrower 
 - My files and `WeaponSandbox` scene live in `Assets/Features/Progression/`; a dummy enemy will be added later.
 - I deliver weapon prefabs with a `Weapon` component and editable `WeaponDefinition` settings. Each weapon copy will keep its own upgrades.
 - Hugo puts my weapon instances under his `WeaponSlot1`–`WeaponSlot3` objects and triggers them. I edit my weapons/settings; he edits the player/scenes.
-- Confirm trigger calls and aim handoff before implementing attacks. Coordinate edits to shared prefabs, scenes and settings.
+- Hugo reads `weapon.Definition`, calls `BeginAttack()` at the start of Attack and `EndAttack()` at its end. Every weapon uses the same `Weapon` component; the player needs no weapon-specific attack code.
+- Hugo rotates the slot toward the aim direction and holds it fixed during aim-locked phases. My weapon reads that orientation and animates its `Visual` child separately.
+- Implement these trigger methods next. Coordinate edits to shared prefabs, scenes and settings.
 
 ## Upgrades come next
 

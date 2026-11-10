@@ -1,6 +1,6 @@
 # Weapons & progression — gameplay decisions
 
-The weapon attributes and team handoffs are in [Jannis.md](Jannis.md). This page keeps the remaining gameplay rules together. Settings and a placeholder hammer exist; the gameplay below is not implemented yet. The proposed player/weapon calls are in the [German handoff for Hugo](Handoff-Hugo-Waffen.md).
+The weapon attributes and team handoffs are in [Jannis.md](Jannis.md). This page keeps the remaining gameplay rules together. Settings and a placeholder hammer exist; the gameplay below is not implemented yet. The agreed player/weapon integration is in the [German handoff for Hugo](Handoff-Hugo-Waffen.md); its trigger methods still need implementing.
 
 ## Agreed weapon behaviour
 
@@ -9,6 +9,14 @@ The weapon attributes and team handoffs are in [Jannis.md](Jannis.md). This page
 - The idle reset starts **after Recover ends**, never during a long attack. Roughly **2–3 seconds** of waiting resets the next attack to slot 1.
 - Aim is adjustable by default. Charge, Attack and Recover can each lock it independently.
 - Movement can be restricted independently during each phase.
+
+## Player/weapon integration — agreed with Hugo
+
+- Hugo's player reads the weapon's settings and runs Charge → Attack → Recover, input, slot cycling, movement and aim locks.
+- At the start of Attack it calls `weapon.BeginAttack()`; at the end it calls `weapon.EndAttack()`.
+- Jannis' weapon performs the swing, burst or continuous attack and detects hits/spawns projectiles. Burst and hit intervals belong inside that weapon behaviour.
+- Every prefab exposes the same `Weapon` component. The player needs no weapon-specific attack code.
+- Hugo rotates the slot to supply live aim, holding its direction during aim-locked phases. Jannis animates the weapon's `Visual` child separately. Fired projectiles keep their direction and can outlast Attack.
 
 ## Proposed details
 

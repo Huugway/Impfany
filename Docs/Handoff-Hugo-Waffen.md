@@ -1,6 +1,8 @@
 # Hugo — Übergabe Waffen ↔ Spieler
 
-**Stand: 10.11.2026.** Das Hammer-Prefab und seine Einstellungen sind vorhanden. **Es greift noch nicht an; eine Trigger-Methode gibt es noch nicht.** Bitte bestätige den Vorschlag unten oder schreib deine gewünschte Schnittstelle dazu, bevor wir die Angriffe implementieren.
+**Mit Hugo abgestimmtes Design · Stand: 10.11.2026.** Der Spieler bestimmt, wann eine Waffe angreift; die Waffe führt ihren eigenen Angriff aus und liefert dem Spieler ihre Phasenwerte.
+
+**Implementierungsstand:** `TestHammer`, `Weapon` und die Einstellungen existieren. Der Hammer greift noch nicht an. `BeginAttack()` und `EndAttack()` sind vereinbart, aber noch nicht implementiert.
 
 ## Wer baut was?
 
@@ -22,17 +24,19 @@ Alles liegt unter `ImpfanyGame/Assets/Features/Progression/`:
 - `Scripts/Weapon.cs` und `Scripts/WeaponDefinition.cs`: Namespace **`Impfany.Weapons`**.
 - `Scenes/WeaponSandbox.unity`: Jannis' eigene Testszene.
 
-Der Waffenroot ist der **Griff-/Befestigungspunkt**; die Grafik zeigt bei Rotation 0 nach **lokal +X (rechts)**. Vorschlag für deine Hierarchie:
+Dein Player-Prefab hat bereits diese Struktur (`WaponHolder` ist der aktuelle Objektname):
 
 ```text
 Player
-├── WeaponSlot1
-│   └── TestHammer (Prefab-Instanz)
-├── WeaponSlot2
-└── WeaponSlot3
+└── WaponHolder
+    ├── WeaponSlot1 → Whip
+    ├── WeaponSlot2 → Hammer
+    └── WeaponSlot3 → Sniper
 ```
 
-Die Waffe liest keinen Input und sucht sich keinen Spieler. Du setzt ihre Position und Zielausrichtung über den Slot bzw. Waffenroot.
+Whip, Hammer und Sniper sind derzeit Platzhalter. In jeden Slot kommt eine Waffen-Prefab-Instanz mit einer **`Weapon`-Komponente am Root**. Dein bisheriger Zugriff auf das erste Kind des Slots passt dazu; bei leerem Slot wird kein Angriff gestartet.
+
+Der Waffenroot ist der **Griff-/Befestigungspunkt**; bei Rotation 0 zeigt die Waffe nach **lokal +X (rechts)**. Die Waffe liest keinen Input und sucht sich keinen Spieler.
 
 **Bereits lesbar** über die `Weapon`-Komponente am Waffenroot:
 
@@ -55,24 +59,36 @@ Der Testhammer hat aktuell **10 Schaden** und diese frei änderbaren Testwerte:
 
 Reichweite, Knockback, Stun, Seelengewinn und Lifesteal sind **geplant, aber noch nicht im Script**. Die Settings-Assets im Spiel nicht verändern: spätere Upgrades gehören zur einzelnen Waffenkopie.
 
-## Vorschlag für den Trigger — noch nicht implementiert
+## Vereinbarte Aufrufe
 
-1. Du startest Charge und verwendest die Phaseneinstellungen.
-2. **Beim Beginn von Attack rufst du `weapon.BeginAttack()` auf.** Die Waffe führt ihren Angriff aus.
-3. **Am Ende von Attack rufst du `weapon.EndAttack()` auf.** Laufende Trefferbereiche bzw. Dauerfeuer werden beendet; bereits abgefeuerte Projektile dürfen weiterfliegen.
-4. Du steuerst Recover und gibst anschließend den nächsten Slot frei.
+| Zeitpunkt | Dein Spieler | Unsere Waffe |
+| --- | --- | --- |
+| Klick / Charge | Waffe wählen, Einstellungen lesen, Charge starten | Liefert Werte über `weapon.Definition` |
+| Beginn von Attack | Einmal `weapon.BeginAttack()` aufrufen | Schwung, Schüsse oder Dauerfeuer starten |
+| Ende von Attack | Einmal `weapon.EndAttack()` aufrufen | Aktive Trefferbereiche und Dauerfeuer beenden |
+| Recover | Recovery steuern, danach nächsten Slot freigeben | Keine eigene Spieler-Phasensteuerung |
 
-**Diese beiden Methodennamen sind nur ein Vorschlag und noch nicht aufrufbar.** Die Waffe bekommt keine zweite Charge/Attack/Recover-Zeitsteuerung. Eigene Burst-/Trefferintervalle innerhalb von Attack gehören zum Waffenverhalten.
+Du verwendest für jede Waffenart dieselbe `Weapon`-Komponente: **`weapon.BeginAttack()`**, unabhängig davon, ob das Prefab TestHammer oder Flamethrower heißt. Dein Player braucht keine Fallunterscheidung für einzelne Waffenarten. Die Methoden nehmen keine Zielrichtung als Parameter entgegen; diese kommt über die Slot-Rotation.
 
-Vorschlag fürs Zielen: Du richtest Slot/Waffenroot laufend aus, sofern die aktuelle Phase Aim erlaubt. Die Waffe verwendet diese Ausrichtung beim jeweiligen Schlag/Schuss. So bleiben auch Dauerfeuer und Bursts nachführbar. Ein bereits abgefeuertes Projektil behält seine Flugrichtung.
+Die Waffe bekommt keine zweite Charge/Attack/Recover-Zeitsteuerung. Eigene Burst-, Schwung- und Trefferintervalle **innerhalb von Attack** gehören zu uns. Bereits abgefeuerte Projektile fliegen nach `EndAttack()` weiter.
 
-Die vereinbarten Dash-Regeln bleiben bei dir: Charge abbrechen und denselben Slot erneut versuchen; Attack nicht unterbrechen; Recover sofort beenden und nächsten Slot freigeben. Beim Weglegen/Deaktivieren muss unsere Waffe ihre laufenden Effekte aufräumen.
+## Zielen und Animation
 
-## Bitte kurz zurückmelden
+- **Du richtest den Slot laufend auf die Zielrichtung aus**, solange die aktuelle Phase Aim erlaubt. Bei Aim-Lock hältst du die Richtung fest.
+- Unsere Waffe verwendet diese Ausrichtung beim jeweiligen Schlag/Schuss. Dauerfeuer und Bursts können so dem Aim folgen; ein abgefeuertes Projektil behält seine Flugrichtung.
+- Wir animieren den **`Visual`-Unterbereich** der Waffe. Dein Slot bleibt die Zielausrichtung, auch während der Hammer schwingt.
 
-- Passt diese Aufteilung und `BeginAttack()` / `EndAttack()`, oder welche Aufrufe möchtest du verwenden? Brauchst du zusätzlich Aufrufe für Charge-/Recover-Effekte oder Abbruch?
-- Kommt die laufende Zielrichtung über die Rotation des Slots/Waffenroots, oder möchtest du sie ausdrücklich als Richtung übergeben?
+## Dash und Aufräumen
 
-Deinen `PlayerAttack`-Slot-Prototyp haben wir gesehen. Du kannst Haltung, Slots und Spielerablauf weiterbauen; wir ändern deine Spielerdateien nicht. Jannis baut das eigentliche Waffenverhalten nach deiner Rückmeldung passend dazu.
+- **Charge:** Dash bricht ab; derselbe Slot wird beim nächsten Angriff erneut versucht. `BeginAttack()` wurde noch nicht aufgerufen.
+- **Attack:** Dash kann diese Phase nicht unterbrechen.
+- **Recover:** Dash beendet die Phase sofort; der nächste Slot ist bereit.
+- **Weglegen/Deaktivieren:** Unsere Waffe beendet ihre laufenden Trefferbereiche/Effekte zuverlässig.
+
+## Parallel weiterbauen
+
+**Hugo:** Player, Slots, Phasentiming, Aim und Bewegung bauen. Die Trigger erst anschließen, sobald die Methoden in `Weapon` vorhanden sind.
+
+**Jannis:** `BeginAttack()` / `EndAttack()` und zuerst das Hammer-Verhalten in den eigenen Dateien und `WeaponSandbox` umsetzen. Wir ändern deine Spielerdateien nicht; Änderungen an unseren Waffen erfolgen am Waffen-Prefab.
 
 Weitere vereinbarte Spielregeln: [WeaponsAndProgression.md](WeaponsAndProgression.md).
