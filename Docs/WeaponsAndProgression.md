@@ -1,6 +1,6 @@
 # Weapons & progression — gameplay decisions
 
-The weapon attributes and team handoffs are in [Jannis.md](Jannis.md). This page keeps the remaining gameplay rules together. Nothing is implemented yet.
+The weapon attributes and team handoffs are in [Jannis.md](Jannis.md). This page keeps the remaining gameplay rules together. Settings and a placeholder hammer exist; the gameplay below is not implemented yet. The proposed player/weapon calls are in the [German handoff for Hugo](Handoff-Hugo-Waffen.md).
 
 ## Agreed weapon behaviour
 
