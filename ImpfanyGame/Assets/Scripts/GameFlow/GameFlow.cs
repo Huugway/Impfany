@@ -3,9 +3,11 @@ using UnityEngine;
 public class GameFlow : MonoBehaviour
 {
     [SerializeField] private GameObject startPanel;
+    [SerializeField] private GameObject hudPanel;
     public void StartGame()
     {
         HidePanel(startPanel);
+        ShowPanel(hudPanel);
     }
 
     private void HidePanel (GameObject panel)
