@@ -1,0 +1,2 @@
+- [ ] Waffen geben abhägig vom schaden Seelen.
+- [ ] 
