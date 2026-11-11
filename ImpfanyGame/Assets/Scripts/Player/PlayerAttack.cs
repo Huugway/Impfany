@@ -1,12 +1,30 @@
-using System;
+using Impfany.Weapons;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [SerializeField] private InputActionReference attackAction;
     [SerializeField] private Transform[] weaponSlots;
     [SerializeField] private int attackPhase;
-    private GameObject curentWeapon;
 
+    void Update()
+    {
+        if (attackAction.action.WasPressedThisFrame()) Attack();
+    }
+
+    private void Attack()
+    {
+        var weaponPrefab = GetWeapon(attackPhase);
+        if (weaponPrefab == null) Debug.LogError($"Weapon wasn't found in Slot {attackPhase + 1}", this);
+        else 
+        {
+            var weapon = weaponPrefab.GetComponent<Weapon>();
+            if (weapon == null) Debug.LogError($"Object in Weapon Slot {attackPhase + 1} does not hold a weapon script", this);
+            else weapon.BeginAttack();
+        }
+        ProgressWeaponChain();
+    }
 
     private GameObject GetWeapon(int slotIndex)
     {
@@ -14,33 +32,14 @@ public class PlayerAttack : MonoBehaviour
         return slot.childCount > 0 ? slot.GetChild(0).gameObject : null;
     }
 
-    private void GetAllWeapons()
+    private void ProgressWeaponChain()
     {
-        for (int slot = 0; slot < 2; slot++)
-        {
-            GetWeapon(slot);
-        }
+        attackPhase++;
+        if (attackPhase == weaponSlots.Length) attackPhase = 0;
     }
 
-    void Awake()
+    private void OnEnable()
     {
-        GetAllWeapons();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void Attack()
-    {
-        var weapon = curentWeapon;
-        switch (attackPhase)
-        {
-            //case 0: GetWeapon(attackPhase).attack();
-            //case 1: GetWeapon(attackPhase).attack();
-            //case 2: GetWeapon(attackPhase).attack();
-        }
+        attackAction.action.Enable();
     }
 }
