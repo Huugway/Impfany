@@ -6,6 +6,8 @@
 
 ## Resume checkpoint — read this before the older plan
 
+**Folder migration completed · 12 November 2026:** teammate assets now live in `Features/Player`, `Features/Enemies` and `Features/GameFlow`; see [team folder structure](FeatureFolders.md). `TestHammer.asset` is now at `Scripts/Weapon/WeaponData/TestHammer.asset` inside Progression. WeaponSandboxUser contains the PhaseEffects struct; its Dictionary has been explained but not added yet. Resume tutoring with that small step.
+
 **Next action: add source tracking to WeaponSandboxUser, then connect phase requests. Do not restart at step 1.** Read this checkpoint, the melee scope in Jannis.md, and the latest saved `Weapon.cs`, `WeaponSettings.cs`, `MeleeConeAttackBehaviour.cs` and sandbox scene references before continuing. The checklist below is the original roadmap; this checkpoint overrides its outdated implementation-status statements.
 
 - Tutor style: begin each step with **“Now we’re doing X because Y; do Z.”** Explain the purpose before procedures. Small, understandable code additions; Jannis writes/saves them. He declined having the geometry helper written for him. Do not edit scripts/assets autonomously; the previous repair was a specifically authorized exception.
@@ -39,7 +41,7 @@ All weapon files are under `ImpfanyGame/Assets/Features/Progression/`.
 | Existing file/setup | What changes |
 | --- | --- |
 | `Scripts/Weapon/WeaponSettings.cs` | Keep name, damage and the three phase settings. They already contain duration, movement multiplier and aim lock. Add `Range` (distance) and `AttackAngle` (total degrees) for the agreed melee cone. Do not call the angle Radius. |
-| `WeaponData/TestHammer.asset` | Keep the asset and values: Charge 0.4 s / speed 1 / aim free; Attack currently 0.2 s / speed 0 / aim locked; change duration to 0 when wiring instantaneous melee; Recover 0.7 s / speed 0.5 / aim free. |
+| `Scripts/Weapon/WeaponData/TestHammer.asset` | Keep the asset and values: Charge 0.4 s / speed 1 / aim free; Attack currently 0.2 s / speed 0 / aim locked; change duration to 0 when wiring instantaneous melee; Recover 0.7 s / speed 0.5 / aim free. |
 | `Scripts/Weapon/Weapon.cs` | Main rewrite: replace the manual attack flag/forwarding API with whole-use entry, current phase, one phase clock, effect requests, interruption and completion notification. |
 | `Scripts/Weapon/WeaponAttackBehaviour.cs` | Keep the common base and Begin/End for the actual Attack phase. No generic animation-progress method is required now. Hugo will not call behaviour methods. |
 | `Scripts/SwingAttackBehaviour.cs` | Removed, including leftover references on TestHammer and the three StartingWeapons prefabs. Keep it removed; presentation does not define damage mechanics. |

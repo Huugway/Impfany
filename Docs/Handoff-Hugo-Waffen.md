@@ -62,11 +62,11 @@ Dash braucht kein zusätzliches „alle Effekte löschen“. Die Waffe räumt ih
 
 ## Prefab und Zielen
 
-Dein Player-Prefab liegt unter `Assets/Prefabs/Player/Player.prefab`. Unter `WaponHolder/WeaponSlot1` bis `WeaponSlot3` kommt jeweils ein Waffen-Prefab mit `Weapon` am Root. Namespace: `Impfany.Weapons`. Leere Slots starten keine Nutzung.
+Dein Player-Prefab liegt unter `Assets/Features/Player/Prefabs/Player.prefab`. Unter `WaponHolder/WeaponSlot1` bis `WeaponSlot3` kommt jeweils ein Waffen-Prefab mit `Weapon` am Root. Namespace: `Impfany.Weapons`. Leere Slots starten keine Nutzung.
 
 Der Waffenroot ist der Griffpunkt und zeigt bei Rotation 0 nach **lokal +X (rechts)**. Du richtest den Slot auf das aktuelle Aim aus. Deine Effektkomponente hält diese Richtung fest, solange ein Aim-Lock gilt. Die Waffen können vorerst statisch bleiben. Spätere Sprite-Animationen sind von der Trefferlogik getrennt; ein vorhandener `Visual`-Unterbereich bleibt für die Darstellung nutzbar.
 
-Jannis' Dateien liegen unter `Assets/Features/Progression/`: `Prefabs/TestHammer.prefab`, `WeaponData/TestHammer.asset`, `Scripts/` und `Scenes/WeaponSandbox.unity`. TestHammer.prefab enthält Weapon, MeleeConeAttackBehaviour und den deaktivierten Trigger-Collider HitArea mit internen Referenzen. Target Layers steht für den Sandbox-Test auf Default; bei der Gegnerintegration auf die vereinbarten Gegner-Layer einstellen. Der Sandbox-Tester gehört nicht auf deinen Player.
+Jannis' Dateien liegen unter `Assets/Features/Progression/`: `Prefabs/TestHammer.prefab`, `Scripts/Weapon/WeaponData/TestHammer.asset`, `Scripts/` und `Scenes/WeaponSandbox.unity`. TestHammer.prefab enthält Weapon, MeleeConeAttackBehaviour und den deaktivierten Trigger-Collider HitArea mit internen Referenzen. Target Layers steht für den Sandbox-Test auf Default; bei der Gegnerintegration auf die vereinbarten Gegner-Layer einstellen. Der Sandbox-Tester gehört nicht auf deinen Player.
 
 ## Vereinbarter Nahkampf — aktueller Umfang
 

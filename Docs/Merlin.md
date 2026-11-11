@@ -6,7 +6,7 @@ Ich arbeite am Startmenü, Spielablauf aus Sicht der UI, HUD und später Pause, 
 
 ## Aktueller Aufbau
 
-- **Szenen:** Ich habe meine UI aus `ImpfanyGame/Assets/Scenes/testScene/MerlinScene.unity` auch in `ImpfanyGame/Assets/Scenes/SampleScene.unity` übernommen. In der `SampleScene` liegt `GameUI` mit `StartPanel`, `HUDPanel` und einem `EventSystem`. Der `PlayButton` ist im Inspector mit `GameFlow.StartGame()` verbunden. Die Szenenänderung liegt im Commit `8f0996c`; das ist noch kein abgeschlossener Test des gesamten Team-Spiels.
+- **Szenen:** Ich habe meine UI aus `ImpfanyGame/Assets/Features/GameFlow/Scenes/MerlinScene.unity` auch in `ImpfanyGame/Assets/Scenes/SampleScene.unity` übernommen. In der `SampleScene` liegt `GameUI` mit `StartPanel`, `HUDPanel` und einem `EventSystem`. Der `PlayButton` ist im Inspector mit `GameFlow.StartGame()` verbunden. Die Szenenänderung liegt im Commit `8f0996c`; das ist noch kein abgeschlossener Test des gesamten Team-Spiels.
 - **Start und Status:** Beim Klick blendet `StartGame()` das `StartPanel` aus und das `HUDPanel` ein. Danach setzt die Methode den Status auf `Playing` und ruft `StartWave()` auf. Mein `GameStatus`-Enum enthält `StartMenu`, `Playing`, `Shop`, `Paused` und `GameOver`; bisher wird nur der Wechsel zu `Playing` ausgelöst. `OnStatusChanged` meldet diesen Wechsel. Die Status-/Event-Änderungen liegen im Commit `cd75c49`.
 - **Wellenzähler:** `GameFlow` beginnt bei `waveCounter = 0`. `StartWave()` erhöht ihn nur im Status `Playing` und sendet `OnWaveStarted` mit der neuen Nummer. Der Play-Button löst damit im aktuellen Code den Start der **gezählten Welle 1** aus. Dieses Event startet noch keinen Gegner-Spawn und ist nicht mit Maxims Wellensystem verbunden.
 - **Herzen:** `HUDPanel/Hearts` trägt eine `HorizontalLayoutGroup` und `HeartHUD`. Das Script erzeugt in `Start()` aus **einem** zugewiesenen `HeartImage`-Prefab Herz-Instanzen; die ersten erhalten das volle, die übrigen das leere Sprite. In der gespeicherten `SampleScene` stehen derzeit `testHeartCount = 10` und `testFilledHearts = 6` im Inspector. Das sind **Testwerte**, keine Daten aus Hugos Player-Health. Die früheren drei sichtbaren Herzen waren ein Test in meiner eigenen Szene; in der `SampleScene` habe ich im Play-Modus zehn `HeartImage(Clone)` in der Hierarchy gesehen.
@@ -49,11 +49,11 @@ flowchart TD
 
 ## Technische Fundstellen
 
-- `ImpfanyGame/Assets/Scripts/GameFlow/GameFlow.cs` – Panelwechsel, Status, Wellenzähler und Events.
-- `ImpfanyGame/Assets/Scripts/GameFlow/GameStatus.cs` – benannte Spielphasen.
-- `ImpfanyGame/Assets/Scripts/UI/HUD/HeartHUD.cs` – Herzinstanzen und vorläufige Sprite-Auswahl.
+- `ImpfanyGame/Assets/Features/GameFlow/Scripts/GameFlow.cs` – Panelwechsel, Status, Wellenzähler und Events.
+- `ImpfanyGame/Assets/Features/GameFlow/Scripts/GameStatus.cs` – benannte Spielphasen.
+- `ImpfanyGame/Assets/Features/GameFlow/Scripts/UI/HUD/HeartHUD.cs` – Herzinstanzen und vorläufige Sprite-Auswahl.
 - `ImpfanyGame/Assets/Scenes/SampleScene.unity` – aktueller Menü-/HUD-Aufbau, `EventSystem`, Button-Verbindung und Inspector-Testwerte.
-- `ImpfanyGame/Assets/Scenes/testScene/MerlinScene.unity` – meine ursprüngliche Testszene.
-- `ImpfanyGame/Assets/Prefabs/UI/HeartImage.prefab` – verwendetes Herz-Image-Prefab.
+- `ImpfanyGame/Assets/Features/GameFlow/Scenes/MerlinScene.unity` – meine ursprüngliche Testszene.
+- `ImpfanyGame/Assets/Features/GameFlow/Prefabs/HeartImage.prefab` – verwendetes Herz-Image-Prefab.
 
 *KI-Unterstützung: Hermes hat den gespeicherten Code, die Szenen und meine Screenshots geprüft und mir beim Formulieren dieses Textes und des Mermaid-Diagramms geholfen. Die Umsetzung und die beschriebenen Play-Tests stammen von mir. Den fertigen HUD-Anzeigetest und die Anbindung an Player-Health und Gegnerwellen habe ich noch nicht bestätigt.*

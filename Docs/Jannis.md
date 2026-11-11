@@ -83,7 +83,7 @@ For the current melee scope, Attack performs one cone hit check and transitions 
 
 ## Building separately in Unity
 
-- My files and `WeaponSandbox` scene live in `Assets/Features/Progression/`; a dummy enemy will be added later.
+- My files and `WeaponSandbox` scene live in `Assets/Features/Progression/`. Sandbox damage dummies stay here too. See the [team folder structure](FeatureFolders.md) for the other areas.
 - I deliver weapon prefabs with a `Weapon` component and editable `WeaponSettings`. Each weapon copy will keep its own upgrades.
 - Hugo puts my weapon instances under his `WeaponSlot1`–`WeaponSlot3` objects and triggers them. I edit my weapons/settings; he edits the player/scenes.
 - Hugo triggers the complete use and listens for its outcome. The outcome identifies completion or the interrupted phase; Hugo owns how his chain responds. Every weapon uses the same `Weapon` component.
