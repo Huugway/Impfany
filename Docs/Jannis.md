@@ -2,7 +2,7 @@
 
 **Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Automatic phases and melee cone detection work in the private sandbox. The cone finds a target inside it and excludes targets beyond its range or angle. The cone calls IDamageable.TakeDamage once per recipient; a logging dummy verifies the call. TestHammer.prefab now contains the complete cone setup. Player effects, outcome events and real enemy integration remain to build; the three StartingWeapons prefabs are still unconfigured.
 
-**Updated design:** the player triggers one use; the weapon runs **Charge → Attack → Recover**, requests its phase effects and removes them when finished. Hugo owns input, slots, dash and the player component that applies effects. This replaces the previous player-owned phase timers. See the [German handoff](Handoff-Hugo-Waffen.md) and [step-by-step migration](WeaponImplementationNext.md). The new API is planned, not implemented yet.
+**Updated design:** the player triggers one use; the weapon runs **Charge → Attack → Recover**, requests its phase effects and removes them when finished. Hugo owns input, slots, dash and the player component that applies effects. This replaces the previous player-owned phase timers. See the [German handoff](Handoff-Hugo-Waffen.md) and [step-by-step migration](WeaponImplementationNext.md). `Weapon.Attack()` already starts the whole use; `CurrentPhase` is readable. The effect-recipient API and outcome events are planned. Hugo updates his caller from `BeginAttack()` to `Attack()`; no compatibility wrapper is kept. Attack behaviours retain their internal `BeginAttack(settings)` method.
 
 ## Planned weapon attributes
 
