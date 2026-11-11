@@ -1,8 +1,8 @@
 # Jannis — Weapons & upgrades
 
-**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Weapon settings, a configured hammer prefab and a private sandbox scene exist. Begin/End triggers are implemented and manually tested with a static rotated pose. Animated swings, hit detection, damage and upgrades are not implemented yet.
+**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Settings, the hammer prefab and a private sandbox exist. Manual Begin/End was previously tested with a static pose. The swing component and script have since been removed; the hammer currently has no attack behaviour. Full phase automation, player effects, hit detection, damage and upgrades are still to build.
 
-**Player/weapon integration agreed with Hugo:** the player controls phases and rotates the weapon slot; the weapon exposes `Settings`, `BeginAttack()` and `EndAttack()`. Hugo can connect these now. See the [German handoff for Hugo](Handoff-Hugo-Waffen.md).
+**Updated design:** the player triggers one use; the weapon runs **Charge → Attack → Recover**, requests its phase effects and removes them when finished. Hugo owns input, slots, dash and the player component that applies effects. This replaces the previous player-owned phase timers. See the [German handoff](Handoff-Hugo-Waffen.md) and [step-by-step migration](WeaponImplementationNext.md). The new API is planned, not implemented yet.
 
 ## Planned weapon attributes
 
@@ -45,11 +45,11 @@ Examples: railgun = stationary Charge; hammer = stationary Attack/Recover; dagge
 | Beam / cone | Hits along a beam or within a cone, once or repeatedly | Laser, flamethrower |
 | Area attack | Hits within an area around a chosen point | Ground slam, explosion |
 
-These are planned starting behaviours; build them as needed. **First: `SwingAttackBehaviour` for TestHammer.** A different attack mechanic may need a different behaviour, even if the weapon has the same name or category.
+These are planned starting behaviours; build them as needed. **First: a static weapon that fires a projectile.** A different attack mechanic may need a different behaviour, even if the weapon has the same name or category.
 
-- **`WeaponSettings`** supplies the weapon's base settings (formerly `WeaponDefinition`). Behaviour-specific parameters such as swing angle currently live on the behaviour component; add further parameters as needed.
-- **`Weapon`** exposes the same `BeginAttack()` / `EndAttack()` calls to Hugo and forwards them to its attached behaviour.
-- **`WeaponAttackBehaviour`** is the common base. `SwingAttackBehaviour` currently sets a test pose and restores it; the animated arc and hit detection come next. Other behaviours remain planned.
+- **`WeaponSettings`** supplies the weapon's base settings (formerly `WeaponDefinition`). Behaviour-specific parameters can live on the appropriate behaviour component.
+- **`Weapon`** will run the complete phase sequence, request/release effects and report when use ends. Currently it only forwards manual Begin/End calls; this is the main script to change.
+- **`WeaponAttackBehaviour`** handles the attack mechanic. A projectile-firing behaviour is the next planned behaviour. The earlier swing behaviour was removed; attacks and hit detection remain to build.
 
 A hammer and an axe can share Swing with different visuals, damage, timing, reach and angle. Melee / Ranged can be descriptive categories for UI or upgrades; they do not choose the attack code.
 
@@ -71,22 +71,22 @@ During Attack: a pistol fires once, a burst fires several shots, a flamethrower 
 
 | Who | What I provide | What you handle |
 | --- | --- | --- |
-| Hugo — Player | Weapon prefabs, stats, phase settings and weapon-specific attack behaviour | Holding/equipping, slots and cycling, input/buffer, aiming, phase timing, dash and movement/aim restrictions |
+| Hugo — Player | Weapons that run their phases, request/release effects, accept interruption requests and report completion | Holding/equipping, slots, input/buffer, idle reset, dash movement and a player component that applies effects |
 | Maxim — Enemies | Damage, stun and knockback for each hit | Apply hits to enemies; report damage actually dealt |
 | Merlin — UI & flow | Weapon details, card rules, upgrade results | Menus, HUD, shop/table screens, when upgrades are allowed |
 
 **One hit:** Hugo triggers the weapon → my weapon detects a hit (or spawns its projectile) → Maxim applies the hit and reports actual damage → I spawn souls that briefly float, then fly to the player → collected souls charge the lantern → Merlin updates the HUD.
 
-**I define the weapon settings; Hugo’s player controller applies them.**
+**My weapon controls when its phase effects apply; Hugo’s effect component changes actual movement and aiming.** Each use has its own effect source. Phase changes replace that source’s effects; completion, cancellation or disabling removes them. Other buffs/slows stay intact. Dash requests interruption; it does not clear every player effect.
 
 ## Building separately in Unity
 
 - My files and `WeaponSandbox` scene live in `Assets/Features/Progression/`; a dummy enemy will be added later.
 - I deliver weapon prefabs with a `Weapon` component and editable `WeaponSettings`. Each weapon copy will keep its own upgrades.
 - Hugo puts my weapon instances under his `WeaponSlot1`–`WeaponSlot3` objects and triggers them. I edit my weapons/settings; he edits the player/scenes.
-- Hugo reads `weapon.Settings`, calls `BeginAttack()` at the start of Attack and `EndAttack()` at its end. Every weapon uses the same `Weapon` component; the player needs no weapon-specific attack code.
+- Hugo triggers the complete use and listens for its outcome. Finished/Recovery skipped means next slot; cancelled Charge means retry this slot. Every weapon uses the same `Weapon` component.
 - Hugo rotates the slot toward the aim direction and holds it fixed during aim-locked phases. My weapon reads that orientation and animates its `Visual` child separately.
-- `WeaponSandboxTester` offers manual Begin/End actions in Play Mode and stays in the sandbox scene. Coordinate edits to shared prefabs, scenes and settings.
+- Update `WeaponSandboxTester` from manual Begin/End to whole-use and interruption tests. Add a sandbox effect recipient so testing does not depend on Hugo’s player. Keep both in the private scene. Coordinate edits to shared prefabs, scenes and settings.
 
 ## Upgrades come next
 
