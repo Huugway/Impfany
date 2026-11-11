@@ -10,6 +10,7 @@ namespace Impfany.Weapons
         [SerializeField]
         private LayerMask targetLayers;
         private readonly List<Collider2D> hitResults = new List<Collider2D>();
+        private readonly HashSet<IDamageable> damagedTargets = new HashSet<IDamageable>();
 
         public override void BeginAttack(WeaponSettings settings)
         {
@@ -20,12 +21,28 @@ namespace Impfany.Weapons
             }
             BuildHitArea(settings);
             FindTargets();
+            ApplyDamage(settings.Damage);
 
             Debug.Log($"Melee cone found {hitResults.Count} colliders.", this);
         }
 
         public override void EndAttack()
         {
+        }
+
+        private void ApplyDamage(float damage)
+        {
+            damagedTargets.Clear();
+            
+            foreach (Collider2D hit in hitResults)
+            {
+                IDamageable target = hit.GetComponentInParent<IDamageable>();
+            
+                if (target != null && damagedTargets.Add(target))
+                {
+                    target.TakeDamage(damage);
+                }
+            }
         }
 
         private void FindTargets()

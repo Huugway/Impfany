@@ -1,6 +1,6 @@
 # Jannis — Weapons & upgrades
 
-**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Automatic phases and melee cone detection work in the private sandbox. The cone finds a target inside it and excludes targets beyond its range or angle. Damage, duplicate-hit prevention, player effects and outcome events are still to build. Shared weapon prefabs remain unconfigured; the working behaviour is attached to the sandbox instance only.
+**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Automatic phases and melee cone detection work in the private sandbox. The cone finds a target inside it and excludes targets beyond its range or angle. The cone calls IDamageable.TakeDamage once per recipient; a logging dummy verifies the call. TestHammer.prefab now contains the complete cone setup. Player effects, outcome events and real enemy integration remain to build; the three StartingWeapons prefabs are still unconfigured.
 
 **Updated design:** the player triggers one use; the weapon runs **Charge → Attack → Recover**, requests its phase effects and removes them when finished. Hugo owns input, slots, dash and the player component that applies effects. This replaces the previous player-owned phase timers. See the [German handoff](Handoff-Hugo-Waffen.md) and [step-by-step migration](WeaponImplementationNext.md). The new API is planned, not implemented yet.
 
@@ -49,13 +49,13 @@ Examples: railgun = stationary Charge; hammer = stationary Attack/Recover; dagge
 
 After Charge, the weapon checks the cone **once** along the slot's current local +X direction, damages all overlapping enemies once each, and immediately enters Recover. For this melee behaviour, Attack is instantaneous (`Attack.Duration = 0`), not a collider left active until the next frame. Sprite animation duration does not determine damage timing.
 
-Use an explicit 2D overlap query against a sector-shaped collider, rather than relying on a one-frame trigger callback. Collider-edge overlaps count; checking enemy centres alone is insufficient. Multiple colliders on one enemy still produce one hit. Reuse the query shape instead of spawning/destroying it every attack. The explicit overlap query exists; damage and duplicate-hit prevention remain to implement.
+Use an explicit 2D overlap query against a sector-shaped collider, rather than relying on a one-frame trigger callback. Collider-edge overlaps count; checking enemy centres alone is insufficient. Multiple colliders on one enemy still produce one hit. Reuse the query shape instead of spawning/destroying it every attack. Overlap detection and one damage call per recipient are implemented and tested with sandbox dummies.
 
 - **`WeaponSettings`** holds name, damage, phase settings and melee range/angle.
 - **`Weapon`** runs phases. Player effect requests and completion/interruption notifications are planned.
 - **`WeaponAttackBehaviour`** is the common base; `MeleeConeAttackBehaviour` currently detects overlapping colliders.
 
-Timing and basic cone detection are verified. Next: add a sandbox damage recipient and prove one hit per enemy. Projectile, continuous-fire, sweeping and other mechanics are future work, outside this implementation scope. Keep the component-based prefab approach; each weapon can have its own visuals/settings without a Hammer/Pistol class hierarchy.
+Timing, damage calls, duplicate-hit prevention, multiple targets, rotation and collider-edge overlaps are verified with sandbox dummies. Next: phase effect requests and player integration. Projectile, continuous-fire, sweeping and other mechanics are future work, outside this implementation scope. Keep the component-based prefab approach; each weapon can have its own visuals/settings without a Hammer/Pistol class hierarchy.
 
 ## How an attack works
 

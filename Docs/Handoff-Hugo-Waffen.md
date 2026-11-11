@@ -2,7 +2,7 @@
 
 **Neues Design · 11.11.2026: Ein Aufruf startet die komplette Waffennutzung.** Die Waffe läuft selbst durch **Charge → Attack → Recover** und meldet anschließend das Ende. Diese Aufteilung ersetzt die frühere Übergabe, in der dein Player alle drei Phasen zeitlich steuert.
 
-**Aktueller Code:** `BeginAttack()` startet bereits die komplette Folge Charge → Attack → Recover; `CurrentPhase` ist lesbar. `EndAttack()` bricht die Nutzung ab und ist für das normale Ende nicht nötig. Im WeaponSandbox erkennt der Nahkampfkegel überlappende Collider. Schaden, Schutz vor Mehrfachtreffern, Effektschnittstelle und Endmeldungen fehlen noch. Die gemeinsamen Waffen-Prefabs haben weiterhin kein Attack Behaviour; nur die Sandbox-Instanz ist verdrahtet.
+**Aktueller Code:** `BeginAttack()` startet bereits die komplette Folge Charge → Attack → Recover; `CurrentPhase` ist lesbar. `EndAttack()` bricht die Nutzung ab und ist für das normale Ende nicht nötig. Der Nahkampfkegel ruft `IDamageable.TakeDamage(float)` einmal pro Empfänger auf. Mehrere Collider desselben Empfängers verursachen keinen Mehrfachtreffer; mit Logging-Dummys getestet. TestHammer.prefab enthält jetzt das verdrahtete Attack Behaviour und HitArea. Die drei StartingWeapons bleiben Platzhalter. Effektschnittstelle, Endmeldungen und Anbindung an Maxims echte Gegner fehlen noch.
 
 ## Wer baut was?
 
@@ -66,7 +66,7 @@ Dein Player-Prefab liegt unter `Assets/Prefabs/Player/Player.prefab`. Unter `Wap
 
 Der Waffenroot ist der Griffpunkt und zeigt bei Rotation 0 nach **lokal +X (rechts)**. Du richtest den Slot auf das aktuelle Aim aus. Deine Effektkomponente hält diese Richtung fest, solange ein Aim-Lock gilt. Die Waffen können vorerst statisch bleiben. Spätere Sprite-Animationen sind von der Trefferlogik getrennt; ein vorhandener `Visual`-Unterbereich bleibt für die Darstellung nutzbar.
 
-Jannis' Dateien liegen unter `Assets/Features/Progression/`: `Prefabs/TestHammer.prefab`, `WeaponData/TestHammer.asset`, `Scripts/` und `Scenes/WeaponSandbox.unity`. Die bestehende Prefab-Hierarchie und die Settings-Referenz bleiben; ein neues Attack Behaviour muss später zugewiesen werden. Der Sandbox-Tester gehört nicht auf deinen Player.
+Jannis' Dateien liegen unter `Assets/Features/Progression/`: `Prefabs/TestHammer.prefab`, `WeaponData/TestHammer.asset`, `Scripts/` und `Scenes/WeaponSandbox.unity`. TestHammer.prefab enthält Weapon, MeleeConeAttackBehaviour und den deaktivierten Trigger-Collider HitArea mit internen Referenzen. Target Layers steht für den Sandbox-Test auf Default; bei der Gegnerintegration auf die vereinbarten Gegner-Layer einstellen. Der Sandbox-Tester gehört nicht auf deinen Player.
 
 ## Vereinbarter Nahkampf — aktueller Umfang
 
@@ -78,7 +78,7 @@ Alle Nahkampfwaffen verwenden vorerst denselben **Kegel-Treffercheck**:
 - Danach sofort Recover. Für diese Waffen ist `Attack.Duration = 0`; wir warten keinen zusätzlichen Frame auf Physik-Callbacks. Sprite-Animation und Schadenszeitpunkt sind getrennt.
 - Dash kann jede aktive Phase beenden. Ein bereits ausgeführter Treffer wird nicht rückgängig gemacht; bei einem sofortigen Angriff ist danach bereits Recover aktiv.
 
-`Range`, `AttackAngle` und die explizite Kegel-Overlap-Abfrage sind implementiert. Im Sandbox-Test: Ziel im Kegel erkannt; Ziele außerhalb von Reichweite oder Winkel ausgeschlossen. Schaden und Schutz vor Mehrfachtreffern fehlen noch. Andere Angriffsverhalten sind aktuell nicht im Umfang.
+`Range`, `AttackAngle` und die explizite Kegel-Overlap-Abfrage sind implementiert. Im Sandbox-Test: Ziel im Kegel erkannt; Ziele außerhalb von Reichweite oder Winkel ausgeschlossen. Der Schadensaufruf und Schutz vor Mehrfachtreffern sind mit Dummys getestet; Maxim muss seine Gegner noch über IDamageable oder einen passenden Adapter anbinden. Andere Angriffsverhalten sind aktuell nicht im Umfang.
 
 ## Vorhandene Settings
 
