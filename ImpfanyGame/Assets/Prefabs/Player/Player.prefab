@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 3084372679238194597}
   - component: {fileID: 6498090500128527903}
   - component: {fileID: 5159919317413295666}
+  - component: {fileID: 5682680777156483837}
   - component: {fileID: 7241265421758484127}
   - component: {fileID: 2628748767019345221}
   m_Layer: 0
@@ -288,6 +289,18 @@ MonoBehaviour:
   attackAction: {fileID: 0}
   weaponSlots: []
   attackPhase: 0
+--- !u!114 &5682680777156483837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430748697754231907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becf05f03b8355849b27756f07d574ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDebuff
 --- !u!114 &7241265421758484127
 MonoBehaviour:
   m_ObjectHideFlags: 0
