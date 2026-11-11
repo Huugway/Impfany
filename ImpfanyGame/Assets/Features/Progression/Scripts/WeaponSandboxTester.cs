@@ -7,15 +7,15 @@ namespace Impfany.Weapons
         [SerializeField]
         private Weapon weapon;
 
-        [ContextMenu("Test/Begin Attack")]
-        private void TestBeginAttack()
+        [ContextMenu("Test/Attack")]
+        private void TestAttack()
         {
             if (!Application.isPlaying || weapon == null)
             {
                 return;
             }
 
-            weapon.BeginAttack();
+            weapon.Attack();
         }
 
         [ContextMenu("Test/End Attack")]

@@ -47,7 +47,7 @@ namespace Impfany.Weapons
             phaseElapsed = 0f;
         }
 
-        public void BeginAttack()
+        public void Attack()
         {
             if (CurrentPhase != WeaponPhase.Idle || !isActiveAndEnabled)
             {
