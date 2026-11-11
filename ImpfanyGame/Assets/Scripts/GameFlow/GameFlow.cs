@@ -7,8 +7,10 @@ public class GameFlow : MonoBehaviour
 
     private GameStatus currentStatus = GameStatus.StartMenu;
     private int waveCounter = 0;
+    private int levelCounter = 0;
     public event System.Action<GameStatus> OnStatusChanged;
     public event System.Action<int> OnWaveStarted;
+    public event System.Action<int> OnLevelStarted;
 
 
     private GameStatus GetGameStatus()
@@ -17,6 +19,11 @@ public class GameFlow : MonoBehaviour
     }
 
     private int GetWaveCounter()
+    {
+        return waveCounter;
+    }
+
+    private int GetLevelCounter()
     {
         return waveCounter;
     }
@@ -35,6 +42,14 @@ public class GameFlow : MonoBehaviour
 
         waveCounter++;
         OnWaveStarted?.Invoke(waveCounter);
+    }
+
+    public void StartLevel()
+    {
+        if (currentStatus != GameStatus.Playing) return;
+
+        levelCounter++;
+        OnLevelStarted?.Invoke(levelCounter);
     }
 
     public void StartGame()
