@@ -1,8 +1,8 @@
 # Hugo — Übergabe Waffen ↔ Spieler
 
-**Mit Hugo abgestimmtes Design · Stand: 10.11.2026.** Der Spieler bestimmt, wann eine Waffe angreift; die Waffe führt ihren eigenen Angriff aus und liefert dem Spieler ihre Phasenwerte.
+**Mit Hugo abgestimmtes Design · Stand: 11.11.2026.** Der Spieler bestimmt, wann eine Waffe angreift; die Waffe führt ihren eigenen Angriff aus und liefert dem Spieler ihre Phasenwerte.
 
-**Implementierungsstand:** `TestHammer`, `Weapon` und die Einstellungen existieren. Der Hammer greift noch nicht an. `BeginAttack()` und `EndAttack()` sind vereinbart, aber noch nicht implementiert.
+**Jetzt anschließbar:** `Weapon.BeginAttack()`, `Weapon.EndAttack()` und **`weapon.Settings`** existieren. `WeaponDefinition` wurde in `WeaponSettings` umbenannt; bitte `.Settings` statt `.Definition` verwenden. Der Hammer zeigt bisher nur eine gedrehte Testpose und kehrt bei `EndAttack()` zurück. Animierter Schwung, Treffer und Schaden fehlen noch. Begin/End wurde in der Sandbox manuell getestet.
 
 ## Wer baut was?
 
@@ -21,10 +21,10 @@ Alles liegt unter `ImpfanyGame/Assets/Features/Progression/`:
 
 - `Prefabs/TestHammer.prefab`: Root mit `Weapon`-Komponente, darunter `Visual/Handle` und `Visual/Head`.
 - `WeaponData/TestHammer.asset`: gemeinsame Grundwerte dieser Waffenart.
-- `Scripts/Weapon.cs` und `Scripts/WeaponDefinition.cs`: Namespace **`Impfany.Weapons`**.
+- `Scripts/Weapon.cs` und `Scripts/WeaponSettings.cs`: Namespace **`Impfany.Weapons`**.
 - `Scenes/WeaponSandbox.unity`: Jannis' eigene Testszene.
 
-Dein Player-Prefab hat bereits diese Struktur (`WaponHolder` ist der aktuelle Objektname):
+Dein Player-Prefab liegt jetzt unter `Assets/Prefabs/Player/Player.prefab` und hat diese Struktur (`WaponHolder` ist der aktuelle Objektname):
 
 ```text
 Player
@@ -36,15 +36,17 @@ Player
 
 Whip, Hammer und Sniper sind derzeit Platzhalter. In jeden Slot kommt eine Waffen-Prefab-Instanz mit einer **`Weapon`-Komponente am Root**. Dein bisheriger Zugriff auf das erste Kind des Slots passt dazu; bei leerem Slot wird kein Angriff gestartet.
 
+`weapon` meint hier die **Komponente**, nicht das GameObject: am Waffenroot `GetComponent<Weapon>()` verwenden, mit `using Impfany.Weapons;` im Playerscript. Das TestHammer-Prefab hat Settings, Swing-Komponente und Visual bereits zugewiesen.
+
 Der Waffenroot ist der **Griff-/Befestigungspunkt**; bei Rotation 0 zeigt die Waffe nach **lokal +X (rechts)**. Die Waffe liest keinen Input und sucht sich keinen Spieler.
 
 **Bereits lesbar** über die `Weapon`-Komponente am Waffenroot:
 
 | Zugriff | Bedeutung |
 | --- | --- |
-| `weapon.Definition.DisplayName` | Anzeigename |
-| `weapon.Definition.Damage` | Grundschaden pro Treffer |
-| `weapon.Definition.Charge`, `.Attack`, `.Recover` | Die drei Phasen |
+| `weapon.Settings.DisplayName` | Anzeigename |
+| `weapon.Settings.Damage` | Grundschaden pro Treffer |
+| `weapon.Settings.Charge`, `.Attack`, `.Recover` | Die drei Phasen |
 | Je Phase: `.Duration` | Dauer in Sekunden |
 | Je Phase: `.MovementSpeedMultiplier` | 0 = kein Laufen, 0,5 = halbe Geschwindigkeit, 1 = normal |
 | Je Phase: `.LockAim` | Zielrichtung während dieser Phase festhalten |
@@ -63,7 +65,7 @@ Reichweite, Knockback, Stun, Seelengewinn und Lifesteal sind **geplant, aber noc
 
 | Zeitpunkt | Dein Spieler | Unsere Waffe |
 | --- | --- | --- |
-| Klick / Charge | Waffe wählen, Einstellungen lesen, Charge starten | Liefert Werte über `weapon.Definition` |
+| Klick / Charge | Waffe wählen, Einstellungen lesen, Charge starten | Liefert Werte über `weapon.Settings` |
 | Beginn von Attack | Einmal `weapon.BeginAttack()` aufrufen | Schwung, Schüsse oder Dauerfeuer starten |
 | Ende von Attack | Einmal `weapon.EndAttack()` aufrufen | Aktive Trefferbereiche und Dauerfeuer beenden |
 | Recover | Recovery steuern, danach nächsten Slot freigeben | Keine eigene Spieler-Phasensteuerung |
@@ -87,8 +89,8 @@ Die Waffe bekommt keine zweite Charge/Attack/Recover-Zeitsteuerung. Eigene Burst
 
 ## Parallel weiterbauen
 
-**Hugo:** Player, Slots, Phasentiming, Aim und Bewegung bauen. Die Trigger erst anschließen, sobald die Methoden in `Weapon` vorhanden sind.
+**Hugo:** Die vorhandenen Trigger jetzt anschließen; Player, Slots, Phasentiming, Aim und Bewegung weiterbauen. Wiederholtes `BeginAttack()` während eines aktiven Angriffs wird ignoriert; `EndAttack()` gibt die Waffe für den nächsten Aufruf frei. Die Waffe beendet sich nicht selbst nach `Attack.Duration`.
 
-**Jannis:** `BeginAttack()` / `EndAttack()` und zuerst das Hammer-Verhalten in den eigenen Dateien und `WeaponSandbox` umsetzen. Wir ändern deine Spielerdateien nicht; Änderungen an unseren Waffen erfolgen am Waffen-Prefab.
+**Jannis:** Als Nächstes den vollständigen Schwung und danach Treffer umsetzen. `WeaponSandboxTester` ist nur für die eigene Testszene und muss nicht auf den Player oder das Waffen-Prefab. Wir ändern deine Spielerdateien nicht; Änderungen an unseren Waffen erfolgen am Waffen-Prefab.
 
 Weitere vereinbarte Spielregeln: [WeaponsAndProgression.md](WeaponsAndProgression.md).

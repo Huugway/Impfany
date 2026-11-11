@@ -23,7 +23,7 @@ namespace Impfany.Weapons
     [CreateAssetMenu(
         fileName = "NewWeapon",
         menuName = "Impfany/Weapons/Weapon Definition")]
-    public sealed class WeaponDefinition : ScriptableObject
+    public sealed class WeaponSettings : ScriptableObject
     {
         [SerializeField]
         private string displayName = "New Weapon";

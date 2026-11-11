@@ -1,6 +1,6 @@
 # Weapons & progression — gameplay decisions
 
-The weapon attributes and team handoffs are in [Jannis.md](Jannis.md). This page keeps the remaining gameplay rules together. Settings and a placeholder hammer exist; the gameplay below is not implemented yet. The agreed player/weapon integration is in the [German handoff for Hugo](Handoff-Hugo-Waffen.md); its trigger methods still need implementing.
+The weapon attributes and team handoffs are in [Jannis.md](Jannis.md). This page keeps the remaining gameplay rules together. Settings, a hammer prefab and working Begin/End triggers exist; the hammer only changes pose so far. Animated attacks, hits, damage and progression remain to be implemented. The callable API (`weapon.Settings`, `BeginAttack()` and `EndAttack()`) is in the [German handoff for Hugo](Handoff-Hugo-Waffen.md).
 
 ## Agreed weapon behaviour
 
@@ -17,6 +17,8 @@ The weapon attributes and team handoffs are in [Jannis.md](Jannis.md). This page
 - Jannis' weapon performs the swing, burst or continuous attack and detects hits/spawns projectiles. Burst and hit intervals belong inside that weapon behaviour.
 - Every prefab exposes the same `Weapon` component. The player needs no weapon-specific attack code.
 - Hugo rotates the slot to supply live aim, holding its direction during aim-locked phases. Jannis animates the weapon's `Visual` child separately. Fired projectiles keep their direction and can outlast Attack.
+
+Weapon prefabs combine appearance, settings and reusable attack behaviours: Swing, Thrust, Projectile firing, Beam / cone or Area attack. Build only what is needed, starting with Swing for TestHammer. The [behaviour table and prefab approach](Jannis.md#reusable-attack-behaviours) are in Jannis.md.
 
 ## Proposed details
 

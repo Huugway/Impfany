@@ -275,7 +275,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!4 &163223816
 Transform:
@@ -513,6 +513,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1622177783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8927932680840297334, guid: 604e36f5316234bc592d0005cfb5df81, type: 3}
+  m_PrefabInstance: {fileID: 732452778261615041}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f565bee13878d47feb8e11eaeb34f3b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Impfany.Weapons.Weapon
+--- !u!1 &2063259956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2063259958}
+  - component: {fileID: 2063259957}
+  m_Layer: 0
+  m_Name: WeaponTester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2063259957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063259956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932410fd83a014522a1c8d77c01a28f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Impfany.Weapons.WeaponSandboxTester
+  weapon: {fileID: 1622177783}
+--- !u!4 &2063259958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063259956}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.13559, y: -0.00974, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &732452778261615041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -578,3 +634,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 163223816}
   - {fileID: 732452778261615041}
+  - {fileID: 2063259958}

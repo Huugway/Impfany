@@ -1,8 +1,8 @@
 # Jannis — Weapons & upgrades
 
-**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Weapon settings, a placeholder hammer prefab and a private sandbox scene exist. Attacks and upgrades are not implemented yet.
+**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Weapon settings, a configured hammer prefab and a private sandbox scene exist. Begin/End triggers are implemented and manually tested with a static rotated pose. Animated swings, hit detection, damage and upgrades are not implemented yet.
 
-**Player/weapon integration agreed with Hugo:** the player controls phases and rotates the weapon slot; the weapon supplies settings and performs its attack through `BeginAttack()` / `EndAttack()`. These methods are not implemented yet. See the [German handoff for Hugo](Handoff-Hugo-Waffen.md).
+**Player/weapon integration agreed with Hugo:** the player controls phases and rotates the weapon slot; the weapon exposes `Settings`, `BeginAttack()` and `EndAttack()`. Hugo can connect these now. See the [German handoff for Hugo](Handoff-Hugo-Waffen.md).
 
 ## Planned weapon attributes
 
@@ -33,6 +33,28 @@ Movement: **0 = cannot walk, 0.5 = half speed, 1 = normal (default), 1.5 = faste
 
 Examples: railgun = stationary Charge; hammer = stationary Attack/Recover; dagger = faster Recover.
 
+## Reusable attack behaviours
+
+**A weapon prefab combines appearance + settings + a reusable attack behaviour.** Behaviours describe how an attack works and can be shared by different weapons.
+
+| Behaviour | What it does | Example weapons |
+| --- | --- | --- |
+| Swing | Sweeps a hit area through an arc | Hammer, sword, axe |
+| Thrust | Extends a hit area forward | Dagger, spear |
+| Projectile firing | Spawns projectiles; supports single shots, bursts or repeated fire | Pistol, shotgun, bow |
+| Beam / cone | Hits along a beam or within a cone, once or repeatedly | Laser, flamethrower |
+| Area attack | Hits within an area around a chosen point | Ground slam, explosion |
+
+These are planned starting behaviours; build them as needed. **First: `SwingAttackBehaviour` for TestHammer.** A different attack mechanic may need a different behaviour, even if the weapon has the same name or category.
+
+- **`WeaponSettings`** supplies the weapon's base settings (formerly `WeaponDefinition`). Behaviour-specific parameters such as swing angle currently live on the behaviour component; add further parameters as needed.
+- **`Weapon`** exposes the same `BeginAttack()` / `EndAttack()` calls to Hugo and forwards them to its attached behaviour.
+- **`WeaponAttackBehaviour`** is the common base. `SwingAttackBehaviour` currently sets a test pose and restores it; the animated arc and hit detection come next. Other behaviours remain planned.
+
+A hammer and an axe can share Swing with different visuals, damage, timing, reach and angle. Melee / Ranged can be descriptive categories for UI or upgrades; they do not choose the attack code.
+
+Create a prefab per weapon using the components it needs. Use prefab variants when weapons share a similar hierarchy; there is no required Melee → Hammer or Ranged → Pistol prefab inheritance tree. Each copy keeps its own later upgrades rather than changing the shared settings asset.
+
 ## How an attack works
 
 One click starts **Charge → Attack → Recover**. Further clicks cycle **slot 1 → 2 → 3 → 1**. Waiting **2–3 seconds after Recover** resets the next attack to slot 1.
@@ -60,11 +82,11 @@ During Attack: a pistol fires once, a burst fires several shots, a flamethrower 
 ## Building separately in Unity
 
 - My files and `WeaponSandbox` scene live in `Assets/Features/Progression/`; a dummy enemy will be added later.
-- I deliver weapon prefabs with a `Weapon` component and editable `WeaponDefinition` settings. Each weapon copy will keep its own upgrades.
+- I deliver weapon prefabs with a `Weapon` component and editable `WeaponSettings`. Each weapon copy will keep its own upgrades.
 - Hugo puts my weapon instances under his `WeaponSlot1`–`WeaponSlot3` objects and triggers them. I edit my weapons/settings; he edits the player/scenes.
-- Hugo reads `weapon.Definition`, calls `BeginAttack()` at the start of Attack and `EndAttack()` at its end. Every weapon uses the same `Weapon` component; the player needs no weapon-specific attack code.
+- Hugo reads `weapon.Settings`, calls `BeginAttack()` at the start of Attack and `EndAttack()` at its end. Every weapon uses the same `Weapon` component; the player needs no weapon-specific attack code.
 - Hugo rotates the slot toward the aim direction and holds it fixed during aim-locked phases. My weapon reads that orientation and animates its `Visual` child separately.
-- Implement these trigger methods next. Coordinate edits to shared prefabs, scenes and settings.
+- `WeaponSandboxTester` offers manual Begin/End actions in Play Mode and stays in the sandbox scene. Coordinate edits to shared prefabs, scenes and settings.
 
 ## Upgrades come next
 
