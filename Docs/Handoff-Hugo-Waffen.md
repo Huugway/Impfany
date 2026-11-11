@@ -2,7 +2,7 @@
 
 **Neues Design · 11.11.2026: Ein Aufruf startet die komplette Waffennutzung.** Die Waffe läuft selbst durch **Charge → Attack → Recover** und meldet anschließend das Ende. Diese Aufteilung ersetzt die frühere Übergabe, in der dein Player alle drei Phasen zeitlich steuert.
 
-**Aktueller Code:** `Attack()` startet bereits die komplette Folge Charge → Attack → Recover; `CurrentPhase` ist lesbar. `EndAttack()` bricht die Nutzung ab und ist für das normale Ende nicht nötig. Der Nahkampfkegel ruft `IDamageable.TakeDamage(float)` einmal pro Empfänger auf. Mehrere Collider desselben Empfängers verursachen keinen Mehrfachtreffer; mit Logging-Dummys getestet. TestHammer.prefab enthält jetzt das verdrahtete Attack Behaviour und HitArea. Die drei StartingWeapons bleiben Platzhalter. Effektschnittstelle, Endmeldungen und Anbindung an Maxims echte Gegner fehlen noch.
+**Aktueller Code:** `Attack()` startet bereits die komplette Folge Charge → Attack → Recover; `CurrentPhase` ist lesbar. `EndAttack()` bricht die Nutzung ab und ist für das normale Ende nicht nötig. Der Nahkampfkegel ruft `IDamageable.TakeDamage(float)` einmal pro Empfänger auf. Mehrere Collider desselben Empfängers verursachen keinen Mehrfachtreffer; mit Logging-Dummys getestet. TestHammer.prefab enthält jetzt das verdrahtete Attack Behaviour und HitArea. Die drei StartingWeapons bleiben Platzhalter. `IWeaponUser` ist angelegt; Effektanbindung, Endmeldungen und Anbindung an Maxims echte Gegner fehlen noch.
 
 ## Wer baut was?
 
@@ -28,7 +28,7 @@ Maxim nimmt Treffer entgegen und meldet tatsächlich verursachten Schaden. Seine
 
 ## Kleine gemeinsame Schnittstelle
 
-**Jetzt verwendbar:** `void weapon.Attack()` startet die ganze Nutzung. `CurrentPhase`, `Settings` und `EndAttack()` existieren ebenfalls. `BeginAttack()` wurde auf Weapon entfernt; bitte deinen Aufruf zu `weapon.Attack()` ändern. Es gibt keinen Kompatibilitäts-Wrapper. Die unten beschriebene Empfängerübergabe und Endmeldungen sind noch geplant. Der genaue technische Vertrag steht im [Umbauplan](WeaponImplementationNext.md#proposed-contract).
+**Jetzt verwendbar:** `void weapon.Attack()` startet die ganze Nutzung. `CurrentPhase`, `Settings` und `EndAttack()` existieren ebenfalls. `BeginAttack()` wurde auf Weapon entfernt; PlayerAttack ruft jetzt `weapon.Attack()` auf. Es gibt keinen Kompatibilitäts-Wrapper. Die unten beschriebene Empfängerübergabe und Endmeldungen sind noch geplant. Der genaue technische Vertrag steht im [Umbauplan](WeaponImplementationNext.md#proposed-contract).
 
 | Zugriff | Zweck |
 | --- | --- |
@@ -43,7 +43,7 @@ Maxim nimmt Treffer entgegen und meldet tatsächlich verursachten Schaden. Seine
 
 Jannis liefert die kleine Schnittstelle in seinem Bereich; Hugo implementiert sie am Player. Zum unabhängigen Testen verwendet Jannis einen Sandbox-Empfänger. Vor dem Anschließen bitte die vorgeschlagenen Namen abgleichen; die Rollenverteilung ist bereits entschieden.
 
-**Stand von Hugos PlayerAttack:** Dein bisheriger Aufruf `weapon.BeginAttack()` muss jetzt zu `weapon.Attack()` werden; du passt deinen Code selbst an. Der Slot wird bisher direkt weitergeschaltet. Die spätere Empfängerübergabe und Ergebnisverarbeitung bleiben weitere Integrationsschritte. `BeginAttack(settings)` auf WeaponAttackBehaviour bleibt bestehen: Das startet intern nur die eigentliche Attack-Phase.
+**Stand von Hugos PlayerAttack:** Der Aufruf wurde auf Jannis’ Wunsch zu `weapon.Attack()` korrigiert. Die übrige Player-Logik bleibt bei dir. Der Slot wird bisher direkt weitergeschaltet. Die spätere Empfängerübergabe und Ergebnisverarbeitung bleiben weitere Integrationsschritte. `BeginAttack(settings)` auf WeaponAttackBehaviour bleibt bestehen: Das startet intern nur die eigentliche Attack-Phase.
 
 ## Dash
 

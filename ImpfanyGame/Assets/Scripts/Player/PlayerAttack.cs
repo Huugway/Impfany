@@ -21,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
         {
             var weapon = weaponPrefab.GetComponent<Weapon>();
             if (weapon == null) Debug.LogError($"Object in Weapon Slot {attackPhase + 1} does not hold a weapon script", this);
-            else weapon.BeginAttack();
+            else weapon.Attack();
         }
         ProgressWeaponChain();
     }
