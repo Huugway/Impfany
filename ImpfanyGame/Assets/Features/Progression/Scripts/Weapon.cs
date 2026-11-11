@@ -7,17 +7,49 @@ namespace Impfany.Weapons
     {
         [SerializeField]
         private WeaponSettings settings;
-
         [SerializeField]
         private WeaponAttackBehaviour attackBehaviour;
-
-        private bool isAttacking;
-
+        private float phaseElapsed;
         public WeaponSettings Settings => settings;
+        public WeaponPhase CurrentPhase { get; private set; } = WeaponPhase.Idle;
+
+
+        private void Update()
+        {
+            if (CurrentPhase == WeaponPhase.Idle)
+            {
+                return;
+            }
+
+            phaseElapsed += Time.deltaTime;
+
+            if (CurrentPhase ==  WeaponPhase.Charge && phaseElapsed >= settings.Charge.Duration)
+            {
+                EnterPhase(WeaponPhase.Attack);
+                attackBehaviour.BeginAttack(settings);
+            }
+
+            if (CurrentPhase == WeaponPhase.Attack && phaseElapsed >= settings.Attack.Duration)
+            {
+                attackBehaviour.EndAttack();
+                EnterPhase(WeaponPhase.Recover);
+            }
+
+            if (CurrentPhase == WeaponPhase.Recover && phaseElapsed >= settings.Recover.Duration)
+            {
+                EndAttack();
+            }
+        }
+
+        private void EnterPhase(WeaponPhase phase)
+        {
+            CurrentPhase = phase;
+            phaseElapsed = 0f;
+        }
 
         public void BeginAttack()
         {
-            if (isAttacking || !isActiveAndEnabled)
+            if (CurrentPhase != WeaponPhase.Idle || !isActiveAndEnabled)
             {
                 return;
             }
@@ -30,23 +62,23 @@ namespace Impfany.Weapons
                 return;
             }
 
-            isAttacking = true;
-            attackBehaviour.BeginAttack(settings);
+            EnterPhase(WeaponPhase.Charge);
         }
 
         public void EndAttack()
         {
-            if (!isAttacking)
+            if (CurrentPhase == WeaponPhase.Idle)
             {
                 return;
             }
 
-            isAttacking = false;
 
-            if (attackBehaviour != null)
+            if (CurrentPhase == WeaponPhase.Attack && attackBehaviour != null)
             {
                  attackBehaviour.EndAttack();
             }
+
+            EnterPhase(WeaponPhase.Idle);
         }
 
         private void OnDisable()

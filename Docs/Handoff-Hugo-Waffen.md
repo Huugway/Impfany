@@ -1,96 +1,95 @@
 # Hugo — Übergabe Waffen ↔ Spieler
 
-**Mit Hugo abgestimmtes Design · Stand: 11.11.2026.** Der Spieler bestimmt, wann eine Waffe angreift; die Waffe führt ihren eigenen Angriff aus und liefert dem Spieler ihre Phasenwerte.
+**Neues Design · 11.11.2026: Ein Aufruf startet die komplette Waffennutzung.** Die Waffe läuft selbst durch **Charge → Attack → Recover** und meldet anschließend das Ende. Diese Aufteilung ersetzt die frühere Übergabe, in der dein Player alle drei Phasen zeitlich steuert.
 
-**Jetzt anschließbar:** `Weapon.BeginAttack()`, `Weapon.EndAttack()` und **`weapon.Settings`** existieren. `WeaponDefinition` wurde in `WeaponSettings` umbenannt; bitte `.Settings` statt `.Definition` verwenden. Der Hammer zeigt bisher nur eine gedrehte Testpose und kehrt bei `EndAttack()` zurück. Animierter Schwung, Treffer und Schaden fehlen noch. Begin/End wurde in der Sandbox manuell getestet.
+**Aktueller Code:** `BeginAttack()` startet bereits die komplette Folge Charge → Attack → Recover; `CurrentPhase` ist lesbar. `EndAttack()` bricht die Nutzung ab und ist für das normale Ende nicht nötig. Der Nahkampfkegel ruft `IDamageable.TakeDamage(float)` einmal pro Empfänger auf. Mehrere Collider desselben Empfängers verursachen keinen Mehrfachtreffer; mit Logging-Dummys getestet. TestHammer.prefab enthält jetzt das verdrahtete Attack Behaviour und HitArea. Die drei StartingWeapons bleiben Platzhalter. Effektschnittstelle, Endmeldungen und Anbindung an Maxims echte Gegner fehlen noch.
 
 ## Wer baut was?
 
 | Hugo — Spieler | Jannis — Waffen |
 | --- | --- |
-| Waffen halten, ausrüsten und zwischen Slot 1–3 wechseln | Waffen-Prefabs, Aussehen und Werte |
-| Input, 0,5-s-Inputbuffer und Ketten-Reset | Waffenspezifische Angriffe: Schwung, Projektil, Flammen usw. |
-| Charge → Attack → Recover zeitlich steuern | Auf deine Aufrufe reagieren; Treffer erkennen bzw. Projektile erzeugen |
-| Zielen, Aim-Locks, Bewegung und Dash-Regeln anwenden | Phasenwerte liefern; später Upgrades je Waffenkopie |
+| Input, ca. 0,5-s-Buffer, Slots 1–3 und Ketten-Reset | Waffen-Prefabs, Settings und spätere Upgrades |
+| Eine ausgewählte Waffe auslösen | Charge → Attack → Recover vollständig ausführen |
+| Effektkomponente: Bewegung und Aim tatsächlich beeinflussen | Pro Phase Bewegungs-/Aim-Effekte anfordern und danach entfernen lassen |
+| Dash ausführen und Unterbrechung anfragen | In jeder aktiven Phase abbrechen und zuverlässig aufräumen |
+| Auf das Ende reagieren und den passenden Slot freigeben | Schwung/Schüsse/Treffer sowie zuverlässiges Aufräumen |
 
-Maxim nimmt Treffer entgegen und meldet den tatsächlich verursachten Schaden zurück. Seine konkrete Treffer-Schnittstelle ist noch abzustimmen.
+Maxim nimmt Treffer entgegen und meldet tatsächlich verursachten Schaden. Seine Treffer-Schnittstelle ist noch abzustimmen.
 
-## Was du jetzt verwenden kannst
+## Ablauf
 
-Alles liegt unter `ImpfanyGame/Assets/Features/Progression/`:
+1. Dein Player wählt die Waffe und startet ihre Nutzung einmal. Er übergibt dabei einen Zugriff auf seine Effektschnittstelle.
+2. Die Waffe startet Charge und fordert die dazugehörigen Effekte an.
+3. Sie wechselt selbst zu Attack, ersetzt ihre Phaseneffekte und führt den Angriff aus.
+4. Sie beendet den Angriff und wechselt mit neuen Phaseneffekten zu Recover.
+5. Nach Recover lässt sie ihre Effekte entfernen und meldet „fertig“. Dein Player gibt den nächsten Slot frei und startet den Idle-Reset-Timer.
 
-- `Prefabs/TestHammer.prefab`: Root mit `Weapon`-Komponente, darunter `Visual/Handle` und `Visual/Head`.
-- `WeaponData/TestHammer.asset`: gemeinsame Grundwerte dieser Waffenart.
-- `Scripts/Weapon.cs` und `Scripts/WeaponSettings.cs`: Namespace **`Impfany.Weapons`**.
-- `Scenes/WeaponSandbox.unity`: Jannis' eigene Testszene.
+**Dein Player braucht keine eigenen Charge-/Attack-/Recover-Timer und keinen normalen EndAttack-Aufruf.** Er verhindert, dass mehrere Slots gleichzeitig benutzt werden. Bereits abgefeuerte Projektile dürfen weiterfliegen.
 
-Dein Player-Prefab liegt jetzt unter `Assets/Prefabs/Player/Player.prefab` und hat diese Struktur (`WaponHolder` ist der aktuelle Objektname):
+## Kleine gemeinsame Schnittstelle
 
-```text
-Player
-└── WaponHolder
-    ├── WeaponSlot1 → Whip
-    ├── WeaponSlot2 → Hammer
-    └── WeaponSlot3 → Sniper
-```
+**`CurrentPhase` und `Settings` existieren. Die übrigen Namen sind vorgeschlagen, noch nicht implementiert.** Der genaue technische Vertrag steht im [Umbauplan](WeaponImplementationNext.md#proposed-contract).
 
-Whip, Hammer und Sniper sind derzeit Platzhalter. In jeden Slot kommt eine Waffen-Prefab-Instanz mit einer **`Weapon`-Komponente am Root**. Dein bisheriger Zugriff auf das erste Kind des Slots passt dazu; bei leerem Slot wird kein Angriff gestartet.
-
-`weapon` meint hier die **Komponente**, nicht das GameObject: am Waffenroot `GetComponent<Weapon>()` verwenden, mit `using Impfany.Weapons;` im Playerscript. Das TestHammer-Prefab hat Settings, Swing-Komponente und Visual bereits zugewiesen.
-
-Der Waffenroot ist der **Griff-/Befestigungspunkt**; bei Rotation 0 zeigt die Waffe nach **lokal +X (rechts)**. Die Waffe liest keinen Input und sucht sich keinen Spieler.
-
-**Bereits lesbar** über die `Weapon`-Komponente am Waffenroot:
-
-| Zugriff | Bedeutung |
+| Zugriff | Zweck |
 | --- | --- |
-| `weapon.Settings.DisplayName` | Anzeigename |
-| `weapon.Settings.Damage` | Grundschaden pro Treffer |
-| `weapon.Settings.Charge`, `.Attack`, `.Recover` | Die drei Phasen |
-| Je Phase: `.Duration` | Dauer in Sekunden |
-| Je Phase: `.MovementSpeedMultiplier` | 0 = kein Laufen, 0,5 = halbe Geschwindigkeit, 1 = normal |
-| Je Phase: `.LockAim` | Zielrichtung während dieser Phase festhalten |
+| `weapon.TryUse(user)` | Ganze Nutzung starten; meldet, ob sie angenommen wurde |
+| `weapon.CurrentPhase` | Idle, Charge, Attack oder Recover lesen |
+| `weapon.UseEnded` | Ende mit Grund erhalten: fertig, Charge/Attack/Recover durch Dash beendet oder anderweitig abgebrochen |
+| `weapon.TryInterruptForDash()` | In jeder aktiven Phase abbrechen; unterbrochene Phase zurückmelden |
+| `weapon.AbortUse()` | Beim Weglegen/Tod zuverlässig aufräumen; kein normaler Dash-Aufruf |
+| `weapon.Settings` | Vorhandene Werte für Anzeige und Vorschau lesen |
 
-Der Testhammer hat aktuell **10 Schaden** und diese frei änderbaren Testwerte:
+**Effekte:** Deine Komponente nimmt Bewegungsmultiplikator und Aim-Lock mit einer Quellenkennung entgegen. Ein Phasenwechsel ersetzt den Eintrag dieser Quelle. Am Ende entfernt die Waffe nur diesen Eintrag über deine Komponente. Andere Buffs oder Slows bleiben bestehen. Die Waffe setzt niemals direkt deine Bewegungsgeschwindigkeit oder Rigidbody-Geschwindigkeit.
 
-| Phase | Sekunden | Bewegung | Aim-Lock |
+Jannis liefert die kleine Schnittstelle in seinem Bereich; Hugo implementiert sie am Player. Zum unabhängigen Testen verwendet Jannis einen Sandbox-Empfänger. Vor dem Anschließen bitte die vorgeschlagenen Namen abgleichen; die Rollenverteilung ist bereits entschieden.
+
+**Stand von Hugos PlayerAttack:** Der aktuelle Code ruft bereits `BeginAttack()` auf und schaltet den Slot direkt weiter. Dieser Prototyp muss später auf die neue Nutzung und deren Ergebnis umgestellt werden; die neue API existiert noch nicht.
+
+## Dash
+
+| Aktuelle Phase | Reaktion der Waffe |
+| --- | --- |
+| Charge | Nutzung abbrechen, eigene Effekte entfernen, Phase melden |
+| Attack | Angriff sofort stoppen, eigene Effekte entfernen, Phase melden |
+| Recover | Recovery sofort beenden, eigene Effekte entfernen, Phase melden |
+| Idle | Nichts abzubrechen |
+
+**Neue Regel: Dash kann jede aktive Phase unterbrechen, auch Attack.** Bereits verursachter Schaden bleibt bestehen; bereits abgefeuerte Projektile fliegen weiter. Aktive Trefferbereiche, Dauerfeuer und noch nicht abgefeuerte Burst-Schüsse werden gestoppt.
+
+**Dash-Bewegung und die anschließende Slot-/Buffer-Entscheidung bleiben bei dir.** Unsere Waffe meldet das Ergebnis mit der unterbrochenen Phase. Die Waffenimplementierung legt keinen Slotwechsel fest.
+
+Dash braucht kein zusätzliches „alle Effekte löschen“. Die Waffe räumt ihre eigenen Einschränkungen auf. Eine Reinigung von gegnerischen Effekten ist keine vereinbarte Dash-Funktion. Normales Ende, Abbruch und Deaktivieren müssen dieselbe zuverlässige Bereinigung benutzen.
+
+## Prefab und Zielen
+
+Dein Player-Prefab liegt unter `Assets/Prefabs/Player/Player.prefab`. Unter `WaponHolder/WeaponSlot1` bis `WeaponSlot3` kommt jeweils ein Waffen-Prefab mit `Weapon` am Root. Namespace: `Impfany.Weapons`. Leere Slots starten keine Nutzung.
+
+Der Waffenroot ist der Griffpunkt und zeigt bei Rotation 0 nach **lokal +X (rechts)**. Du richtest den Slot auf das aktuelle Aim aus. Deine Effektkomponente hält diese Richtung fest, solange ein Aim-Lock gilt. Die Waffen können vorerst statisch bleiben. Spätere Sprite-Animationen sind von der Trefferlogik getrennt; ein vorhandener `Visual`-Unterbereich bleibt für die Darstellung nutzbar.
+
+Jannis' Dateien liegen unter `Assets/Features/Progression/`: `Prefabs/TestHammer.prefab`, `WeaponData/TestHammer.asset`, `Scripts/` und `Scenes/WeaponSandbox.unity`. TestHammer.prefab enthält Weapon, MeleeConeAttackBehaviour und den deaktivierten Trigger-Collider HitArea mit internen Referenzen. Target Layers steht für den Sandbox-Test auf Default; bei der Gegnerintegration auf die vereinbarten Gegner-Layer einstellen. Der Sandbox-Tester gehört nicht auf deinen Player.
+
+## Vereinbarter Nahkampf — aktueller Umfang
+
+Alle Nahkampfwaffen verwenden vorerst denselben **Kegel-Treffercheck**:
+
+- `Range`: Entfernung vom Waffenroot bis zum äußeren Kegelrand.
+- `AttackAngle`: gesamte Kegelbreite in Grad, z. B. Dolch 1°, Hammer 90°. 90° bedeutet ±45° um die Slot-Richtung. Der Winkel heißt nicht „Radius“.
+- Nach Charge erfolgt **ein sofortiger Overlap-Check**, der jedes überlappende Enemy einmal trifft. Mehrere Collider desselben Enemy verursachen keinen Mehrfachschaden.
+- Danach sofort Recover. Für diese Waffen ist `Attack.Duration = 0`; wir warten keinen zusätzlichen Frame auf Physik-Callbacks. Sprite-Animation und Schadenszeitpunkt sind getrennt.
+- Dash kann jede aktive Phase beenden. Ein bereits ausgeführter Treffer wird nicht rückgängig gemacht; bei einem sofortigen Angriff ist danach bereits Recover aktiv.
+
+`Range`, `AttackAngle` und die explizite Kegel-Overlap-Abfrage sind implementiert. Im Sandbox-Test: Ziel im Kegel erkannt; Ziele außerhalb von Reichweite oder Winkel ausgeschlossen. Der Schadensaufruf und Schutz vor Mehrfachtreffern sind mit Dummys getestet; Maxim muss seine Gegner noch über IDamageable oder einen passenden Adapter anbinden. Andere Angriffsverhalten sind aktuell nicht im Umfang.
+
+## Vorhandene Settings
+
+`weapon.Settings` liefert `DisplayName`, `Damage`, `Range`, `AttackAngle` und `Charge` / `Attack` / `Recover`. Jede Phase hat `Duration`, `MovementSpeedMultiplier` und `LockAim`.
+
+| Testhammer: 10 Schaden | Sekunden | Bewegung | Aim-Lock |
 | --- | --- | --- | --- |
 | Charge | 0,4 | 1 | Nein |
-| Attack | 0,2 | 0 | Ja |
+| Attack | 0 | 0 | Ja |
 | Recover | 0,7 | 0,5 | Nein |
 
-Reichweite, Knockback, Stun, Seelengewinn und Lifesteal sind **geplant, aber noch nicht im Script**. Die Settings-Assets im Spiel nicht verändern: spätere Upgrades gehören zur einzelnen Waffenkopie.
+0 = kein Laufen, 0,5 = halbes Tempo, 1 = normal, 1,5 = schneller. Ein Lauf-Lock blockiert nicht automatisch Dash oder eingehenden Knockback. Settings-Assets zur Laufzeit nicht verändern; spätere Upgrades gehören zur Waffenkopie.
 
-## Vereinbarte Aufrufe
-
-| Zeitpunkt | Dein Spieler | Unsere Waffe |
-| --- | --- | --- |
-| Klick / Charge | Waffe wählen, Einstellungen lesen, Charge starten | Liefert Werte über `weapon.Settings` |
-| Beginn von Attack | Einmal `weapon.BeginAttack()` aufrufen | Schwung, Schüsse oder Dauerfeuer starten |
-| Ende von Attack | Einmal `weapon.EndAttack()` aufrufen | Aktive Trefferbereiche und Dauerfeuer beenden |
-| Recover | Recovery steuern, danach nächsten Slot freigeben | Keine eigene Spieler-Phasensteuerung |
-
-Du verwendest für jede Waffenart dieselbe `Weapon`-Komponente: **`weapon.BeginAttack()`**, unabhängig davon, ob das Prefab TestHammer oder Flamethrower heißt. Dein Player braucht keine Fallunterscheidung für einzelne Waffenarten. Die Methoden nehmen keine Zielrichtung als Parameter entgegen; diese kommt über die Slot-Rotation.
-
-Die Waffe bekommt keine zweite Charge/Attack/Recover-Zeitsteuerung. Eigene Burst-, Schwung- und Trefferintervalle **innerhalb von Attack** gehören zu uns. Bereits abgefeuerte Projektile fliegen nach `EndAttack()` weiter.
-
-## Zielen und Animation
-
-- **Du richtest den Slot laufend auf die Zielrichtung aus**, solange die aktuelle Phase Aim erlaubt. Bei Aim-Lock hältst du die Richtung fest.
-- Unsere Waffe verwendet diese Ausrichtung beim jeweiligen Schlag/Schuss. Dauerfeuer und Bursts können so dem Aim folgen; ein abgefeuertes Projektil behält seine Flugrichtung.
-- Wir animieren den **`Visual`-Unterbereich** der Waffe. Dein Slot bleibt die Zielausrichtung, auch während der Hammer schwingt.
-
-## Dash und Aufräumen
-
-- **Charge:** Dash bricht ab; derselbe Slot wird beim nächsten Angriff erneut versucht. `BeginAttack()` wurde noch nicht aufgerufen.
-- **Attack:** Dash kann diese Phase nicht unterbrechen.
-- **Recover:** Dash beendet die Phase sofort; der nächste Slot ist bereit.
-- **Weglegen/Deaktivieren:** Unsere Waffe beendet ihre laufenden Trefferbereiche/Effekte zuverlässig.
-
-## Parallel weiterbauen
-
-**Hugo:** Die vorhandenen Trigger jetzt anschließen; Player, Slots, Phasentiming, Aim und Bewegung weiterbauen. Wiederholtes `BeginAttack()` während eines aktiven Angriffs wird ignoriert; `EndAttack()` gibt die Waffe für den nächsten Aufruf frei. Die Waffe beendet sich nicht selbst nach `Attack.Duration`.
-
-**Jannis:** Als Nächstes den vollständigen Schwung und danach Treffer umsetzen. `WeaponSandboxTester` ist nur für die eigene Testszene und muss nicht auf den Player oder das Waffen-Prefab. Wir ändern deine Spielerdateien nicht; Änderungen an unseren Waffen erfolgen am Waffen-Prefab.
-
-Weitere vereinbarte Spielregeln: [WeaponsAndProgression.md](WeaponsAndProgression.md).
+Weitere Spielregeln: [WeaponsAndProgression.md](WeaponsAndProgression.md). Jannis' nächste Schritte: [Umbauplan](WeaponImplementationNext.md).

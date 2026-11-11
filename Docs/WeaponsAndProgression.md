@@ -1,6 +1,6 @@
 # Weapons & progression — gameplay decisions
 
-The weapon attributes and team handoffs are in [Jannis.md](Jannis.md). This page keeps the remaining gameplay rules together. Settings, a hammer prefab and working Begin/End triggers exist; the hammer only changes pose so far. Animated attacks, hits, damage and progression remain to be implemented. The callable API (`weapon.Settings`, `BeginAttack()` and `EndAttack()`) is in the [German handoff for Hugo](Handoff-Hugo-Waffen.md).
+The weapon attributes are in [Jannis.md](Jannis.md). The [German handoff](Handoff-Hugo-Waffen.md) describes the updated ownership: one trigger starts the weapon's complete phase sequence. The [migration checklist](WeaponImplementationNext.md) records the code and Unity changes still needed. Settings, a hammer prefab, and the manual Begin/End API exist; the swing behaviour was removed and the hammer currently has no attack behaviour. Automatic phases, projectile firing, player effects and damage are not implemented yet.
 
 ## Agreed weapon behaviour
 
@@ -10,15 +10,25 @@ The weapon attributes and team handoffs are in [Jannis.md](Jannis.md). This page
 - Aim is adjustable by default. Charge, Attack and Recover can each lock it independently.
 - Movement can be restricted independently during each phase.
 
-## Player/weapon integration — agreed with Hugo
+## Player/weapon integration — updated design
 
-- Hugo's player reads the weapon's settings and runs Charge → Attack → Recover, input, slot cycling, movement and aim locks.
-- At the start of Attack it calls `weapon.BeginAttack()`; at the end it calls `weapon.EndAttack()`.
-- Jannis' weapon performs the swing, burst or continuous attack and detects hits/spawns projectiles. Burst and hit intervals belong inside that weapon behaviour.
-- Every prefab exposes the same `Weapon` component. The player needs no weapon-specific attack code.
-- Hugo rotates the slot to supply live aim, holding its direction during aim-locked phases. Jannis animates the weapon's `Visual` child separately. Fired projectiles keep their direction and can outlast Attack.
+- Hugo's player handles input/buffering, slot cycling, the idle-reset timer, aiming and dash movement. It triggers one complete weapon use.
+- Jannis' `Weapon` runs Charge → Attack → Recover, then reports the outcome. Hugo does not run duplicate phase timers or end attacks manually.
+- On each phase change, the weapon requests its movement multiplier and aim lock through the player's effect component. That component applies them to actual player controls.
+- Effects are identified by their source. The weapon replaces its own effects on phase changes and removes them on completion, cancellation or disabling. Unrelated effects remain.
+- The weapon's behaviour performs the swing, burst or continuous attack and detects hits/spawns projectiles. Every weapon exposes the same `Weapon` component.
+- Hugo rotates the slot for live aim and holds its direction while aim-locked. Sprite animation is separate from damage; no scripted visual swing is required. Fired projectiles can outlast the weapon use.
+- The weapon reports completion or which phase was interrupted. Hugo owns the player’s slot/buffer response; the weapon does not advance slots.
 
-Weapon prefabs combine appearance, settings and reusable attack behaviours: Swing, Thrust, Projectile firing, Beam / cone or Area attack. Build only what is needed, starting with Swing for TestHammer. The [behaviour table and prefab approach](Jannis.md#reusable-attack-behaviours) are in Jannis.md.
+## Current melee scope — agreed with Hugo
+
+One shared cone attack covers all melee weapons for now. **Range** is the distance to the cone's outer edge; **AttackAngle** is total width in degrees (dagger example: 1°, hammer: 90°). “Radius” is not used as the name of the angle setting.
+
+Charge finishes → one overlap query along the weapon slot's current direction → damage every overlapping enemy once → Recover. Current melee Attack is instantaneous, with duration 0. Sprite animation supplies the presentation independently.
+
+Use actual enemy-collider overlap, including cone edges. Deduplicate multiple colliders belonging to the same enemy. Do not wait for physics trigger callbacks from a collider that exists for only one frame. Reusing a cone-shaped query collider is the implementation recommendation.
+
+Dash can cancel any active phase, but cannot undo damage already applied by an instantaneous hit. Other behaviours, including projectiles and continuous attacks, are outside the current implementation scope. Details: [Jannis.md](Jannis.md#reusable-attack-behaviours).
 
 ## Proposed details
 
@@ -29,7 +39,7 @@ Weapon prefabs combine appearance, settings and reusable attack behaviours: Swin
 | Default phase settings | Normal movement and unlocked aim |
 | Aim lock | Hold the direction when the phase starts; consecutive locked phases keep the same direction |
 | Continuous damage | A fixed damage interval, not damage every frame |
-| Repeated hits | A swing hits each enemy once; later burst shots and continuous ticks can hit it again |
+| Repeated hits | Current melee hits each enemy once per use, regardless of how many colliders it has |
 | Upgrading a weapon | New stats apply to its next attack |
 | End or interruption | Clear that attack's movement/aim restrictions, keeping other buffs and slows |
 
@@ -39,10 +49,13 @@ A four-second flamethrower dealing 2 damage every 0.1 seconds deals **80 total d
 
 - **Input buffer: about 0.5 seconds**, adjustable for balancing. Remember one early attack click and use it as soon as an attack is allowed. If it expires first, do not attack.
 - Example: ready in **0.4 seconds → attack triggers**. Ready in **0.6 seconds → click expires** unless something, such as a dash, makes attacking possible sooner.
-- **Dash during Charge:** cancel the charge without advancing the slot. The next attack retries that weapon, unless the idle timer resets the chain first.
-- **Dash during Attack:** cannot interrupt the Attack phase.
-- **Dash during Recover:** end recovery immediately, allowing the next weapon to be used.
+- **Dash during Charge:** stop the use before Attack begins and remove its effects.
+- **Dash during Attack:** stop the active attack immediately and remove its effects. Stop active hit areas, continuous fire and remaining burst shots. Already-dealt damage is not undone; fired projectiles continue.
+- **Dash during Recover:** end recovery immediately and remove its effects.
+- **Player integration:** report the interrupted phase; Hugo decides the subsequent slot/buffer handling. Do not encode that decision inside the weapon.
 - **Hurt/cancellation:** do not reset the chain to slot 1. Only the idle timeout resets it.
+
+Dash asks the weapon to interrupt; the weapon checks its own phase and cleans up when interruption is accepted. The player performs dash movement. There is no additional blanket effect cleanse.
 
 Movement multiplier zero means **no walking**; it does not automatically forbid a dash. Incoming knockback can still move the player.
 
