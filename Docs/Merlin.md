@@ -6,7 +6,7 @@ Ich arbeite am Startmenü, Spielablauf aus Sicht der UI, HUD und später Pause, 
 
 ## Aktueller Aufbau
 
-- **Testszene:** `ImpfanyGame/Assets/Scenes/testScene/MerlinScene.unity`. 
+- **Testszene:** `ImpfanyGame/Assets/Scenes/testScene/MerlinScene.unity`.
 - **Menü und HUD:** Unter `GameUI` gibt es `StartPanel` mit Titel und `PlayButton` sowie das anfangs inaktive `HUDPanel`. Der Button ist im Inspector mit `GameFlow.StartGame()` verbunden.
 - **Wechsel:** `GameFlow.StartGame()` ruft `HidePanel(startPanel)` und `ShowPanel(hudPanel)` auf; diese Methoden setzen die Panels per `SetActive(false)` beziehungsweise `SetActive(true)`. Es wird dadurch bislang nur die Anzeige umgeschaltet.
 - **Herzen:** `HUDPanel/Hearts` trägt eine `HorizontalLayoutGroup` und `HeartHUD`. Das Script erzeugt in `Start()` aus **einem** zugewiesenen Image-Prefab Herz-Instanzen als Kinder des Containers. Im aktuellen Inspector stehen `testHeartCount = 3` und `testFilledHearts = 2`; volle und leere Sprites sind zugewiesen. Der Code wählt für die ersten beiden Bilder das volle und für das dritte das leere Sprite. Das sind **Testwerte**, keine Player-Health-Daten.
