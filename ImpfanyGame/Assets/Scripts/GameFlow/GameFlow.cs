@@ -57,6 +57,7 @@ public class GameFlow : MonoBehaviour
         HidePanel(startPanel);
         ShowPanel(hudPanel);
         SetGameStatus(GameStatus.Playing);
+        StartLevel();
         StartWave();
     }
 
