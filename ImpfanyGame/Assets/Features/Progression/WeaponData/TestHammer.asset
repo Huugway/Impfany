@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Impfany.Weapons.WeaponDefinition
   displayName: Test Hammer
   damage: 10
+  range: 2
+  attackAngle: 90
   charge:
     duration: 0.4
     movementSpeedMultiplier: 1
     lockAim: 0
   attack:
-    duration: 0.2
+    duration: 0
     movementSpeedMultiplier: 0
     lockAim: 1
   recover:

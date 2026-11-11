@@ -1,10 +1,12 @@
 # Jannis — Weapons & upgrades
 
-**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Settings, the hammer prefab and a private sandbox exist. Manual Begin/End was previously tested with a static pose. The swing component and script have since been removed; the hammer currently has no attack behaviour. Full phase automation, player effects, hit detection, damage and upgrades are still to build.
+**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Automatic phases and melee cone detection work in the private sandbox. The cone finds a target inside it and excludes targets beyond its range or angle. Damage, duplicate-hit prevention, player effects and outcome events are still to build. Shared weapon prefabs remain unconfigured; the working behaviour is attached to the sandbox instance only.
 
 **Updated design:** the player triggers one use; the weapon runs **Charge → Attack → Recover**, requests its phase effects and removes them when finished. Hugo owns input, slots, dash and the player component that applies effects. This replaces the previous player-owned phase timers. See the [German handoff](Handoff-Hugo-Waffen.md) and [step-by-step migration](WeaponImplementationNext.md). The new API is planned, not implemented yet.
 
 ## Planned weapon attributes
+
+The current implementation is limited to name, damage, melee range/angle and phase settings. Burst, continuous fire, upgrades and on-hit bonuses below are future work.
 
 | Attribute | What it controls |
 | --- | --- |
@@ -26,7 +28,7 @@
 | Phase | Duration | Movement speed | Lock aim? |
 | --- | --- | --- | --- |
 | Charge | Delay from click until the attack starts | Adjustable multiplier | Yes / no |
-| Attack | How long the swing/firing lasts | Adjustable multiplier | Yes / no |
+| Attack | Instantaneous for current melee; duration remains available for future behaviours | Adjustable multiplier | Yes / no |
 | Recover | Wait after attacking before the next weapon can start | Adjustable multiplier | Yes / no |
 
 Movement: **0 = cannot walk, 0.5 = half speed, 1 = normal (default), 1.5 = faster**. Aim is unlocked by default. Dash permission is separate.
@@ -35,34 +37,34 @@ Examples: railgun = stationary Charge; hammer = stationary Attack/Recover; dagge
 
 ## Reusable attack behaviours
 
-**A weapon prefab combines appearance + settings + a reusable attack behaviour.** Behaviours describe how an attack works and can be shared by different weapons.
+**Current scope: one shared melee cone behaviour for all melee weapons.** No coded weapon swing is needed. Hammer and dagger use the same hit logic with different settings; their sprite animations are presentation.
 
-| Behaviour | What it does | Example weapons |
-| --- | --- | --- |
-| Swing | Sweeps a hit area through an arc | Hammer, sword, axe |
-| Thrust | Extends a hit area forward | Dagger, spear |
-| Projectile firing | Spawns projectiles; supports single shots, bursts or repeated fire | Pistol, shotgun, bow |
-| Beam / cone | Hits along a beam or within a cone, once or repeatedly | Laser, flamethrower |
-| Area attack | Hits within an area around a chosen point | Ground slam, explosion |
+| Melee setting | Meaning |
+| --- | --- |
+| `Damage` | Damage to each enemy hit, once per attack |
+| `Range` | Distance from the weapon root to the cone's outer edge |
+| `AttackAngle` | Total cone width in degrees: 90° = 45° on each side of aim |
 
-These are planned starting behaviours; build them as needed. **First: a static weapon that fires a projectile.** A different attack mechanic may need a different behaviour, even if the weapon has the same name or category.
+`Damage`, `Range` and `AttackAngle` exist in `WeaponSettings`. The earlier word “radius” meant angle; use `AttackAngle` so degrees cannot be confused with distance. A dagger could use 1° and a hammer 90°; range and damage remain editable balance values.
 
-- **`WeaponSettings`** supplies the weapon's base settings (formerly `WeaponDefinition`). Behaviour-specific parameters can live on the appropriate behaviour component.
-- **`Weapon`** will run the complete phase sequence, request/release effects and report when use ends. Currently it only forwards manual Begin/End calls; this is the main script to change.
-- **`WeaponAttackBehaviour`** handles the attack mechanic. A projectile-firing behaviour is the next planned behaviour. The earlier swing behaviour was removed; attacks and hit detection remain to build.
+After Charge, the weapon checks the cone **once** along the slot's current local +X direction, damages all overlapping enemies once each, and immediately enters Recover. For this melee behaviour, Attack is instantaneous (`Attack.Duration = 0`), not a collider left active until the next frame. Sprite animation duration does not determine damage timing.
 
-A hammer and an axe can share Swing with different visuals, damage, timing, reach and angle. Melee / Ranged can be descriptive categories for UI or upgrades; they do not choose the attack code.
+Use an explicit 2D overlap query against a sector-shaped collider, rather than relying on a one-frame trigger callback. Collider-edge overlaps count; checking enemy centres alone is insufficient. Multiple colliders on one enemy still produce one hit. Reuse the query shape instead of spawning/destroying it every attack. The explicit overlap query exists; damage and duplicate-hit prevention remain to implement.
 
-Create a prefab per weapon using the components it needs. Use prefab variants when weapons share a similar hierarchy; there is no required Melee → Hammer or Ranged → Pistol prefab inheritance tree. Each copy keeps its own later upgrades rather than changing the shared settings asset.
+- **`WeaponSettings`** holds name, damage, phase settings and melee range/angle.
+- **`Weapon`** runs phases. Player effect requests and completion/interruption notifications are planned.
+- **`WeaponAttackBehaviour`** is the common base; `MeleeConeAttackBehaviour` currently detects overlapping colliders.
+
+Timing and basic cone detection are verified. Next: add a sandbox damage recipient and prove one hit per enemy. Projectile, continuous-fire, sweeping and other mechanics are future work, outside this implementation scope. Keep the component-based prefab approach; each weapon can have its own visuals/settings without a Hammer/Pistol class hierarchy.
 
 ## How an attack works
 
 One click starts **Charge → Attack → Recover**. Further clicks cycle **slot 1 → 2 → 3 → 1**. Waiting **2–3 seconds after Recover** resets the next attack to slot 1.
 
-During Attack: a pistol fires once, a burst fires several shots, a flamethrower deals repeated damage.
+For the current melee scope, Attack performs one cone hit check and transitions immediately to Recover. Future weapon behaviours may have a longer Attack phase.
 
 - **Input buffer:** an early click is remembered for about **0.5 seconds**. It fires when attacking becomes possible; otherwise it expires. This value will be balanced later.
-- **Dash:** cancels Charge (retry the same weapon), cannot interrupt Attack, and ends Recover immediately (next weapon ready).
+- **Dash:** can cancel the weapon during Charge, Attack or Recover. The weapon stops its active behaviour, removes its own effects and reports which phase was interrupted. Hugo owns the subsequent slot decision. An instantaneous melee hit cannot be undone once its overlap query has executed.
 - **Chain reset:** only the idle timer resets the chain, not getting hurt or cancelling an attack.
 
 ## How this connects to your work
@@ -84,8 +86,8 @@ During Attack: a pistol fires once, a burst fires several shots, a flamethrower 
 - My files and `WeaponSandbox` scene live in `Assets/Features/Progression/`; a dummy enemy will be added later.
 - I deliver weapon prefabs with a `Weapon` component and editable `WeaponSettings`. Each weapon copy will keep its own upgrades.
 - Hugo puts my weapon instances under his `WeaponSlot1`–`WeaponSlot3` objects and triggers them. I edit my weapons/settings; he edits the player/scenes.
-- Hugo triggers the complete use and listens for its outcome. Finished/Recovery skipped means next slot; cancelled Charge means retry this slot. Every weapon uses the same `Weapon` component.
-- Hugo rotates the slot toward the aim direction and holds it fixed during aim-locked phases. My weapon reads that orientation and animates its `Visual` child separately.
+- Hugo triggers the complete use and listens for its outcome. The outcome identifies completion or the interrupted phase; Hugo owns how his chain responds. Every weapon uses the same `Weapon` component.
+- Hugo rotates the slot toward the aim direction and holds it fixed during aim-locked phases. My weapon uses that orientation for the cone. Sprite animation is separate from hit detection; no scripted swing is needed.
 - Update `WeaponSandboxTester` from manual Begin/End to whole-use and interruption tests. Add a sandbox effect recipient so testing does not depend on Hugo’s player. Keep both in the private scene. Coordinate edits to shared prefabs, scenes and settings.
 
 ## Upgrades come next

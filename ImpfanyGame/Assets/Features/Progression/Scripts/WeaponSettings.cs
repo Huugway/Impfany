@@ -30,6 +30,10 @@ namespace Impfany.Weapons
 
         [SerializeField, Min(0f)]
         private float damage = 10f;
+        [SerializeField, Min(0.01f)]
+        private float range = 2f;
+        [SerializeField, Range(1f, 360f)]
+        private float attackAngle = 90f;
 
         [SerializeField]
         private WeaponPhaseSettings charge = new WeaponPhaseSettings();
@@ -42,6 +46,8 @@ namespace Impfany.Weapons
 
         public string DisplayName => displayName;
         public float Damage => damage;
+        public float Range => range;
+        public float AttackAngle => attackAngle;
         public WeaponPhaseSettings Charge => charge;
         public WeaponPhaseSettings Attack => attack;
         public WeaponPhaseSettings Recover => recover;

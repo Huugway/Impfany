@@ -2,7 +2,7 @@
 
 **Neues Design · 11.11.2026: Ein Aufruf startet die komplette Waffennutzung.** Die Waffe läuft selbst durch **Charge → Attack → Recover** und meldet anschließend das Ende. Diese Aufteilung ersetzt die frühere Übergabe, in der dein Player alle drei Phasen zeitlich steuert.
 
-**Noch umzusetzen:** Im Code gibt es bisher `Weapon.BeginAttack()`, `EndAttack()` und `Settings`. Begin/End steuern nur den eigentlichen Angriff. Die neue Phasensteuerung und Effektschnittstelle existieren noch nicht. Der Swing-Code wurde entfernt; dem Testhammer fehlt aktuell ein Attack Behaviour. Der bestehende Aufruf `BeginAttack()` meldet bei diesem Prefab deshalb einen Konfigurationsfehler. Projektilverhalten, Treffer und Schaden fehlen noch.
+**Aktueller Code:** `BeginAttack()` startet bereits die komplette Folge Charge → Attack → Recover; `CurrentPhase` ist lesbar. `EndAttack()` bricht die Nutzung ab und ist für das normale Ende nicht nötig. Im WeaponSandbox erkennt der Nahkampfkegel überlappende Collider. Schaden, Schutz vor Mehrfachtreffern, Effektschnittstelle und Endmeldungen fehlen noch. Die gemeinsamen Waffen-Prefabs haben weiterhin kein Attack Behaviour; nur die Sandbox-Instanz ist verdrahtet.
 
 ## Wer baut was?
 
@@ -11,7 +11,7 @@
 | Input, ca. 0,5-s-Buffer, Slots 1–3 und Ketten-Reset | Waffen-Prefabs, Settings und spätere Upgrades |
 | Eine ausgewählte Waffe auslösen | Charge → Attack → Recover vollständig ausführen |
 | Effektkomponente: Bewegung und Aim tatsächlich beeinflussen | Pro Phase Bewegungs-/Aim-Effekte anfordern und danach entfernen lassen |
-| Dash ausführen und Unterbrechung anfragen | Je nach Phase abbrechen, Recover beenden oder Unterbrechung ablehnen |
+| Dash ausführen und Unterbrechung anfragen | In jeder aktiven Phase abbrechen und zuverlässig aufräumen |
 | Auf das Ende reagieren und den passenden Slot freigeben | Schwung/Schüsse/Treffer sowie zuverlässiges Aufräumen |
 
 Maxim nimmt Treffer entgegen und meldet tatsächlich verursachten Schaden. Seine Treffer-Schnittstelle ist noch abzustimmen.
@@ -28,14 +28,14 @@ Maxim nimmt Treffer entgegen und meldet tatsächlich verursachten Schaden. Seine
 
 ## Kleine gemeinsame Schnittstelle
 
-**Vorgeschlagene Namen, noch nicht implementiert.** Der genaue technische Vertrag steht im [Umbauplan](WeaponImplementationNext.md#proposed-contract).
+**`CurrentPhase` und `Settings` existieren. Die übrigen Namen sind vorgeschlagen, noch nicht implementiert.** Der genaue technische Vertrag steht im [Umbauplan](WeaponImplementationNext.md#proposed-contract).
 
 | Zugriff | Zweck |
 | --- | --- |
 | `weapon.TryUse(user)` | Ganze Nutzung starten; meldet, ob sie angenommen wurde |
 | `weapon.CurrentPhase` | Idle, Charge, Attack oder Recover lesen |
-| `weapon.UseEnded` | Ende mit Grund erhalten: fertig, Charge abgebrochen, Recover übersprungen oder anderweitig abgebrochen |
-| `weapon.TryInterruptForDash()` | Phasenabhängige Unterbrechung anfragen |
+| `weapon.UseEnded` | Ende mit Grund erhalten: fertig, Charge/Attack/Recover durch Dash beendet oder anderweitig abgebrochen |
+| `weapon.TryInterruptForDash()` | In jeder aktiven Phase abbrechen; unterbrochene Phase zurückmelden |
 | `weapon.AbortUse()` | Beim Weglegen/Tod zuverlässig aufräumen; kein normaler Dash-Aufruf |
 | `weapon.Settings` | Vorhandene Werte für Anzeige und Vorschau lesen |
 
@@ -47,14 +47,16 @@ Jannis liefert die kleine Schnittstelle in seinem Bereich; Hugo implementiert si
 
 ## Dash
 
-| Aktuelle Phase | Reaktion der Waffe | Folge für den Slot |
-| --- | --- | --- |
-| Charge | Nutzung abbrechen, eigene Effekte entfernen | Gleiche Waffe erneut versuchen |
-| Attack | Unterbrechung ablehnen; Angriff läuft weiter | Kein Wechsel |
-| Recover | Recovery sofort beenden, eigene Effekte entfernen | Nächster Slot bereit |
-| Idle | Nichts abzubrechen | Keine Änderung |
+| Aktuelle Phase | Reaktion der Waffe |
+| --- | --- |
+| Charge | Nutzung abbrechen, eigene Effekte entfernen, Phase melden |
+| Attack | Angriff sofort stoppen, eigene Effekte entfernen, Phase melden |
+| Recover | Recovery sofort beenden, eigene Effekte entfernen, Phase melden |
+| Idle | Nichts abzubrechen |
 
-**Dash-Bewegung bleibt bei dir.** Das Ergebnis der Unterbrechung sagt, was mit der Waffe passiert ist. Es definiert nicht automatisch, ob ein Dash während Attack grundsätzlich erlaubt ist; festgelegt ist bisher nur, dass er Attack nicht unterbricht.
+**Neue Regel: Dash kann jede aktive Phase unterbrechen, auch Attack.** Bereits verursachter Schaden bleibt bestehen; bereits abgefeuerte Projektile fliegen weiter. Aktive Trefferbereiche, Dauerfeuer und noch nicht abgefeuerte Burst-Schüsse werden gestoppt.
+
+**Dash-Bewegung und die anschließende Slot-/Buffer-Entscheidung bleiben bei dir.** Unsere Waffe meldet das Ergebnis mit der unterbrochenen Phase. Die Waffenimplementierung legt keinen Slotwechsel fest.
 
 Dash braucht kein zusätzliches „alle Effekte löschen“. Die Waffe räumt ihre eigenen Einschränkungen auf. Eine Reinigung von gegnerischen Effekten ist keine vereinbarte Dash-Funktion. Normales Ende, Abbruch und Deaktivieren müssen dieselbe zuverlässige Bereinigung benutzen.
 
@@ -62,18 +64,30 @@ Dash braucht kein zusätzliches „alle Effekte löschen“. Die Waffe räumt ih
 
 Dein Player-Prefab liegt unter `Assets/Prefabs/Player/Player.prefab`. Unter `WaponHolder/WeaponSlot1` bis `WeaponSlot3` kommt jeweils ein Waffen-Prefab mit `Weapon` am Root. Namespace: `Impfany.Weapons`. Leere Slots starten keine Nutzung.
 
-Der Waffenroot ist der Griffpunkt und zeigt bei Rotation 0 nach **lokal +X (rechts)**. Du richtest den Slot auf das aktuelle Aim aus. Deine Effektkomponente hält diese Richtung fest, solange ein Aim-Lock gilt. Wir animieren ausschließlich den `Visual`-Unterbereich.
+Der Waffenroot ist der Griffpunkt und zeigt bei Rotation 0 nach **lokal +X (rechts)**. Du richtest den Slot auf das aktuelle Aim aus. Deine Effektkomponente hält diese Richtung fest, solange ein Aim-Lock gilt. Die Waffen können vorerst statisch bleiben. Spätere Sprite-Animationen sind von der Trefferlogik getrennt; ein vorhandener `Visual`-Unterbereich bleibt für die Darstellung nutzbar.
 
 Jannis' Dateien liegen unter `Assets/Features/Progression/`: `Prefabs/TestHammer.prefab`, `WeaponData/TestHammer.asset`, `Scripts/` und `Scenes/WeaponSandbox.unity`. Die bestehende Prefab-Hierarchie und die Settings-Referenz bleiben; ein neues Attack Behaviour muss später zugewiesen werden. Der Sandbox-Tester gehört nicht auf deinen Player.
 
+## Vereinbarter Nahkampf — aktueller Umfang
+
+Alle Nahkampfwaffen verwenden vorerst denselben **Kegel-Treffercheck**:
+
+- `Range`: Entfernung vom Waffenroot bis zum äußeren Kegelrand.
+- `AttackAngle`: gesamte Kegelbreite in Grad, z. B. Dolch 1°, Hammer 90°. 90° bedeutet ±45° um die Slot-Richtung. Der Winkel heißt nicht „Radius“.
+- Nach Charge erfolgt **ein sofortiger Overlap-Check**, der jedes überlappende Enemy einmal trifft. Mehrere Collider desselben Enemy verursachen keinen Mehrfachschaden.
+- Danach sofort Recover. Für diese Waffen ist `Attack.Duration = 0`; wir warten keinen zusätzlichen Frame auf Physik-Callbacks. Sprite-Animation und Schadenszeitpunkt sind getrennt.
+- Dash kann jede aktive Phase beenden. Ein bereits ausgeführter Treffer wird nicht rückgängig gemacht; bei einem sofortigen Angriff ist danach bereits Recover aktiv.
+
+`Range`, `AttackAngle` und die explizite Kegel-Overlap-Abfrage sind implementiert. Im Sandbox-Test: Ziel im Kegel erkannt; Ziele außerhalb von Reichweite oder Winkel ausgeschlossen. Schaden und Schutz vor Mehrfachtreffern fehlen noch. Andere Angriffsverhalten sind aktuell nicht im Umfang.
+
 ## Vorhandene Settings
 
-`weapon.Settings` liefert `DisplayName`, `Damage` und `Charge` / `Attack` / `Recover`. Jede Phase hat `Duration`, `MovementSpeedMultiplier` und `LockAim`.
+`weapon.Settings` liefert `DisplayName`, `Damage`, `Range`, `AttackAngle` und `Charge` / `Attack` / `Recover`. Jede Phase hat `Duration`, `MovementSpeedMultiplier` und `LockAim`.
 
 | Testhammer: 10 Schaden | Sekunden | Bewegung | Aim-Lock |
 | --- | --- | --- | --- |
 | Charge | 0,4 | 1 | Nein |
-| Attack | 0,2 | 0 | Ja |
+| Attack | 0 | 0 | Ja |
 | Recover | 0,7 | 0,5 | Nein |
 
 0 = kein Laufen, 0,5 = halbes Tempo, 1 = normal, 1,5 = schneller. Ein Lauf-Lock blockiert nicht automatisch Dash oder eingehenden Knockback. Settings-Assets zur Laufzeit nicht verändern; spätere Upgrades gehören zur Waffenkopie.
