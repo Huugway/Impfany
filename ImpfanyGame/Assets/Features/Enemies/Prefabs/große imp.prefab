@@ -150,6 +150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   movementSpeed: 1
   player: {fileID: 0}
+  facingEast: 0
+  isInRange: 0
+  HitRange: 0.95
 --- !u!95 &4718466679224433848
 Animator:
   serializedVersion: 7
@@ -160,7 +163,7 @@ Animator:
   m_GameObject: {fileID: 5777940923789850252}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7a238b7a81995ad4c9a76e7e8bcb6cf0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6667438e3555b8a45a4a81f75635e174, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

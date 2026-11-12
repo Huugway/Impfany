@@ -2,8 +2,13 @@ using UnityEngine;
 using Impfany.Weapons;
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
-
+    [SerializeField] private EnemyTracker EnemyTracker;
     public float health = 50;
+
+    private void Awake()
+    {
+        EnemyTracker = FindFirstObjectByType<EnemyTracker>();
+    }
 
 
     [ContextMenu("Attack ausführen")]
@@ -18,6 +23,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         health -= amount;
     }
 
+
     void IDamageable.TakeDamage(float amount)
     {
         TakeDamage(amount);
@@ -30,5 +36,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         {
             Destroy(gameObject);
         }
+    }
+    private void OnDestroy()
+    {
+        EnemyTracker.removeEnemy();
     }
 }

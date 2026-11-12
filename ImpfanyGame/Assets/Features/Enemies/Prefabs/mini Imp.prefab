@@ -150,6 +150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   movementSpeed: 2.3
   player: {fileID: 0}
+  facingEast: 0
+  isInRange: 0
+  HitRange: 0.5
 --- !u!95 &4718466679224433848
 Animator:
   serializedVersion: 7

@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
     Vector2 newPos;
     [SerializeField] private bool isInRange;
 
-    [SerializeField] private float HitRange;
+    [SerializeField] private float HitRange = 0.5f;
     public void Init(PlayerSuperPosition player)
     {
         this.player = player;
