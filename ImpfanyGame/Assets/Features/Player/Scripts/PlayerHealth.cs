@@ -32,9 +32,15 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamageable
         PublishHealth();
     }
     
-    private void Die()
+    public void Die()
     {
         OnDeath?.Invoke();
+        Destroy(gameObject);
+    }
+
+    public void Disintegrate()
+    {
+        Debug.Log("I do not feel so good");
         Destroy(gameObject);
     }
     public void PublishHealth()
