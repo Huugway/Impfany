@@ -8,27 +8,39 @@ public class SpawnEnemyScript : MonoBehaviour
     [SerializeField] private PlayerSuperPosition playerSuperPosition;
     [SerializeField] private GameFlow gameFlow;
     [SerializeField] private EnemyTracker EnemyTracker;
+    private int level;
     
 
     [ContextMenu("Gegner Spawnen")]
+    
     void SpawnImp()
     {
-        EnemyMovement enemy = Instantiate(imp, transform.position, Quaternion.identity);
+        int ranX = UnityEngine.Random.Range(-20, 20);
+        int ranY = UnityEngine.Random.Range(-20, 20);
+        EnemyMovement enemy = Instantiate(imp, new Vector3(ranX, ranY, 0), Quaternion.identity);
         enemy.Init(playerSuperPosition);
         EnemyTracker.addEnemy(1);
     }
-
+    
     void SpawnBigImp()
     {
-        EnemyMovement enemy = Instantiate(bigimp, transform.position, Quaternion.identity);
+        int ranX = UnityEngine.Random.Range(-20, 20);
+        int ranY = UnityEngine.Random.Range(-20, 20);
+        EnemyMovement enemy = Instantiate(bigimp, new Vector3(ranX, ranY, 0), Quaternion.identity);
         enemy.Init(playerSuperPosition);
         EnemyTracker.addEnemy(1);
     }
 
     private void Awake()
     {
+        gameFlow.OnLevelStarted += GameFlow_OnLevelStarted;
         gameFlow.OnWaveStarted += GameFlow_OnWaveStarted;
         EnemyTracker = GetComponent<EnemyTracker>();
+    }
+
+    private void GameFlow_OnLevelStarted(int obj)
+    {
+        this.level = obj;
     }
 
     void Update()
@@ -92,6 +104,10 @@ public class SpawnEnemyScript : MonoBehaviour
     #endregion
     private void GameFlow_OnWaveStarted(int obj)
     {
+        for (int i = 0; i < level; i++)
+        {
+
+        }
         Wave(obj);
     }
 }

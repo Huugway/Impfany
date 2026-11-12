@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -46,9 +44,6 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector2 newPos = Vector2.MoveTowards(rb.position, player.transform.position, movementSpeed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
-
-        
-
     }
     private void OnDestroy()
     {

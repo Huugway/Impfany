@@ -6,5 +6,6 @@ public enum GameStatus
     Playing,
     Shop,
     Paused,
+    Won,
     GameOver
 }
