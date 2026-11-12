@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 5682680777156483837}
   - component: {fileID: 7241265421758484127}
   - component: {fileID: 2628748767019345221}
+  - component: {fileID: -3098108539173492705}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -287,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e70a936af17da543ba84de72ec0d275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  maxHealth: 6
 --- !u!114 &5159919317413295666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +354,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3098108539173492705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430748697754231907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35bffab2660ad143aaabb9e790f230b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSuperPosition
 --- !u!1 &4611097728595773998
 GameObject:
   m_ObjectHideFlags: 0

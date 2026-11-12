@@ -6,22 +6,47 @@ public class HeartHUD : MonoBehaviour
     [SerializeField] private Image heartPrefab;
     [SerializeField] private Sprite fullHeartSprite;
     [SerializeField] private Sprite emptyHeartSprite;
-    [SerializeField] private int testHeartCount = 3;
-    [SerializeField] private int testFilledHearts = 2;
+    private PlayerHealth playerHealth;
+
+    private int currentHealth;
+    private int maxHealth;
+    
+    private void Awake()
+    {
+        playerHealth = FindFirstObjectByType<PlayerHealth>();
+        playerHealth.OnHealthChanged += PlayerHealth_OnHealthChanged;
+    }
+
+    private void PlayerHealth_OnHealthChanged(int currentPlayerHealth, int maxPlayerHealth)
+    {
+        currentHealth = currentPlayerHealth;
+        maxHealth = maxPlayerHealth;
+        RefreshHearts();
+    }
 
     private void Start()
     {
-        for (int i = 0; i < testHeartCount; i++)
+        BuildHearts();
+    }
+    private void BuildHearts()
+    {
+        for (int i = 0; i < maxHealth; i++)
         {
             Image heart = Instantiate(heartPrefab, transform);
 
-            if (i < testFilledHearts)
+            if (i < currentHealth)
             {
                 heart.sprite = fullHeartSprite;
-            } else
+            }
+            else
             {
                 heart.sprite = emptyHeartSprite;
             }
         }
+    }
+
+    private void RefreshHearts()
+    {
+
     }
 }

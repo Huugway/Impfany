@@ -4,6 +4,10 @@ public class GameFlow : MonoBehaviour
 {
     [SerializeField] private GameObject startPanel;
     [SerializeField] private GameObject hudPanel;
+    [SerializeField] private GameObject gameOverPanel;
+    private PlayerHealth playerHealth;
+    [SerializeField] private EnemyTracker enemyTracker;
+
 
     private GameStatus currentStatus = GameStatus.StartMenu;
     private int waveCounter = 0;
@@ -11,7 +15,27 @@ public class GameFlow : MonoBehaviour
     public event System.Action<GameStatus> OnStatusChanged;
     public event System.Action<int> OnWaveStarted;
     public event System.Action<int> OnLevelStarted;
+    public event System.Action OnRestart;
 
+
+    private void Awake()
+    {
+        playerHealth = FindFirstObjectByType<PlayerHealth>();
+        playerHealth.OnDeath += Player_OnDeath;
+        enemyTracker.OnWaveEnd += EnemyTracker_OnWaveEnd;
+    }
+
+    private void EnemyTracker_OnWaveEnd()
+    {
+        StartWave();
+    }
+
+    private void Player_OnDeath()
+    {
+        SetGameStatus(GameStatus.GameOver);
+        HidePanel(hudPanel);
+        ShowPanel(gameOverPanel);
+    }
 
     private GameStatus GetGameStatus()
     {
@@ -35,7 +59,7 @@ public class GameFlow : MonoBehaviour
         currentStatus = status;
         OnStatusChanged?.Invoke(status);
     }
-    [ContextMenu("Welle Starten")]
+    
     public void StartWave()
     {
         if (currentStatus != GameStatus.Playing) return;
@@ -56,9 +80,20 @@ public class GameFlow : MonoBehaviour
     {
         HidePanel(startPanel);
         ShowPanel(hudPanel);
+        playerHealth.PublishHealth();
         SetGameStatus(GameStatus.Playing);
         StartLevel();
         StartWave();
+    }
+
+    public void RestartGame()
+    {
+        HidePanel(gameOverPanel);
+        SetGameStatus(GameStatus.StartMenu);
+        levelCounter = 0;
+        waveCounter = 0;
+
+        ShowPanel(startPanel);
     }
 
     private void HidePanel (GameObject panel)
