@@ -7,6 +7,8 @@ public class GameFlow : MonoBehaviour
     [SerializeField] private GameObject hudPanel;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject gameWonPanel;
+    [SerializeField] private GameObject playerPrefab;
+
     private PlayerHealth playerHealth;
     [SerializeField] private EnemyTracker enemyTracker;
 
@@ -98,7 +100,10 @@ public class GameFlow : MonoBehaviour
     {
         HidePanel(startPanel);
         ShowPanel(hudPanel);
+
+        Instantiate(playerPrefab);   
         playerHealth.PublishHealth();
+
         SetGameStatus(GameStatus.Playing);
         StartLevel();
         StartWave();
