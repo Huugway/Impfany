@@ -4,29 +4,17 @@ using UnityEngine;
 public class SpawnEnemyScript : MonoBehaviour
 {
     [SerializeField] private EnemyMovement enemyPrefab;
-    [SerializeField] private SuperPosition player;
-    [SerializeField] private GameFlow gameFlow;
+    [SerializeField] private PlayerSuperPosition player;
     [ContextMenu("Gegner Spawnen")]
-    private void Awake()
-    {
-        gameFlow.OnWaveStarted += GameFlow_OnWaveStarted;
-    }
-
     void SpawnEnemy()
     {
         EnemyMovement enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         enemy.Init(player);
         Debug.Log("gegner gespawned");
     }
-
-
+    // Update is called once per frame
     void Update()
     {
         
-    }
-
-    private void GameFlow_OnWaveStarted(int obj)
-    {
-        SpawnEnemy();
     }
 }
