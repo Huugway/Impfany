@@ -9,11 +9,11 @@ public class EnemyHealth : MonoBehaviour
     [ContextMenu("Attack ausführen")]
     private void Attack()
     {
-        Damage(10);
+        TakeDamage(10);
         Debug.Log(health.ToString());
     }
 
-    void Damage(float amount)
+    void TakeDamage(float amount)
     {
         health -= amount;
     }

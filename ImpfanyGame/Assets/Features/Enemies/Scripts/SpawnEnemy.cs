@@ -3,14 +3,22 @@ using UnityEngine;
 
 public class SpawnEnemyScript : MonoBehaviour
 {
-    [SerializeField] private EnemyMovement enemyPrefab;
+    [SerializeField] private EnemyMovement imp;
+    [SerializeField] private EnemyMovement bigimp;
     [SerializeField] private PlayerSuperPosition playerSuperPosition;
     [SerializeField] private GameFlow gameFlow;
 
     [ContextMenu("Gegner Spawnen")]
-    void SpawnEnemy()
+    void SpawnImp()
     {
-        EnemyMovement enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        EnemyMovement enemy = Instantiate(imp, transform.position, Quaternion.identity);
+        enemy.Init(playerSuperPosition);
+        Debug.Log("gegner gespawned");
+    }
+
+    void SpawnBigImp()
+    {
+        EnemyMovement enemy = Instantiate(bigimp, transform.position, Quaternion.identity);
         enemy.Init(playerSuperPosition);
         Debug.Log("gegner gespawned");
     }
@@ -26,7 +34,7 @@ public class SpawnEnemyScript : MonoBehaviour
 
     private void GameFlow_OnWaveStarted(int obj)
     {
-        SpawnEnemy();
+        SpawnBigImp();
     }
 }
 
