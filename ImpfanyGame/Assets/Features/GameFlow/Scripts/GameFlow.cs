@@ -6,14 +6,16 @@ public class GameFlow : MonoBehaviour
     [SerializeField] private GameObject startPanel;
     [SerializeField] private GameObject hudPanel;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject gameWonPanel;
     private PlayerHealth playerHealth;
     [SerializeField] private EnemyTracker enemyTracker;
 
-    [SerializeField] private int waveCountPerLevel = 5;
+    [SerializeField] private int waveCountPerLevel = 10;
+    [SerializeField] private int maxLevel = 3;
 
     private GameStatus currentStatus = GameStatus.StartMenu;
     private int waveCounter = 0;
-    private int levelCounter = 1;
+    private int levelCounter = 0;
     public event System.Action<GameStatus> OnStatusChanged;
     public event System.Action<int> OnWaveStarted;
     public event System.Action<int> OnLevelStarted;
@@ -25,6 +27,11 @@ public class GameFlow : MonoBehaviour
         playerHealth = FindFirstObjectByType<PlayerHealth>();
         playerHealth.OnDeath += Player_OnDeath;
         enemyTracker.OnWaveEnd += EnemyTracker_OnWaveEnd;
+    }
+
+    private void Start()
+    {
+        ShowPanel(startPanel);
     }
 
     private void EnemyTracker_OnWaveEnd()
@@ -40,8 +47,20 @@ public class GameFlow : MonoBehaviour
 
     private void EndLevel()
     {
+        if(levelCounter == maxLevel)
+        {
+            Win();
+        }
+
         waveCounter = 0;
         StartLevel();
+    }
+
+    private void Win()
+    {
+        SetGameStatus(GameStatus.Won);
+        HidePanel(hudPanel);
+        ShowPanel(gameWonPanel);
     }
 
     private void Player_OnDeath()
