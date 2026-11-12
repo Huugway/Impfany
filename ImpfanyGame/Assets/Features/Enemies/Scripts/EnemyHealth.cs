@@ -1,6 +1,6 @@
 using UnityEngine;
-
-public class EnemyHealth : MonoBehaviour
+using Impfany.Weapons;
+public class EnemyHealth : MonoBehaviour, IDamageable
 {
 
     public float health = 50;
@@ -16,6 +16,11 @@ public class EnemyHealth : MonoBehaviour
     void TakeDamage(float amount)
     {
         health -= amount;
+    }
+
+    void IDamageable.TakeDamage(float amount)
+    {
+        TakeDamage(amount);
     }
 
     // Update is called once per frame

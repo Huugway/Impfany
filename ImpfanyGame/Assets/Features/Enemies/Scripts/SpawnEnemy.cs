@@ -13,14 +13,12 @@ public class SpawnEnemyScript : MonoBehaviour
     {
         EnemyMovement enemy = Instantiate(imp, transform.position, Quaternion.identity);
         enemy.Init(playerSuperPosition);
-        Debug.Log("gegner gespawned");
     }
 
     void SpawnBigImp()
     {
         EnemyMovement enemy = Instantiate(bigimp, transform.position, Quaternion.identity);
         enemy.Init(playerSuperPosition);
-        Debug.Log("gegner gespawned");
     }
 
     private void Awake()
@@ -35,6 +33,8 @@ public class SpawnEnemyScript : MonoBehaviour
     private void GameFlow_OnWaveStarted(int obj)
     {
         SpawnBigImp();
+        SpawnImp();
+
     }
 }
 

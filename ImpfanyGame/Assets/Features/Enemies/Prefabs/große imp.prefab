@@ -49,7 +49,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.3
+  m_Mass: 0.5
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e967670aecebedc41b87f1100d8c658a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  movementSpeed: 2
+  movementSpeed: 1
   player: {fileID: 0}
 --- !u!95 &4718466679224433848
 Animator:
@@ -160,7 +160,7 @@ Animator:
   m_GameObject: {fileID: 5777940923789850252}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7ea88418ecc56404fb5ef32d6013e270, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7a238b7a81995ad4c9a76e7e8bcb6cf0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -206,6 +206,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.010460377, y: -0.007671118}
-  m_Size: {x: 0.32282925, y: 0.52314425}
+  m_Offset: {x: -0.02802372, y: -0.0076708794}
+  m_Size: {x: 0.6227684, y: 1.1014051}
   m_Direction: 0
