@@ -5,11 +5,11 @@ public class EnemyMovement : MonoBehaviour
 {
     
     [SerializeField] private float movementSpeed;
-    [SerializeField] private SuperPosition player;
+    [SerializeField] private PlayerSuperPosition player;
     Transform playerTrans;
     Rigidbody2D rb;
 
-    public void Init(SuperPosition player)
+    public void Init(PlayerSuperPosition player)
     {
         this.player = player;
         player.OnMoved += OnPlayerMoved;
@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = FindFirstObjectByType<SuperPosition>();
+        player = FindFirstObjectByType<PlayerSuperPosition>();
     }
     private void OnPlayerMoved(Transform playerTransform)
     {

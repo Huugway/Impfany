@@ -4,7 +4,7 @@ using UnityEngine;
 public class SpawnEnemyScript : MonoBehaviour
 {
     [SerializeField] private EnemyMovement enemyPrefab;
-    [SerializeField] private SuperPosition player;
+    [SerializeField] private PlayerSuperPosition player;
     [ContextMenu("Gegner Spawnen")]
     void SpawnEnemy()
     {
