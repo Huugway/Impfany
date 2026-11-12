@@ -11,16 +11,21 @@ public class SpawnEnemyScript : MonoBehaviour
     
 
     [ContextMenu("Gegner Spawnen")]
+    
     void SpawnImp()
     {
-        EnemyMovement enemy = Instantiate(imp, transform.position, Quaternion.identity);
+        int ranX = UnityEngine.Random.Range(-20, 20);
+        int ranY = UnityEngine.Random.Range(-20, 20);
+        EnemyMovement enemy = Instantiate(imp, new Vector3(ranX, ranY, 0), Quaternion.identity);
         enemy.Init(playerSuperPosition);
         EnemyTracker.addEnemy(1);
     }
-
+    
     void SpawnBigImp()
     {
-        EnemyMovement enemy = Instantiate(bigimp, transform.position, Quaternion.identity);
+        int ranX = UnityEngine.Random.Range(-20, 20);
+        int ranY = UnityEngine.Random.Range(-20, 20);
+        EnemyMovement enemy = Instantiate(bigimp, new Vector3(ranX, ranY, 0), Quaternion.identity);
         enemy.Init(playerSuperPosition);
         EnemyTracker.addEnemy(1);
     }
