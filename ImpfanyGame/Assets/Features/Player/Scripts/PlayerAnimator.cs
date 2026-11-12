@@ -13,6 +13,8 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private float moveThreshold = 0.1f;
     [Tooltip("So weit (in Units) muss die Maus seitlich vom Spieler entfernt sein, bevor er sich umdreht.")]
     [SerializeField] private float turnDeadZone = 0.05f;
+    [Tooltip("Geschwindigkeit (Units/Sekunde), bei der die Lauf-Animation in Normaltempo spielt.")]
+    [SerializeField, Min(0.01f)] private float fullAnimationSpeed = 6f;
 
     private Animator animator;
     private Rigidbody2D rb;
@@ -44,7 +46,9 @@ public class PlayerAnimator : MonoBehaviour
         bool isWalkingBackwards = isMoving && movesHorizontally && Mathf.Sign(velocity.x) != facing;
 
         animator.SetBool(IsMovingParam, isMoving);
-        animator.SetFloat(WalkDirectionParam, isWalkingBackwards ? -1f : 1f);
+        // Die Animation laeuft so schnell wie der Spieler tatsaechlich, also auch langsamer bei Slows.
+        float animationSpeed = velocity.magnitude / fullAnimationSpeed;
+        animator.SetFloat(WalkDirectionParam, isWalkingBackwards ? -animationSpeed : animationSpeed);
     }
 
     private void UpdateFacing()

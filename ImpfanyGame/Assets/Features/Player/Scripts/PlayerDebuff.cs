@@ -1,56 +1,78 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static Unity.VisualScripting.Member;
 
 public class PlayerDebuff : MonoBehaviour
 {
     private struct Debuff
     {
-        public float SpeedMultipier;
+        public float SpeedMultiplier;
         public bool Stuns;
-        public bool Cleansable;
-        public float Duration;
+        public bool IsCleansable;
+        public float EndTime;
     }
     private readonly Dictionary<object, Debuff> debuffs = new();
-    private readonly List<object> expired = new();
+    private readonly List<object> toRemove = new();
 
-    public float SpeedMultipiler { get; private set; } = 1f;
+    public float SpeedMultiplier { get; private set; } = 1f;
     public bool IsStunned { get; private set; }
 
-    public void Slow(object source, float multiplier, float duration = float.PositiveInfinity)
-        => Apply(source, multiplier, false, duration);
-    public void Stun(object source, float duration = float.PositiveInfinity)
-        => Apply(source, 1f, true, duration);
-    public void Apply(object source, float multiplier, bool stuns, float duration)
+    public void Slow(object source, float multiplier, float duration = float.PositiveInfinity, bool cleansable = true)
+        => Apply(source, multiplier, false, duration, cleansable);
+    public void Stun(object source, float duration = float.PositiveInfinity, bool cleansable = true)
+        => Apply(source, 1f, true, duration, cleansable);
+    private void Apply(object source, float multiplier, bool stuns, float duration, bool cleansable)
     {
         debuffs[source] = new Debuff()
         {
-            SpeedMultipier = Mathf.Max(0f, multiplier),
+            SpeedMultiplier = Mathf.Max(0f, multiplier),
             Stuns = stuns,
-            Duration = duration
+            EndTime = Time.time + duration,
+            IsCleansable = cleansable
         };
         Calculate();
     }
-    public void Calculate()
+    public void Cleanse()
     {
-        SpeedMultipiler = 1f;
+        foreach (var pair in debuffs)
+        {
+            if (pair.Value.IsCleansable) toRemove.Add(pair.Key);
+        }
+        RemoveCollected();
+    }
+    private void Calculate()
+    {
+        SpeedMultiplier = 1f;
         IsStunned = false;
         foreach (var debuff in debuffs.Values)
         {
-            SpeedMultipiler *= debuff.SpeedMultipier;
+            SpeedMultiplier *= debuff.SpeedMultiplier;
             IsStunned |= debuff.Stuns;
         }
     }
-
-    void Update()
+    private void Update()
     {
         foreach (var pair in debuffs)
-            if (Time.time >= pair.Value.Duration) expired.Add(pair.Key);
+            if (Time.time >= pair.Value.EndTime) toRemove.Add(pair.Key);
 
-        if (expired.Count == 0) return;
-        
-        foreach (var source in expired) debuffs.Remove(source);
-        expired.Clear();
+        RemoveCollected();
+    }
+    private void RemoveCollected()
+    {
+        if (toRemove.Count == 0) return;
+
+        foreach (var source in toRemove) debuffs.Remove(source);
+        toRemove.Clear();
         Calculate();
     }
+    public void Remove(object source)
+    {
+        if (debuffs.Remove(source)) Calculate();
+    }
+    private void OnDisable()
+    {
+        debuffs.Clear();
+        toRemove.Clear();
+        Calculate();
+    }
+
 }
