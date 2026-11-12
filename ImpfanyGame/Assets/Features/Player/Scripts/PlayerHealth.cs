@@ -31,6 +31,7 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamageable
         CurrentHealth = MaxHealth;
         PublishHealth();
     }
+    
     private void Die()
     {
         OnDeath?.Invoke();

@@ -26,6 +26,7 @@ public class SpawnEnemyScript : MonoBehaviour
         EnemyMovement enemy = Instantiate(imp, new Vector3(ranX, ranY, 0), Quaternion.identity);
         enemy.Init(GetPlayer());
         EnemyTracker.addEnemy(1);
+        EnemyTracker.addEnemyToList(gameObject);
     }
     
     void SpawnBigImp()
@@ -35,6 +36,7 @@ public class SpawnEnemyScript : MonoBehaviour
         EnemyMovement enemy = Instantiate(bigimp, new Vector3(ranX, ranY, 0), Quaternion.identity);
         enemy.Init(GetPlayer());
         EnemyTracker.addEnemy(1);
+        EnemyTracker.addEnemyToList(gameObject);
     }
 
     private void Awake()
