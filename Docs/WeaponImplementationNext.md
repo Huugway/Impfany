@@ -4,15 +4,19 @@
 
 **Tutor mode:** Jannis types the code and makes Unity changes. Explain one small, compilable step and why it exists, then wait for him. Inspect saved files before continuing; “done” sometimes means the editor buffer is still unsaved. Do not dump full scripts, silently implement the plan, or edit Hugo's player files. Docs and Git changes need their own request. Do not push as part of this checklist.
 
-## Resume checkpoint — 12 November 2026
+## Resume checkpoint — 13 November 2026
 
-**Tutor mode remains: Jannis implements; the agent reads and explains small steps.** Git/docs updates are authorized for this sync. Preserve unrelated Overview edits and machine files.
+**After compaction:** reread this checkpoint, Jannis.md, Handoff-Hugo-Waffen.md and FeatureFolders.md, then inspect the current weapon scripts, starting prefabs and fresh Git/Unity status. Continue from the gameplay checks below; do not restart earlier implementation steps.
 
-**Remote sync target:** `a14291f` (team merge commits fetched before this push). Maxim's EnemyHealth now implements IDamageable explicitly; no enemy script changes are needed from us. Real enemy damage and moving-player integration still need a gameplay check. Hugo still owns input, slot policy, dash and movement.
+**Tutor mode remains: Jannis implements; the agent reads and explains small steps.** Jannis explicitly reaffirmed that the agent must not edit prefabs. Explain the intended result and reason before the Unity steps; give the complete setup goal before splitting it into small steps. Preserve unrelated Overview edits and machine files. Git actions require a request.
+
+**Git checkpoint:** weapon code/docs were pushed as `3ecc9e1`; starting prefab/settings/docs setup was pushed as `a4dd9f8`. Latest team sync is `a72e69b`. The team renamed the damage interface to `IEnemyDamageable` and updated the melee behaviour, sandbox dummy and EnemyHealth together. GameFlow now spawns the player on start; coin collection and level UI were added. Real enemy damage and moving-player integration still need a gameplay check. Hugo still owns input, slot policy, dash and movement.
+
+**Editor status:** refreshed Unity's asset database and regenerated the local C# project files after the pull; the stale `IDamageable.cs` project reference caused VS Code's red errors. VS Code now reports zero errors/warnings. Unity compiles successfully; its remaining warning is the unused GameFlow.OnRestart event. No gameplay code or prefab edits were needed for this repair. Current local balance changes: Fist range 1.5; MetalGlove damage 50.
 
 **Current weapon code:** `Weapon.Attack()` runs Charge → Attack → Recover → Idle. `PhaseElapsed` exposes the phase clock read-only; `PhaseChanged` announces each phase entry, including zero-duration Attack. EndAttack cancels any active phase. Movement/aim requests, completion outcomes and a dedicated dash API are not wired yet.
 
-**Melee code:** `Scripts/Weapon/AttackBehaviours/MeeleCone/` contains MeleeConeAttackBehaviour, MeleeConeShape and MeleeConeIndicator. The folder spelling is currently `MeeleCone`. The moved behaviour retains its GUID. Collider and visible mesh use the same 16-segment cone points; the overlap deals damage once per IDamageable, even with several colliders.
+**Melee code:** `Scripts/Weapon/AttackBehaviours/MeeleCone/` contains MeleeConeAttackBehaviour, MeleeConeShape and MeleeConeIndicator. The folder spelling is currently `MeeleCone`. The moved behaviour retains its GUID. Collider and visible mesh use the same 16-segment cone points; the overlap deals damage once per IEnemyDamageable, even with several colliders.
 
 **Shared visual:** Prefabs/HitAreaIndicator.prefab is nested under TestHammer and all three StartingWeapons. It is a separate child with MeleeConeIndicator, MeshFilter, MeshRenderer and Materials/HitAreaWhite (Sprite-Unlit-Default). Its local Transform is identity. Charge opacity is `0.25 * progress^2.5`; Attack is 100%; Recover is `(1-progress)^2.5`; Idle is invisible. On Recover it detaches preserving its world transform; the next Charge reattaches and resets its local transform. A detached indicator destroys itself if its weapon is destroyed. Renderer property blocks keep opacity independent per instance.
 
@@ -47,7 +51,7 @@ All weapon files are under `ImpfanyGame/Assets/Features/Progression/`.
 | `Prefabs/TestHammer.prefab` | Keep root → Visual → Handle/Head, colours, dimensions, and Settings reference. It now contains MeleeConeAttackBehaviour and HitArea with assigned internal references. No rebuild or reparenting needed. |
 | `Scenes/WeaponSandbox.unity` | Keep this private scene. Add a simple effect-recipient component for testing; wire it to the tester. No shared scene/player-prefab changes. |
 
-**Current behaviour:** `Weapon.Attack()` runs automatic phases. TestHammer.prefab has the cone behaviour and dispatches one damage call per IDamageable recipient. WeaponDamageDummy logs those calls. All three StartingWeapons are configured with independent settings, melee detection and the shared indicator; player effects, end notifications and real enemy integration are pending.
+**Current behaviour:** `Weapon.Attack()` runs automatic phases. TestHammer.prefab has the cone behaviour and dispatches one damage call per IEnemyDamageable recipient. WeaponDamageDummy logs those calls. All three StartingWeapons are configured with independent settings, melee detection and the shared indicator; player effects, end notifications and real enemy integration are pending.
 
 Do not rename `WeaponSettings` again or add `FormerlySerializedAs`. Preserve the existing serialized field names (`settings`, `attackBehaviour`) and Unity `.meta` files. Create new scripts through Unity so they receive metadata.
 
