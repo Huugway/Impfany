@@ -2,7 +2,7 @@
 
 **Neues Design · 11.11.2026: Ein Aufruf startet die komplette Waffennutzung.** Die Waffe läuft selbst durch **Charge → Attack → Recover** und meldet anschließend das Ende. Diese Aufteilung ersetzt die frühere Übergabe, in der dein Player alle drei Phasen zeitlich steuert.
 
-**Aktueller Code:** `Attack()` startet bereits die komplette Folge Charge → Attack → Recover; `CurrentPhase` ist lesbar. `EndAttack()` bricht die Nutzung ab und ist für das normale Ende nicht nötig. Der Nahkampfkegel ruft `IDamageable.TakeDamage(float)` einmal pro Empfänger auf. Mehrere Collider desselben Empfängers verursachen keinen Mehrfachtreffer; mit Logging-Dummys getestet. TestHammer.prefab enthält jetzt das verdrahtete Attack Behaviour und HitArea. Die drei StartingWeapons bleiben Platzhalter. `IWeaponUser` ist angelegt; Effektanbindung, Endmeldungen und Anbindung an Maxims echte Gegner fehlen noch.
+**Aktueller Code:** `Attack()` startet bereits die komplette Folge Charge → Attack → Recover; `CurrentPhase` ist lesbar. `EndAttack()` bricht die Nutzung ab und ist für das normale Ende nicht nötig. Der Nahkampfkegel ruft `IDamageable.TakeDamage(float)` einmal pro Empfänger auf. Mehrere Collider desselben Empfängers verursachen keinen Mehrfachtreffer; mit Logging-Dummys getestet. TestHammer.prefab enthält jetzt das verdrahtete Attack Behaviour und HitArea. TestDagger ist ebenfalls verdrahtet und nutzt eigene Dagger-Settings (10 Schaden, Reichweite 2, Winkel 4°, Charge/Attack/Recover 0/0/0,7 s). TestFist und TestMetalGlove bleiben unkonfiguriert. `IWeaponUser` ist angelegt; Effektanbindung, Endmeldungen und Anbindung an Maxims echte Gegner fehlen noch.
 
 ## Wer baut was?
 
