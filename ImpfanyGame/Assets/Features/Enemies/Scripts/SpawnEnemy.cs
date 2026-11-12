@@ -36,11 +36,63 @@ public class SpawnEnemyScript : MonoBehaviour
 
     }
 
+    #region Waves
+    void Wave(int i)
+    {
+        switch (i)
+        {
+            case 1:
+                SpawnImp();
+                break;
+            case 2:
+                SpawnBigImp();
+                SpawnImp();
+                SpawnImp();
+                break;
+            case 3:
+                SpawnBigImp();
+                SpawnBigImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                break;
+            case 4:
+                SpawnBigImp();
+                SpawnBigImp();
+                SpawnBigImp();
+                SpawnBigImp();
+                SpawnBigImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                break;
+            case 5:
+                SpawnBigImp();
+                SpawnBigImp();
+                SpawnBigImp();
+                SpawnBigImp();
+                SpawnBigImp();
+                SpawnBigImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
+                break;
+        }
+    }
+    #endregion
     private void GameFlow_OnWaveStarted(int obj)
     {
-        SpawnBigImp();
-        SpawnImp();
-
+        Wave(obj);
     }
 }
 

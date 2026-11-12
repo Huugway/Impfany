@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class EnemyTracker : MonoBehaviour
 {
+    public event System.Action OnWaveEnd;
     [SerializeField] private int enemyCount;
-    public int GetEnemyCount()
-    {
-        return enemyCount;
-    }
+
     public void addEnemy(int i)
     {
         enemyCount += i;
@@ -19,9 +17,16 @@ public class EnemyTracker : MonoBehaviour
         enemyCount--;
     }
 
-    // Update is called once per frame
+    private void checkEnemyCount()
+    {
+        if (enemyCount == 0)
+        {
+            OnWaveEnd?.Invoke();
+        }
+        else return;
+    }
     void Update()
     {
-        
+        checkEnemyCount();
     }
 }
