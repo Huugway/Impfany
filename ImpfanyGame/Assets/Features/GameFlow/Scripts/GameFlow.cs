@@ -107,6 +107,7 @@ public class GameFlow : MonoBehaviour
     public void RestartGame()
     {
         HidePanel(gameOverPanel);
+        HidePanel(gameWonPanel);
         SetGameStatus(GameStatus.StartMenu);
         levelCounter = 0;
         waveCounter = 0;
