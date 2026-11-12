@@ -9,11 +9,11 @@ public class GameFlow : MonoBehaviour
     private PlayerHealth playerHealth;
     [SerializeField] private EnemyTracker enemyTracker;
 
-    [SerializeField] private int waveCountPerLevel = 10;
+    [SerializeField] private int waveCountPerLevel = 5;
 
     private GameStatus currentStatus = GameStatus.StartMenu;
     private int waveCounter = 0;
-    private int levelCounter = 0;
+    private int levelCounter = 1;
     public event System.Action<GameStatus> OnStatusChanged;
     public event System.Action<int> OnWaveStarted;
     public event System.Action<int> OnLevelStarted;

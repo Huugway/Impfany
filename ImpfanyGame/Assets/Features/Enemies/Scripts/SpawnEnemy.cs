@@ -40,7 +40,7 @@ public class SpawnEnemyScript : MonoBehaviour
 
     private void GameFlow_OnLevelStarted(int obj)
     {
-        this.level = obj;
+        this.level = obj; 
     }
 
     void Update()
@@ -104,11 +104,11 @@ public class SpawnEnemyScript : MonoBehaviour
     #endregion
     private void GameFlow_OnWaveStarted(int obj)
     {
-        for (int i = 0; i < level; i++)
+        for (int i = 0; i < this.level; i++)
         {
-
+            Wave(obj);
         }
-        Wave(obj);
+        
     }
 }
 
