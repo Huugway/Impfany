@@ -18,6 +18,6 @@ public class WaveTextPresenter : MonoBehaviour
 
     private void ShowWave(int number)
     {
-        waveText.text = $"Wave {number}";
+        waveText.text = $"Wave: {number}";
     }
 }
