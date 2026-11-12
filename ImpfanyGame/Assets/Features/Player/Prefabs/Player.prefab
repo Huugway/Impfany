@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 6044648704484233825}
   - component: {fileID: 3084372679238194597}
   - component: {fileID: 6498090500128527903}
+  - component: {fileID: 8633457551309481157}
   - component: {fileID: 5159919317413295666}
   - component: {fileID: 5682680777156483837}
   - component: {fileID: 7241265421758484127}
@@ -274,6 +275,18 @@ MonoBehaviour:
   movementSpeed: 6
   acceleration: 60
   deceleration: 80
+--- !u!114 &8633457551309481157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430748697754231907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e70a936af17da543ba84de72ec0d275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!114 &5159919317413295666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +329,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   moveThreshold: 0.1
   turnDeadZone: 0.05
+  fullAnimationSpeed: 6
 --- !u!95 &2628748767019345221
 Animator:
   serializedVersion: 7
