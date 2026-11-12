@@ -1,6 +1,6 @@
 # Jannis — Weapons & upgrades
 
-**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Automatic phases and melee cone detection work in the private sandbox. The cone finds a target inside it and excludes targets beyond its range or angle. The cone calls IDamageable.TakeDamage once per recipient; a logging dummy verifies the call. TestHammer.prefab now contains the complete cone setup. Player effects, outcome events and real enemy integration remain to build; TestDagger is now wired to the melee cone with its own Dagger settings. TestFist and TestMetalGlove remain unconfigured.
+**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Automatic phases, melee damage dispatch and the white cone indicator work in the private sandbox. TestHammer has the full setup; TestDagger has melee damage and its own settings, but no indicator yet. TestFist and TestMetalGlove remain unconfigured. Maxim's enemies now implement IDamageable; gameplay testing with the moving player is next. Player effect requests and completion outcomes remain to build.
 
 **Updated design:** the player triggers one use; the weapon runs **Charge → Attack → Recover**, requests its phase effects and removes them when finished. Hugo owns input, slots, dash and the player component that applies effects. This replaces the previous player-owned phase timers. See the [German handoff](Handoff-Hugo-Waffen.md) and [step-by-step migration](WeaponImplementationNext.md). `Weapon.Attack()` already starts the whole use; `CurrentPhase` is readable. The effect-recipient API and outcome events are planned. Hugo updates his caller from `BeginAttack()` to `Attack()`; no compatibility wrapper is kept. Attack behaviours retain their internal `BeginAttack(settings)` method.
 
@@ -54,6 +54,8 @@ Use an explicit 2D overlap query against a sector-shaped collider, rather than r
 - **`WeaponSettings`** holds name, damage, phase settings and melee range/angle.
 - **`Weapon`** runs phases. Player effect requests and completion/interruption notifications are planned.
 - **`WeaponAttackBehaviour`** is the common base; `MeleeConeAttackBehaviour` currently detects overlapping colliders.
+
+**White attack indicator:** collider and visual use the same cone points. During Charge it follows the weapon and brightens from 0% to 25%, slowly at first and faster toward the end. Attack flashes at 100%. At Recover entry it stays in world space and fades to 0%, quickly at first and more slowly at the end. The next Charge attaches it to the weapon again. The visual deals no damage. Fades are verified in the sandbox; moving-weapon detachment still needs testing. TestHammer currently uses longer test timings: 1.5 s Charge, instant Attack, 2 s Recover.
 
 Timing, damage calls, duplicate-hit prevention, multiple targets, rotation and collider-edge overlaps are verified with sandbox dummies. Next: phase effect requests and player integration. Projectile, continuous-fire, sweeping and other mechanics are future work, outside this implementation scope. Keep the component-based prefab approach; each weapon can have its own visuals/settings without a Hammer/Pistol class hierarchy.
 

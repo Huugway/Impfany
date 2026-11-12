@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Impfany.Weapons
@@ -12,6 +13,8 @@ namespace Impfany.Weapons
         private float phaseElapsed;
         public WeaponSettings Settings => settings;
         public WeaponPhase CurrentPhase { get; private set; } = WeaponPhase.Idle;
+        public float PhaseElapsed => phaseElapsed;
+        public event Action<WeaponPhase> PhaseChanged;
 
 
         private void Update()
@@ -45,6 +48,7 @@ namespace Impfany.Weapons
         {
             CurrentPhase = phase;
             phaseElapsed = 0f;
+            PhaseChanged?.Invoke(phase);
         }
 
         public void Attack()
