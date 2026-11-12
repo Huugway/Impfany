@@ -765,6 +765,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1108991417517160803, guid: 4e07b3b79a5cb2a459417d30c23c1ed1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2726553812666857775, guid: 4e07b3b79a5cb2a459417d30c23c1ed1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

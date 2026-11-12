@@ -29,6 +29,11 @@ public class GameFlow : MonoBehaviour
         enemyTracker.OnWaveEnd += EnemyTracker_OnWaveEnd;
     }
 
+    private void Start()
+    {
+        ShowPanel(startPanel);
+    }
+
     private void EnemyTracker_OnWaveEnd()
     {
         if (waveCounter >= waveCountPerLevel)
