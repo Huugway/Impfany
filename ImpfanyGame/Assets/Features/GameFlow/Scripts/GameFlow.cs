@@ -35,7 +35,7 @@ public class GameFlow : MonoBehaviour
         currentStatus = status;
         OnStatusChanged?.Invoke(status);
     }
-
+    [ContextMenu("Welle Starten")]
     public void StartWave()
     {
         if (currentStatus != GameStatus.Playing) return;
