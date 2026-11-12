@@ -8,6 +8,7 @@ public class SpawnEnemyScript : MonoBehaviour
     [SerializeField] private PlayerSuperPosition playerSuperPosition;
     [SerializeField] private GameFlow gameFlow;
     [SerializeField] private EnemyTracker EnemyTracker;
+    private int level;
     
 
     [ContextMenu("Gegner Spawnen")]
@@ -32,8 +33,14 @@ public class SpawnEnemyScript : MonoBehaviour
 
     private void Awake()
     {
+        gameFlow.OnLevelStarted += GameFlow_OnLevelStarted;
         gameFlow.OnWaveStarted += GameFlow_OnWaveStarted;
         EnemyTracker = GetComponent<EnemyTracker>();
+    }
+
+    private void GameFlow_OnLevelStarted(int obj)
+    {
+        this.level = obj;
     }
 
     void Update()
@@ -97,6 +104,10 @@ public class SpawnEnemyScript : MonoBehaviour
     #endregion
     private void GameFlow_OnWaveStarted(int obj)
     {
+        for (int i = 0; i < level; i++)
+        {
+
+        }
         Wave(obj);
     }
 }
