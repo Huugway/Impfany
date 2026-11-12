@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6052552544191119606}
   - component: {fileID: 4718466679224433848}
   - component: {fileID: 6649850766509216386}
+  - component: {fileID: -1656856853128415721}
   m_Layer: 0
   m_Name: "gro\xDFe imp"
   m_TagString: Untagged
@@ -135,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdcb8171e3db78f428964916573d596e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  EnemyTracker: {fileID: 0}
   health: 50
 --- !u!114 &6052552544191119606
 MonoBehaviour:
@@ -149,7 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   movementSpeed: 1
-  player: {fileID: 0}
   facingEast: 0
   isInRange: 0
   HitRange: 0.95
@@ -212,3 +213,16 @@ CapsuleCollider2D:
   m_Offset: {x: -0.02802372, y: -0.0076708794}
   m_Size: {x: 0.6227684, y: 1.1014051}
   m_Direction: 0
+--- !u!114 &-1656856853128415721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777940923789850252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42015abdbe4eb2443969c6fb7e413bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::dropCoin
+  prefabCoin: {fileID: 5302339451353683443, guid: d4f9b0afba707f8479509cc864266db4, type: 3}
