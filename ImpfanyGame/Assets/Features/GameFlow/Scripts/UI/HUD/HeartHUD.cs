@@ -16,22 +16,30 @@ public class HeartHUD : MonoBehaviour
     private int currentHealth;
     private int maxHealth;
     
-    private void Awake()
+    private void subscribeEvents()
     {
-        playerHealth = FindFirstObjectByType<PlayerHealth>();
         playerHealth.OnHealthChanged += PlayerHealth_OnHealthChanged;
+    }
+
+    private void LateUpdate()
+    {
+        if (playerHealth == null)
+        {
+            PlayerHealth newPlayerHealth = FindFirstObjectByType<PlayerHealth>();
+            if (newPlayerHealth == null) return;
+            playerHealth = newPlayerHealth;
+            subscribeEvents();
+            playerHealth.PublishHealth();
+        }
     }
 
     private void PlayerHealth_OnHealthChanged(int currentPlayerHealth, int maxPlayerHealth)
     {
         currentHealth = currentPlayerHealth;
         maxHealth = maxPlayerHealth;
-
         if (hearts.Count == 0) BuildHearts();
-
         RefreshHearts();
     }
-
     private void BuildHearts()
     {
         for (int i = 0; i < maxHealth; i++)

@@ -1,6 +1,6 @@
 using UnityEngine;
 using Impfany.Weapons;
-public class EnemyHealth : MonoBehaviour, IDamageable
+public class EnemyHealth : MonoBehaviour, IEnemyDamageable
 {
     [SerializeField] private EnemyTracker EnemyTracker;
     public float health = 50;
@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     }
 
 
-    void IDamageable.TakeDamage(float amount)
+    void IEnemyDamageable.TakeDamage(float amount)
     {
         TakeDamage(amount);
     }

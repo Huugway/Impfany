@@ -24,11 +24,22 @@ public class GameFlow : MonoBehaviour
     public event System.Action OnRestart;
 
 
-    private void Awake()
+    private void subscribeEvents()
     {
-        playerHealth = FindFirstObjectByType<PlayerHealth>();
         playerHealth.OnDeath += Player_OnDeath;
         enemyTracker.OnWaveEnd += EnemyTracker_OnWaveEnd;
+    }
+
+    private void LateUpdate()
+    {
+        if (playerHealth == null)
+        {
+            PlayerHealth newPlayerHealth = FindFirstObjectByType<PlayerHealth>();
+            if (newPlayerHealth == null) return;
+            playerHealth = newPlayerHealth;
+            subscribeEvents();
+            playerHealth.PublishHealth();
+        }
     }
 
     private void Start()
@@ -102,7 +113,6 @@ public class GameFlow : MonoBehaviour
         ShowPanel(hudPanel);
 
         Instantiate(playerPrefab);   
-        playerHealth.PublishHealth();
 
         SetGameStatus(GameStatus.Playing);
         StartLevel();

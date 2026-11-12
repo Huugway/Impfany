@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Impfany.Weapons
 {
-    public interface IDamageable
+    public interface IEnemyDamageable
     {
         void TakeDamage(float amount);
     }

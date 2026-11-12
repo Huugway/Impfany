@@ -10,7 +10,7 @@ namespace Impfany.Weapons
         [SerializeField]
         private LayerMask targetLayers;
         private readonly List<Collider2D> hitResults = new List<Collider2D>();
-        private readonly HashSet<IDamageable> damagedTargets = new HashSet<IDamageable>();
+        private readonly HashSet<IEnemyDamageable> damagedTargets = new HashSet<IEnemyDamageable>();
 
         public override void BeginAttack(WeaponSettings settings)
         {
@@ -36,7 +36,7 @@ namespace Impfany.Weapons
             
             foreach (Collider2D hit in hitResults)
             {
-                IDamageable target = hit.GetComponentInParent<IDamageable>();
+                IEnemyDamageable target = hit.GetComponentInParent<IEnemyDamageable>();
             
                 if (target != null && damagedTargets.Add(target))
                 {

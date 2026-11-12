@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform player;
+    public GameObject player;
+   
     void LateUpdate()
     {
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        if (player == null)
+        {
+            GameObject gameObject = GameObject.FindGameObjectWithTag("Player");
+            if (gameObject == null) return;          // noch kein Spieler, nächsten Frame nochmal
+            player = gameObject;
+        }
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
 
     }
 }

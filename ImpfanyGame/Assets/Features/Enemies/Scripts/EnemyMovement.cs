@@ -4,7 +4,7 @@ public class EnemyMovement : MonoBehaviour
 {
     
     [SerializeField] private float movementSpeed;
-    [SerializeField] private PlayerSuperPosition player;
+    private PlayerSuperPosition player = null;
     Transform playerTrans;
     SpriteRenderer sr;
     Rigidbody2D rb;
@@ -15,17 +15,30 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private bool isInRange;
 
     [SerializeField] private float HitRange = 0.5f;
+    
+  
+
+    private void LateUpdate()
+    {
+        if (player == null)
+        {
+            PlayerSuperPosition newplayerSuperPosition = FindFirstObjectByType<PlayerSuperPosition>();
+            if (newplayerSuperPosition == null) return;
+            player = newplayerSuperPosition;
+        }
+    }
+
     public void Init(PlayerSuperPosition player)
     {
         this.player = player;
         player.OnMoved += OnPlayerMoved;
     }
+
     private void Awake()
     {
         am = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        player = FindFirstObjectByType<PlayerSuperPosition>();
     }
     private void OnPlayerMoved(Transform playerTransform)
     {
@@ -35,6 +48,11 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player == null)
+        {
+            am.SetBool("isCloseEnoughToHit", false);
+            return;
+        }
         Updatefacing();
         moveTowardsPlayer();
         UpdateHitRange();

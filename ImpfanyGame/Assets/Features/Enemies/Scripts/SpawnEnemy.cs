@@ -5,11 +5,17 @@ public class SpawnEnemyScript : MonoBehaviour
 {
     [SerializeField] private EnemyMovement imp;
     [SerializeField] private EnemyMovement bigimp;
-    [SerializeField] private PlayerSuperPosition playerSuperPosition;
+    private PlayerSuperPosition playerSuperPosition;
     [SerializeField] private GameFlow gameFlow;
     [SerializeField] private EnemyTracker EnemyTracker;
     private int level;
-    
+    private PlayerSuperPosition GetPlayer()
+    {
+        if (playerSuperPosition == null)
+            playerSuperPosition = FindFirstObjectByType<PlayerSuperPosition>();
+        return playerSuperPosition;
+    }
+
 
     [ContextMenu("Gegner Spawnen")]
     
@@ -18,7 +24,7 @@ public class SpawnEnemyScript : MonoBehaviour
         int ranX = UnityEngine.Random.Range(-20, 20);
         int ranY = UnityEngine.Random.Range(-20, 20);
         EnemyMovement enemy = Instantiate(imp, new Vector3(ranX, ranY, 0), Quaternion.identity);
-        enemy.Init(playerSuperPosition);
+        enemy.Init(GetPlayer());
         EnemyTracker.addEnemy(1);
     }
     
@@ -27,7 +33,7 @@ public class SpawnEnemyScript : MonoBehaviour
         int ranX = UnityEngine.Random.Range(-20, 20);
         int ranY = UnityEngine.Random.Range(-20, 20);
         EnemyMovement enemy = Instantiate(bigimp, new Vector3(ranX, ranY, 0), Quaternion.identity);
-        enemy.Init(playerSuperPosition);
+        enemy.Init(GetPlayer());
         EnemyTracker.addEnemy(1);
     }
 
