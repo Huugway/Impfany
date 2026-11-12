@@ -1542,6 +1542,7 @@ MonoBehaviour:
   hudPanel: {fileID: 1547874381}
   gameOverPanel: {fileID: 240840986}
   enemyTracker: {fileID: 169599390}
+  waveCountPerLevel: 5
 --- !u!4 &1367736416
 Transform:
   m_ObjectHideFlags: 0

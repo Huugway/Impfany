@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameFlow : MonoBehaviour
@@ -8,6 +9,7 @@ public class GameFlow : MonoBehaviour
     private PlayerHealth playerHealth;
     [SerializeField] private EnemyTracker enemyTracker;
 
+    [SerializeField] private int waveCountPerLevel = 10;
 
     private GameStatus currentStatus = GameStatus.StartMenu;
     private int waveCounter = 0;
@@ -27,7 +29,19 @@ public class GameFlow : MonoBehaviour
 
     private void EnemyTracker_OnWaveEnd()
     {
+        if (waveCounter >= waveCountPerLevel)
+        {
+            EndLevel();
+            return;
+        }
+
         StartWave();
+    }
+
+    private void EndLevel()
+    {
+        waveCounter = 0;
+        StartLevel();
     }
 
     private void Player_OnDeath()
@@ -35,21 +49,6 @@ public class GameFlow : MonoBehaviour
         SetGameStatus(GameStatus.GameOver);
         HidePanel(hudPanel);
         ShowPanel(gameOverPanel);
-    }
-
-    private GameStatus GetGameStatus()
-    {
-        return currentStatus;
-    }
-
-    private int GetWaveCounter()
-    {
-        return waveCounter;
-    }
-
-    private int GetLevelCounter()
-    {
-        return waveCounter;
     }
 
     private void SetGameStatus(GameStatus status)
