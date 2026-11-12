@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
         if (damage <= 0) return;
         if (CurrentHealth <= 0) return;
         CurrentHealth = Mathf.Max(CurrentHealth - damage, 0);
-        OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
+        PublishHealth();
         if (CurrentHealth == 0) OnDeath?.Invoke();
     }
     public void Heal(int heal = 1)
@@ -22,10 +22,15 @@ public class PlayerHealth : MonoBehaviour
         if (CurrentHealth <= 0) return;
         CurrentHealth += heal;
         if (CurrentHealth > MaxHealth) CurrentHealth = MaxHealth;
-        OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
+        PublishHealth();
     }
     private void Awake()
     {
         CurrentHealth = MaxHealth;
+    }
+
+    public void PublishHealth()
+    {
+        OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
     }
 }
