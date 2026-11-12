@@ -6,10 +6,12 @@ public class GameFlow : MonoBehaviour
     [SerializeField] private GameObject startPanel;
     [SerializeField] private GameObject hudPanel;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject gameWonPanel;
     private PlayerHealth playerHealth;
     [SerializeField] private EnemyTracker enemyTracker;
 
     [SerializeField] private int waveCountPerLevel = 10;
+    [SerializeField] private int maxLevel = 3;
 
     private GameStatus currentStatus = GameStatus.StartMenu;
     private int waveCounter = 0;
@@ -40,8 +42,20 @@ public class GameFlow : MonoBehaviour
 
     private void EndLevel()
     {
+        if(levelCounter == maxLevel)
+        {
+            Win();
+        }
+
         waveCounter = 0;
         StartLevel();
+    }
+
+    private void Win()
+    {
+        SetGameStatus(GameStatus.Won);
+        HidePanel(hudPanel);
+        ShowPanel(gameWonPanel);
     }
 
     private void Player_OnDeath()
