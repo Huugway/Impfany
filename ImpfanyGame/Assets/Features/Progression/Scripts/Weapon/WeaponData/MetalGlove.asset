@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MetalGlove
   m_EditorClassIdentifier: Assembly-CSharp::Impfany.Weapons.WeaponDefinition
   displayName: Metal Glove
-  damage: 30
+  damage: 50
   range: 4
   attackAngle: 90
   charge:
