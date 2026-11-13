@@ -5,8 +5,9 @@ public class DeleteCoin : MonoBehaviour
     GameFlow gameFlow;
     private void Awake()
     {
-
-        gameFlow.OnStatusChanged += GameFlow_OnStatusChanged;
+        gameFlow = FindFirstObjectByType<GameFlow>();
+        if (gameFlow != null)
+            gameFlow.OnStatusChanged += GameFlow_OnStatusChanged;
     }
 
     private void GameFlow_OnStatusChanged(GameStatus obj)
@@ -16,5 +17,11 @@ public class DeleteCoin : MonoBehaviour
             Destroy(gameObject);
         }
         
+    }
+
+    private void OnDestroy()
+    {
+        if (gameFlow != null)
+            gameFlow.OnStatusChanged -= GameFlow_OnStatusChanged;
     }
 }

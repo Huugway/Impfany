@@ -11,6 +11,7 @@ public class EnemyTracker : MonoBehaviour
     GameFlow gameFlow;
     private void Awake()
     {
+        gameFlow = FindAnyObjectByType<GameFlow>();
         gameFlow.OnStatusChanged += GameFlow_OnStatusChanged;
     }
 

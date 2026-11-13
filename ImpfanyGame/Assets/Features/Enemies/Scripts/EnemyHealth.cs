@@ -39,6 +39,8 @@ public class EnemyHealth : MonoBehaviour, IEnemyDamageable
     }
     private void OnDestroy()
     {
-        EnemyTracker.removeEnemy();
+        if (!gameObject.scene.isLoaded) return;   
+        if (EnemyTracker != null)
+            EnemyTracker.removeEnemy();
     }
 }
