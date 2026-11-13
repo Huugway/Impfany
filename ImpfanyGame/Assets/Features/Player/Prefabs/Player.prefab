@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f5102f3e745ba429a2784fb839986a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  turnDeadZone: 0.05
 --- !u!1 &7216708270435313617
 GameObject:
   m_ObjectHideFlags: 0

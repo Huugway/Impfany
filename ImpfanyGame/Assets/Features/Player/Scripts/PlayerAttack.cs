@@ -7,7 +7,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private InputActionReference attackAction;
     [SerializeField] private Transform[] weaponSlots;
     [SerializeField] private int attackPhase;
-
+    private float cooldown;
+    
     void Update()
     {
         if (attackAction.action.WasPressedThisFrame()) Attack();
@@ -15,13 +16,18 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
+        if (Time.time < cooldown) return;
         var weaponPrefab = GetWeapon(attackPhase);
         if (weaponPrefab == null) Debug.LogError($"Weapon wasn't found in Slot {attackPhase + 1}", this);
         else 
         {
             var weapon = weaponPrefab.GetComponent<Weapon>();
             if (weapon == null) Debug.LogError($"Object in Weapon Slot {attackPhase + 1} does not hold a weapon script", this);
-            else weapon.Attack();
+            else 
+            { 
+                weapon.Attack();
+                cooldown = Time.time + weapon.Settings.Charge.Duration + weapon.Settings.Attack.Duration + weapon.Settings.Recover.Duration;
+            }
         }
         ProgressWeaponChain();
     }
@@ -31,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
         Transform slot = weaponSlots[slotIndex];
         return slot.childCount > 0 ? slot.GetChild(0).gameObject : null;
     }
-
+    
     private void ProgressWeaponChain()
     {
         attackPhase++;
