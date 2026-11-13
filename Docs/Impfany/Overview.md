@@ -16,16 +16,16 @@
 - -> might be able to knock away enemy's, reflect or destroy projectiles or grant temporary invincibility frames
 
 - The second slot is the *Effect* Weapon
-- -> might be able to stun enemy's, poison or control them in any way
+- -> might be able to stun enemy's, poison or control them in any way or impact the Lantern stacks.
 
 - The third slot is the *Precision* Weapon
-- -> is able to deal heavy damage but will be a harder to hit, rather single focused attack
+- -> is able to deal heavy damage but will be a harder to hit, rather single focused attack. it might reach further in range, maybe even off screen a bit
 
 - Weapons are upgradable via *Cards*:
 - Cards will be dropped by enemy's
 - Ace Cards will exclusively be dropped by mini-bosses
 - Wildcards will be dropped by bosses
-- Once per wave you can convert any 2 Cards to a number card of your liking on the *devil's table* (excluding face cards, aces or wildcards)
+- Once per wave (after the wave was defeated and before the new wave starts) you can add cards of the same type (Hearts, Spade, Diamond, Club) together for example Heart 2 with Heart 6 to create Heart 8 once per Wave at the *devil's table* (excluding face cards, aces or wildcards)
 - Weapons have 4 card stack slots (one for each symbol)
 - Card stack slots have to be unlocked by placing an Ace of the corresponding symbol
 - Aces will be stuck on the Weapon and are not able to be redistributed like other cards.

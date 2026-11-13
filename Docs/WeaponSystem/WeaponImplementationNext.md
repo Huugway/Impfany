@@ -6,7 +6,15 @@
 
 ## Resume checkpoint — 13 November 2026
 
-**After compaction:** reread this checkpoint, Jannis.md, Handoff-Hugo-Waffen.md and ../FeatureFolders.md, then inspect the current weapon scripts, starting prefabs and fresh Git/Unity status. Continue from the gameplay checks below; do not restart earlier implementation steps.
+**After compaction:** reread this checkpoint, Jannis.md, Handoff-Hugo-Waffen.md and ../FeatureFolders.md, then inspect the current weapon scripts, starting prefabs and fresh Git/Unity status. Prioritize the temporary player timer replacement below; do not restart earlier implementation steps.
+
+**Priority update — 13 November 2026: replace Hugo's temporary timer ASAP next week (from 16 November).** Confirmed in PlayerAttack.cs after pulling `df6b22f` (Hugo's cooldown commit `5598d6b`): `cooldown = Time.time + Charge.Duration + Attack.Duration + Recover.Duration`; clicks before that timestamp are ignored. The slot index still advances immediately through ProgressWeaponChain after the start attempt; only subsequent attack input is delayed. This is a temporary bridge, not the agreed final contract. Preserve Hugo's work while replacing the timer with the whole-use completion contract.
+
+- Jannis supplies `Weapon.UseEnded` for the end of the **complete use**, after Recover or an interruption. WeaponAttackBehaviour must not notify the player when only the Attack phase ends.
+- The player keeps one active weapon across all slots and waits for that weapon's end notification. Hugo then handles slot advancement, the idle-reset timer and still-valid buffered input. Do not gate this with a second duration timer.
+- Change `Attack()` to report whether starting was accepted. Hugo subscribes before starting; a rejected start must not leave the player waiting for an event that will never arrive.
+- Include a completion/interruption reason. Emit once per accepted use, after cleanup and entering Idle; rejected starts emit nothing. Hugo owns the chain response to cancellation.
+- Build this completion contract next without waiting for the unfinished movement/aim effect system. Jannis implements in tutoring mode; Hugo replaces his timer and updates his player integration. Verify normal completion, rejected starts, cancellation/disable and buffered input together.
 
 **Tutor mode remains: Jannis implements; the agent reads and explains small steps.** Jannis explicitly reaffirmed that the agent must not edit prefabs. Explain the intended result and reason before the Unity steps; give the complete setup goal before splitting it into small steps. Preserve unrelated Overview edits and machine files. Git actions require a request.
 
@@ -24,9 +32,9 @@
 
 **StartingWeapons configuration complete:** TestDagger, TestFist and TestMetalGlove each have their own settings asset, an assigned MeleeConeAttackBehaviour, an assigned disabled trigger HitArea at local identity, Default target layers and one shared HitAreaIndicator prefab child. Existing weapon GUIDs are preserved. Jannis made the Unity edits. Stats are editable test values; read the assets for current numbers. Fist now uses 360°, which still needs the full-circle collider/visual test noted below.
 
-**Next: test the moving player and enemies in SampleScene.** Check actual health loss, aim/movement following during Charge and Attack, frozen world position during Recover, repeat use and cancellation. No new movement/aim effect integration is implied by these prefab updates. Do not edit Hugo's player scripts or Maxim's EnemyHealth.
+**Gameplay checks still open:** test the moving player and enemies in SampleScene. Check actual health loss, aim/movement following during Charge and Attack, frozen world position during Recover, repeat use and cancellation. No new movement/aim effect integration is implied by these prefab updates. Do not edit Hugo's player scripts or Maxim's EnemyHealth.
 
-**Later:** resume source tracking in WeaponSandboxUser (PhaseEffects struct exists; methods remain empty), then phase effect requests and completion outcomes. Carry phase-clock overshoot across transitions; validate 1°/360° cones and child-collider recipients. Do not restart the older checklist below at step 1.
+**Later:** resume source tracking in WeaponSandboxUser (PhaseEffects struct exists; methods remain empty), then phase effect requests. Completion outcomes have been promoted to the priority above. Carry phase-clock overshoot across transitions; validate 1°/360° cones and child-collider recipients. Do not restart the older checklist below at step 1.
 
 ## Documentation entry point
 
@@ -124,4 +132,4 @@ Check the phase/effect milestones in the sandbox, then the cone-hit checks in st
 - [ ] Other effect sources survive weapon cleanup. Consecutive aim-locked phases do not briefly unlock.
 - [ ] With Hugo's adapter, check actual walking speed/lock, live aim/aim lock, Hugo’s slot handling and the ~0.5 s input buffer. Dash and knockback remain separate from walking restrictions.
 
-**Next tutoring turn: follow the resume checkpoint above.** Phase basics and cone damage dispatch have been verified; teach source tracking in WeaponSandboxUser next. Additional attack mechanics, progression and sprite animation systems remain future work; the melee indicator is implemented as described above.
+**Next tutoring turn: follow the priority update in the resume checkpoint above.** Implement the whole-use completion/acceptance contract so Hugo can replace his temporary timer; source tracking in WeaponSandboxUser follows later. Additional attack mechanics, progression and sprite animation systems remain future work; the melee indicator is implemented as described above.
