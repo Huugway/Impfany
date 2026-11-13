@@ -1,23 +1,23 @@
 using TMPro;
 using UnityEngine;
 
-public class LevelTextPresenter : MonoBehaviour
+public class LevelTextPresenter : NumericTextPresenter
 {
     [SerializeField] private GameFlow gameFlow;
     [SerializeField] private TMP_Text levelText;
 
-    private void OnEnable()
+    protected override TMP_Text TargetText => levelText;
+    protected override string Format(int number) => $"Level: {number}";
+
+    protected override void Subscribe()
     {
-        gameFlow.OnLevelStarted += ShowLevel;
+        if (gameFlow != null)
+            gameFlow.OnLevelStarted += ShowNumber;
     }
 
-    private void OnDisable()
+    protected override void Unsubscribe()
     {
-        gameFlow.OnLevelStarted -= ShowLevel;
-    }
-
-    private void ShowLevel(int number)
-    {
-        levelText.text = $"Level: {number}";
+        if (gameFlow != null)
+            gameFlow.OnLevelStarted -= ShowNumber;
     }
 }

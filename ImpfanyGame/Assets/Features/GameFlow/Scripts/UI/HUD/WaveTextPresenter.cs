@@ -1,23 +1,23 @@
 using TMPro;
 using UnityEngine;
 
-public class WaveTextPresenter : MonoBehaviour
+public class WaveTextPresenter : NumericTextPresenter
 {
     [SerializeField] private GameFlow gameFlow;
     [SerializeField] private TMP_Text waveText;
 
-    private void OnEnable()
+    protected override TMP_Text TargetText => waveText;
+    protected override string Format(int number) => $"Wave: {number}";
+
+    protected override void Subscribe()
     {
-        gameFlow.OnWaveStarted += ShowWave;
+        if (gameFlow != null)
+            gameFlow.OnWaveStarted += ShowNumber;
     }
 
-    private void OnDisable()
+    protected override void Unsubscribe()
     {
-        gameFlow.OnWaveStarted -= ShowWave;
-    }
-
-    private void ShowWave(int number)
-    {
-        waveText.text = $"Wave: {number}";
+        if (gameFlow != null)
+            gameFlow.OnWaveStarted -= ShowNumber;
     }
 }
