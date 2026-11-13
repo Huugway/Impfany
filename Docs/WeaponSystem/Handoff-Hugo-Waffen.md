@@ -2,6 +2,10 @@
 
 **Neues Design · 11.11.2026: Ein Aufruf startet die komplette Waffennutzung.** Die Waffe läuft selbst durch **Charge → Attack → Recover** und meldet anschließend das Ende. Diese Aufteilung ersetzt die frühere Übergabe, in der dein Player alle drei Phasen zeitlich steuert.
 
+**Priorität vom 13.11.2026 — Übergangslösung nächste Woche ab 16.11. schnellstmöglich ersetzen:** Nach Pull von `df6b22f` im Code bestätigt: PlayerAttack setzt einen Cooldown bis Time.time + Charge + Attack + Recover und ignoriert vorherige Klicks. Der Slot-Index wird noch direkt nach dem Startversuch weitergeschaltet; nur weitere Angriffe warten. Diese Timer-Lösung ist ausdrücklich vorläufig. Ziel bleibt: Der Player startet die Waffe und wartet auf `Weapon.UseEnded`, statt die Dauer selbst nachzurechnen. Jannis liefert diese Endmeldung als nächsten Integrationsschritt; Hugo ersetzt seinen Timer. Die noch offene Effektanbindung muss dafür nicht zuerst fertig werden.
+
+Der Player abonniert die Meldung **vor** dem Start. `Attack()` soll zurückmelden, ob die Nutzung angenommen wurde; bei Ablehnung darf der Player nicht warten. `UseEnded` kommt einmal pro angenommener Nutzung, nach Bereinigung und Idle, mit Grund für Abschluss oder Unterbrechung. Hugo entscheidet daraufhin über Slot, Ketten-Reset und gültigen Input-Buffer. Die Meldung kommt von Weapon nach der gesamten Nutzung, nicht vom AttackBehaviour nach der Attack-Phase.
+
 **Aktueller Code:** `Attack()` startet Charge → Attack → Recover; `CurrentPhase` und `PhaseElapsed` sind lesbar. `PhaseChanged` meldet Phasenwechsel für die Darstellung. `EndAttack()` bricht die Nutzung ab; ein normaler End-Aufruf durch den Player ist nicht nötig. TestDagger, TestFist und TestMetalGlove sind jetzt mit eigenem Settings-Asset, Nahkampfverhalten, HitArea und gemeinsamem weißem Indikator konfiguriert. Der Kegel trifft jeden IEnemyDamageable-Empfänger einmal; Maxims EnemyHealth implementiert diese Schnittstelle inzwischen. Die Verbindung wurde mit Dummys geprüft; Tests mit dem bewegten Player und echten Gegnern stehen noch aus. `IWeaponUser` ist angelegt; Effektanbindung, Endmeldungen und die gesonderte Dash-API fehlen noch.
 
 ## Wer baut was?
@@ -43,7 +47,7 @@ Maxim nimmt Treffer über IEnemyDamageable entgegen. Eine Rückmeldung über tat
 
 Jannis liefert die kleine Schnittstelle in seinem Bereich; Hugo implementiert sie am Player. Zum unabhängigen Testen verwendet Jannis einen Sandbox-Empfänger. Vor dem Anschließen bitte die vorgeschlagenen Namen abgleichen; die Rollenverteilung ist bereits entschieden.
 
-**Stand von Hugos PlayerAttack:** Der Aufruf wurde auf Jannis’ Wunsch zu `weapon.Attack()` korrigiert. Die übrige Player-Logik bleibt bei dir. Der Slot wird bisher direkt weitergeschaltet. Die spätere Empfängerübergabe und Ergebnisverarbeitung bleiben weitere Integrationsschritte. `BeginAttack(settings)` auf WeaponAttackBehaviour bleibt bestehen: Das startet intern nur die eigentliche Attack-Phase.
+**Stand von Hugos PlayerAttack:** Der Aufruf lautet `weapon.Attack()`. Im lokalen Checkout ist der oben beschriebene Cooldown jetzt vorhanden; der Slot-Index wird weiterhin direkt weitergeschaltet. Deine übrige Player-Logik bleibt bei dir. Endmeldung und Start-Rückmeldung haben jetzt Vorrang; Empfängerübergabe für Effekte bleibt ein weiterer Integrationsschritt. `BeginAttack(settings)` auf WeaponAttackBehaviour bleibt bestehen: Das startet intern nur die eigentliche Attack-Phase.
 
 ## Dash
 
