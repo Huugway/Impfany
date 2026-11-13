@@ -8,6 +8,21 @@ public class EnemyTracker : MonoBehaviour
     public event System.Action OnWaveEnd;
     [SerializeField] private int enemyCount;
     private List<GameObject> enemyList = new List<GameObject>();
+    GameFlow gameFlow;
+    private void Awake()
+    {
+        gameFlow.OnStatusChanged += GameFlow_OnStatusChanged;
+    }
+
+    private void GameFlow_OnStatusChanged(GameStatus obj)
+    {
+        if (obj.Equals(GameStatus.StartMenu))
+        {
+            removeAllEnemies();
+        }
+
+    }
+
 
     public void addEnemy(int i)
     {
