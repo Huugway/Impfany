@@ -123,11 +123,13 @@ public class GameFlow : MonoBehaviour
     {
         HidePanel(gameOverPanel);
         HidePanel(gameWonPanel);
-        Destroy(playerHealth);
+        
         SetGameStatus(GameStatus.StartMenu);
         levelCounter = 0;
         waveCounter = 0;
 
+        if(playerHealth != null) playerHealth.Disintegrate();
+        
         ShowPanel(startPanel);
     }
 
