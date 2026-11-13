@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 6820334814656734368}
   - component: {fileID: 601460723463434211}
   - component: {fileID: 846012889571880142}
+  - component: {fileID: 5702782883336030269}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -352,6 +353,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   coins: 0
+--- !u!114 &5702782883336030269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196188914107597601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374c13bce67913942b2e99b7759ad63b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCoinHeal
+  coinCost: 10
+  healAmount: 2
 --- !u!1 &5821399749586908663
 GameObject:
   m_ObjectHideFlags: 0
