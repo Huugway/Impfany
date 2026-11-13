@@ -2,7 +2,7 @@
 
 **Neues Design · 11.11.2026: Ein Aufruf startet die komplette Waffennutzung.** Die Waffe läuft selbst durch **Charge → Attack → Recover** und meldet anschließend das Ende. Diese Aufteilung ersetzt die frühere Übergabe, in der dein Player alle drei Phasen zeitlich steuert.
 
-**Aktueller Code:** `Attack()` startet Charge → Attack → Recover; `CurrentPhase` und `PhaseElapsed` sind lesbar. `PhaseChanged` meldet Phasenwechsel für die Darstellung. `EndAttack()` bricht die Nutzung ab; ein normaler End-Aufruf durch den Player ist nicht nötig. TestDagger, TestFist und TestMetalGlove sind jetzt mit eigenem Settings-Asset, Nahkampfverhalten, HitArea und gemeinsamem weißem Indikator konfiguriert. Der Kegel trifft jeden IDamageable-Empfänger einmal; Maxims EnemyHealth implementiert diese Schnittstelle inzwischen. Die Verbindung wurde mit Dummys geprüft; Tests mit dem bewegten Player und echten Gegnern stehen noch aus. `IWeaponUser` ist angelegt; Effektanbindung, Endmeldungen und die gesonderte Dash-API fehlen noch.
+**Aktueller Code:** `Attack()` startet Charge → Attack → Recover; `CurrentPhase` und `PhaseElapsed` sind lesbar. `PhaseChanged` meldet Phasenwechsel für die Darstellung. `EndAttack()` bricht die Nutzung ab; ein normaler End-Aufruf durch den Player ist nicht nötig. TestDagger, TestFist und TestMetalGlove sind jetzt mit eigenem Settings-Asset, Nahkampfverhalten, HitArea und gemeinsamem weißem Indikator konfiguriert. Der Kegel trifft jeden IEnemyDamageable-Empfänger einmal; Maxims EnemyHealth implementiert diese Schnittstelle inzwischen. Die Verbindung wurde mit Dummys geprüft; Tests mit dem bewegten Player und echten Gegnern stehen noch aus. `IWeaponUser` ist angelegt; Effektanbindung, Endmeldungen und die gesonderte Dash-API fehlen noch.
 
 ## Wer baut was?
 
@@ -14,7 +14,7 @@
 | Dash ausführen und Unterbrechung anfragen | In jeder aktiven Phase abbrechen und zuverlässig aufräumen |
 | Auf das Ende reagieren und den passenden Slot freigeben | Schwung/Schüsse/Treffer sowie zuverlässiges Aufräumen |
 
-Maxim nimmt Treffer entgegen und meldet tatsächlich verursachten Schaden. Seine Treffer-Schnittstelle ist noch abzustimmen.
+Maxim nimmt Treffer über IEnemyDamageable entgegen. Eine Rückmeldung über tatsächlich verursachten Schaden ist noch abzustimmen.
 
 ## Ablauf
 
@@ -78,7 +78,7 @@ Alle Nahkampfwaffen verwenden vorerst denselben **Kegel-Treffercheck**:
 - Danach sofort Recover. Für diese Waffen ist `Attack.Duration = 0`; wir warten keinen zusätzlichen Frame auf Physik-Callbacks. Sprite-Animation und Schadenszeitpunkt sind getrennt.
 - Dash kann jede aktive Phase beenden. Ein bereits ausgeführter Treffer wird nicht rückgängig gemacht; bei einem sofortigen Angriff ist danach bereits Recover aktiv.
 
-`Range`, `AttackAngle` und die explizite Kegel-Overlap-Abfrage sind implementiert. Im Sandbox-Test: Ziel im Kegel erkannt; Ziele außerhalb von Reichweite oder Winkel ausgeschlossen. Der Schadensaufruf und Schutz vor Mehrfachtreffern sind mit Dummys getestet; Maxim muss seine Gegner noch über IDamageable oder einen passenden Adapter anbinden. Andere Angriffsverhalten sind aktuell nicht im Umfang.
+`Range`, `AttackAngle` und die explizite Kegel-Overlap-Abfrage sind implementiert. Im Sandbox-Test: Ziel im Kegel erkannt; Ziele außerhalb von Reichweite oder Winkel ausgeschlossen. Der Schadensaufruf und Schutz vor Mehrfachtreffern sind mit Dummys getestet; Maxims EnemyHealth implementiert IEnemyDamageable; Gameplay-Tests mit echten Gegnern stehen noch aus. Andere Angriffsverhalten sind aktuell nicht im Umfang.
 
 ## Vorhandene Settings
 

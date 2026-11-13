@@ -1,6 +1,6 @@
 # Jannis — Weapons & upgrades
 
-**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Automatic phases, melee damage dispatch and the white cone indicator work in the private sandbox. TestHammer and all three StartingWeapons now have melee detection and the shared HitAreaIndicator prefab. Dagger, Fist and MetalGlove each use independent settings assets. Maxim's enemies now implement IDamageable; gameplay testing with the moving player is next. Player effect requests and completion outcomes remain to build.
+**Build order:** weapons → card upgrades → Soul Lantern → item bonuses. Automatic phases, melee damage dispatch and the white cone indicator work in the private sandbox. TestHammer and all three StartingWeapons now have melee detection and the shared HitAreaIndicator prefab. Dagger, Fist and MetalGlove each use independent settings assets. Maxim's enemies now implement IEnemyDamageable; gameplay testing with the moving player is next. Player effect requests and completion outcomes remain to build.
 
 **Updated design:** the player triggers one use; the weapon runs **Charge → Attack → Recover**, requests its phase effects and removes them when finished. Hugo owns input, slots, dash and the player component that applies effects. This replaces the previous player-owned phase timers. See the [German handoff](Handoff-Hugo-Waffen.md) and [step-by-step migration](WeaponImplementationNext.md). `Weapon.Attack()` already starts the whole use; `CurrentPhase` is readable. The effect-recipient API and outcome events are planned. Hugo updates his caller from `BeginAttack()` to `Attack()`; no compatibility wrapper is kept. Attack behaviours retain their internal `BeginAttack(settings)` method.
 
@@ -85,7 +85,7 @@ For the current melee scope, Attack performs one cone hit check and transitions 
 
 ## Building separately in Unity
 
-- My files and `WeaponSandbox` scene live in `Assets/Features/Progression/`. Sandbox damage dummies stay here too. See the [team folder structure](FeatureFolders.md) for the other areas.
+- My files and `WeaponSandbox` scene live in `Assets/Features/Progression/`. Sandbox damage dummies stay here too. See the [team folder structure](../FeatureFolders.md) for the other areas.
 - I deliver weapon prefabs with a `Weapon` component and editable `WeaponSettings`. Each weapon copy will keep its own upgrades.
 - Hugo puts my weapon instances under his `WeaponSlot1`–`WeaponSlot3` objects and triggers them. I edit my weapons/settings; he edits the player/scenes.
 - Hugo triggers the complete use and listens for its outcome. The outcome identifies completion or the interrupted phase; Hugo owns how his chain responds. Every weapon uses the same `Weapon` component.

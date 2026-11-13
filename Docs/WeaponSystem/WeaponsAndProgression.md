@@ -1,6 +1,6 @@
 # Weapons & progression — gameplay decisions
 
-The weapon attributes are in [Jannis.md](Jannis.md). The [German handoff](Handoff-Hugo-Waffen.md) describes the updated ownership: one trigger starts the weapon's complete phase sequence. The [migration checklist](WeaponImplementationNext.md) records the code and Unity changes still needed. Settings, a hammer prefab, and the manual Begin/End API exist; the swing behaviour was removed and the hammer currently has no attack behaviour. Automatic phases, projectile firing, player effects and damage are not implemented yet.
+The weapon attributes are in [Jannis.md](Jannis.md). The [German handoff](Handoff-Hugo-Waffen.md) describes the updated ownership: one trigger starts the weapon's complete phase sequence. The [migration checklist](WeaponImplementationNext.md) records the code and Unity changes still needed. Settings, automatic phases, melee cone damage dispatch, the white indicator and configured weapon prefabs are implemented. Player effects, completion outcomes, projectile behaviours and progression systems remain to build.
 
 ## Agreed weapon behaviour
 

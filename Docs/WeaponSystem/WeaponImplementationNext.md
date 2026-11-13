@@ -6,7 +6,7 @@
 
 ## Resume checkpoint — 13 November 2026
 
-**After compaction:** reread this checkpoint, Jannis.md, Handoff-Hugo-Waffen.md and FeatureFolders.md, then inspect the current weapon scripts, starting prefabs and fresh Git/Unity status. Continue from the gameplay checks below; do not restart earlier implementation steps.
+**After compaction:** reread this checkpoint, Jannis.md, Handoff-Hugo-Waffen.md and ../FeatureFolders.md, then inspect the current weapon scripts, starting prefabs and fresh Git/Unity status. Continue from the gameplay checks below; do not restart earlier implementation steps.
 
 **Tutor mode remains: Jannis implements; the agent reads and explains small steps.** Jannis explicitly reaffirmed that the agent must not edit prefabs. Explain the intended result and reason before the Unity steps; give the complete setup goal before splitting it into small steps. Preserve unrelated Overview edits and machine files. Git actions require a request.
 
@@ -27,6 +27,10 @@
 **Next: test the moving player and enemies in SampleScene.** Check actual health loss, aim/movement following during Charge and Attack, frozen world position during Recover, repeat use and cancellation. No new movement/aim effect integration is implied by these prefab updates. Do not edit Hugo's player scripts or Maxim's EnemyHealth.
 
 **Later:** resume source tracking in WeaponSandboxUser (PhaseEffects struct exists; methods remain empty), then phase effect requests and completion outcomes. Carry phase-clock overshoot across transitions; validate 1°/360° cones and child-collider recipients. Do not restart the older checklist below at step 1.
+
+## Documentation entry point
+
+The maintained weapon docs now live in `Docs/WeaponSystem/`; start at [README.md](README.md). Shared system diagrams live in [Diagrams](Diagrams/README.md). Update their source and implemented/planned status when the corresponding systems change, then regenerate and inspect the Markdown and offline HTML views.
 
 ## What we are building
 
