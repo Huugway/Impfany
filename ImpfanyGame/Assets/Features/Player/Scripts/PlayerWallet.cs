@@ -16,4 +16,12 @@ public class PlayerWallet : MonoBehaviour
     {
         OnCoinsChanged?.Invoke(coins);
     }
+
+    public bool TrySpend(int amount)
+    {
+        if (amount <= 0 || coins < amount) return false;
+        coins -= amount;
+        PublishCoins();
+        return true;
+    }
 }
