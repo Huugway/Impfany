@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(PlayerDebuff))]
+[RequireComponent(typeof(MovementDebuff))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private InputActionReference moveAction;
@@ -10,13 +10,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float acceleration = 60f;
     [SerializeField] private float deceleration = 80f;
     private Rigidbody2D rb;
-    private PlayerDebuff debuff;
+    private MovementDebuff debuff;
     private Vector2 moveInput;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        debuff = GetComponent<PlayerDebuff>();
+        debuff = GetComponent<MovementDebuff>();
     }
     private void OnEnable()
     {

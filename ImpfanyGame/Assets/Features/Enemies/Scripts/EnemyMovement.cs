@@ -1,23 +1,20 @@
+using Impfany.Debuffs;
 using UnityEngine;
 
+[RequireComponent(typeof(MovementDebuff))]
 public class EnemyMovement : MonoBehaviour
 {
-    
     [SerializeField] private float movementSpeed;
-    private PlayerSuperPosition player = null;
-    Transform playerTrans;
-    SpriteRenderer sr;
-    Rigidbody2D rb;
-    Animator am;
-    [SerializeField] private bool facingEast;
-
-    Vector2 newPos;
     [SerializeField] private bool isInRange;
-
     [SerializeField] private float HitRange = 0.5f;
     
-  
-
+    private PlayerSuperPosition player = null;
+    MovementDebuff movementDebuff;
+    Transform playerTrans;
+    SpriteRenderer spriteRenderer;
+    Rigidbody2D ridgidbody;
+    Animator animator;
+    [SerializeField] private bool facingEast;
     private void LateUpdate()
     {
         if (player == null)
@@ -27,41 +24,36 @@ public class EnemyMovement : MonoBehaviour
             player = newplayerSuperPosition;
         }
     }
-
     public void Init(PlayerSuperPosition player)
     {
         this.player = player;
         player.OnMoved += OnPlayerMoved;
     }
-
     private void Awake()
     {
-        am = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        ridgidbody = GetComponent<Rigidbody2D>();
     }
     private void OnPlayerMoved(Transform playerTransform)
     {
         playerTrans = playerTransform;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (player == null)
         {
-            am.SetBool("isCloseEnoughToHit", false);
+            animator.SetBool("isCloseEnoughToHit", false);
             return;
         }
         Updatefacing();
         moveTowardsPlayer();
         UpdateHitRange();
     }
-
     void moveTowardsPlayer() 
     {
-        Vector2 newPos = Vector2.MoveTowards(rb.position, player.transform.position, movementSpeed * Time.fixedDeltaTime);
-        rb.MovePosition(newPos);
+        Vector2 newPos = Vector2.MoveTowards(ridgidbody.position, player.transform.position, movementSpeed * Time.fixedDeltaTime * movementDebuff.SpeedMultiplier);
+        ridgidbody.MovePosition(newPos);
     }
     private void OnDestroy()
     {
@@ -73,22 +65,22 @@ public class EnemyMovement : MonoBehaviour
         float dx = player.transform.position.x - transform.position.x;
         if (Mathf.Abs(dx) > 0.1f)
             if (dx < 0)
-                sr.flipX = true;
+                spriteRenderer.flipX = true;
             else
-                sr.flipX = false;
+                spriteRenderer.flipX = false;
     }
-
     void UpdateHitRange()
     {
-        isInRange = am.GetBool("isCloseEnoughToHit");
+        isInRange = animator.GetBool("isCloseEnoughToHit");
         float dx = player.transform.position.x - transform.position.x;
         if (Mathf.Abs(dx) < HitRange)
         {
-            am.SetBool("isCloseEnoughToHit", true);
+            animator.SetBool("isCloseEnoughToHit", true);
         }
         else
         {
-            am.SetBool("isCloseEnoughToHit", false);
+            animator.SetBool("isCloseEnoughToHit", false);
         }
     }
+
 }
