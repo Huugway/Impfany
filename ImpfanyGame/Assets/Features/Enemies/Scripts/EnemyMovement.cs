@@ -1,4 +1,5 @@
 using Impfany.Debuffs;
+using System.Diagnostics;
 using UnityEngine;
 
 [RequireComponent(typeof(MovementDebuff))]
@@ -52,7 +53,8 @@ public class EnemyMovement : MonoBehaviour
     }
     void moveTowardsPlayer() 
     {
-        Vector2 newPos = Vector2.MoveTowards(ridgidbody.position, player.transform.position, movementSpeed * Time.fixedDeltaTime * movementDebuff.SpeedMultiplier);
+        float speed = movementDebuff.IsStunned ? 0f : movementSpeed * movementDebuff.SpeedMultiplier;
+        Vector2 newPos = Vector2.MoveTowards(ridgidbody.position, player.transform.position, speed * Time.deltaTime);
         ridgidbody.MovePosition(newPos);
     }
     private void OnDestroy()
