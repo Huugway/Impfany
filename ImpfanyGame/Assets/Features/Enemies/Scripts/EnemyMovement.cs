@@ -32,6 +32,7 @@ public class EnemyMovement : MonoBehaviour
     }
     private void Awake()
     {
+        movementDebuff = GetComponent<MovementDebuff>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         ridgidbody = GetComponent<Rigidbody2D>();
@@ -48,8 +49,12 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
         Updatefacing();
-        moveTowardsPlayer();
         UpdateHitRange();
+    }
+    private void FixedUpdate()
+    {
+        if (player == null) return;
+        moveTowardsPlayer();
     }
     void moveTowardsPlayer() 
     {
