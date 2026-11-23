@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE surveyContent SYSTEM "https://www.soscisurvey.de/templates/doctype.survey.dtd">
+<surveyContent version="2.4">
+<program>sosci</program>
+<version>4.0.02</version>
+<timestamp>2026-11-17 15:52:06</timestamp>
+<title>PXI</title>
+<description />
+<language>ger</language>
+<attributes.specific program="ofb">
+<attr id="language">ger</attr>
+</attributes.specific>
+<section>
+<title>PXI</title>
+<attributes.specific program="ofb">
+<attr id="id">PX</attr>
+</attributes.specific>
+<question>
+<description>P-Meaning 1</description>
+<class>polar</class>
+<title>Playing the game was meaningful to me.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Meaning 2</description>
+<class>polar</class>
+<title>The game felt relevant to me.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Meaning 3</description>
+<class>polar</class>
+<title>Playing this game was valuable to me.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Mastery 1</description>
+<class>polar</class>
+<title>I felt I was good at playing this game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Mastery 2</description>
+<class>polar</class>
+<title>I felt capable while playing the game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Mastery 3</description>
+<class>polar</class>
+<title>I felt a sense of mastery playing this game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Immersion 1</description>
+<class>polar</class>
+<title>I was no longer aware of my surroundings while I was playing.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Immersion 2</description>
+<class>polar</class>
+<title>I was immersed in the game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Immersion 3</description>
+<class>polar</class>
+<title>I was fully focused on the game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Autonomy 1</description>
+<class>polar</class>
+<title>I felt free to play the game in my own way.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">10</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Autonomy 2</description>
+<class>polar</class>
+<title>I felt like I had choices regarding how I wanted to play this game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">11</attr>
+<attr id="pos">11</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Autonomy 3</description>
+<class>polar</class>
+<title>I felt a sense of freedom about how I wanted to play this game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">12</attr>
+<attr id="pos">12</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Curiosity 1</description>
+<class>polar</class>
+<title>I wanted to explore how the game evolved.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">13</attr>
+<attr id="pos">13</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Curiosity 2</description>
+<class>polar</class>
+<title>I wanted to find out how the game progressed.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">14</attr>
+<attr id="pos">14</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>P-Curiosity 3</description>
+<class>polar</class>
+<title>I felt eager to discover how the game continued.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">15</attr>
+<attr id="pos">15</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Ease of Control 1</description>
+<class>polar</class>
+<title>It was easy to know how to perform actions in the game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">16</attr>
+<attr id="pos">16</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Ease of Control 2</description>
+<class>polar</class>
+<title>The actions to control the game were clear to me.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">17</attr>
+<attr id="pos">17</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Ease of Control 3</description>
+<class>polar</class>
+<title>I thought the game was easy to control.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">18</attr>
+<attr id="pos">18</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Challenge 1</description>
+<class>polar</class>
+<title>The game was not too easy and not too hard to play.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">19</attr>
+<attr id="pos">19</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Challenge 2</description>
+<class>polar</class>
+<title>The game was challenging but not too challenging.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">20</attr>
+<attr id="pos">20</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Challenge 3</description>
+<class>polar</class>
+<title>The challenges in the game were at the right level of difficulty for me.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">21</attr>
+<attr id="pos">21</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Progress Feedback 1</description>
+<class>polar</class>
+<title>The game informed me of my progress in the game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">22</attr>
+<attr id="pos">22</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Progress Feedback 2</description>
+<class>polar</class>
+<title>I could easily assess how I was performing in the game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">23</attr>
+<attr id="pos">23</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Progress Feedback 3</description>
+<class>polar</class>
+<title>The game gave clear feedback on my progress towards the goals.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">24</attr>
+<attr id="pos">24</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Audiovisual Appeal 1</description>
+<class>polar</class>
+<title>I enjoyed the way the game was styled.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">25</attr>
+<attr id="pos">25</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Audiovisual Appeal 2</description>
+<class>polar</class>
+<title>I liked the look and feel of the game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">26</attr>
+<attr id="pos">26</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Audiovisual Appeal 3</description>
+<class>polar</class>
+<title>I appreciated the aesthetics of the game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">27</attr>
+<attr id="pos">27</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Clarity of Goals 1</description>
+<class>polar</class>
+<title>I grasped the overall goal of the game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">28</attr>
+<attr id="pos">28</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Clarity of Goals 2</description>
+<class>polar</class>
+<title>The goals of the game were clear to me.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">29</attr>
+<attr id="pos">29</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>F-Clarity of Goals 3</description>
+<class>polar</class>
+<title>I understood the objectives of the game.</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">30</attr>
+<attr id="pos">30</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Enjoyment 1</description>
+<class>polar</class>
+<title>I liked playing the game</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">31</attr>
+<attr id="pos">31</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Enjoyment 2</description>
+<class>polar</class>
+<title>The game was entertaining</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">32</attr>
+<attr id="pos">32</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>Enjoyment 3</description>
+<class>polar</class>
+<title>I had a good time playing this game</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">33</attr>
+<attr id="pos">33</attr>
+<attr id="scale.display">extrema</attr>
+<attr id="displayNumbering">asym</attr>
+<attr id="scale.niveau">7</attr>
+<attr id="restrictions.answered">yes</attr>
+<attr id="input.numbering">item</attr>
+</attributes.specific>
+<item>
+<text>Strongly agree</text>
+<suffix>Strongly disagree</suffix>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+</surveyContent>
