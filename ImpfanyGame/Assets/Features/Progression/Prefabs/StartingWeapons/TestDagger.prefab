@@ -264,7 +264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056070239943280296, guid: 738134838b6e74da29632624cd733b43, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -284,6 +284,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4656818511067861007}
     m_Modifications:
+    - target: {fileID: 1829296320937208992, guid: 4e380ba1c3db01b46ae076a66e6b7e95, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value:
+      objectReference: {fileID: 2100000, guid: fed85aa8c5e64bbea94cc695746945f9, type: 2}
     - target: {fileID: 3248470494087901881, guid: 4e380ba1c3db01b46ae076a66e6b7e95, type: 3}
       propertyPath: m_Name
       value: ArcSwooshVisual

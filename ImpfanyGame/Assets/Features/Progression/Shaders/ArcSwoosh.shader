@@ -3,7 +3,11 @@ Shader "Impfany/ArcSwoosh"
     Properties
     {
         _Color ("Color", Color) = (1, 1, 1, 1)
+        _TailColor ("Tail Color", Color) = (1, 1, 1, 0.2)
+        [IntRange] _Steps ("Color Steps", Range(2, 8)) = 3
         _TrailLength ("Trail Length", Range(0.05, 1)) = 0.5
+        _Thickness ("Thickness", Range(0.05, 1)) = 0.4
+        _Skew ("Skew", Range(0, 1)) = 0.2
     }
 
     SubShader
@@ -41,6 +45,10 @@ Shader "Impfany/ArcSwoosh"
                 float _Angle;
                 float _Progress;
                 float _TrailLength;
+                float _Thickness;
+                half4 _TailColor;
+                float _Steps;
+                float _Skew;
             CBUFFER_END
 
             Varyings Vert(Attributes input)
@@ -59,16 +67,22 @@ Shader "Impfany/ArcSwoosh"
                 float radius = length(p);
                 float angle = degrees(atan2(p.y, p.x));
 
-                float insideRange = step(radius, _Range);
                 float insideAngle = step(abs(angle), _Angle * 0.5);
                 
                 float along = angle / _Angle + 0.5;
-                float head = _Progress * (1.0 + _TrailLength);
-                float behind = head - along;
+                float lag = _Skew * (1.0 - radius / _Range);
+                float head = _Progress * (1.0 + _TrailLength + _Skew * _Thickness);
+                float behind = head - along - lag;
                 float insideTrail = step(0.0, behind) * step(behind, _TrailLength);
+                
+                float tail = 1.0 - behind / _TrailLength;
+                float innerRadius = _Range * (1.0 - _Thickness * tail);
+                float insideBlade = step(innerRadius, radius) * step(radius, _Range);
 
-                half4 color = _Color;
-                color.a *= insideRange * insideAngle * insideTrail;
+                float band = min(floor(tail * _Steps), _Steps - 1.0);
+                float shade = band / (_Steps - 1.0);
+                half4 color = lerp(_TailColor, _Color, shade);
+                color.a *= insideBlade * insideAngle * insideTrail;
                 return color;
             }
             ENDHLSL

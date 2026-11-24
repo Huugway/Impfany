@@ -5,6 +5,11 @@ namespace Impfany.Weapons
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public sealed class MeleeConeIndicator : MonoBehaviour
     {
+        private const float MaxOpacity = 0.005f;
+
+        [SerializeField]
+        private Color tint = new Color(0.72f, 0.72f, 0.72f, 1f);
+
         private MeshFilter meshFilter;
         private MeshRenderer meshRenderer;
         private Mesh mesh;
@@ -44,7 +49,7 @@ namespace Impfany.Weapons
                 {
                     float recoveryProgress = weapon.PhaseElapsed / recoveryDuration;
                     float remaining = 1f - Mathf.Clamp01(recoveryProgress);
-                    SetOpacity(Mathf.Pow(remaining, 2.5f));
+                    SetOpacity(MaxOpacity * Mathf.Pow(remaining, 2.5f));
                 }
 
                 return;
@@ -64,21 +69,14 @@ namespace Impfany.Weapons
 
             float progress = weapon.PhaseElapsed /duration;
             float curvedProgress = Mathf.Pow(progress, 2.5f);
-            SetOpacity(Mathf.Lerp(0f, 0.25f, curvedProgress));
+            SetOpacity(Mathf.Lerp(0f, MaxOpacity, curvedProgress));
         }
 
         private void OnPhaseChanged(WeaponPhase phase)
         {
-            float opacity = 1f;
-
-            if (phase == WeaponPhase.Idle)
+            if (phase == WeaponPhase.Charge)
             {
-                opacity = 0f;
-            }
-            else if (phase == WeaponPhase.Charge)
-            {
-                opacity = 0f;
-
+                // Zurück an die Waffe, damit die Vorwarnung mit ihr mitzielt.
                 transform.SetParent(weapon.transform, false);
                 transform.localPosition = Vector3.zero;
                 transform.localRotation = Quaternion.identity;
@@ -86,17 +84,19 @@ namespace Impfany.Weapons
             }
             else if (phase == WeaponPhase.Recover)
             {
+                // Am Ende der Attack-Phase lösen, damit das Nachglühen dort liegen bleibt.
                 transform.SetParent(null, true);
             }
 
-            SetOpacity(opacity);
+            bool striking = phase == WeaponPhase.Attack || phase == WeaponPhase.Recover;
+            SetOpacity(striking ? MaxOpacity : 0f);
         }
 
         private void SetOpacity(float opacity)
         {
             materialProperties.SetColor(
                 "_Color",
-                new Color(1f, 1f, 1f, opacity));
+                new Color(tint.r, tint.g, tint.b, opacity));
 
             meshRenderer.SetPropertyBlock(materialProperties);
         }
