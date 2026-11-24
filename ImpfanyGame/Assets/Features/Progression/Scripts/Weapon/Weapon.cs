@@ -15,7 +15,20 @@ namespace Impfany.Weapons
         public WeaponPhase CurrentPhase { get; private set; } = WeaponPhase.Idle;
         public float PhaseElapsed => phaseElapsed;
         public event Action<WeaponPhase> PhaseChanged;
+        public float PhaseProgress
+        {
+            get
+            {
+                float duration = GetCurrentPhaseDuration();
 
+                if (duration <= 0f)
+                {
+                    return 0f;
+                }
+
+                return Mathf.Clamp01(phaseElapsed / duration);
+            }
+        }
 
         private void Update()
         {
@@ -49,6 +62,22 @@ namespace Impfany.Weapons
             CurrentPhase = phase;
             phaseElapsed = 0f;
             PhaseChanged?.Invoke(phase);
+        }
+
+        private float GetCurrentPhaseDuration()
+        {
+            if (settings == null)
+            {
+                return 0f;
+            }
+
+            switch (CurrentPhase)
+            {
+                case WeaponPhase.Charge: return settings.Charge.Duration;
+                case WeaponPhase.Attack: return settings.Attack.Duration;
+                case WeaponPhase.Recover: return settings.Recover.Duration;
+                default: return 0f;
+            }
         }
 
         public void Attack()
