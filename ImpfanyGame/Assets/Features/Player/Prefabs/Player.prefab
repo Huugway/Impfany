@@ -79,12 +79,12 @@ GameObject:
   - component: {fileID: 8783688287171926440}
   - component: {fileID: 8046317182366399998}
   - component: {fileID: 5462551803504330788}
-  - component: {fileID: 6488203408849998317}
   - component: {fileID: 7676046225157072003}
   - component: {fileID: 6820334814656734368}
   - component: {fileID: 601460723463434211}
   - component: {fileID: 846012889571880142}
   - component: {fileID: 5702782883336030269}
+  - component: {fileID: 2572983947695536924}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -278,18 +278,6 @@ MonoBehaviour:
   - {fileID: 3209183356120012454}
   - {fileID: 5702300975223560752}
   attackPhase: 0
---- !u!114 &6488203408849998317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2196188914107597601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: becf05f03b8355849b27756f07d574ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerDebuff
 --- !u!114 &7676046225157072003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +355,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCoinHeal
   coinCost: 10
   healAmount: 2
+--- !u!114 &2572983947695536924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196188914107597601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04490ab959c5383429259aeaf2ffd5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Impfany.Modifiers.StatModifiers
 --- !u!1 &5821399749586908663
 GameObject:
   m_ObjectHideFlags: 0

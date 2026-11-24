@@ -47,12 +47,6 @@
     "ast_hash": "3f59e9b29ed9ead5869762b2ef032c22",
     "semantic_hash": ""
   },
-  "ImpfanyGame/Assets/Features/Enemies/Scripts/EnemyDebuff.cs": {
-    "mtime": 1795116475.73657,
-    "seen": 1795543291.9527588,
-    "ast_hash": "ee094ab8a7f8f4fecd43022d140e6433",
-    "semantic_hash": ""
-  },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/EnemyHealth.cs": {
     "mtime": 1795116294.8427017,
     "seen": 1795543291.9527595,
@@ -60,9 +54,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/EnemyMovement.cs": {
-    "mtime": 1795213639.5873575,
-    "seen": 1795543291.9527605,
-    "ast_hash": "142b25bc8757f7fa2722956dc4ca528c",
+    "mtime": 1795552732.0984921,
+    "seen": 1795552742.023543,
+    "ast_hash": "8f7a43e7a5eaef674782f2a777ee746e",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/EnemyTracker.cs": {
@@ -84,9 +78,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/GameFlow/Scripts/GameFlow.cs": {
-    "mtime": 1795543285.0934608,
-    "seen": 1795543291.9527643,
-    "ast_hash": "d293f3a95083729ca499de673b1f624b",
+    "mtime": 1795546749.2828865,
+    "seen": 1795551010.1745179,
+    "ast_hash": "8ddbbf0fd6a42ef54f70e132bd0f9c66",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/GameFlow/Scripts/GameStatus.cs": {
@@ -96,8 +90,8 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/GameFlow/Scripts/UI/HUD/HeartHUD.cs": {
-    "mtime": 1794523411.9765525,
-    "seen": 1795543291.9527657,
+    "mtime": 1795549794.9556155,
+    "seen": 1795551010.17452,
     "ast_hash": "09923963742822ad86d10ae01ce85942",
     "semantic_hash": ""
   },
@@ -137,12 +131,6 @@
     "ast_hash": "994afdc68c8093e9caf3cb99aba502c7",
     "semantic_hash": ""
   },
-  "ImpfanyGame/Assets/Features/Player/Scripts/Interfaces/IMovementDebuff.cs": {
-    "mtime": 1795106833.1155596,
-    "seen": 1795543291.9527712,
-    "ast_hash": "b4b15b2723fbc28a22c2c87161169b08",
-    "semantic_hash": ""
-  },
   "ImpfanyGame/Assets/Features/Player/Scripts/Interfaces/IPlayerDamageable.cs": {
     "mtime": 1794519623.0502264,
     "seen": 1795543291.9527717,
@@ -153,12 +141,6 @@
     "mtime": 1794483310.1948442,
     "seen": 1795543291.9527726,
     "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Player/Scripts/MovementDebuff.cs": {
-    "mtime": 1795116709.0087862,
-    "seen": 1795543291.9527733,
-    "ast_hash": "b9bff18e9b731d9d614ab340abe215f4",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Player/Scripts/PlayerAnimator.cs": {
@@ -174,15 +156,15 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Player/Scripts/PlayerHealth.cs": {
-    "mtime": 1794526744.140134,
-    "seen": 1795543291.952776,
+    "mtime": 1795549794.9571245,
+    "seen": 1795551010.1745367,
     "ast_hash": "9494641bfc7cfc69aff1a63ef467ed83",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Player/Scripts/PlayerMovement.cs": {
-    "mtime": 1795542908.946143,
-    "seen": 1795543291.9527767,
-    "ast_hash": "cad6398c44637255070cff56cdf823eb",
+    "mtime": 1795552715.0008466,
+    "seen": 1795552742.0235686,
+    "ast_hash": "f8305a7c59da3d2256e1c31c1689b7cf",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Player/Scripts/PlayerSuperPosition.cs": {
@@ -246,8 +228,8 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Progression/Scripts/Weapon/AttackBehaviours/MeeleCone/MeleeConeAttackBehaviour.cs": {
-    "mtime": 1794519463.5663364,
-    "seen": 1795543291.9527855,
+    "mtime": 1795549794.9591465,
+    "seen": 1795551010.1745481,
     "ast_hash": "80b363433eac2219e57ac9b788e942ed",
     "semantic_hash": ""
   },
@@ -288,9 +270,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Shop/ScriopScripts/PlayerEnterShopScript.cs": {
-    "mtime": 1795543285.164421,
-    "seen": 1795543291.9527915,
-    "ast_hash": "edd15b438f29d8a033a24e1348025e62",
+    "mtime": 1795547312.2176743,
+    "seen": 1795551010.1745546,
+    "ast_hash": "366b7c5c6cca60a325d2db4edf6dbbe3",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/TextMesh Pro/Sprites/EmojiOne.json": {
@@ -1233,6 +1215,36 @@
     "mtime": 1794347064.112905,
     "seen": 1795543291.9529047,
     "ast_hash": "d74995ede57abaa0aa3b1bded90a26ec",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Items/Scripts/ItemBuff.cs": {
+    "mtime": 1795550998.008684,
+    "seen": 1795551010.1745253,
+    "ast_hash": "98c6cad8cd4f41a4c8527b5239eb110b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Modifiers/Scripts/IModifiable.cs": {
+    "mtime": 1795550984.4900126,
+    "seen": 1795551010.1745262,
+    "ast_hash": "9dbbe49a495225b3ae53ebd3a02874ab",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Modifiers/Scripts/Stat.cs": {
+    "mtime": 1795550984.4007065,
+    "seen": 1795551010.1745267,
+    "ast_hash": "b7a0dd3aac47bb1df683cb7e6cfa2a45",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Modifiers/Scripts/StatModifiers.cs": {
+    "mtime": 1795552732.3678758,
+    "seen": 1795552742.02356,
+    "ast_hash": "d7a0d0c4bc0536b404890a9103f6b5ed",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Items/Scripts/Debug/ItemDebugPanel.cs": {
+    "mtime": 1795552732.2966604,
+    "seen": 1795552742.023555,
+    "ast_hash": "8e656392fc8e3dc3267a2a2b0103f536",
     "semantic_hash": ""
   }
 }
