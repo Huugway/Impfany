@@ -23,6 +23,7 @@ public class GameFlow : MonoBehaviour
     private GameStatus currentStatus = GameStatus.StartMenu;
     private int waveCounter = 0;
     private int levelCounter = 0;
+    public event System.Action OnShopOpened;
     public event System.Action<GameStatus> OnStatusChanged;
     public event System.Action<int> OnWaveStarted;
     public event System.Action<int> OnLevelStarted;
@@ -61,6 +62,7 @@ public class GameFlow : MonoBehaviour
             if (currentStatus != GameStatus.Playing) return;
 
             waitingForShop = true;
+            OnShopOpened?.Invoke();
             return;
         }
 

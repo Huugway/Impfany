@@ -140,6 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   EnemyTracker: {fileID: 0}
   health: 50
+  health: 65
 --- !u!114 &6052552544191119606
 MonoBehaviour:
   m_ObjectHideFlags: 0
