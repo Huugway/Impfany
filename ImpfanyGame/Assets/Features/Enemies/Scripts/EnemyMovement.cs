@@ -1,8 +1,7 @@
-using Impfany.Debuffs;
+using Impfany.Modifiers;
 using System.Diagnostics;
 using UnityEngine;
 
-[RequireComponent(typeof(MovementDebuff))]
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
@@ -10,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float HitRange = 0.5f;
     
     private PlayerSuperPosition player = null;
-    MovementDebuff movementDebuff;
+    IModifiable modifiers;
     Transform playerTrans;
     SpriteRenderer spriteRenderer;
     Rigidbody2D ridgidbody;
@@ -32,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
     }
     private void Awake()
     {
-        movementDebuff = GetComponent<MovementDebuff>();
+        modifiers = GetComponent<IModifiable>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         ridgidbody = GetComponent<Rigidbody2D>();
@@ -58,9 +57,14 @@ public class EnemyMovement : MonoBehaviour
     }
     void moveTowardsPlayer() 
     {
-        float speed = movementDebuff.IsStunned ? 0f : movementSpeed * movementDebuff.SpeedMultiplier;
+        float speed = movementSpeed * GetSpeedMultiplier();
         Vector2 newPos = Vector2.MoveTowards(ridgidbody.position, player.transform.position, speed * Time.deltaTime);
         ridgidbody.MovePosition(newPos);
+    }
+    private float GetSpeedMultiplier()
+    {
+        if (modifiers == null) return 1f;
+        return modifiers.Get(Stat.MoveSpeed);
     }
     private void OnDestroy()
     {

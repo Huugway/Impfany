@@ -14,6 +14,11 @@ public class GameFlow : MonoBehaviour
 
     [SerializeField] private int waveCountPerLevel = 10;
     [SerializeField] private int maxLevel = 3;
+    bool isInShop = false;
+    bool waitingForShop = false;
+
+    public bool IsInShop => isInShop;
+    public bool WaitingForShop => waitingForShop;
 
     private GameStatus currentStatus = GameStatus.StartMenu;
     private int waveCounter = 0;
@@ -49,12 +54,31 @@ public class GameFlow : MonoBehaviour
 
     private void EnemyTracker_OnWaveEnd()
     {
+        if (waitingForShop) return;
         if (waveCounter >= waveCountPerLevel)
         {
             EndLevel();
+            if (currentStatus != GameStatus.Playing) return;
+
+            waitingForShop = true;
             return;
         }
 
+        StartWave();
+    }
+
+    public void PlayerEnteredShop()
+    {
+        if (!waitingForShop) return;
+        isInShop = true;
+    }
+
+    public void PlayerLeftShop()
+    {
+        if (!isInShop) return;
+
+        isInShop = false;
+        waitingForShop = false;
         StartWave();
     }
 
@@ -63,6 +87,7 @@ public class GameFlow : MonoBehaviour
         if(levelCounter == maxLevel)
         {
             Win();
+            return;
         }
 
         waveCounter = 0;
@@ -127,6 +152,8 @@ public class GameFlow : MonoBehaviour
         SetGameStatus(GameStatus.StartMenu);
         levelCounter = 0;
         waveCounter = 0;
+        isInShop = false;
+        waitingForShop = false;
 
         if(playerHealth != null) playerHealth.Disintegrate();
         

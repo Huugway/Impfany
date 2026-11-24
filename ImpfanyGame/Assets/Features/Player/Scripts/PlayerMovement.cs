@@ -1,8 +1,10 @@
+using Impfany.Modifiers;
+using Impfany.Weapons;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(MovementDebuff))]
+[RequireComponent(typeof(StatModifiers))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private InputActionReference moveAction;
@@ -10,13 +12,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float acceleration = 60f;
     [SerializeField] private float deceleration = 80f;
     private Rigidbody2D rb;
-    private MovementDebuff debuff;
+    private IModifiable modifiers;
     private Vector2 moveInput;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        debuff = GetComponent<MovementDebuff>();
+        modifiers = GetComponent<IModifiable>();
     }
     private void OnEnable()
     {
@@ -28,12 +30,19 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        float speed = debuff.IsStunned ? 0f : movementSpeed * debuff.SpeedMultiplier;
-        Vector2 targetVelocity = Vector2.ClampMagnitude(moveInput, 1f) * speed;
-        float rate = moveInput.sqrMagnitude > 0.01f ? acceleration : deceleration;
-        rb.linearVelocity = Vector2.MoveTowards(
-            rb.linearVelocity,
-            targetVelocity,
-            rate * Time.fixedDeltaTime);
+        Vector2 targetVelocity = Vector2.ClampMagnitude(moveInput, 1f) * GetCurrentSpeed();
+        float rate = IsMoving() ? acceleration : deceleration;
+        rb.linearVelocity = Vector2.MoveTowards(rb.linearVelocity, targetVelocity, rate * Time.fixedDeltaTime);
     }
+
+    public float GetCurrentSpeed()
+    {
+        return movementSpeed * modifiers.Get(Stat.MoveSpeed);
+    }
+
+    private bool IsMoving()
+    {
+        return moveInput.sqrMagnitude > 0.01f;
+    }
+
 }
