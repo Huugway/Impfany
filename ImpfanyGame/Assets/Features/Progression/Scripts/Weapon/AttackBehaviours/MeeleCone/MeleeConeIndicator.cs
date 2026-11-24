@@ -5,7 +5,7 @@ namespace Impfany.Weapons
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public sealed class MeleeConeIndicator : MonoBehaviour
     {
-        private const float MaxOpacity = 0.005f;
+        private const float MaxOpacity = 0.01f;
 
         [SerializeField]
         private Color tint = new Color(0.72f, 0.72f, 0.72f, 1f);
