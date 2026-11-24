@@ -1,3 +1,4 @@
+using Impfany.Weapons;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,4 +37,5 @@ public class PlayerMovement : MonoBehaviour
             targetVelocity,
             rate * Time.fixedDeltaTime);
     }
+
 }
