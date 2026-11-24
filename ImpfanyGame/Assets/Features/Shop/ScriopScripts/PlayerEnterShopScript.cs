@@ -1,7 +1,5 @@
 using UnityEngine;
 
-// Auf das Shop-Objekt legen. Der Collider2D des Shops sollte "Is Trigger" haben,
-// damit der Spieler hineinlaufen kann.
 public class PlayerEnterShopScript : MonoBehaviour
 {
     [SerializeField] private GameFlow gameFlow;
