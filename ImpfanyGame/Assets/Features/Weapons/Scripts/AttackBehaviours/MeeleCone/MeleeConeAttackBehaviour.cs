@@ -21,7 +21,7 @@ namespace Impfany.Weapons
             }
             BuildHitArea(settings);
             FindTargets();
-            ApplyDamage(settings.Damage);
+            ApplyDamage(settings);
 
             Debug.Log($"Melee cone found {hitResults.Count} colliders.", this);
         }
@@ -30,18 +30,27 @@ namespace Impfany.Weapons
         {
         }
 
-        private void ApplyDamage(float damage)
+        private void ApplyDamage(WeaponSettings settings)
         {
             damagedTargets.Clear();
-            
-            foreach (Collider2D hit in hitResults)
+            Vector2 origin = hitArea.transform.position;
+
+            foreach (Collider2D col in hitResults)
             {
-                IEnemyDamageable target = hit.GetComponentInParent<IEnemyDamageable>();
-            
-                if (target != null && damagedTargets.Add(target))
-                {
-                    target.TakeDamage(damage);
-                }
+                IEnemyDamageable target = col.GetComponentInParent<IEnemyDamageable>();
+                if (target == null || !damagedTargets.Add(target)) continue;
+
+                Vector2 targetPos = col.attachedRigidbody != null
+                    ? col.attachedRigidbody.position
+                    : (Vector2)col.transform.position;
+
+                Vector2 direction = targetPos - origin;
+                if (direction.sqrMagnitude < 0.0001f)
+                    direction = hitArea.transform.right;
+                direction.Normalize();
+
+                WeaponHit weaponHit = new WeaponHit(settings.Damage, settings.KnockbackDistance, settings.StunDuration, direction);
+                target.ApplyHit(weaponHit);
             }
         }
 

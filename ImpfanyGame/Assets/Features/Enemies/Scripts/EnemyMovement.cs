@@ -15,6 +15,12 @@ public class EnemyMovement : MonoBehaviour
     Rigidbody2D ridgidbody;
     Animator animator;
     [SerializeField] private bool facingEast;
+    private const float KnockbackDuration = 0.1f;
+    private Vector2 knockback;
+    private float knockbackTime = KnockbackDuration;
+    private float knockbackProgress;
+    private float stunnedUntil;
+    public bool IsStunned => Time.time < stunnedUntil;
     private void LateUpdate()
     {
         if (player == null)
@@ -52,9 +58,43 @@ public class EnemyMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (knockbackTime < KnockbackDuration)
+        {
+            ApplyKnockback();
+            return;
+        }
+
+        if (IsStunned)
+        {
+            ridgidbody.linearVelocity = Vector2.zero;
+            return;
+        }
+
         if (player == null) return;
         moveTowardsPlayer();
     }
+
+    public void Stun(float duration)
+    {
+        stunnedUntil = Mathf.Max(stunnedUntil, Time.time + duration);
+    }
+
+    public void BeginKnockback(Vector2 direction, float distance)
+    {
+        knockback = direction * distance;
+        knockbackTime = 0f;
+        knockbackProgress = 0f;
+    }
+
+    private void ApplyKnockback()
+    {
+        knockbackTime += Time.deltaTime;
+        float t = Mathf.Clamp01(knockbackTime / KnockbackDuration);
+        float progress = 1f - (1f - t) * (1f - t);
+        ridgidbody.MovePosition(ridgidbody.position + knockback * (progress - knockbackProgress));
+        knockbackProgress = progress;
+    }
+
     void moveTowardsPlayer() 
     {
         float speed = movementSpeed * GetSpeedMultiplier();
@@ -84,7 +124,7 @@ public class EnemyMovement : MonoBehaviour
     {
         isInRange = animator.GetBool("isCloseEnoughToHit");
         float dx = player.transform.position.x - transform.position.x;
-        if (Mathf.Abs(dx) < HitRange)
+        if (!IsStunned && Mathf.Abs(dx) < HitRange)
         {
             animator.SetBool("isCloseEnoughToHit", true);
         }

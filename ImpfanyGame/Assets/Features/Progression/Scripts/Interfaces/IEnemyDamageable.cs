@@ -4,6 +4,6 @@ namespace Impfany.Weapons
 {
     public interface IEnemyDamageable
     {
-        void TakeDamage(float amount);
+        float ApplyHit(WeaponHit hit);
     }
 }

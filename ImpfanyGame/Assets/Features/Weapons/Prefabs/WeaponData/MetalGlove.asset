@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Impfany.Weapons.WeaponDefinition
   displayName: Metal Glove
   damage: 35
+  knockbackDistance: 1.25
+  stunDuration: 0.25
   range: 4
   attackAngle: 90
   charge:

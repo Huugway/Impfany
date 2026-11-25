@@ -30,6 +30,10 @@ namespace Impfany.Weapons
 
         [SerializeField, Min(0f)]
         private float damage = 10f;
+        [SerializeField, Min(0f)]
+        private float knockbackDistance = 0f;
+        [SerializeField, Min(0f)]
+        private float stunDuration = 0f;
         [SerializeField, Min(0.01f)]
         private float range = 2f;
         [SerializeField, Range(1f, 360f)]
@@ -46,6 +50,8 @@ namespace Impfany.Weapons
 
         public string DisplayName => displayName;
         public float Damage => damage;
+        public float KnockbackDistance => knockbackDistance;
+        public float StunDuration => stunDuration;
         public float Range => range;
         public float AttackAngle => attackAngle;
         public WeaponPhaseSettings Charge => charge;
