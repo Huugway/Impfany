@@ -15,7 +15,7 @@ MonoBehaviour:
   displayName: Dagger
   damage: 100
   range: 3
-  attackAngle: 4
+  attackAngle: 15
   charge:
     duration: 0
     movementSpeedMultiplier: 1
