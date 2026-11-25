@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 5029401750889797382}
   - component: {fileID: 2286710341604599893}
   m_Layer: 0
-  m_Name: TestMetalGlove
+  m_Name: MetalGlove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

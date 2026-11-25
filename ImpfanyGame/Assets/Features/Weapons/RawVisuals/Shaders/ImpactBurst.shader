@@ -2,14 +2,13 @@ Shader "Impfany/ImpactBurst"
 {
     Properties
     {
-        _Color ("Color", Color) = (1, 1, 1, 1)
-        _TailColor ("Center Color", Color) = (1, 1, 1, 0.2)
-        _RimColor ("Rim Color", Color) = (1, 1, 1, 1)
-        [IntRange] _Steps ("Color Steps", Range(2, 8)) = 3
-        _RimWidth ("Rim Width", Range(0, 0.5)) = 0.09
-        [IntRange] _Spikes ("Spikes", Range(3, 32)) = 12
-        _SpikeDepth ("Spike Depth", Range(0, 0.6)) = 0.18
-        _ExpandTime ("Expand Time", Range(0.05, 0.95)) = 0.35
+        _Color ("Center Color", Color) = (0.72, 0.72, 0.72, 0.1)
+        _EdgeColor ("Edge Color", Color) = (0.5, 0.5, 0.5, 0.28)
+        _RimColor ("Rim Color", Color) = (0.72, 0.72, 0.72, 0.5)
+        [IntRange] _Steps ("Color Steps", Range(2, 16)) = 8
+        _RimWidth ("Rim Width", Range(0, 0.5)) = 0.0625
+        _ExpandTime ("Expand Time", Range(0.01, 0.95)) = 0.08
+        _FadeSoftness ("Fade Softness", Range(0.01, 1)) = 0.5
     }
 
     SubShader
@@ -29,7 +28,6 @@ Shader "Impfany/ImpactBurst"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
             #define PIXELS_PER_UNIT 32.0
-            #define FULL_TURN 6.28318530718
 
             struct Attributes
             {
@@ -44,13 +42,12 @@ Shader "Impfany/ImpactBurst"
 
             CBUFFER_START(UnityPerMaterial)
                 half4 _Color;
-                half4 _TailColor;
+                half4 _EdgeColor;
                 half4 _RimColor;
                 float _Steps;
                 float _RimWidth;
-                float _Spikes;
-                float _SpikeDepth;
                 float _ExpandTime;
+                float _FadeSoftness;
                 float _Range;
                 float _Progress;
             CBUFFER_END
@@ -70,19 +67,14 @@ Shader "Impfany/ImpactBurst"
 
                 float radius = length(p);
 
-                // Einmal rundherum von 0 bis 1.
-                float around = atan2(p.y, p.x) / FULL_TURN + 0.5;
-
-                // Erster Teil der Phase: der Kreis platzt auf (schnell los, bremst am Ende ab).
+                // Erster Teil der Phase: der Kreis waechst von der Mitte bis zur Range
+                // (schnell los, bremst am Ende ab).
                 float expand = saturate(_Progress / _ExpandTime);
                 expand = 1.0 - pow(1.0 - expand, 3.0);
+                float outer = _Range * expand;
 
-                // Restliche Phase: die Mitte leert sich von innen nach aussen.
+                // Restliche Phase: laeuft von 0 auf 1 und blendet die Flaeche aus.
                 float clear = saturate((_Progress - _ExpandTime) / (1.0 - _ExpandTime));
-
-                // Zickzack rund um den Kreis: 0 = Zackenspitze, 1 = Tal zwischen zwei Zacken.
-                float zigzag = abs(frac(around * _Spikes) * 2.0 - 1.0);
-                float outer = _Range * expand * (1.0 - _SpikeDepth * zigzag);
 
                 // Wie tief der Punkt innerhalb der Aussenkante liegt.
                 float depth = outer - radius;
@@ -91,14 +83,18 @@ Shader "Impfany/ImpactBurst"
 
                 // 0 = Mitte, 1 = Aussenkante.
                 float toEdge = saturate(radius / max(outer, 0.0001));
-                float insideFill = inside * step(clear, toEdge);
 
+                // Krater: zur Kante hin in Stufen dunkler.
                 float band = min(floor(toEdge * _Steps), _Steps - 1.0);
                 float shade = band / (_Steps - 1.0);
-                half4 color = lerp(_TailColor, _Color, shade);
-                color.a *= insideFill;
+                half4 color = lerp(_Color, _EdgeColor, shade);
 
-                // Die harte Kante liegt immer obenauf.
+                // Ausblenden von der Mitte nach aussen, in Stufen statt hartem Loch.
+                float fade = saturate((toEdge + _FadeSoftness - clear * (1.0 + _FadeSoftness)) / _FadeSoftness);
+                fade = ceil(fade * _Steps) / _Steps;
+                color.a *= inside * fade;
+
+                // Die harte Kontur bleibt bis zum Ende der Phase stehen.
                 color = lerp(color, _RimColor, insideRim);
                 return color;
             }
