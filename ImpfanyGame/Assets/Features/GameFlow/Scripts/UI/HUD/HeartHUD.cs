@@ -37,16 +37,21 @@ public class HeartHUD : MonoBehaviour
     {
         currentHealth = currentPlayerHealth;
         maxHealth = maxPlayerHealth;
-        if (hearts.Count == 0) BuildHearts();
+        if (hearts.Count != maxHealth) BuildHearts();
         RefreshHearts();
     }
+
+    // Passt die Anzahl Herzen an MaxHealth an (wächst bei HP-Items, schrumpft beim Neustart)
     private void BuildHearts()
     {
-        for (int i = 0; i < maxHealth; i++)
-        {
-            Image heart = Instantiate(heartPrefab, transform);
+        while (hearts.Count < maxHealth)
+            hearts.Add(Instantiate(heartPrefab, transform));
 
-            hearts.Add(heart);
+        while (hearts.Count > maxHealth)
+        {
+            int last = hearts.Count - 1;
+            Destroy(hearts[last].gameObject);
+            hearts.RemoveAt(last);
         }
     }
 

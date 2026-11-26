@@ -77,6 +77,14 @@ public class GameFlow : MonoBehaviour
         StartWave();
     }
 
+    // Debug: markiert die aktuelle Welle als letzte, damit beim nächsten
+    // Wellenende der normale EndLevel/Shop-Ablauf greift.
+    public void DebugFinishLevel()
+    {
+        if (currentStatus != GameStatus.Playing || waitingForShop) return;
+        waveCounter = waveCountPerLevel;
+    }
+
     public void PlayerEnteredShop()
     {
         if (!waitingForShop) return;

@@ -26,6 +26,16 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamageable
         if (CurrentHealth > MaxHealth) CurrentHealth = MaxHealth;
         PublishHealth();
     }
+    // Mehr Max-HP, die neuen Herzen sind direkt voll
+    public void AddMaxHealth(int amount)
+    {
+        if (amount <= 0) return;
+        if (CurrentHealth <= 0) return;
+        maxHealth += amount;
+        CurrentHealth += amount;
+        PublishHealth();
+    }
+
     private void Awake()
     {
         CurrentHealth = MaxHealth;
