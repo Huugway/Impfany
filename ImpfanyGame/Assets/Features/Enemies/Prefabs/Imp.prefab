@@ -15,12 +15,12 @@ GameObject:
   - component: {fileID: 6052552544191119606}
   - component: {fileID: 4718466679224433848}
   - component: {fileID: 6649850766509216386}
-  - component: {fileID: -1656856853128415721}
-  - component: {fileID: -8427021811172168257}
-  - component: {fileID: 9152306031143267775}
-  - component: {fileID: 7879886605022784946}
+  - component: {fileID: 2788418414983037736}
+  - component: {fileID: -7112565130656668529}
+  - component: {fileID: 6266805788726789286}
+  - component: {fileID: 7662669095289999017}
   m_Layer: 0
-  m_Name: "gro\xDFe imp"
+  m_Name: Imp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 0.3
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -117,7 +117,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2922865136255791346, guid: 8ae3c8602aa1beb4aa991efccaa51b4a, type: 3}
+  m_Sprite: {fileID: -234715232667115813, guid: c316d7e26ebfd0f4a898ac4ddaf2eed4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   EnemyTracker: {fileID: 0}
-  health: 65
+  health: 50
 --- !u!114 &6052552544191119606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e967670aecebedc41b87f1100d8c658a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  movementSpeed: 1
+  movementSpeed: 2.3
   isInRange: 0
-  HitRange: 0.95
+  HitRange: 0.5
   facingEast: 0
 --- !u!95 &4718466679224433848
 Animator:
@@ -167,7 +167,7 @@ Animator:
   m_GameObject: {fileID: 5777940923789850252}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6667438e3555b8a45a4a81f75635e174, type: 2}
+  m_Controller: {fileID: 9100000, guid: 65f3095d1a2d8224387d57433cfe3794, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -213,23 +213,10 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.02802372, y: -0.0076708794}
-  m_Size: {x: 0.6227684, y: 1.1014051}
+  m_Offset: {x: -0.010460377, y: 0.22452855}
+  m_Size: {x: 0.32282925, y: 0.5276971}
   m_Direction: 0
---- !u!114 &-1656856853128415721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5777940923789850252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42015abdbe4eb2443969c6fb7e413bb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::dropCoin
-  prefabCoin: {fileID: 5302339451353683443, guid: d4f9b0afba707f8479509cc864266db4, type: 3}
---- !u!114 &-8427021811172168257
+--- !u!114 &2788418414983037736
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,8 +227,21 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7ce025f2d8a96f438b8f2cf1e8a3119, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AttackPlayer
---- !u!114 &9152306031143267775
+  m_EditorClassIdentifier: '::'
+--- !u!114 &-7112565130656668529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777940923789850252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42015abdbe4eb2443969c6fb7e413bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  prefabCoin: {fileID: 5302339451353683443, guid: d4f9b0afba707f8479509cc864266db4, type: 3}
+--- !u!114 &6266805788726789286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04490ab959c5383429259aeaf2ffd5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Impfany.Modifiers.StatModifiers
---- !u!114 &7879886605022784946
+--- !u!114 &7662669095289999017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
