@@ -31,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 targetVelocity = Vector2.ClampMagnitude(moveInput, 1f) * GetCurrentSpeed();
-        float rate = IsMoving() ? acceleration : deceleration;
+        float speedMultiplier = Mathf.Max(1f, modifiers.Get(Stat.MoveSpeed));
+        float rate = (IsMoving() ? acceleration : deceleration) * speedMultiplier;
         rb.linearVelocity = Vector2.MoveTowards(rb.linearVelocity, targetVelocity, rate * Time.fixedDeltaTime);
     }
 
