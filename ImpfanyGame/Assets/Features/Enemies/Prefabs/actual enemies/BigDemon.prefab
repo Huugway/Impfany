@@ -140,7 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   EnemyTracker: {fileID: 0}
-  health: 100
+  health: 250
+  deathAnimationDuration: 0.7
 --- !u!114 &6052552544191119606
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnEnemyScript
   imp: {fileID: 6052552544191119606, guid: d7e0113b457606047ad89b9b42b13d0c, type: 3}
-  bigimp: {fileID: 6052552544191119606, guid: dea58497e39deae4ab6bcf01d6b3a16c, type: 3}
-  playerSuperPosition: {fileID: 0}
+  demon: {fileID: 6052552544191119606, guid: dea58497e39deae4ab6bcf01d6b3a16c, type: 3}
+  bigDemon: {fileID: 6052552544191119606, guid: 5fc2c9acfac2f4b4ca4d022a3e36f260, type: 3}
   gameFlow: {fileID: 0}
   EnemyTracker: {fileID: 214869077784947966}
 --- !u!114 &214869077784947966

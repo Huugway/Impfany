@@ -21,6 +21,12 @@ public class EnemyMovement : MonoBehaviour
     private float knockbackProgress;
     private float stunnedUntil;
     public bool IsStunned => Time.time < stunnedUntil;
+    // ---
+    [SerializeField] private float knockdownThreshold = 1f;
+    [SerializeField] private float standupDuration = 0.4f;
+    private float knockdownUntil;
+    // ---
+
     private void LateUpdate()
     {
         if (player == null)
@@ -48,6 +54,12 @@ public class EnemyMovement : MonoBehaviour
     }
     void Update()
     {
+        // do later in debuff
+        bool inKnockdown = Time.time < knockdownUntil;
+        bool isLying = Time.time < knockdownUntil - standupDuration;
+        animator.SetBool("isKnockedDown", isLying);
+        animator.SetBool("isStunned", IsStunned && !inKnockdown);
+        // ---
         if (player == null)
         {
             animator.SetBool("isCloseEnoughToHit", false);
@@ -56,6 +68,13 @@ public class EnemyMovement : MonoBehaviour
         Updatefacing();
         UpdateHitRange();
     }
+    // remove if debuff exists
+    private void OnDisable()
+    {
+        animator.SetBool("isStunned", false);
+        animator.SetBool("isKnockedDown", false);
+    }
+    // ---
     private void FixedUpdate()
     {
         if (knockbackTime < KnockbackDuration)
@@ -74,10 +93,14 @@ public class EnemyMovement : MonoBehaviour
         moveTowardsPlayer();
     }
 
+    // remove if debuff exists
     public void Stun(float duration)
     {
         stunnedUntil = Mathf.Max(stunnedUntil, Time.time + duration);
+        if (duration >= knockdownThreshold)
+            knockdownUntil = Mathf.Max(knockdownUntil, Time.time + duration);
     }
+    // ---
 
     public void BeginKnockback(Vector2 direction, float distance)
     {

@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 4f12743d70b682541bcb6c899a773aa5
+guid: ab938b10caf69374c887d73ca5e52053
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1238408921735032373
-    second: dead_1-sheet_0
+      213: -7534924035689356946
+    second: ready_1-sheet_0
   - first:
-      213: -5037417438613457931
-    second: dead_1-sheet_1
+      213: -6419443160217620129
+    second: ready_1-sheet_1
   - first:
-      213: 3353701913014178621
-    second: dead_1-sheet_2
+      213: -4678949932964786945
+    second: ready_1-sheet_2
   - first:
-      213: -8331813322747988923
-    second: dead_1-sheet_3
+      213: -5303292222277904131
+    second: ready_1-sheet_3
+  - first:
+      213: -946051714574168228
+    second: ready_1-sheet_4
+  - first:
+      213: 8358225950657673956
+    second: ready_1-sheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dead_1-sheet_0
+      name: ready_1-sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53ee0ba5a56bf2110800000000000000
-      internalID: 1238408921735032373
+      spriteID: e61ee23e2829e6790800000000000000
+      internalID: -7534924035689356946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dead_1-sheet_1
+      name: ready_1-sheet_1
       rect:
         serializedVersion: 2
         x: 200
@@ -146,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f3361a678f771ab0800000000000000
-      internalID: -5037417438613457931
+      spriteID: f51fa6b157e89e6a0800000000000000
+      internalID: -6419443160217620129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dead_1-sheet_2
+      name: ready_1-sheet_2
       rect:
         serializedVersion: 2
         x: 400
@@ -168,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3312c70f1eba8e20800000000000000
-      internalID: 3353701913014178621
+      spriteID: ffccbcb73d7011fb0800000000000000
+      internalID: -4678949932964786945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dead_1-sheet_3
+      name: ready_1-sheet_3
       rect:
         serializedVersion: 2
         x: 600
@@ -190,8 +196,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5443db24de37f5c80800000000000000
-      internalID: -8331813322747988923
+      spriteID: df8980762dbe666b0800000000000000
+      internalID: -5303292222277904131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ready_1-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 200
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f48ad5af2fed2f0800000000000000
+      internalID: -946051714574168228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ready_1-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 200
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eaf665e7326ef370800000000000000
+      internalID: 8358225950657673956
       vertices: []
       indices: 
       edges: []
@@ -200,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 09b3bdc401ac41946beec8fb8562b947
+    spriteID: fd5fcbef75f9dde4fbccf21005b64b1c
     internalID: 0
     vertices: []
     indices: 
@@ -212,10 +262,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":200.0,"y":160.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.10000000149011612},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      dead_1-sheet_0: 1238408921735032373
-      dead_1-sheet_1: -5037417438613457931
-      dead_1-sheet_2: 3353701913014178621
-      dead_1-sheet_3: -8331813322747988923
+      ready_1-sheet_0: -7534924035689356946
+      ready_1-sheet_1: -6419443160217620129
+      ready_1-sheet_2: -4678949932964786945
+      ready_1-sheet_3: -5303292222277904131
+      ready_1-sheet_4: -946051714574168228
+      ready_1-sheet_5: 8358225950657673956
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
