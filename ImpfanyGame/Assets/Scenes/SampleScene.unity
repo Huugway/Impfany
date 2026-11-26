@@ -1968,7 +1968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &218103981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2040,7 +2040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &227683061
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2129,7 +2129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &370120181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126357,7 +126357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &874697706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128111,6 +128111,11 @@ MonoBehaviour:
   hudPanel: {fileID: 7508597375124979611}
   gameOverPanel: {fileID: 6374093310527286430}
   gameWonPanel: {fileID: 6969934178908893383}
+  bigWaveMessage: {fileID: 874697705}
+  bigLevelMessage: {fileID: 370120180}
+  prepTime: 5
+  panelTime: 2
+  bigCompletedMessage: {fileID: 2097988362}
   playerPrefab: {fileID: 2196188914107597601, guid: abc58ebcdc5ac2942954c2883116b7a0, type: 3}
   enemyTracker: {fileID: 169599390}
   waveCountPerLevel: 3
@@ -128758,7 +128763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1583890605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -201939,7 +201944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2097988363
 MonoBehaviour:
   m_ObjectHideFlags: 0

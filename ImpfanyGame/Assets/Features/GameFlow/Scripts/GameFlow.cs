@@ -7,6 +7,11 @@ public class GameFlow : MonoBehaviour
     [SerializeField] private GameObject hudPanel;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject gameWonPanel;
+    [SerializeField] private GameObject bigWaveMessage;
+    [SerializeField] private GameObject bigLevelMessage;
+    [SerializeField] private int prepTime = 5;
+    [SerializeField] private int panelTime = 2;
+    [SerializeField] private GameObject bigCompletedMessage;
     [SerializeField] private GameObject playerPrefab;
 
     private PlayerHealth playerHealth;
@@ -56,6 +61,7 @@ public class GameFlow : MonoBehaviour
     private void EnemyTracker_OnWaveEnd()
     {
         if (waitingForShop) return;
+        if (waveCounter == 0) return;
         if (waveCounter >= waveCountPerLevel)
         {
             EndLevel();
@@ -81,7 +87,7 @@ public class GameFlow : MonoBehaviour
 
         isInShop = false;
         waitingForShop = false;
-        StartWave();
+        StartLevel();
     }
 
     private void EndLevel()
@@ -93,7 +99,7 @@ public class GameFlow : MonoBehaviour
         }
 
         waveCounter = 0;
-        StartLevel();
+        PopUpPanel(bigCompletedMessage, prepTime);
     }
 
     private void Win()
@@ -124,14 +130,18 @@ public class GameFlow : MonoBehaviour
 
         waveCounter++;
         OnWaveStarted?.Invoke(waveCounter);
+        PopUpPanel(bigWaveMessage, panelTime);
     }
 
-    public void StartLevel()
+    public async void StartLevel()
     {
         if (currentStatus != GameStatus.Playing) return;
 
         levelCounter++;
         OnLevelStarted?.Invoke(levelCounter);
+        PopUpPanel(bigLevelMessage, prepTime);
+        await Awaitable.WaitForSecondsAsync(prepTime);
+        StartWave();
     }
 
     public void StartGame()
@@ -143,7 +153,6 @@ public class GameFlow : MonoBehaviour
 
         SetGameStatus(GameStatus.Playing);
         StartLevel();
-        StartWave();
     }
 
     public void RestartGame()
@@ -170,5 +179,12 @@ public class GameFlow : MonoBehaviour
     private void ShowPanel(GameObject panel)
     {
         panel.SetActive(true);
+    }
+
+    private async void PopUpPanel(GameObject panel, int seconds)
+    {
+        panel.SetActive(true);
+        await Awaitable.WaitForSecondsAsync(seconds);
+        panel.SetActive(false);
     }
 }
