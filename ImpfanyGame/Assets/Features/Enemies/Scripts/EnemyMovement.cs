@@ -90,7 +90,7 @@ public class EnemyMovement : MonoBehaviour
         }
 
         if (player == null) return;
-        moveTowardsPlayer();
+        MoveTowardsPlayer();
     }
 
     // remove if debuff exists
@@ -118,7 +118,7 @@ public class EnemyMovement : MonoBehaviour
         knockbackProgress = progress;
     }
 
-    void moveTowardsPlayer() 
+    void MoveTowardsPlayer() 
     {
         float speed = movementSpeed * GetSpeedMultiplier();
         Vector2 newPos = Vector2.MoveTowards(ridgidbody.position, player.transform.position, speed * Time.deltaTime);
@@ -146,8 +146,8 @@ public class EnemyMovement : MonoBehaviour
     void UpdateHitRange()
     {
         isInRange = animator.GetBool("isCloseEnoughToHit");
-        float dx = player.transform.position.x - transform.position.x;
-        if (!IsStunned && Mathf.Abs(dx) < HitRange)
+        float distance = Vector2.Distance(player.transform.position, transform.position);
+        if (!IsStunned && distance < HitRange)
         {
             animator.SetBool("isCloseEnoughToHit", true);
         }

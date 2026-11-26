@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   movementSpeed: 2
   isInRange: 0
-  HitRange: 0.95
+  HitRange: 1
   facingEast: 0
   knockdownThreshold: 1
   standupDuration: 0.4
