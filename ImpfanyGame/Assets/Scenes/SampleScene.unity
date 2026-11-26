@@ -127470,7 +127470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66800ad6e9800074d95f30081c6656a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemSpawner
-  itemPrefab: {fileID: 7656854907781532027, guid: 70bbef4808dd28245a4ee5cb2a180022, type: 3}
+  slots: []
+  itemPool: []
 --- !u!1 &1041928728
 GameObject:
   m_ObjectHideFlags: 0
