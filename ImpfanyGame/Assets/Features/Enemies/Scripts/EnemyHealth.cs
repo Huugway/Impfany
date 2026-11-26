@@ -6,12 +6,17 @@ public class EnemyHealth : MonoBehaviour, IEnemyDamageable
     public float health = 50;
     private EnemyHitFlash hitFlash;
     private EnemyMovement movement;
+    private static readonly int DieParam = Animator.StringToHash("die");
+    [SerializeField] private float deathAnimationDuration = 0.7f;
+    private Animator animator;
+    private bool isDead;
 
     private void Awake()
     {
         EnemyTracker = FindFirstObjectByType<EnemyTracker>();
         hitFlash = GetComponent<EnemyHitFlash>();
         movement = GetComponent<EnemyMovement>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -34,17 +39,25 @@ public class EnemyHealth : MonoBehaviour, IEnemyDamageable
             movement.BeginKnockback(hit.Direction, hit.KnockbackDistance);
             movement.Stun(hit.StunDuration);
 }
+        if (health <= 0f) Die();
         return dealt;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Die()
     {
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
+        if (isDead) return;
+        isDead = true;
+
+        if (animator != null) animator.SetTrigger(DieParam);
+
+        if (movement != null) movement.enabled = false;
+        if (TryGetComponent(out AttackPlayer attack)) attack.enabled = false;
+        if (TryGetComponent(out Collider2D col)) col.enabled = false;
+        if (TryGetComponent(out Rigidbody2D rb)) rb.linearVelocity = Vector2.zero;
+
+        Destroy(gameObject, deathAnimationDuration);
     }
+
     private void OnDestroy()
     {
         if (!gameObject.scene.isLoaded) return;   
