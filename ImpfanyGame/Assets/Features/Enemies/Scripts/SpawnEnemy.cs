@@ -43,9 +43,7 @@ public class SpawnEnemyScript : MonoBehaviour
 
     void SpawnDemon()
     {
-        int ranX = UnityEngine.Random.Range(-20, 20);
-        int ranY = UnityEngine.Random.Range(-20, 20);
-        EnemyMovement enemy = Instantiate(demon, new Vector3(ranX, ranY, 0), Quaternion.identity);
+        EnemyMovement enemy = Instantiate(demon, GetSpawnPosition(), Quaternion.identity);
         enemy.Init(GetPlayer());
         EnemyTracker.addEnemy(1);
         EnemyTracker.addEnemyToList(enemy.gameObject);
@@ -53,9 +51,7 @@ public class SpawnEnemyScript : MonoBehaviour
 
     void SpawnBigDemon()
     {
-        int ranX = UnityEngine.Random.Range(-20, 20);
-        int ranY = UnityEngine.Random.Range(-20, 20);
-        EnemyMovement enemy = Instantiate(bigDemon, new Vector3(ranX, ranY, 0), Quaternion.identity);
+        EnemyMovement enemy = Instantiate(bigDemon, GetSpawnPosition(), Quaternion.identity);
         enemy.Init(GetPlayer());
         EnemyTracker.addEnemy(1);
         EnemyTracker.addEnemyToList(enemy.gameObject);
