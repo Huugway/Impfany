@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15945357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15945358}
+  m_Layer: 0
+  m_Name: Slot 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &15945358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15945357}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.01, y: -1.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 769444660}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &88810790
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,6 +781,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 8220096105316681003, guid: 880ab3f09ccdfd145b59ded6d3da03ca, type: 3}
+      propertyPath: demon
+      value: 
+      objectReference: {fileID: 6052552544191119606, guid: dea58497e39deae4ab6bcf01d6b3a16c, type: 3}
+    - target: {fileID: 8220096105316681003, guid: 880ab3f09ccdfd145b59ded6d3da03ca, type: 3}
+      propertyPath: bigDemon
+      value: 
+      objectReference: {fileID: 6052552544191119606, guid: 5fc2c9acfac2f4b4ca4d022a3e36f260, type: 3}
     - target: {fileID: 8220096105316681003, guid: 880ab3f09ccdfd145b59ded6d3da03ca, type: 3}
       propertyPath: gameFlow
       value: 
@@ -3081,6 +3120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 769444660}
+  - component: {fileID: 769444661}
   m_Layer: 0
   m_Name: Shop
   m_TagString: Untagged
@@ -3102,8 +3142,30 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1026961922}
+  - {fileID: 873001805}
+  - {fileID: 15945358}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769444661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769444659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66800ad6e9800074d95f30081c6656a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemSpawner
+  slots:
+  - {fileID: 1026961922}
+  - {fileID: 873001805}
+  - {fileID: 15945358}
+  itemPool:
+  - {fileID: 7867650950425170837, guid: 0da035abbcb281c4b8a5ad76b4fa45fc, type: 3}
+  - {fileID: 7867650950425170837, guid: 30ad1c58ced2bf2408fc823d0626ce0a, type: 3}
+  - {fileID: 7867650950425170837, guid: 70bbef4808dd28245a4ee5cb2a180022, type: 3}
 --- !u!1 &836378483
 GameObject:
   m_ObjectHideFlags: 0
@@ -126340,6 +126402,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 52.386757, y: 18.852148}
   m_EdgeRadius: 0
+--- !u!1 &873001804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 873001805}
+  m_Layer: 0
+  m_Name: Slot 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &873001805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873001804}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.05, y: -1.49, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 769444660}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &874697705
 GameObject:
   m_ObjectHideFlags: 0
@@ -127427,7 +127520,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1026961922}
-  - component: {fileID: 1026961923}
   m_Layer: 0
   m_Name: Slot 1
   m_TagString: Untagged
@@ -127450,19 +127542,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 769444660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1026961923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026961921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66800ad6e9800074d95f30081c6656a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShopItemSpawner
-  itemPrefab: {fileID: 7656854907781532027, guid: 70bbef4808dd28245a4ee5cb2a180022, type: 3}
 --- !u!1 &1041928728
 GameObject:
   m_ObjectHideFlags: 0
