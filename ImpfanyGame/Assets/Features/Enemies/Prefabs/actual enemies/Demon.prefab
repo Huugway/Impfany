@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   EnemyTracker: {fileID: 0}
   health: 65
+  deathAnimationDuration: 0.7
 --- !u!114 &6052552544191119606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,10 +154,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e967670aecebedc41b87f1100d8c658a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  movementSpeed: 1.7
+  movementSpeed: 2
   isInRange: 0
   HitRange: 0.95
   facingEast: 0
+  knockdownThreshold: 1
+  standupDuration: 0.4
 --- !u!95 &4718466679224433848
 Animator:
   serializedVersion: 7
