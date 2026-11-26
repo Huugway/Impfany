@@ -16,6 +16,8 @@ public class GameFlow : MonoBehaviour
 
     private PlayerHealth playerHealth;
     [SerializeField] private EnemyTracker enemyTracker;
+    [SerializeField] private GameObject doorHitboxes;
+    [SerializeField] private GameObject ArenaLid;
 
     [SerializeField] private int waveCountPerLevel = 10;
     [SerializeField] private int maxLevel = 3;
@@ -100,6 +102,7 @@ public class GameFlow : MonoBehaviour
 
         waveCounter = 0;
         PopUpPanel(bigCompletedMessage, prepTime);
+        LeaveWavePhase(); 
     }
 
     private void Win()
@@ -140,6 +143,7 @@ public class GameFlow : MonoBehaviour
         levelCounter++;
         OnLevelStarted?.Invoke(levelCounter);
         PopUpPanel(bigLevelMessage, prepTime);
+        EnterWavePhase();
         await Awaitable.WaitForSecondsAsync(prepTime);
         StartWave();
     }
@@ -186,5 +190,15 @@ public class GameFlow : MonoBehaviour
         panel.SetActive(true);
         await Awaitable.WaitForSecondsAsync(seconds);
         panel.SetActive(false);
+    }
+    private void EnterWavePhase()
+    {
+        doorHitboxes.SetActive(true);
+        ArenaLid.SetActive(true);
+    }
+    private void LeaveWavePhase()
+    {
+        doorHitboxes.SetActive(false);
+        ArenaLid.SetActive(false);
     }
 }
