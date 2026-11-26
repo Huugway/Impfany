@@ -4,7 +4,8 @@ using UnityEngine;
 public class SpawnEnemyScript : MonoBehaviour
 {
     [SerializeField] private EnemyMovement imp;
-    [SerializeField] private EnemyMovement bigimp;
+    [SerializeField] private EnemyMovement demon;
+    [SerializeField] private EnemyMovement bigDemon;
     private PlayerSuperPosition playerSuperPosition;
     [SerializeField] private GameFlow gameFlow;
     [SerializeField] private EnemyTracker EnemyTracker;
@@ -40,9 +41,21 @@ public class SpawnEnemyScript : MonoBehaviour
         EnemyTracker.addEnemyToList(enemy.gameObject);
     }
 
-    void SpawnBigImp()
+    void SpawnDemon()
     {
-        EnemyMovement enemy = Instantiate(bigimp, GetSpawnPosition(), Quaternion.identity);
+        int ranX = UnityEngine.Random.Range(-20, 20);
+        int ranY = UnityEngine.Random.Range(-20, 20);
+        EnemyMovement enemy = Instantiate(demon, new Vector3(ranX, ranY, 0), Quaternion.identity);
+        enemy.Init(GetPlayer());
+        EnemyTracker.addEnemy(1);
+        EnemyTracker.addEnemyToList(enemy.gameObject);
+    }
+
+    void SpawnBigDemon()
+    {
+        int ranX = UnityEngine.Random.Range(-20, 20);
+        int ranY = UnityEngine.Random.Range(-20, 20);
+        EnemyMovement enemy = Instantiate(bigDemon, new Vector3(ranX, ranY, 0), Quaternion.identity);
         enemy.Init(GetPlayer());
         EnemyTracker.addEnemy(1);
         EnemyTracker.addEnemyToList(enemy.gameObject);
@@ -72,25 +85,27 @@ public class SpawnEnemyScript : MonoBehaviour
         {
             case 1:
                 SpawnImp();
+                SpawnBigDemon();
+                SpawnDemon();
                 break;
             case 2:
-                SpawnBigImp();
+                SpawnDemon();
                 SpawnImp();
                 SpawnImp();
                 break;
             case 3:
-                SpawnBigImp();
-                SpawnBigImp();
+                SpawnDemon();
+                SpawnDemon();
                 SpawnImp();
                 SpawnImp();
                 SpawnImp();
                 break;
             case 4:
-                SpawnBigImp();
-                SpawnBigImp();
-                SpawnBigImp();
-                SpawnBigImp();
-                SpawnBigImp();
+                SpawnDemon();
+                SpawnDemon();
+                SpawnDemon();
+                SpawnDemon();
+                SpawnDemon();
                 SpawnImp();
                 SpawnImp();
                 SpawnImp();
@@ -98,12 +113,12 @@ public class SpawnEnemyScript : MonoBehaviour
                 SpawnImp();
                 break;
             case 5:
-                SpawnBigImp();
-                SpawnBigImp();
-                SpawnBigImp();
-                SpawnBigImp();
-                SpawnBigImp();
-                SpawnBigImp();
+                SpawnDemon();
+                SpawnDemon();
+                SpawnDemon();
+                SpawnDemon();
+                SpawnDemon();
+                SpawnDemon();
                 SpawnImp();
                 SpawnImp();
                 SpawnImp();

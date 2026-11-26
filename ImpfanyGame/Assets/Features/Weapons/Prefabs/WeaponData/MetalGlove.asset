@@ -15,7 +15,7 @@ MonoBehaviour:
   displayName: Metal Glove
   damage: 35
   knockbackDistance: 1.25
-  stunDuration: 0.25
+  stunDuration: 2
   range: 4
   attackAngle: 90
   charge:
