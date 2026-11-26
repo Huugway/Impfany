@@ -48,15 +48,15 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/EnemyHealth.cs": {
-    "mtime": 1795632186.0237753,
-    "seen": 1795703759.885239,
-    "ast_hash": "c45dcff0cb4252cf9c54287f27e44a8e",
+    "mtime": 1795726893.1094522,
+    "seen": 1795733065.1344812,
+    "ast_hash": "8d37c5fea8b4f438684cab9fb498608c",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/EnemyMovement.cs": {
-    "mtime": 1795632186.0357747,
-    "seen": 1795703759.8852417,
-    "ast_hash": "e5f566259f2586bcc4a9a5fce15e35aa",
+    "mtime": 1795726893.1135633,
+    "seen": 1795733065.1344845,
+    "ast_hash": "034ff02edb5d02bc551e278b80549a89",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/EnemyTracker.cs": {
@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/SpawnEnemy.cs": {
-    "mtime": 1795705398.8642893,
-    "seen": 1795705404.9001858,
-    "ast_hash": "bcdc9d2d9c9a9568c0a3a764001fb28c",
+    "mtime": 1795709550.5088983,
+    "seen": 1795733065.1344867,
+    "ast_hash": "e95cdb3405e8e83d08556ecce6fcc73f",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/dropCoin.cs": {
@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Player/Scripts/PlayerMovement.cs": {
-    "mtime": 1795552715.0008466,
-    "seen": 1795552742.0235686,
-    "ast_hash": "f8305a7c59da3d2256e1c31c1689b7cf",
+    "mtime": 1795726893.2678268,
+    "seen": 1795733065.1345117,
+    "ast_hash": "6ec0161e68a0fe7eeb21548db126675d",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Player/Scripts/PlayerSuperPosition.cs": {
@@ -491,630 +491,6 @@
     "ast_hash": "2e94b059cd61de156e3004ca1cd9fa7b",
     "semantic_hash": ""
   },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/attack1_1.png": {
-    "mtime": 1794490644.3322372,
-    "seen": 1795543291.952825,
-    "ast_hash": "bda6922319c073019dec4a19167ab2c7",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/attack1_2.png": {
-    "mtime": 1794490644.3337522,
-    "seen": 1795543291.9528255,
-    "ast_hash": "f1b8d05ee8df4382fdec385a449ec2bd",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/attack1_3.png": {
-    "mtime": 1794490644.334775,
-    "seen": 1795543291.9528267,
-    "ast_hash": "da60a0b0bcfc6896b112219462c576c6",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/attack1_4.png": {
-    "mtime": 1794490644.334775,
-    "seen": 1795543291.9528272,
-    "ast_hash": "1dcfb22e468e78f22c479b277b9efb5f",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/attack1_5.png": {
-    "mtime": 1794490644.336286,
-    "seen": 1795543291.952828,
-    "ast_hash": "2670070253c915b76d454d3a638d04ea",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/attack1_6.png": {
-    "mtime": 1794490644.3367965,
-    "seen": 1795543291.9528284,
-    "ast_hash": "eadca90b96d0d188d7ffb5229cf6e4a7",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/attack2_1.png": {
-    "mtime": 1794490644.337307,
-    "seen": 1795543291.9528291,
-    "ast_hash": "bda6922319c073019dec4a19167ab2c7",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/attack2_2.png": {
-    "mtime": 1794490644.3378215,
-    "seen": 1795543291.9528298,
-    "ast_hash": "585e4c999a98d6a81cee52db123cb678",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/attack2_3.png": {
-    "mtime": 1794490644.3393378,
-    "seen": 1795543291.9528308,
-    "ast_hash": "c0be65f6271204f7aa5fa340b07deafa",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/attack2_4.png": {
-    "mtime": 1794490644.3398416,
-    "seen": 1795543291.9528313,
-    "ast_hash": "6e234c040b007747f498895d38784edb",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/attack2_5.png": {
-    "mtime": 1794490644.3408608,
-    "seen": 1795543291.952832,
-    "ast_hash": "3662b45578d2a5107fdbcf6266b725cd",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/attack2_6.png": {
-    "mtime": 1794490644.3408608,
-    "seen": 1795543291.9528325,
-    "ast_hash": "3f17b9a9ac074272f73a4bea8bbb03cf",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/fall_back_1.png": {
-    "mtime": 1794490644.3408608,
-    "seen": 1795543291.9528332,
-    "ast_hash": "6b941370561afd479dc709897838c1c0",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/fall_back_2.png": {
-    "mtime": 1794490644.3423722,
-    "seen": 1795543291.952834,
-    "ast_hash": "2acb1feec2450a7b55bf2ffdff88809b",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/fall_back_3.png": {
-    "mtime": 1794490644.3434167,
-    "seen": 1795543291.9528372,
-    "ast_hash": "585078b6efc85338617755a20f77d49f",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/fall_back_4.png": {
-    "mtime": 1794490644.3439267,
-    "seen": 1795543291.952838,
-    "ast_hash": "5a48a1edc87103ef05e6cfa5f885f931",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/fall_back_5.png": {
-    "mtime": 1794490644.3444374,
-    "seen": 1795543291.9528387,
-    "ast_hash": "89a9e24fc64897748fdf727ee574c879",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/hit_1.png": {
-    "mtime": 1794490644.3444374,
-    "seen": 1795543291.9528394,
-    "ast_hash": "6b941370561afd479dc709897838c1c0",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/hit_2.png": {
-    "mtime": 1794490644.34595,
-    "seen": 1795543291.95284,
-    "ast_hash": "8b065e363ed06d87526554657fae7c8f",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/hit_3.png": {
-    "mtime": 1794490644.346462,
-    "seen": 1795543291.9528408,
-    "ast_hash": "bff0d7a59978171fb9c0bbb5e4c8db1f",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/jump_1.png": {
-    "mtime": 1794490644.3469732,
-    "seen": 1795543291.9528415,
-    "ast_hash": "631623fd72ebe874185689b4e247f863",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/jump_2.png": {
-    "mtime": 1794490644.3469732,
-    "seen": 1795543291.952842,
-    "ast_hash": "f8153a258d99a936c1ece9476e983002",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/jump_3.png": {
-    "mtime": 1794490644.3469732,
-    "seen": 1795543291.9528427,
-    "ast_hash": "fd7339b3d557bde4151d50b4e1f90811",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/jump_4.png": {
-    "mtime": 1794490644.3484862,
-    "seen": 1795543291.9528434,
-    "ast_hash": "6b5a2377b69c6478603f6143d0de2b67",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/jump_5.png": {
-    "mtime": 1794490644.349491,
-    "seen": 1795543291.9528441,
-    "ast_hash": "56d2037fe8e0279d4e30169846787253",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/ready_1.png": {
-    "mtime": 1794490644.349995,
-    "seen": 1795543291.9528449,
-    "ast_hash": "b360d9d5044c0ed2894efb9d11e82bdf",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/ready_2.png": {
-    "mtime": 1794490644.3505075,
-    "seen": 1795543291.9528453,
-    "ast_hash": "90f83747e61402bd1c46b248e62f7312",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/ready_3.png": {
-    "mtime": 1794490644.3510177,
-    "seen": 1795543291.952846,
-    "ast_hash": "22fa84526c7baaad6b8d2326a4551c79",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/ready_4.png": {
-    "mtime": 1794490644.3520222,
-    "seen": 1795543291.9528468,
-    "ast_hash": "22fa84526c7baaad6b8d2326a4551c79",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/ready_5.png": {
-    "mtime": 1794490644.353029,
-    "seen": 1795543291.9528477,
-    "ast_hash": "90f83747e61402bd1c46b248e62f7312",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/ready_6.png": {
-    "mtime": 1794490644.3535385,
-    "seen": 1795543291.9528484,
-    "ast_hash": "b360d9d5044c0ed2894efb9d11e82bdf",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/run_1.png": {
-    "mtime": 1794490644.3540542,
-    "seen": 1795543291.952849,
-    "ast_hash": "9e67d494ccd72766591504573a023991",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/run_2.png": {
-    "mtime": 1794490644.3545644,
-    "seen": 1795543291.9528496,
-    "ast_hash": "ce0d6d9e46e6fb2dd5e14f34c1e84be8",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/run_3.png": {
-    "mtime": 1794490644.3555853,
-    "seen": 1795543291.95285,
-    "ast_hash": "09cf1ba41d435b9eabfd23c6a81c4317",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/run_4.png": {
-    "mtime": 1794490644.356096,
-    "seen": 1795543291.952851,
-    "ast_hash": "43a0661975e22f27dcb60dcf92ae90d9",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/run_5.png": {
-    "mtime": 1794490644.356742,
-    "seen": 1795543291.9528518,
-    "ast_hash": "2dad30ad7a5a180d297cd288b7656a89",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/run_6.png": {
-    "mtime": 1794490644.3572595,
-    "seen": 1795543291.9528522,
-    "ast_hash": "465cf0813df1ac675c415398dbd63cf2",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/stand_up_1.png": {
-    "mtime": 1794490644.3582633,
-    "seen": 1795543291.952853,
-    "ast_hash": "27b76043744a9fedbc372bbd056bd30a",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/stand_up_2.png": {
-    "mtime": 1794490644.3587666,
-    "seen": 1795543291.9528534,
-    "ast_hash": "9e50323154fa14b7f585ff26c7964b15",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/stand_up_3.png": {
-    "mtime": 1794490644.3592784,
-    "seen": 1795543291.9528542,
-    "ast_hash": "cffbb53c34d866878ab5f603047c8bd1",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/stand_up_4.png": {
-    "mtime": 1794490644.3598194,
-    "seen": 1795543291.952855,
-    "ast_hash": "792ae739e371f2247542e86007ee0dab",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/stand_up_5.png": {
-    "mtime": 1794490644.360843,
-    "seen": 1795543291.9528558,
-    "ast_hash": "758b5072e48981fd935138e13131f156",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/walk_1.png": {
-    "mtime": 1794490644.361377,
-    "seen": 1795543291.9528565,
-    "ast_hash": "e96f96b248136b8feb04d6d917168ae4",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/walk_2.png": {
-    "mtime": 1794490644.361888,
-    "seen": 1795543291.9528573,
-    "ast_hash": "eee5b6ae41740bbf8da975811fd21fe4",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/walk_3.png": {
-    "mtime": 1794490644.362914,
-    "seen": 1795543291.9528582,
-    "ast_hash": "018f54ffb8e97381633c818d5b5b7285",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/walk_4.png": {
-    "mtime": 1794490644.3639321,
-    "seen": 1795543291.9528587,
-    "ast_hash": "dd4ab86df96f4feed3037da4e52a4a40",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/walk_5.png": {
-    "mtime": 1794490644.3646085,
-    "seen": 1795543291.9528594,
-    "ast_hash": "04d1e32f8feeb1372944161f20f771a5",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/BigImp/walk_6.png": {
-    "mtime": 1794490644.3651197,
-    "seen": 1795543291.95286,
-    "ast_hash": "77a8904bcf229cf3c4c00ec33b592d9e",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/attack1_1.png": {
-    "mtime": 1794490644.365851,
-    "seen": 1795543291.9528606,
-    "ast_hash": "9d77ead2eb4304d4120e9cdb8b741326",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/attack1_2.png": {
-    "mtime": 1794490644.366878,
-    "seen": 1795543291.9528615,
-    "ast_hash": "e766ab895ab2bf1e838ad44cf131b710",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/attack1_3.png": {
-    "mtime": 1794490644.367389,
-    "seen": 1795543291.9528623,
-    "ast_hash": "a44272b7d28a5fed57d2f843d2a764d9",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/attack1_4.png": {
-    "mtime": 1794490644.367389,
-    "seen": 1795543291.952863,
-    "ast_hash": "05bf724a9d32102acc5b0ee9a43afd31",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/attack1_5.png": {
-    "mtime": 1794490644.3683932,
-    "seen": 1795543291.9528635,
-    "ast_hash": "ca73f5ecece40cd44d717b313d5f807b",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/attack1_6.png": {
-    "mtime": 1794490644.3688965,
-    "seen": 1795543291.9528642,
-    "ast_hash": "142239eace969034a203709f03c72d3a",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/attack2_1.png": {
-    "mtime": 1794490644.3699007,
-    "seen": 1795543291.9528651,
-    "ast_hash": "9d77ead2eb4304d4120e9cdb8b741326",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/attack2_2.png": {
-    "mtime": 1794490644.3704033,
-    "seen": 1795543291.9528656,
-    "ast_hash": "bcd854c93e12c52e5b6cd6f6117ba3e2",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/attack2_3.png": {
-    "mtime": 1794490644.3709173,
-    "seen": 1795543291.9528663,
-    "ast_hash": "bb28f316ca3ac13ba4bea0fa09d1ebef",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/attack2_4.png": {
-    "mtime": 1794490644.3714273,
-    "seen": 1795543291.952867,
-    "ast_hash": "6b3f4819b7f478ff01d3d648968335ee",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/attack2_5.png": {
-    "mtime": 1794490644.3714273,
-    "seen": 1795543291.9528677,
-    "ast_hash": "e7700e6206b16808eec49d3732e6395b",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/attack2_6.png": {
-    "mtime": 1794490644.3729396,
-    "seen": 1795543291.9528685,
-    "ast_hash": "3923e70b8b4ba1e190f407e53ec385e6",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/dead_1.png": {
-    "mtime": 1794490644.3739438,
-    "seen": 1795543291.9528692,
-    "ast_hash": "9d77ead2eb4304d4120e9cdb8b741326",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/dead_2.png": {
-    "mtime": 1794490644.374447,
-    "seen": 1795543291.95287,
-    "ast_hash": "905748f8e80c9f8592e4f16b944cf6b2",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/dead_3.png": {
-    "mtime": 1794490644.374447,
-    "seen": 1795543291.9528704,
-    "ast_hash": "f727312de2bd99b721874588f879f0b3",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/dead_4.png": {
-    "mtime": 1794490644.375958,
-    "seen": 1795543291.952871,
-    "ast_hash": "26b7ff4bc633df29a45618622ac06d93",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/fall_back_1.png": {
-    "mtime": 1794490644.375958,
-    "seen": 1795543291.9528716,
-    "ast_hash": "9d77ead2eb4304d4120e9cdb8b741326",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/fall_back_2.png": {
-    "mtime": 1794490644.377475,
-    "seen": 1795543291.9528725,
-    "ast_hash": "6d8cea23db5baa9513140486fd7321c0",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/fall_back_3.png": {
-    "mtime": 1794490644.378502,
-    "seen": 1795543291.9528732,
-    "ast_hash": "a4ec95f90975b0d6a34cb95d7a481f06",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/fall_back_4.png": {
-    "mtime": 1794490644.379012,
-    "seen": 1795543291.9528737,
-    "ast_hash": "bde8716e3094bde0edbc9ec717e94d8d",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/hit_1.png": {
-    "mtime": 1794490644.379526,
-    "seen": 1795543291.9528744,
-    "ast_hash": "9d77ead2eb4304d4120e9cdb8b741326",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/hit_2.png": {
-    "mtime": 1794490644.3805485,
-    "seen": 1795543291.952875,
-    "ast_hash": "f05875ad631eb9e95da4ce8bded3f99f",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/hit_3.png": {
-    "mtime": 1794490644.3810694,
-    "seen": 1795543291.9528759,
-    "ast_hash": "fadbf53fd6b81bbe6b8bba1de19d5152",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/jump_1.png": {
-    "mtime": 1794490644.3815804,
-    "seen": 1795543291.9528763,
-    "ast_hash": "9d77ead2eb4304d4120e9cdb8b741326",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/jump_2.png": {
-    "mtime": 1794490644.382585,
-    "seen": 1795543291.952877,
-    "ast_hash": "d69b286a4073fa306f94bfe2253c0428",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/jump_3.png": {
-    "mtime": 1794490644.3830884,
-    "seen": 1795543291.9528778,
-    "ast_hash": "59d862d874ca261870f5679457692dc9",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/jump_4.png": {
-    "mtime": 1794490644.3835921,
-    "seen": 1795543291.9528782,
-    "ast_hash": "f7c323c26db99d608ee89e58213f1bce",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/jump_5.png": {
-    "mtime": 1794490644.3846214,
-    "seen": 1795543291.9528792,
-    "ast_hash": "52cde3e899e1fe38d7f0bbada2477507",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/ready_1.png": {
-    "mtime": 1794490644.3851311,
-    "seen": 1795543291.9528797,
-    "ast_hash": "9d77ead2eb4304d4120e9cdb8b741326",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/ready_2.png": {
-    "mtime": 1794490644.3851311,
-    "seen": 1795543291.9528804,
-    "ast_hash": "9f01164611dcda66826d21f7395384aa",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/ready_3.png": {
-    "mtime": 1794490644.3866403,
-    "seen": 1795543291.9528818,
-    "ast_hash": "13b79b32550a66c1278ff0ef91264290",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/ready_4.png": {
-    "mtime": 1794490644.3881483,
-    "seen": 1795543291.9528828,
-    "ast_hash": "13b79b32550a66c1278ff0ef91264290",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/ready_5.png": {
-    "mtime": 1794490644.3881483,
-    "seen": 1795543291.9528835,
-    "ast_hash": "9f01164611dcda66826d21f7395384aa",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/ready_6.png": {
-    "mtime": 1794490644.3896587,
-    "seen": 1795543291.9528842,
-    "ast_hash": "9d77ead2eb4304d4120e9cdb8b741326",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/run_1.png": {
-    "mtime": 1794490644.390191,
-    "seen": 1795543291.9528847,
-    "ast_hash": "4fc648e4dc353b118e850909d116fc0a",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/run_2.png": {
-    "mtime": 1794490644.3907,
-    "seen": 1795543291.9528854,
-    "ast_hash": "a6b1f87f83e20260cbd1fd292b1a7989",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/run_3.png": {
-    "mtime": 1794490644.3920226,
-    "seen": 1795543291.952886,
-    "ast_hash": "9d10364a0cc9ee41263523d6a7131a90",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/run_4.png": {
-    "mtime": 1794490644.392542,
-    "seen": 1795543291.9528868,
-    "ast_hash": "2cf2f8c6e1eae128b815b01b59f8d34f",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/run_5.png": {
-    "mtime": 1794490644.3930502,
-    "seen": 1795543291.9528873,
-    "ast_hash": "8ebde702a621f384c3fb0ac3a26ad655",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/run_6.png": {
-    "mtime": 1794490644.3940687,
-    "seen": 1795543291.952888,
-    "ast_hash": "337b7ed154d2f1ebc3174089cbce0274",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/stand_up_1.png": {
-    "mtime": 1794490644.3940687,
-    "seen": 1795543291.9528885,
-    "ast_hash": "12a56f0f4de2f60cc66d15affb947713",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/stand_up_2.png": {
-    "mtime": 1794490644.3955796,
-    "seen": 1795543291.9528894,
-    "ast_hash": "b510d02d0e2d0a77d46c993cabac6632",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/stand_up_3.png": {
-    "mtime": 1794490644.3955796,
-    "seen": 1795543291.9528902,
-    "ast_hash": "b0be9ee899774ef2f2c9993c5dba4a29",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/stand_up_4.png": {
-    "mtime": 1794490644.3970897,
-    "seen": 1795543291.9528909,
-    "ast_hash": "52cde3e899e1fe38d7f0bbada2477507",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/stand_up_5.png": {
-    "mtime": 1794490644.3976033,
-    "seen": 1795543291.9528913,
-    "ast_hash": "9d77ead2eb4304d4120e9cdb8b741326",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/walk_1.png": {
-    "mtime": 1794490644.3981137,
-    "seen": 1795543291.952892,
-    "ast_hash": "94ac023c9deda69a298730b3408aedb4",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/walk_2.png": {
-    "mtime": 1794490644.3981137,
-    "seen": 1795543291.952893,
-    "ast_hash": "2f51f37c37e78c4083fa3c516306ce7b",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/walk_3.png": {
-    "mtime": 1794490644.3996227,
-    "seen": 1795543291.9528935,
-    "ast_hash": "84abe68a2f3edc46241362ee4c7d8b3f",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/walk_4.png": {
-    "mtime": 1794490644.4006264,
-    "seen": 1795543291.9528942,
-    "ast_hash": "5705b2be38e4a37d72ed2ff01b2ce513",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/walk_5.png": {
-    "mtime": 1794490644.4011302,
-    "seen": 1795543291.9528947,
-    "ast_hash": "51772d4fe9571f0f038c77bc5683374b",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/Demon/walk_6.png": {
-    "mtime": 1794490644.4021373,
-    "seen": 1795543291.9528954,
-    "ast_hash": "b68be0f7d4fd715cf6c6c4cb21c67f53",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/SmallImpAttack.png": {
-    "mtime": 1794517989.2530577,
-    "seen": 1795543291.952896,
-    "ast_hash": "b95b59b838c1ce1da538b4afb7d05535",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/SmallImpDeathPH.png": {
-    "mtime": 1794517989.2766802,
-    "seen": 1795543291.9528968,
-    "ast_hash": "202682337256d99a946ed90d6207b19c",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/SmallImpHitPH.png": {
-    "mtime": 1794517989.2882378,
-    "seen": 1795543291.9528973,
-    "ast_hash": "8022321407841eb3d0cd770d4164c3e7",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/SmallImpIdlePH.png": {
-    "mtime": 1794517989.2988024,
-    "seen": 1795543291.952898,
-    "ast_hash": "0ebcb4bf337ade10b09e1c068c84220b",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Enemies/Fantas/SmallImpRunPH.png": {
-    "mtime": 1794517989.3253717,
-    "seen": 1795543291.9528985,
-    "ast_hash": "1225861986dc236105834af0b14542d5",
-    "semantic_hash": ""
-  },
   "ImpfanyGame/Assets/Features/GameFlow/Sprites/Placeholder/Heart.png": {
     "mtime": 1794483310.186762,
     "seen": 1795543291.9528992,
@@ -1170,9 +546,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Items/Scripts/ItemBuff.cs": {
-    "mtime": 1795704500.3284245,
-    "seen": 1795704511.2019184,
-    "ast_hash": "9fe4c958a0244e70916da4cb736a1ce5",
+    "mtime": 1795733549.423275,
+    "seen": 1795733553.6768832,
+    "ast_hash": "23d22bf0f601ae2b0579f425c193552a",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Modifiers/Scripts/IModifiable.cs": {
@@ -4077,6 +3453,162 @@
     "mtime": 1795702830.9525487,
     "seen": 1795704511.2024279,
     "ast_hash": "9073c802979787a291fb1337840e919e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Coin/Scripts/CoinMagnet.cs": {
+    "mtime": 1795726893.0517416,
+    "seen": 1795733065.1344757,
+    "ast_hash": "08f06270d715bdb97936c6075420066b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Hoodini.png": {
+    "mtime": 1795729203.4917533,
+    "seen": 1795733065.1345687,
+    "ast_hash": "f0a98cde6df8d7d01134e5175657433d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprite-0001-Recovered-export 1.png": {
+    "mtime": 1795731705.2916741,
+    "seen": 1795733065.13457,
+    "ast_hash": "5e0f0e26c2ca02eaa0d8b8d15fd60829",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprite-0001-Recovered-export.png": {
+    "mtime": 1795731650.3388007,
+    "seen": 1795733065.1345716,
+    "ast_hash": "d3caed185b738eb135747b19c2d19622",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprite-0001-Recovered.png": {
+    "mtime": 1795731604.5856707,
+    "seen": 1795733065.1345727,
+    "ast_hash": "6c64887b8dafcb29cb422f9d70ae3ced",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Coin/coin2_16x16.png": {
+    "mtime": 1795726893.0613444,
+    "seen": 1795733065.135009,
+    "ast_hash": "ee0ec00bddaf7e4dab0da7afebee74be",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/BigDemon/Sprites/attack1_1-sheet.png": {
+    "mtime": 1795726893.154341,
+    "seen": 1795733065.1350098,
+    "ast_hash": "c84365bca3659164f09b0fddb54c105e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/BigDemon/Sprites/dead_1-sheet 1.png": {
+    "mtime": 1795726893.161989,
+    "seen": 1795733065.1350105,
+    "ast_hash": "3007174c66b51fe232462e19f4eb25dd",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/BigDemon/Sprites/fall_back_1-sheet.png": {
+    "mtime": 1795726893.1730678,
+    "seen": 1795733065.1350114,
+    "ast_hash": "56ab2cc820091ad6b6cdaed148cca027",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/BigDemon/Sprites/hit_1-sheet.png": {
+    "mtime": 1795726893.1786008,
+    "seen": 1795733065.1350124,
+    "ast_hash": "18f1143dc5c10bcf5281cf4305ba8a0e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/BigDemon/Sprites/ready_1-sheet.png": {
+    "mtime": 1795726893.1866686,
+    "seen": 1795733065.135013,
+    "ast_hash": "b265d6e147932b2c6904eec7bb76634b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/BigDemon/Sprites/stand_up_1-sheet.png": {
+    "mtime": 1795726893.1927006,
+    "seen": 1795733065.1350138,
+    "ast_hash": "027139dbbca91980d37c703836a02447",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/BigDemon/Sprites/walk_1-sheet.png": {
+    "mtime": 1795726893.1937008,
+    "seen": 1795733065.1350143,
+    "ast_hash": "4aff0fe40d3a55c57c05125fa86e0c96",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/Demon/Sprites/attack2_1-sheet.png": {
+    "mtime": 1795726893.2230773,
+    "seen": 1795733065.1350152,
+    "ast_hash": "9069041b36291e3903d81e346b57bf50",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/Demon/Sprites/death.png": {
+    "mtime": 1795726893.2301211,
+    "seen": 1795733065.135016,
+    "ast_hash": "12d4776f1ee7735ec1ba3018d1c411f7",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/Demon/Sprites/fall_back.png": {
+    "mtime": 1795726893.2356584,
+    "seen": 1795733065.1350167,
+    "ast_hash": "423968e0550960844194d7c3ac4dafbc",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/Demon/Sprites/hit_1-sheet.png": {
+    "mtime": 1795726893.2371657,
+    "seen": 1795733065.1350172,
+    "ast_hash": "b960aa054e84637b9c12e3e41c2ca393",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/Demon/Sprites/ready_1-sheet.png": {
+    "mtime": 1795726893.2386773,
+    "seen": 1795733065.1350179,
+    "ast_hash": "4adcc32e861c2c73da45a3acf02c9e8e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/Demon/Sprites/run_1-sheet.png": {
+    "mtime": 1795726893.2396772,
+    "seen": 1795733065.1350188,
+    "ast_hash": "6111c9bda677c690788e28e1d30c8b22",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/Demon/Sprites/stand_up_1-sheet.png": {
+    "mtime": 1795726893.2417138,
+    "seen": 1795733065.1350195,
+    "ast_hash": "1bf385444fdb77080c3eb6a88b7042f6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/Imp/Sprites/ImpAttack.png": {
+    "mtime": 1795726893.2575376,
+    "seen": 1795733065.13502,
+    "ast_hash": "ae96daa4884152fc43ce5defa2f4f94e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/Imp/Sprites/ImpDeath.png": {
+    "mtime": 1795726893.2585385,
+    "seen": 1795733065.1350207,
+    "ast_hash": "73517e191999fa6878c2ce49ba2afd4f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/Imp/Sprites/ImpHit.png": {
+    "mtime": 1795726893.259537,
+    "seen": 1795733065.1350212,
+    "ast_hash": "b1c16dfb31885a993e7763159862a940",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/Imp/Sprites/ImpIdle.png": {
+    "mtime": 1795726893.2607403,
+    "seen": 1795733065.1350222,
+    "ast_hash": "9482f89132b15549832631059acbbe40",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/VisualsEnemy/Imp/Sprites/ImpRun.png": {
+    "mtime": 1795726893.2617452,
+    "seen": 1795733065.135023,
+    "ast_hash": "142bc7ac71812fe32f4f454b33e7bded",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/UI/EKey.png": {
+    "mtime": 1795733550.5812194,
+    "seen": 1795733553.6773708,
+    "ast_hash": "1c97ee1b77d137036d92e29d1f754a28",
     "semantic_hash": ""
   }
 }

@@ -1,7 +1,7 @@
 using Impfany.Modifiers;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-// Item in der Welt: Läuft der Player rein, bekommt er dauerhaft einen Buff.
 // Boots: Stat = MoveSpeed, Multiplier = 1.15 (+15 %)
 // Herz:  Multiplier = 1, Max Health Bonus = 1 (+1 Herz)
 // Braucht einen Collider2D mit "Is Trigger" an.
@@ -13,19 +13,47 @@ public class ItemBuff : MonoBehaviour
     [Tooltip("Zusätzliche Max-HP (Herzen). 0 = kein HP-Bonus.")]
     [SerializeField, Min(0)] private int maxHealthBonus = 0;
 
+    [SerializeField, Min(0)] private int price = 15;
+    [SerializeField] private GameObject buyPrompt;
+
     public event System.Action<ItemBuff> OnPickedUp;
     private bool pickedUp;
+    private Collider2D playerInRange;
+
+    private void Awake()
+    {
+        if (buyPrompt != null) buyPrompt.SetActive(false);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (pickedUp || !other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player")) return;
+        playerInRange = other;
+        if (buyPrompt != null) buyPrompt.SetActive(true);
+    }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other != playerInRange) return;
+        playerInRange = null;
+        if (buyPrompt != null) buyPrompt.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (pickedUp || playerInRange == null) return;
+        if (Keyboard.current == null || !Keyboard.current.eKey.wasPressedThisFrame) return;
+
+        Collider2D other = playerInRange;
         IModifiable target = other.GetComponentInParent<IModifiable>();
         if (target == null)
         {
             Debug.LogError("Player hat kein StatModifiers-Script.", other);
             return;
         }
+
+        PlayerWallet wallet = other.GetComponentInParent<PlayerWallet>();
+        if (wallet == null || !wallet.TrySpend(price)) return;
 
         // Quelle = dieses Item, nicht cleansable -> bleibt für immer und stapelt mit weiteren Items
         // Multiplier 1 = kein Stat-Buff (z. B. reines HP-Item)
