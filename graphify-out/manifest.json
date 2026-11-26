@@ -36,9 +36,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/AttackPlayer.cs": {
-    "mtime": 1794519637.3608022,
-    "seen": 1795543291.9527576,
-    "ast_hash": "b22b5b09955f618ceaa6037a513c9e5e",
+    "mtime": 1795632186.019771,
+    "seen": 1795703759.8852363,
+    "ast_hash": "9ce444ac179b218236f9d04bbb9c4dc5",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/CollectCoin.cs": {
@@ -48,15 +48,15 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/EnemyHealth.cs": {
-    "mtime": 1795116294.8427017,
-    "seen": 1795543291.9527595,
-    "ast_hash": "f0a22c1911b9a434c25c20518ab4b042",
+    "mtime": 1795632186.0237753,
+    "seen": 1795703759.885239,
+    "ast_hash": "c45dcff0cb4252cf9c54287f27e44a8e",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/EnemyMovement.cs": {
-    "mtime": 1795552732.0984921,
-    "seen": 1795552742.023543,
-    "ast_hash": "8f7a43e7a5eaef674782f2a777ee746e",
+    "mtime": 1795632186.0357747,
+    "seen": 1795703759.8852417,
+    "ast_hash": "e5f566259f2586bcc4a9a5fce15e35aa",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/EnemyTracker.cs": {
@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/SpawnEnemy.cs": {
-    "mtime": 1794532880.1054974,
-    "seen": 1795543291.9527626,
-    "ast_hash": "a2bf6e794cdb07cb58242ef0d3345636",
+    "mtime": 1795705398.8642893,
+    "seen": 1795705404.9001858,
+    "ast_hash": "bcdc9d2d9c9a9568c0a3a764001fb28c",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Enemies/Scripts/dropCoin.cs": {
@@ -78,9 +78,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/GameFlow/Scripts/GameFlow.cs": {
-    "mtime": 1795546749.2828865,
-    "seen": 1795551010.1745179,
-    "ast_hash": "8ddbbf0fd6a42ef54f70e132bd0f9c66",
+    "mtime": 1795703745.013451,
+    "seen": 1795703759.885248,
+    "ast_hash": "d3fd1daf72306e355ff5d46981af88f8",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/GameFlow/Scripts/GameStatus.cs": {
@@ -90,9 +90,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/GameFlow/Scripts/UI/HUD/HeartHUD.cs": {
-    "mtime": 1795549794.9556155,
-    "seen": 1795551010.17452,
-    "ast_hash": "09923963742822ad86d10ae01ce85942",
+    "mtime": 1795704507.6332924,
+    "seen": 1795704511.201908,
+    "ast_hash": "9a24e98aa20ca197437bb62e0ae2bd4b",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/GameFlow/Scripts/UI/HUD/LevelTextPresenter.cs": {
@@ -156,9 +156,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Player/Scripts/PlayerHealth.cs": {
-    "mtime": 1795549794.9571245,
-    "seen": 1795551010.1745367,
-    "ast_hash": "9494641bfc7cfc69aff1a63ef467ed83",
+    "mtime": 1795704492.6078668,
+    "seen": 1795704511.2019296,
+    "ast_hash": "25eea9db5bda9bef795f07e89f89d08b",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Player/Scripts/PlayerMovement.cs": {
@@ -192,9 +192,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Progression/Scripts/Interfaces/IEnemyDamageable.cs": {
-    "mtime": 1794519468.9816384,
-    "seen": 1795543291.9527807,
-    "ast_hash": "f925e5bcb367b03f645e0aea6e449c03",
+    "mtime": 1795632186.0596514,
+    "seen": 1795703759.885279,
+    "ast_hash": "b578267c12d37cff4e29519f276a5000",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Progression/Scripts/Interfaces/IWeaponUser.cs": {
@@ -204,9 +204,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Progression/Scripts/Test/WeaponDamageDummy.cs": {
-    "mtime": 1794519463.5505545,
-    "seen": 1795543291.9527822,
-    "ast_hash": "ebcec79c3c28d374c8200ae82dcef12f",
+    "mtime": 1795632186.0627847,
+    "seen": 1795703759.8852816,
+    "ast_hash": "115245de961e04f126ece022540de5ab",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Progression/Scripts/Test/WeaponDebugAttackBehaviour.cs": {
@@ -225,54 +225,6 @@
     "mtime": 1794483310.2104938,
     "seen": 1795543291.9527843,
     "ast_hash": "40bf5d458a28a008cb751ebf1f41c744",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Progression/Scripts/Weapon/AttackBehaviours/MeeleCone/MeleeConeAttackBehaviour.cs": {
-    "mtime": 1795549794.9591465,
-    "seen": 1795551010.1745481,
-    "ast_hash": "80b363433eac2219e57ac9b788e942ed",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Progression/Scripts/Weapon/AttackBehaviours/MeeleCone/MeleeConeIndicator.cs": {
-    "mtime": 1794516570.8162677,
-    "seen": 1795543291.9527862,
-    "ast_hash": "239cd438496e2cd9867d706f71c8c3cd",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Progression/Scripts/Weapon/AttackBehaviours/MeeleCone/MeleeConeShape.cs": {
-    "mtime": 1794516570.8288214,
-    "seen": 1795543291.9527879,
-    "ast_hash": "22062e498b87a94ce649ff367b62d15b",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Progression/Scripts/Weapon/Weapon.cs": {
-    "mtime": 1794516570.842755,
-    "seen": 1795543291.9527888,
-    "ast_hash": "aa13edb3da147d4a056ae43a95446d70",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Progression/Scripts/Weapon/WeaponAttackBehaviour.cs": {
-    "mtime": 1794483310.2140298,
-    "seen": 1795543291.9527895,
-    "ast_hash": "d0e181e96ac00febb3bc1ae30779d31a",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Progression/Scripts/Weapon/WeaponPhase.cs": {
-    "mtime": 1794483310.2175877,
-    "seen": 1795543291.9527903,
-    "ast_hash": "03f5b5adcd4050de2992ea7024e6a7df",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Progression/Scripts/Weapon/WeaponSettings.cs": {
-    "mtime": 1794483310.2181005,
-    "seen": 1795543291.9527907,
-    "ast_hash": "fd2612f424479ebdecaa125c8b32cd99",
-    "semantic_hash": ""
-  },
-  "ImpfanyGame/Assets/Features/Shop/ScriopScripts/PlayerEnterShopScript.cs": {
-    "mtime": 1795547312.2176743,
-    "seen": 1795551010.1745546,
-    "ast_hash": "366b7c5c6cca60a325d2db4edf6dbbe3",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/TextMesh Pro/Sprites/EmojiOne.json": {
@@ -1218,9 +1170,9 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Items/Scripts/ItemBuff.cs": {
-    "mtime": 1795550998.008684,
-    "seen": 1795551010.1745253,
-    "ast_hash": "98c6cad8cd4f41a4c8527b5239eb110b",
+    "mtime": 1795704500.3284245,
+    "seen": 1795704511.2019184,
+    "ast_hash": "9fe4c958a0244e70916da4cb736a1ce5",
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Modifiers/Scripts/IModifiable.cs": {
@@ -1242,9 +1194,2889 @@
     "semantic_hash": ""
   },
   "ImpfanyGame/Assets/Features/Items/Scripts/Debug/ItemDebugPanel.cs": {
-    "mtime": 1795552732.2966604,
-    "seen": 1795552742.023555,
-    "ast_hash": "8e656392fc8e3dc3267a2a2b0103f536",
+    "mtime": 1795703744.9528942,
+    "seen": 1795703759.8852582,
+    "ast_hash": "4725bb7cc6df18ac95e383caa48060df",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Enemies/Scripts/EnemyHitFlash.cs": {
+    "mtime": 1795632186.0277743,
+    "seen": 1795703759.8852406,
+    "ast_hash": "8b3334254e5dbbc71bde7ebb3a958350",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/GameFlow/Scripts/UI/HUD/PopUps/BigCompletionTextPresenter.cs": {
+    "mtime": 1795702370.8816044,
+    "seen": 1795703759.8852532,
+    "ast_hash": "26f6506e4810a8a03b611d86e7004503",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/GameFlow/Scripts/UI/HUD/PopUps/BigLevelTextPresenter.cs": {
+    "mtime": 1795702370.8910868,
+    "seen": 1795703759.8852541,
+    "ast_hash": "747e727747d6fcabe841f8e560c87e8f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/GameFlow/Scripts/UI/HUD/PopUps/BigWaveTextPresenter.cs": {
+    "mtime": 1795702370.9001932,
+    "seen": 1795703759.8852549,
+    "ast_hash": "0398cb4fdcf36dffd1a97626df46a8f6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Shop/Scripts/PlayerEnterShopScript.cs": {
+    "mtime": 1795547312.2176743,
+    "seen": 1795703759.8852863,
+    "ast_hash": "366b7c5c6cca60a325d2db4edf6dbbe3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Shop/Scripts/ShopItemSpawner.cs": {
+    "mtime": 1795704874.300393,
+    "seen": 1795705404.9002244,
+    "ast_hash": "9ed7321c631a59888201c8286a1038e5",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Weapons/Scripts/AttackBehaviours/MeeleCone/MeleeConeAttackBehaviour.cs": {
+    "mtime": 1795632186.079384,
+    "seen": 1795703759.8852882,
+    "ast_hash": "d79f668dc5eb0866d7a5473b72c15134",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Weapons/Scripts/AttackBehaviours/MeeleCone/MeleeConeIndicator.cs": {
+    "mtime": 1795569697.1789668,
+    "seen": 1795703759.8852892,
+    "ast_hash": "b7ecdacee16c0862081591f0c8de890d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Weapons/Scripts/AttackBehaviours/MeeleCone/MeleeConeShape.cs": {
+    "mtime": 1795569697.1789668,
+    "seen": 1795703759.88529,
+    "ast_hash": "22062e498b87a94ce649ff367b62d15b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Weapons/Scripts/Weapon.cs": {
+    "mtime": 1795569697.1851642,
+    "seen": 1795703759.8852904,
+    "ast_hash": "04fb6a864bb07292b75b862f060b757f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Weapons/Scripts/WeaponAttackBehaviour.cs": {
+    "mtime": 1795569697.1866732,
+    "seen": 1795703759.8852913,
+    "ast_hash": "d0e181e96ac00febb3bc1ae30779d31a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Weapons/Scripts/WeaponHit.cs": {
+    "mtime": 1795632186.0834394,
+    "seen": 1795703759.8852918,
+    "ast_hash": "e516e7e5db2f80dabe136142bcb80b26",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Weapons/Scripts/WeaponPhase.cs": {
+    "mtime": 1795569697.187738,
+    "seen": 1795703759.8852937,
+    "ast_hash": "03f5b5adcd4050de2992ea7024e6a7df",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Weapons/Scripts/WeaponSettings.cs": {
+    "mtime": 1795632186.0929322,
+    "seen": 1795703759.8852947,
+    "ast_hash": "1720ee093a1bda9cce55c3e58491265e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Weapons/Scripts/WeaponVisual.cs": {
+    "mtime": 1795569697.1927958,
+    "seen": 1795703759.885296,
+    "ast_hash": "57b6c0e073f1bb0cdbc773316a0a824e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Weapons/Scripts/WeaponVisuals/ArcSwooshVisual.cs": {
+    "mtime": 1795569697.2029977,
+    "seen": 1795703759.8852968,
+    "ast_hash": "e6764ecb4a8f8846ce1bd9ac32af7995",
+    "semantic_hash": ""
+  },
+  "Docs/Impfany/EE-Lerngraph.md": {
+    "mtime": 1795552943.5162137,
+    "seen": 1795703759.8853092,
+    "ast_hash": "1a9689cecd5e0ac448c45bdd020b1e47",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Items/Prefabs/028 - The Belt.png": {
+    "mtime": 1795702865.6362295,
+    "seen": 1795703759.8854458,
+    "ast_hash": "569c429a670f97ea536a42d6d1991035",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/006 - Number One.png": {
+    "mtime": 1795702830.893791,
+    "seen": 1795704511.2019904,
+    "ast_hash": "46baf2e88d3a7c85adb395e4780bc5ef",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/009 - Skatole.png": {
+    "mtime": 1795702865.6187632,
+    "seen": 1795704511.2019918,
+    "ast_hash": "0e61a6154bdf83872e94691d7e4f8676",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/011 - 1up!.png": {
+    "mtime": 1795702830.9018245,
+    "seen": 1795704511.2019928,
+    "ast_hash": "bfef8dee0b46b15be2d3d4fb1c736f1e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/013 - The Virus.png": {
+    "mtime": 1795702830.9058256,
+    "seen": 1795704511.2019935,
+    "ast_hash": "b8b1baa42eb72e0bbfb5c3ca98074f81",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/014 - Roid Rage.png": {
+    "mtime": 1795702830.9115584,
+    "seen": 1795704511.2019942,
+    "ast_hash": "e1e0ad86808e52336b460b660d229678",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/015 - 3.png": {
+    "mtime": 1795702865.6237805,
+    "seen": 1795704511.201995,
+    "ast_hash": "171038ecdd49ec5c8f37b2a50abf31ad",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/016 - Raw Liver.png": {
+    "mtime": 1795702830.9206288,
+    "seen": 1795704511.2019956,
+    "ast_hash": "98e515c3831b0347000b40de0e411ede",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/018 - A Dollar.png": {
+    "mtime": 1795702865.6280084,
+    "seen": 1795704511.2019963,
+    "ast_hash": "22d7a4af21d701dd27886f3600593dcb",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/019 - Boom!.png": {
+    "mtime": 1795702830.9303584,
+    "seen": 1795704511.201997,
+    "ast_hash": "65e5f94cb5591ed173094bdc10bc48fe",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/021 - The Compass.png": {
+    "mtime": 1795702865.6325243,
+    "seen": 1795704511.2019978,
+    "ast_hash": "dcb8cb808d7ede1986b96d4ccece7fa5",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/022 - Lunch.png": {
+    "mtime": 1795702830.938901,
+    "seen": 1795704511.2019987,
+    "ast_hash": "153f16992cd356a02ef0cfe13692c3dc",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/023 - Dinner.png": {
+    "mtime": 1795702830.944512,
+    "seen": 1795704511.2019992,
+    "ast_hash": "f1ca692ec4f40dd29e5d6743ee6503f6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/024 - Dessert.png": {
+    "mtime": 1795702830.9480195,
+    "seen": 1795704511.202,
+    "ast_hash": "65fa32ddb68d671eaad7f63c7830e8bf",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/026 - Rotten Meat.png": {
+    "mtime": 1795702830.9570591,
+    "seen": 1795704511.2020006,
+    "ast_hash": "2139134908f27af105068f61d336546d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/028 - The Belt.png": {
+    "mtime": 1795702865.6362295,
+    "seen": 1795704511.2020013,
+    "ast_hash": "569c429a670f97ea536a42d6d1991035",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/030 - Mom's Heels.png": {
+    "mtime": 1795702830.9655812,
+    "seen": 1795704511.2020023,
+    "ast_hash": "56b5a028d6853d587855dceb37091250",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/033 - The Bible.png": {
+    "mtime": 1795702830.9710948,
+    "seen": 1795704511.202003,
+    "ast_hash": "7c2b73f38f2f7d26cb2feb87940651b0",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/036 - The Poop.png": {
+    "mtime": 1795702830.9752648,
+    "seen": 1795704511.2020037,
+    "ast_hash": "ea2af76283108a21ff4deea5a5c0a103",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/037 - Mr. Boom.png": {
+    "mtime": 1795702830.9792807,
+    "seen": 1795704511.2020044,
+    "ast_hash": "7bf73db1376ee91bd4d5a12842eaf54c",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/038 - Tammy's Head.png": {
+    "mtime": 1795702830.9832952,
+    "seen": 1795704511.2020051,
+    "ast_hash": "ef109b76786583c8a4f5aa93f75195ac",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/039 - Mom's Bra.png": {
+    "mtime": 1795702830.9889917,
+    "seen": 1795704511.202006,
+    "ast_hash": "8ea110077a64ea8d1426bd6eede882b2",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/040 - Kamikaze!.png": {
+    "mtime": 1795702830.9933212,
+    "seen": 1795704511.2020068,
+    "ast_hash": "86b8b9a7feff23da1d662dcd5fba2253",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/041 - Mom's Pad.png": {
+    "mtime": 1795702830.9968262,
+    "seen": 1795704511.2020075,
+    "ast_hash": "4510044a49f4fc69f13baa6aeda4093d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/044 - Teleport!.png": {
+    "mtime": 1795702831.0019052,
+    "seen": 1795704511.2020082,
+    "ast_hash": "ca335cc7c44cb98078a5d782f49bc859",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/045 - Yum Heart.png": {
+    "mtime": 1795702831.00641,
+    "seen": 1795704511.2020094,
+    "ast_hash": "3a6a5e56171fbface1b78495de769e43",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/046 - Lucky Foot.png": {
+    "mtime": 1795702865.640743,
+    "seen": 1795704511.20201,
+    "ast_hash": "254fbdf178a8146cbc7e154e5d2d64d9",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/050 - Steven.png": {
+    "mtime": 1795702865.645252,
+    "seen": 1795704511.2020106,
+    "ast_hash": "4c49ad29c4255d0b40e7c6183a664be2",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/051 - Pentagram.png": {
+    "mtime": 1795702865.6487565,
+    "seen": 1795704511.2020113,
+    "ast_hash": "8b357ef2d302b56154a84e4acae79a42",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/052 - Dr. Fetus.png": {
+    "mtime": 1795702865.6532667,
+    "seen": 1795704511.2020118,
+    "ast_hash": "8c27273b32a2f42237bb2baae35ee4e0",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/053 - Magneto.png": {
+    "mtime": 1795702865.657441,
+    "seen": 1795704511.2020128,
+    "ast_hash": "2881a6d62063ccb371d01132e4fc3d09",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/055 - Mom's Eye.png": {
+    "mtime": 1795702865.6619842,
+    "seen": 1795704511.2020135,
+    "ast_hash": "64d909647bf6d33b2e7fb2be0e592f7a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/060 - The Ladder.png": {
+    "mtime": 1795702865.6660624,
+    "seen": 1795704511.2020142,
+    "ast_hash": "0e4293da9d955aa63cd3b47764c6aee8",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/063 - The Battery.png": {
+    "mtime": 1795702831.0422678,
+    "seen": 1795704511.202015,
+    "ast_hash": "f946376ecf68d0ae4139929bf9aff158",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/064 - Steam Sale.png": {
+    "mtime": 1795702831.046287,
+    "seen": 1795704511.2020156,
+    "ast_hash": "cd0e4dff2236ed956da5410f750c969b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/068 - Technology.png": {
+    "mtime": 1795702831.0513232,
+    "seen": 1795704511.2020166,
+    "ast_hash": "71a60aa37a1e8a53a626bb3fd5064ca6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/072 - Rosary.png": {
+    "mtime": 1795702831.0563705,
+    "seen": 1795704511.202017,
+    "ast_hash": "e852a20ae76fc61ee22f13d1ed3f862a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/073 - Cube of Meat.png": {
+    "mtime": 1795702831.0603852,
+    "seen": 1795704511.2020175,
+    "ast_hash": "4ba8fcf2cf461c1e18f7451233ebb3db",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/074 - A Quarter.png": {
+    "mtime": 1795702865.6705928,
+    "seen": 1795704511.2020185,
+    "ast_hash": "e2b7772f6eb8497b141466400e11082f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/075 - PHD.png": {
+    "mtime": 1795702831.0697079,
+    "seen": 1795704511.2020192,
+    "ast_hash": "55ffb8e40613b2d0f86214f3a2813c5f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/076 - X-Ray Vision.png": {
+    "mtime": 1795702831.0733955,
+    "seen": 1795704511.2020202,
+    "ast_hash": "b63c09a887d10075736d1357a1acda67",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/079 - The Mark.png": {
+    "mtime": 1795702831.0791152,
+    "seen": 1795704511.202021,
+    "ast_hash": "74269d2ba27910d55bd465f9d67de46e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/080 - The Pact.png": {
+    "mtime": 1795702831.0832021,
+    "seen": 1795704511.2020216,
+    "ast_hash": "fcb8665261b6554bf864158f0a16dfa9",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/081 - Dead Cat.png": {
+    "mtime": 1795702831.087521,
+    "seen": 1795704511.2020223,
+    "ast_hash": "784051bec78f64453efc7ed67b41c144",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/083 - The Nail.png": {
+    "mtime": 1795702831.0915258,
+    "seen": 1795704511.202023,
+    "ast_hash": "d7ad88e7d75a9e8f8c2788c165a2335a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/087 - Loki's Horns.png": {
+    "mtime": 1795702831.0979376,
+    "seen": 1795704511.202024,
+    "ast_hash": "0ef9e2d5211e3e5a535c81d3d1564f34",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/090 - The Small Rock.png": {
+    "mtime": 1795702831.1024442,
+    "seen": 1795704511.2020247,
+    "ast_hash": "6acf8884e242a20f40bb205a5725580b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/093 - The Gamekid.png": {
+    "mtime": 1795702865.6736448,
+    "seen": 1795704511.2020254,
+    "ast_hash": "a8a045faa7a17eff8a99f57546fede40",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/095 - Robo-Baby.png": {
+    "mtime": 1795702865.678169,
+    "seen": 1795704511.202026,
+    "ast_hash": "435589b9e78bd2b139722fedc5e237a3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/096 - Little C.H.A.D..png": {
+    "mtime": 1795702831.1166368,
+    "seen": 1795704511.2020268,
+    "ast_hash": "84ef066341b0bb0e562c227bd7933379",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/097 - The Book of Sin.png": {
+    "mtime": 1795702831.1201477,
+    "seen": 1795704511.2020276,
+    "ast_hash": "9b20990067c7bd8c07e72b4c66739f06",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/098 - The Relic.png": {
+    "mtime": 1795702865.6827538,
+    "seen": 1795704511.2020288,
+    "ast_hash": "6d93b0f15f7a1b368c12239098a1dc03",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/099 - Little Gish.png": {
+    "mtime": 1795702865.6862688,
+    "seen": 1795704511.2020292,
+    "ast_hash": "900cfdccf9a70f4fc4f952d2eda5e2d0",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/101 - The Halo.png": {
+    "mtime": 1795702831.1336102,
+    "seen": 1795704511.2020302,
+    "ast_hash": "a3bbd662d9ce3dde17f09991120c0b7e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/105 - The D6.png": {
+    "mtime": 1795702831.1381464,
+    "seen": 1795704511.2020307,
+    "ast_hash": "63dae1c748361f397072b355c4f0d1c7",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/106 - Mr. Mega.png": {
+    "mtime": 1795702831.1421661,
+    "seen": 1795704511.2020319,
+    "ast_hash": "0cba15aa8303769c83e05b17528dabd4",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/108 - The Wafer.png": {
+    "mtime": 1795702831.146225,
+    "seen": 1795704511.2020323,
+    "ast_hash": "92500011b2e2f9ff46b74318c7c68673",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/111 - The Bean.png": {
+    "mtime": 1795702831.1522756,
+    "seen": 1795704511.2020335,
+    "ast_hash": "f47aad97629da0dd145f89efe460729d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/113 - Demon Baby.png": {
+    "mtime": 1795702865.6917937,
+    "seen": 1795704511.202034,
+    "ast_hash": "840ee208f81cbfbd024b12a79d2961c9",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/114 - Mom's Knife.png": {
+    "mtime": 1795702865.6963067,
+    "seen": 1795704511.2020347,
+    "ast_hash": "ba96d37829fcacfcf3c3f0baa410b6d1",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/115 - Ouija Board.png": {
+    "mtime": 1795702831.1654563,
+    "seen": 1795704511.2020352,
+    "ast_hash": "e7b36c7fd61f07a7bc4dfd37ad0693dd",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/116 - 9 Volt.png": {
+    "mtime": 1795702831.1689706,
+    "seen": 1795704511.2020364,
+    "ast_hash": "d9e85fa0d40ae3ec05879f099ed7e5a5",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/117 - Dead Bird.png": {
+    "mtime": 1795702831.1735075,
+    "seen": 1795704511.2020373,
+    "ast_hash": "486293f41924e5e4da13b022a37c0b1d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/118 - Brimstone.png": {
+    "mtime": 1795702865.700837,
+    "seen": 1795704511.202038,
+    "ast_hash": "e3f556eb35eec37d36ec3db3f263585b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/119 - Blood Bag.png": {
+    "mtime": 1795702865.704856,
+    "seen": 1795704511.2020388,
+    "ast_hash": "c650442a32c312c55275933cdc09af79",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/125 - Bobby-Bomb.png": {
+    "mtime": 1795702831.1875465,
+    "seen": 1795704511.2020395,
+    "ast_hash": "d78cf8315db32d4dd93a1991b419a631",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/126 - Razor Blade.png": {
+    "mtime": 1795702865.7098696,
+    "seen": 1795704511.2020404,
+    "ast_hash": "01fe898ff8739f3985f9e6e3c67be452",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/130 - A Pony.png": {
+    "mtime": 1795702831.1970649,
+    "seen": 1795704511.2020411,
+    "ast_hash": "c65f2a9c88a8bbbdbd2d9c629facc5f2",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/131 - Bomb Bag.png": {
+    "mtime": 1795702831.201107,
+    "seen": 1795704511.2020416,
+    "ast_hash": "552e2a7a09ca5942f15aeb2c0fdad042",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/133 - Guppy's Paw.png": {
+    "mtime": 1795702831.2051122,
+    "seen": 1795704511.2020423,
+    "ast_hash": "125a8a9a718003c84350f39d6bac9055",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/134 - Guppy's Tail.png": {
+    "mtime": 1795702831.2101662,
+    "seen": 1795704511.2020428,
+    "ast_hash": "051618d01a158d80355ff0bd313fc5c2",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/135 - IV Bag.png": {
+    "mtime": 1795702865.7148845,
+    "seen": 1795704511.202044,
+    "ast_hash": "8c06804760bb8e9bccf9fdba829438ac",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/136 - Best Friend.png": {
+    "mtime": 1795702831.2206647,
+    "seen": 1795704511.2020445,
+    "ast_hash": "8f07cd8a19dc09740bae424da1c5f7b1",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/138 - Stigmata.png": {
+    "mtime": 1795702831.225671,
+    "seen": 1795704511.2020452,
+    "ast_hash": "4a8d5d6ef800d35ea02b24dac5c55856",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/139 - Mom's Purse.png": {
+    "mtime": 1795702831.230522,
+    "seen": 1795704511.2020457,
+    "ast_hash": "48c96e94f49c4ae48bfbe3251f6d4c2d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/140 - Bob's Curse.png": {
+    "mtime": 1795702865.7198982,
+    "seen": 1795704511.2020464,
+    "ast_hash": "b87b6980b8cee198a16dbfecd7c5d7e3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/141 - Pageant Boy.png": {
+    "mtime": 1795702865.7249186,
+    "seen": 1795704511.2020469,
+    "ast_hash": "3af4b8d2dad3e0f39ea47c451a4d02c2",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/142 - Scapular.png": {
+    "mtime": 1795702831.243514,
+    "seen": 1795704511.2020478,
+    "ast_hash": "7b336b952ff9930bd323a0e5fcd63495",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/143 - Speed Ball.png": {
+    "mtime": 1795702865.728914,
+    "seen": 1795704511.2020485,
+    "ast_hash": "bb7deb97f57821460522f5e70d47f2e4",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/144 - Bum Friend.png": {
+    "mtime": 1795702865.7319205,
+    "seen": 1795704511.2020493,
+    "ast_hash": "3059c564fa450b805a84ed4c9b041735",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/145 - Guppy's Head.png": {
+    "mtime": 1795702831.2561352,
+    "seen": 1795704511.2020497,
+    "ast_hash": "209c620b1ba422d2cd8907179772f636",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/146 - Prayer Card.png": {
+    "mtime": 1795702831.2616634,
+    "seen": 1795704511.202051,
+    "ast_hash": "773156f5b1de7e154a2a7553453c49f3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/147 - Notched Axe.png": {
+    "mtime": 1795702831.2666843,
+    "seen": 1795704511.2020514,
+    "ast_hash": "a5a46e89c0792dfe5fb8c379ac3e4af0",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/149 - Ipecac.png": {
+    "mtime": 1795702831.2709053,
+    "seen": 1795704511.202052,
+    "ast_hash": "e088a1c605878efe2521807344c6bcdf",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/150 - Tough Love.png": {
+    "mtime": 1795702865.7374408,
+    "seen": 1795704511.2020528,
+    "ast_hash": "ced55dc64af257c0c77c8e6268289c21",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/155 - The Peeper.png": {
+    "mtime": 1795702865.7414663,
+    "seen": 1795704511.2020533,
+    "ast_hash": "680e9aac1d5cef6287008b9dcf20d695",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/156 - Habit.png": {
+    "mtime": 1795702865.7465284,
+    "seen": 1795704511.2020543,
+    "ast_hash": "3c450a1e022f606a4bc18bcbdff128f9",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/157 - Bloody Lust.png": {
+    "mtime": 1795702831.2901707,
+    "seen": 1795704511.202055,
+    "ast_hash": "2d03c54c7134cea498d437dbab6fa2cd",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/161 - Ankh.png": {
+    "mtime": 1795702831.2957506,
+    "seen": 1795704511.2020557,
+    "ast_hash": "c94a57e1ddae8fec0d7786f3a58bf48c",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/163 - Ghost Baby.png": {
+    "mtime": 1795702865.7511008,
+    "seen": 1795704511.2020562,
+    "ast_hash": "410a177cb6193a01fc6bbd546fae1cf5",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/164 - The Candle.png": {
+    "mtime": 1795702831.3042836,
+    "seen": 1795704511.202057,
+    "ast_hash": "efb2c1f72d8dcaf19c230d1344f5a90e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/166 - D20.png": {
+    "mtime": 1795702865.7556086,
+    "seen": 1795704511.2020578,
+    "ast_hash": "9f408b1543a6136b2af1d8d3620775c5",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/168 - Epic Fetus.png": {
+    "mtime": 1795702865.7605534,
+    "seen": 1795704511.2020583,
+    "ast_hash": "4b5d4ca992d079362f567c6dc60efe1e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/169 - Polyphemus.png": {
+    "mtime": 1795702865.7655678,
+    "seen": 1795704511.202059,
+    "ast_hash": "d2185da8ba806e740a1b2c6dc6651131",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/171 - Spider Butt.png": {
+    "mtime": 1795702831.3229227,
+    "seen": 1795704511.2020597,
+    "ast_hash": "b305626a1cb07030aed273d6e925e503",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/173 - Mitre.png": {
+    "mtime": 1795702865.7710757,
+    "seen": 1795704511.2020605,
+    "ast_hash": "e9030636a6d48f35897d747503b25fff",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/175 - Dad's Key.png": {
+    "mtime": 1795702831.3314538,
+    "seen": 1795704511.2020614,
+    "ast_hash": "ae1ce93a6a65a661a2af6ba58ef40565",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/176 - Stem Cells.png": {
+    "mtime": 1795702831.3364635,
+    "seen": 1795704511.2020624,
+    "ast_hash": "8d8365c95781576cd4dc95c86b3c83fe",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/178 - Holy Water.png": {
+    "mtime": 1795702865.7753394,
+    "seen": 1795704511.2020628,
+    "ast_hash": "349c90f28dde954a56a8dd82fdb93228",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/179 - Fate.png": {
+    "mtime": 1795702831.3459947,
+    "seen": 1795704511.2020636,
+    "ast_hash": "421f002b4ab51b8fd66080141be0e894",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/180 - The Black Bean.png": {
+    "mtime": 1795702831.3500302,
+    "seen": 1795704511.2020643,
+    "ast_hash": "bea2c5f154c7d84f7b6832f2a87ef03c",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/181 - White Pony.png": {
+    "mtime": 1795702831.353754,
+    "seen": 1795704511.2020652,
+    "ast_hash": "6607c1da8937b84ab49ceb5886f578fa",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/183 - Tooth Picks.png": {
+    "mtime": 1795702831.3585594,
+    "seen": 1795704511.202066,
+    "ast_hash": "7ee64455a45ccb822e4d8aaba99f4523",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/184 - Holy Grail.png": {
+    "mtime": 1795702831.3628805,
+    "seen": 1795704511.2020667,
+    "ast_hash": "626aa13f523dea95ddb06c54a006a9db",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/185 - Dead Dove.png": {
+    "mtime": 1795702831.3661764,
+    "seen": 1795704511.2020674,
+    "ast_hash": "95febf62e413206c29c225a42e9c6712",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/188 - Abel.png": {
+    "mtime": 1795702831.3716993,
+    "seen": 1795704511.2020683,
+    "ast_hash": "962e9487694de2ac6a4d41f5be19e5cb",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/190 - Pyro.png": {
+    "mtime": 1795702865.7803886,
+    "seen": 1795704511.202069,
+    "ast_hash": "5ef87ad8d8455a0093bc4f1bef602b0b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/193 - MEAT!.png": {
+    "mtime": 1795702831.380724,
+    "seen": 1795704511.2020695,
+    "ast_hash": "ef20a1a0b4faac0f9c9ce790c581ca22",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/194 - Magic 8 Ball.png": {
+    "mtime": 1795702865.7844362,
+    "seen": 1795704511.2020702,
+    "ast_hash": "1d7b3b1e4a46031c038ab382fd28d9dd",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/196 - Squeezy.png": {
+    "mtime": 1795702831.3912632,
+    "seen": 1795704511.2020712,
+    "ast_hash": "63cd3fa1fb2f86b33364aaaac75e2667",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/197 - Jesus Juice.png": {
+    "mtime": 1795702831.395923,
+    "seen": 1795704511.2020721,
+    "ast_hash": "6c6902cab5236e2f62f19a71d0083d13",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/198 - Box.png": {
+    "mtime": 1795702865.7895653,
+    "seen": 1795704511.2020726,
+    "ast_hash": "64c8ce1d07e688cf6d2377c69bbe8654",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/199 - Mom's Key.png": {
+    "mtime": 1795702831.4049604,
+    "seen": 1795704511.2020733,
+    "ast_hash": "4bfa28f73acb95475667aa28ee81f981",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/201 - Iron Bar.png": {
+    "mtime": 1795702831.4094682,
+    "seen": 1795704511.202074,
+    "ast_hash": "9c300042dffbc623cf27f7f228786556",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/202 - Midas' Touch.png": {
+    "mtime": 1795702831.4134934,
+    "seen": 1795704511.2020748,
+    "ast_hash": "68c5f5e9f776c7dc863f11349351d0db",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/204 - Fanny Pack.png": {
+    "mtime": 1795702831.4185803,
+    "seen": 1795704511.2020757,
+    "ast_hash": "5cbf679f03350ea24bcdf0b8108da083",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/205 - Sharp Plug.png": {
+    "mtime": 1795702831.4230888,
+    "seen": 1795704511.2020762,
+    "ast_hash": "6dcf8aa3ac807f2d2623987833277285",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/206 - Guillotine.png": {
+    "mtime": 1795702831.436646,
+    "seen": 1795704511.202077,
+    "ast_hash": "2abca66c6031779b173f03784c9b0d45",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/209 - Butt Bombs.png": {
+    "mtime": 1795702831.4413006,
+    "seen": 1795704511.2020776,
+    "ast_hash": "72649a3f46136bd14164d7560dd21be1",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/210 - Gnawed Leaf.png": {
+    "mtime": 1795702831.4276195,
+    "seen": 1795704511.2020786,
+    "ast_hash": "8a13ee34b8236123ea11d10c450116a6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/211 - Spiderbaby.png": {
+    "mtime": 1795702866.6763632,
+    "seen": 1795704511.2020793,
+    "ast_hash": "52f068c6f55e83082132f41bbadc1123",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/214 - Anemic.png": {
+    "mtime": 1795702866.6814148,
+    "seen": 1795704511.20208,
+    "ast_hash": "0b1a2c850d6af5c3ad520e025a03ea82",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/215 - Goat Head.png": {
+    "mtime": 1795702866.6854274,
+    "seen": 1795704511.2020805,
+    "ast_hash": "b06ffa54f0235b24b88fa0bcec4228e3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/217 - Mom's Wig.png": {
+    "mtime": 1795702831.4583406,
+    "seen": 1795704511.2020812,
+    "ast_hash": "986751579341fdf5d9f99fe910813c55",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/218 - Placenta.png": {
+    "mtime": 1795702831.461874,
+    "seen": 1795704511.2020822,
+    "ast_hash": "0310f5324a12eadbc77b5df3ce685139",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/219 - Old Bandage.png": {
+    "mtime": 1795702831.466732,
+    "seen": 1795704511.2020855,
+    "ast_hash": "61d1f3f1da329ecc4a900f5dc65aca7d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/220 - Sad Bombs.png": {
+    "mtime": 1795702866.6902401,
+    "seen": 1795704511.2020862,
+    "ast_hash": "a3e21d5836d4c437db8bbcc00460bee3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/223 - Pyromaniac.png": {
+    "mtime": 1795702831.4753473,
+    "seen": 1795704511.2020872,
+    "ast_hash": "8250d92a69873e996efa3696f630ef2c",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/225 - Gimpy.png": {
+    "mtime": 1795702831.479541,
+    "seen": 1795704511.2020876,
+    "ast_hash": "18c0cf5cc9b0b8c1987a5132ab5ca3fd",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/226 - Black Lotus.png": {
+    "mtime": 1795702866.6937568,
+    "seen": 1795704511.2020886,
+    "ast_hash": "395f11962dba1915d75b7177eefa04be",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/227 - Piggy Bank.png": {
+    "mtime": 1795702866.6982603,
+    "seen": 1795704511.2020893,
+    "ast_hash": "da5d90bdaf765809bf54c9a78594b0a9",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/230 - Abaddon.png": {
+    "mtime": 1795702866.7025895,
+    "seen": 1795704511.20209,
+    "ast_hash": "a67f354e8c19d4de9a9f80d3e09de344",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/231 - Ball of Tar.png": {
+    "mtime": 1795702831.4960916,
+    "seen": 1795704511.202091,
+    "ast_hash": "3c4c0ac7a40d500558902d97119dd2a6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/232 - Stop Watch.png": {
+    "mtime": 1795702831.5006,
+    "seen": 1795704511.2020915,
+    "ast_hash": "db796e776b17d8c0d60bc99eca578b50",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/233 - Tiny Planet.png": {
+    "mtime": 1795702831.5054874,
+    "seen": 1795704511.2020922,
+    "ast_hash": "e502bfe79cd7a7cde27e561237964a85",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/236 - E. Coli.png": {
+    "mtime": 1795702831.5090508,
+    "seen": 1795704511.202093,
+    "ast_hash": "552048e11f6038d7ae9daa50943ae4a3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/238 - Key Piece 1.png": {
+    "mtime": 1795702831.514079,
+    "seen": 1795704511.2020936,
+    "ast_hash": "f88551d323a3388008324007e87cdc0d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/239 - Key Piece 2.png": {
+    "mtime": 1795702866.7066054,
+    "seen": 1795704511.202094,
+    "ast_hash": "809737b4c04e1eb57bbbe2ad897492ee",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/242 - Infamy.png": {
+    "mtime": 1795702831.5226038,
+    "seen": 1795704511.2020948,
+    "ast_hash": "6fe03dc279e05c96b1db1e50cbadf8f9",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/245 - 2020.png": {
+    "mtime": 1795702866.7116306,
+    "seen": 1795704511.2020955,
+    "ast_hash": "1569870c6ed9503aaa302abd8803409e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/246 - Blue Map.png": {
+    "mtime": 1795702831.5316281,
+    "seen": 1795704511.2020962,
+    "ast_hash": "5db94101825a2d7ad703379224a976aa",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/247 - BFFS!.png": {
+    "mtime": 1795702831.5356555,
+    "seen": 1795704511.202097,
+    "ast_hash": "468fff632f13a68b824cc5613d9bc4b3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/248 - Hive Mind.png": {
+    "mtime": 1795702831.5391634,
+    "seen": 1795704511.2020977,
+    "ast_hash": "956f60f542fcc86166fb8b2ba250e44d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/250 - BOGO Bombs.png": {
+    "mtime": 1795702831.5441124,
+    "seen": 1795704511.2020981,
+    "ast_hash": "d4df5676fba42f12d1ecad865c7df4ea",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/253 - Magic Scab.png": {
+    "mtime": 1795702831.5491402,
+    "seen": 1795704511.2020988,
+    "ast_hash": "a6dde3357469e7bf42656e029268e1d6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/254 - Blood Clot.png": {
+    "mtime": 1795702831.5522034,
+    "seen": 1795704511.2020998,
+    "ast_hash": "8266af84dcd4b90c0f145a128e101c67",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/255 - Screw.png": {
+    "mtime": 1795702831.5561242,
+    "seen": 1795704511.2021003,
+    "ast_hash": "0cb9c215a0527a300383ccc4d65ecb20",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/256 - Hot Bombs.png": {
+    "mtime": 1795702831.5601616,
+    "seen": 1795704511.202101,
+    "ast_hash": "2a04ed56b6dde85a5027c366b2d2e226",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/257 - Fire Mind.png": {
+    "mtime": 1795702831.5646722,
+    "seen": 1795704511.2021017,
+    "ast_hash": "9b715a6be07bb3cc11eff2a595d34f07",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/258 - Missing No..png": {
+    "mtime": 1795702831.568703,
+    "seen": 1795704511.2021022,
+    "ast_hash": "40e3214613d586867901f9180af672c8",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/259 - Dark Matter.png": {
+    "mtime": 1795702831.5727365,
+    "seen": 1795704511.2021031,
+    "ast_hash": "092b0a8332b3a8313a9aea5b1ba1146e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/261 - Proptosis.png": {
+    "mtime": 1795702866.7146275,
+    "seen": 1795704511.2021039,
+    "ast_hash": "784dac09337b79aa5b464b7bf841b809",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/263 - Clear Rune.png": {
+    "mtime": 1795702865.793576,
+    "seen": 1795704511.2021043,
+    "ast_hash": "678b3f817914a48de9617b86a0f1dd71",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/264 - Smart Fly.png": {
+    "mtime": 1795702831.5813372,
+    "seen": 1795704511.202105,
+    "ast_hash": "613d30d24bd321e601234d23084068f3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/265 - Dry Baby.png": {
+    "mtime": 1795702866.7192588,
+    "seen": 1795704511.2021058,
+    "ast_hash": "2eb6a8541e326516929646124c65d759",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/266 - Juicy Sack.png": {
+    "mtime": 1795702831.588876,
+    "seen": 1795704511.202109,
+    "ast_hash": "5f3635525a7e460024062898d4619a76",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/267 - Robo-Baby 2.0.png": {
+    "mtime": 1795702866.7232642,
+    "seen": 1795704511.20211,
+    "ast_hash": "ee0d1090c8c2db43feee45381bef0fc0",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/268 - Rotten Baby.png": {
+    "mtime": 1795702866.727785,
+    "seen": 1795704511.2021108,
+    "ast_hash": "24787a25901b3b82bbff8ac5424718e6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/270 - Leech.png": {
+    "mtime": 1795702831.6025422,
+    "seen": 1795704511.2021112,
+    "ast_hash": "fc013195df77aab75b26cb88e030ce15",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/272 - BBF.png": {
+    "mtime": 1795702831.6060445,
+    "seen": 1795704511.202112,
+    "ast_hash": "da6a7dc445bd4bf3bac0e66d917df61d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/273 - Bob's Brain.png": {
+    "mtime": 1795702831.6112373,
+    "seen": 1795704511.2021127,
+    "ast_hash": "637b108b3a118bf1a11ed3b93e066bef",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/274 - Best Bud.png": {
+    "mtime": 1795702866.7312944,
+    "seen": 1795704511.2021134,
+    "ast_hash": "c3005eafc8b958c67f02a735f4d526f2",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/277 - Lil Haunt.png": {
+    "mtime": 1795702831.6194851,
+    "seen": 1795704511.202114,
+    "ast_hash": "74aa42e3949ce6db46a36c347803019f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/278 - Dark Bum.png": {
+    "mtime": 1795702866.7358022,
+    "seen": 1795704511.2021148,
+    "ast_hash": "8bdd650108687dbe091b72b22b59ece1",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/279 - Big Fan.png": {
+    "mtime": 1795702831.6286306,
+    "seen": 1795704511.2021155,
+    "ast_hash": "44fd4344a35571a4998dff90f97e8dca",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/282 - How to Jump.png": {
+    "mtime": 1795702831.4326286,
+    "seen": 1795704511.202116,
+    "ast_hash": "554226e31a8287fba3c05ce2f69878a4",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/283 - D100.png": {
+    "mtime": 1795702831.632643,
+    "seen": 1795704511.202117,
+    "ast_hash": "c54d1c810466c915b7db3362d5ae12ca",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/284 - D4.png": {
+    "mtime": 1795702831.6361682,
+    "seen": 1795704511.2021177,
+    "ast_hash": "cdb900636feb016267d6a232ee2bf4b2",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/285 - D10.png": {
+    "mtime": 1795702866.740493,
+    "seen": 1795704511.2021184,
+    "ast_hash": "fcbe33b0a502be8de1e6924de2ba2ce0",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/286 - Blank Card.png": {
+    "mtime": 1795702831.6448755,
+    "seen": 1795704511.2021189,
+    "ast_hash": "ea38d1f3994bbc29637920c6809e1491",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/289 - Red Candle.png": {
+    "mtime": 1795702831.6494305,
+    "seen": 1795704511.2021196,
+    "ast_hash": "094eccff4fcc8a99df0fb16e38c01c04",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/290 - The Jar.png": {
+    "mtime": 1795702866.7448828,
+    "seen": 1795704511.2021205,
+    "ast_hash": "0b4a064c8ebbdb9dea6bbd70236e09c7",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/291 - Flush!.png": {
+    "mtime": 1795702831.6575332,
+    "seen": 1795704511.2021213,
+    "ast_hash": "4db1f3ec31e915a50c36904742349c65",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/294 - Butter Bean.png": {
+    "mtime": 1795702831.6621292,
+    "seen": 1795704511.2021217,
+    "ast_hash": "041fe09fea37decced5f9cb0ce41de48",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/296 - Converter.png": {
+    "mtime": 1795702866.7493947,
+    "seen": 1795704511.2021224,
+    "ast_hash": "988a485f0ab1d34ff4ad2df9b49f6b27",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/297 - Pandora's Box.png": {
+    "mtime": 1795702831.6717327,
+    "seen": 1795704511.202123,
+    "ast_hash": "d9c0457467589d9e0905c8a312c05e49",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/299 - Taurus.png": {
+    "mtime": 1795702866.753395,
+    "seen": 1795704511.2021239,
+    "ast_hash": "1b58138c9da36e8e0eadbd410855a1a6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/300 - Aries.png": {
+    "mtime": 1795702831.6795678,
+    "seen": 1795704511.2021246,
+    "ast_hash": "da7b55689a9d345127c8e6497f0dce55",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/301 - Cancer.png": {
+    "mtime": 1795702866.7565713,
+    "seen": 1795704511.2021253,
+    "ast_hash": "b1b4fca9df1ae187ccbbe9b52a6c489f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/302 - Leo.png": {
+    "mtime": 1795702831.687594,
+    "seen": 1795704511.2021258,
+    "ast_hash": "dbd6c07f7e43b21edef86ce0c1c1a838",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/303 - Virgo.png": {
+    "mtime": 1795702831.692608,
+    "seen": 1795704511.2021265,
+    "ast_hash": "37453064f25bb1d79419b3e259eea9e6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/304 - Libra.png": {
+    "mtime": 1795702831.69773,
+    "seen": 1795704511.2021275,
+    "ast_hash": "3c1e884ca8acf80fa3d30f9ac2ba33b4",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/305 - Scorpio.png": {
+    "mtime": 1795702831.701251,
+    "seen": 1795704511.202128,
+    "ast_hash": "97c76b28203eada7e1835e229d36c821",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/307 - Capricorn.png": {
+    "mtime": 1795702831.70582,
+    "seen": 1795704511.2021286,
+    "ast_hash": "dd87fe8e2a688fe6fb0a22bb6f85dfb1",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/308 - Aquarius.png": {
+    "mtime": 1795702866.7611318,
+    "seen": 1795704511.2021294,
+    "ast_hash": "1645f776f8edf8ac014bbc836af2ef22",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/309 - Pisces.png": {
+    "mtime": 1795702831.715905,
+    "seen": 1795704511.2021298,
+    "ast_hash": "ab8bfd5c1962ef3edd7571d2d8703afe",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/312 - Maggy's Bow.png": {
+    "mtime": 1795702831.7214139,
+    "seen": 1795704511.2021308,
+    "ast_hash": "0119d5a98d2e165e2e849e70d2bdcbb8",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/313 - Holy Mantle.png": {
+    "mtime": 1795702831.7254364,
+    "seen": 1795704511.2021325,
+    "ast_hash": "cc919baca6ba55407efb3e80d62f4b14",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/316 - Cursed Eye.png": {
+    "mtime": 1795702831.7299497,
+    "seen": 1795704511.2021332,
+    "ast_hash": "218d696e3bf001da3cf811a2831edecf",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/318 - Gemini.png": {
+    "mtime": 1795702866.7662125,
+    "seen": 1795704511.2021341,
+    "ast_hash": "709bd83e4a76080d6a38ed03a9f0322c",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/319 - Cain's Other Eye.png": {
+    "mtime": 1795702831.7384906,
+    "seen": 1795704511.2021348,
+    "ast_hash": "c428cfc125043feaae9339c8418c0c89",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/322 - Mongo Baby.png": {
+    "mtime": 1795702831.743504,
+    "seen": 1795704511.2021353,
+    "ast_hash": "96135ae91f022fbc31b652aded6e983e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/324 - Undefined.png": {
+    "mtime": 1795702866.770281,
+    "seen": 1795704511.202136,
+    "ast_hash": "5fbd4180127eea6d3187219502207faa",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/325 - Scissors.png": {
+    "mtime": 1795702831.7524314,
+    "seen": 1795704511.2021365,
+    "ast_hash": "9230f728ccad963e076180b4e713d15f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/330 - Soy Milk.png": {
+    "mtime": 1795702866.7747898,
+    "seen": 1795704511.2021372,
+    "ast_hash": "5b47b3fd40dbdcd6fa95bda116bf0b7f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/331 - Godhead.png": {
+    "mtime": 1795702831.7615404,
+    "seen": 1795704511.2021382,
+    "ast_hash": "7b5cdb361f6823ed6f508d20f5cc6b56",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/333 - The Mind.png": {
+    "mtime": 1795702831.766054,
+    "seen": 1795704511.202139,
+    "ast_hash": "3f5f860507be0982a441d8619a6be46e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/334 - The Body.png": {
+    "mtime": 1795702831.7696002,
+    "seen": 1795704511.2021394,
+    "ast_hash": "146387bba37a969b57483980b1cf5421",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/335 - The Soul.png": {
+    "mtime": 1795702831.7738273,
+    "seen": 1795704511.20214,
+    "ast_hash": "11fff8565c024069d9c7210284924190",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/336 - Dead Onion.png": {
+    "mtime": 1795702831.778337,
+    "seen": 1795704511.2021406,
+    "ast_hash": "70c2bf26ae6d1788c5803e176c3f8976",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/338 - The Boomerang.png": {
+    "mtime": 1795702866.779327,
+    "seen": 1795704511.2021415,
+    "ast_hash": "f29de61c9a9fd2b00b214f096e4908a3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/339 - Safety Pin.png": {
+    "mtime": 1795702831.7863631,
+    "seen": 1795704511.2021422,
+    "ast_hash": "c61c2d5b9d7a2b7ec20be7316e905e28",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/341 - Torn Photo.png": {
+    "mtime": 1795702831.7913892,
+    "seen": 1795704511.202143,
+    "ast_hash": "1b7f0716b39a892f562b850a3cb0740e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/342 - Blue Cap.png": {
+    "mtime": 1795702831.7954094,
+    "seen": 1795704511.2021434,
+    "ast_hash": "f318e514d36cbe7781e4c2354561fb25",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/343 - Latch Key.png": {
+    "mtime": 1795702831.800099,
+    "seen": 1795704511.2021441,
+    "ast_hash": "eba60876517b3ac6b2afd46766d49ba9",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/344 - Match Book.png": {
+    "mtime": 1795702831.8048627,
+    "seen": 1795704511.202145,
+    "ast_hash": "687e7e75ad9aa138c45c7561510ac910",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/345 - Synthoil.png": {
+    "mtime": 1795702831.8088818,
+    "seen": 1795704511.2021458,
+    "ast_hash": "db4439355accdd237a81bee8e8ab5d90",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/346 - A Snack.png": {
+    "mtime": 1795702831.8134055,
+    "seen": 1795704511.2021465,
+    "ast_hash": "36fcb87be0a633ea09ef6bbdb3da36f1",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/347 - Diplopia.png": {
+    "mtime": 1795702843.6878438,
+    "seen": 1795704511.2021472,
+    "ast_hash": "4438359d486d6c2c4e4b4301b9d1359f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/348 - Placebo.png": {
+    "mtime": 1795702843.692384,
+    "seen": 1795704511.2021482,
+    "ast_hash": "80d6b3110aaf332df6de95a66fe0b7b6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/350 - Toxic Shock.png": {
+    "mtime": 1795702843.695962,
+    "seen": 1795704511.2021487,
+    "ast_hash": "d1037e3eba9fdc6c9ec5aedd301dd861",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/351 - Mega Bean.png": {
+    "mtime": 1795702843.7009866,
+    "seen": 1795704511.2021494,
+    "ast_hash": "4b6b554f655bbad7f5c8ab240381ef64",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/353 - Bomber Boy.png": {
+    "mtime": 1795702843.706128,
+    "seen": 1795704511.2021499,
+    "ast_hash": "c9b37a9e7a80146ce48d9052780dccd6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/354 - Crack Jacks.png": {
+    "mtime": 1795702865.7985964,
+    "seen": 1795704511.2021506,
+    "ast_hash": "66ec52e4c5bed429205ca3083775a1d2",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/355 - Mom's Pearls.png": {
+    "mtime": 1795702843.7142015,
+    "seen": 1795704511.2021515,
+    "ast_hash": "558e38a4f991dbcde3deb636efa1f9d6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/356 - Car Battery.png": {
+    "mtime": 1795702843.7202444,
+    "seen": 1795704511.2021523,
+    "ast_hash": "f610629d79bcabce275670b025b5a88c",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/358 - The Wiz.png": {
+    "mtime": 1795702843.7237659,
+    "seen": 1795704511.202153,
+    "ast_hash": "7252ca9bd60adb04c19a7a0751cbb800",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/359 - 8 Inch Nails.png": {
+    "mtime": 1795702865.8026154,
+    "seen": 1795704511.2021534,
+    "ast_hash": "b9052d50e8554e1ef06f05cbc4db60ec",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/360 - Incubus.png": {
+    "mtime": 1795702865.8066328,
+    "seen": 1795704511.2021542,
+    "ast_hash": "008c3a1cb33610cfbbb79a8ac4d2c3f5",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/362 - Lil Chest.png": {
+    "mtime": 1795702843.7394974,
+    "seen": 1795704511.202155,
+    "ast_hash": "fcfc83d0a3ab6a8a16ce6c430757d825",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/364 - Friend Zone.png": {
+    "mtime": 1795702865.8116524,
+    "seen": 1795704511.2021558,
+    "ast_hash": "ac572b6fd9407212e1546c14a2bf860d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/365 - Lost Fly.png": {
+    "mtime": 1795702865.8161578,
+    "seen": 1795704511.2021563,
+    "ast_hash": "e8c56357c6c42ed915d126e1c9b4c4b3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/368 - Epiphora.png": {
+    "mtime": 1795702843.7537408,
+    "seen": 1795704511.202157,
+    "ast_hash": "91c428533d4d74c02c1a4321d301656d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/369 - Continuum.png": {
+    "mtime": 1795702865.8201673,
+    "seen": 1795704511.2021577,
+    "ast_hash": "fa5ec749fd435e78c0f6ef3318bd957d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/370 - Mr. Dolly.png": {
+    "mtime": 1795702843.7634344,
+    "seen": 1795704511.2021587,
+    "ast_hash": "625f95b05d13b7b70d6c68cf5ffc4318",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/373 - Dead Eye.png": {
+    "mtime": 1795702843.7674942,
+    "seen": 1795704511.2021594,
+    "ast_hash": "1c2c4a9d602e79920c315fbc76d71405",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/374 - Holy Light.png": {
+    "mtime": 1795702843.7720034,
+    "seen": 1795704511.20216,
+    "ast_hash": "a62542ccb26f673f4fbe3eb506819ca6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/375 - Host Hat.png": {
+    "mtime": 1795702843.7775874,
+    "seen": 1795704511.2021606,
+    "ast_hash": "1573dae244b787a476a77be6592e3e4c",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/376 - Restock.png": {
+    "mtime": 1795702843.7816064,
+    "seen": 1795704511.2021613,
+    "ast_hash": "14533de6f854a2e4a5e18d96bf1fe0ff",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/378 - No. 2.png": {
+    "mtime": 1795702843.785135,
+    "seen": 1795704511.2021623,
+    "ast_hash": "9fa7641ff8e6de071d6d639b81a3c8a7",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/380 - Pay To Play.png": {
+    "mtime": 1795702843.7896667,
+    "seen": 1795704511.2021627,
+    "ast_hash": "609bdcc7b35060002dd5f070978e431c",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/384 - Lil Gurdy.png": {
+    "mtime": 1795702843.795215,
+    "seen": 1795704511.2021635,
+    "ast_hash": "492cad707c46ea8a73706f8f05234f1d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/385 - Bumbo.png": {
+    "mtime": 1795702843.8007529,
+    "seen": 1795704511.202164,
+    "ast_hash": "7a6a8a04ae14d1b0f2660b388a0a1f5d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/386 - D12.png": {
+    "mtime": 1795702843.8048086,
+    "seen": 1795704511.2021646,
+    "ast_hash": "253434b3d37d16963fc8fd08ff7f75fc",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/387 - Censer.png": {
+    "mtime": 1795702843.8083453,
+    "seen": 1795704511.2021656,
+    "ast_hash": "8f429a519d4b955deae1eb43fa88024e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/388 - Key Bum.png": {
+    "mtime": 1795702865.8251846,
+    "seen": 1795704511.202166,
+    "ast_hash": "4be0b416427811864718fe187b7f8701",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/389 - Rune Bag.png": {
+    "mtime": 1795702843.8174279,
+    "seen": 1795704511.2021668,
+    "ast_hash": "d972da8b36e3c9567a985367f8b512ea",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/390 - Seraphim.png": {
+    "mtime": 1795702843.821444,
+    "seen": 1795704511.2021673,
+    "ast_hash": "5c7e7c51aec4b573d42baaab705d21b5",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/391 - Betrayal.png": {
+    "mtime": 1795702843.8264747,
+    "seen": 1795704511.202168,
+    "ast_hash": "29cdbfd912464115e3b69718ed9acbbc",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/392 - Zodiac.png": {
+    "mtime": 1795702865.828698,
+    "seen": 1795704511.2021685,
+    "ast_hash": "7fc140b983019392dfeeb4e4c7bdd9e6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/394 - Marked.png": {
+    "mtime": 1795702865.8327098,
+    "seen": 1795704511.2021694,
+    "ast_hash": "26e0bf163036d21fdd46ba1224b0b4b5",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/395 - Tech X.png": {
+    "mtime": 1795702843.8397753,
+    "seen": 1795704511.2021701,
+    "ast_hash": "bfcda52ce5212f48e1486a29abb2118d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/398 - God's Flesh.png": {
+    "mtime": 1795702843.8437834,
+    "seen": 1795704511.2021706,
+    "ast_hash": "efbc924756b1a1aa5e0babb79e684ec7",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/401 - Explosivo.png": {
+    "mtime": 1795702843.848981,
+    "seen": 1795704511.2021713,
+    "ast_hash": "e8e14d954b6dfb296bed47a65d955881",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/402 - Chaos.png": {
+    "mtime": 1795702865.8372314,
+    "seen": 1795704511.2021718,
+    "ast_hash": "40940a69cc024e5329d7528ebd6c74cd",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/403 - Spider Mod.png": {
+    "mtime": 1795702843.8585117,
+    "seen": 1795704511.2021728,
+    "ast_hash": "a02a1dab311a66249d8c7359b4efbe5c",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/404 - Farting Baby.png": {
+    "mtime": 1795702866.7829983,
+    "seen": 1795704511.2021735,
+    "ast_hash": "8d5d702babab77d87647c81d1238ea1a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/405 - GB Bug.png": {
+    "mtime": 1795702843.8623743,
+    "seen": 1795704511.2021742,
+    "ast_hash": "21a382b529e3647e09fc3cbcf7a144e0",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/406 - D8.png": {
+    "mtime": 1795702843.8675268,
+    "seen": 1795704511.2021747,
+    "ast_hash": "a2da04d8cc03aede87cf4b98b6f05f95",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/407 - Purity.png": {
+    "mtime": 1795702843.872116,
+    "seen": 1795704511.2021754,
+    "ast_hash": "797f6ff2d0f1543f51470e733e15f318",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/408 - Athame.png": {
+    "mtime": 1795702843.8762386,
+    "seen": 1795704511.202176,
+    "ast_hash": "2d5e8efe5de81c656410a01a051b3307",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/410 - Evil Eye.png": {
+    "mtime": 1795702865.8417387,
+    "seen": 1795704511.2021768,
+    "ast_hash": "b143b9db4426e690721bb9d802ddbc1e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/411 - Lusty Blood.png": {
+    "mtime": 1795702843.8852568,
+    "seen": 1795704511.2021773,
+    "ast_hash": "c44f473c2e3be2a39e5ff55cd250676a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/417 - Succubus.png": {
+    "mtime": 1795702843.8902912,
+    "seen": 1795704511.202178,
+    "ast_hash": "dc2f4a5807841904a5f7b7f200a1ae27",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/418 - Fruit Cake.png": {
+    "mtime": 1795702843.8943028,
+    "seen": 1795704511.2021787,
+    "ast_hash": "a9dd27bbbb6a6ed3acc660c3b33a80a3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/419 - Teleport 2.0.png": {
+    "mtime": 1795702843.8999,
+    "seen": 1795704511.2021797,
+    "ast_hash": "28d3ce3a68092228b3d5a05022d9b3c6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/421 - Kidney Bean.png": {
+    "mtime": 1795702865.846845,
+    "seen": 1795704511.2021801,
+    "ast_hash": "5676fb820caad7b9b22e260edb156215",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/424 - Sack Head.png": {
+    "mtime": 1795702843.9085896,
+    "seen": 1795704511.2021809,
+    "ast_hash": "4dadfb7fc2ca597a506d548b34d1598a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/425 - Night Light.png": {
+    "mtime": 1795702843.9122803,
+    "seen": 1795704511.2021816,
+    "ast_hash": "3bc36e2d832f265b4cbde3d4a5552626",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/428 - PJs.png": {
+    "mtime": 1795702843.9178152,
+    "seen": 1795704511.202182,
+    "ast_hash": "d392c2b697052786d86646880af38389",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/430 - Papa Fly.png": {
+    "mtime": 1795702843.9239488,
+    "seen": 1795704511.202183,
+    "ast_hash": "e88279a6528f7e3b4b0699c4e79e8253",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/433 - My Shadow.png": {
+    "mtime": 1795702843.9286506,
+    "seen": 1795704511.2021837,
+    "ast_hash": "41c575d3433031adf59cd2a8579be8c0",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/434 - Jar of Flies.png": {
+    "mtime": 1795702865.8527179,
+    "seen": 1795704511.2021844,
+    "ast_hash": "6512b3ce103ab5c4723863db9a972970",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/435 - Lil Loki.png": {
+    "mtime": 1795702865.8571212,
+    "seen": 1795704511.2021852,
+    "ast_hash": "d711e3f8aaf4d65fa9ab67f3cdd220f3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/436 - Milk!.png": {
+    "mtime": 1795702865.8605413,
+    "seen": 1795704511.2021856,
+    "ast_hash": "d5787a69a12a61069ca68402a2a710ed",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/437 - D7.png": {
+    "mtime": 1795702865.866395,
+    "seen": 1795704511.2021866,
+    "ast_hash": "32c26208f52af0dc39cce0ada3505055",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/438 - Binky.png": {
+    "mtime": 1795702843.9493532,
+    "seen": 1795704511.2021873,
+    "ast_hash": "ea1bcc771e78a70807833ef7577c2b83",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/439 - Mom's Box.png": {
+    "mtime": 1795702843.9538634,
+    "seen": 1795704511.2021878,
+    "ast_hash": "a15e7a841cc777b571c49ec840222d1d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/443 - Apple!.png": {
+    "mtime": 1795702865.8701773,
+    "seen": 1795704511.2021885,
+    "ast_hash": "fc3ce0c4184dd989c23cee3dc248e118",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/444 - Lead Pencil.png": {
+    "mtime": 1795702865.8741956,
+    "seen": 1795704511.2021892,
+    "ast_hash": "73050ad02ba13d35fcf7ea6989bf949f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/445 - Dog Tooth.png": {
+    "mtime": 1795702865.8787305,
+    "seen": 1795704511.20219,
+    "ast_hash": "24a3a3c64b0b196933b73294f0150b12",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/446 - Dead Tooth.png": {
+    "mtime": 1795702865.8817334,
+    "seen": 1795704511.2021906,
+    "ast_hash": "1233ec2baabef49f6ee38668a8b09118",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/447 - Linger Bean.png": {
+    "mtime": 1795702865.8867471,
+    "seen": 1795704511.2021914,
+    "ast_hash": "f6a046bd01827cd319c2a9ec2094d5ba",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/449 - Metal Plate.png": {
+    "mtime": 1795702865.8909087,
+    "seen": 1795704511.2021918,
+    "ast_hash": "7c61d586b0c8d823fe40576399c62566",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/450 - Eye of Greed.png": {
+    "mtime": 1795702865.8955152,
+    "seen": 1795704511.2021925,
+    "ast_hash": "aefecc69e37d0d858769dfb17ee35701",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/451 - Tarot Cloth.png": {
+    "mtime": 1795702865.8995237,
+    "seen": 1795704511.2021935,
+    "ast_hash": "b490bb4849a941144ff8ad8c3c626552",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/456 - Midnight Snack.png": {
+    "mtime": 1795702865.9061704,
+    "seen": 1795704511.202194,
+    "ast_hash": "9527b02e76861d3a38877fb642ed01d8",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/457 - Cone Head.png": {
+    "mtime": 1795702865.9107394,
+    "seen": 1795704511.2021947,
+    "ast_hash": "7df41ff135870fcb24dc796e6809b5b5",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/460 - Glaucoma.png": {
+    "mtime": 1795702865.9158945,
+    "seen": 1795704511.2021952,
+    "ast_hash": "a25a0a309e8f6a6c7c1e640abfd25c20",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/461 - Parasitoid.png": {
+    "mtime": 1795702865.9209125,
+    "seen": 1795704511.202196,
+    "ast_hash": "2b49def62fc8d556c595060462e1fbe3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/466 - Contagion.png": {
+    "mtime": 1795702865.9259553,
+    "seen": 1795704511.2021966,
+    "ast_hash": "525a7d7dd72161199fd20e378e61bc81",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/467 - Finger!.png": {
+    "mtime": 1795702865.9304664,
+    "seen": 1795704511.202197,
+    "ast_hash": "621e808985da2d2ef89f2bc0dfbbeea4",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/468 - Shade.png": {
+    "mtime": 1795702865.936302,
+    "seen": 1795704511.202198,
+    "ast_hash": "5487a233405299c5bde8e7ce2824c736",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/469 - Depression.png": {
+    "mtime": 1795702865.9408164,
+    "seen": 1795704511.2021985,
+    "ast_hash": "dab1b02053f980549434670f6e198d42",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/470 - Hushy.png": {
+    "mtime": 1795702865.9453225,
+    "seen": 1795704511.2021992,
+    "ast_hash": "c673f497c74030e242377306286ae7ca",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/471 - Lil Monstro.png": {
+    "mtime": 1795702865.9488308,
+    "seen": 1795704511.2022002,
+    "ast_hash": "bc3dd5d4bb7b430f8572273eff6b27c4",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/472 - King Baby.png": {
+    "mtime": 1795702865.9539368,
+    "seen": 1795704511.2022007,
+    "ast_hash": "8f2d59f59b0fc67bb3de67b686112992",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/473 - Big Chubby.png": {
+    "mtime": 1795702865.9579492,
+    "seen": 1795704511.2022014,
+    "ast_hash": "a877c1f9200a99a64542dbbe6b9bd7bf",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/475 - Plan C.png": {
+    "mtime": 1795702865.9639635,
+    "seen": 1795704511.202202,
+    "ast_hash": "b2026317d7a0c1fda813f95ce4f2dd89",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/476 - D1.png": {
+    "mtime": 1795702865.9674814,
+    "seen": 1795704511.2022026,
+    "ast_hash": "4602099607e972a78bfafdd95019e1c7",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/477 - Void.png": {
+    "mtime": 1795702865.972119,
+    "seen": 1795704511.2022033,
+    "ast_hash": "810272c3eafffc0704f0e1c22475d1c0",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/478 - Pause.png": {
+    "mtime": 1795702865.9761198,
+    "seen": 1795704511.202204,
+    "ast_hash": "95a4ddb529d2253948fbd2d538b25b4e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/479 - Smelter.png": {
+    "mtime": 1795702865.9806433,
+    "seen": 1795704511.2022047,
+    "ast_hash": "00e129b2f924a88113be4d0b3bdfaa14",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/480 - Compost.png": {
+    "mtime": 1795702865.9861495,
+    "seen": 1795704511.2022054,
+    "ast_hash": "e07ea541462f8f820bf08091f3a9a47a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/481 - Dataminer.png": {
+    "mtime": 1795702865.9906926,
+    "seen": 1795704511.2022061,
+    "ast_hash": "5ae11cd4f92e1cf2f7c5ebd2ce2ccac4",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/482 - Clicker.png": {
+    "mtime": 1795702865.9952004,
+    "seen": 1795704511.2022066,
+    "ast_hash": "cd9c8192a4cf2650943679291714c2e0",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/483 - Mama Mega!.png": {
+    "mtime": 1795702866.0002177,
+    "seen": 1795704511.2022076,
+    "ast_hash": "26feaab5e4cde0683a23338ffa522b29",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/484 - Wait What.png": {
+    "mtime": 1795702866.0037286,
+    "seen": 1795704511.202208,
+    "ast_hash": "a147204954efe3d8d46ee29ee1ae60ca",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/486 - Dull Razor.png": {
+    "mtime": 1795702866.7885497,
+    "seen": 1795704511.2022088,
+    "ast_hash": "38c5b854e718f46ee55981cc7f3601b9",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/488 - Metronome.png": {
+    "mtime": 1795702866.792633,
+    "seen": 1795704511.2022092,
+    "ast_hash": "8e5fa7e2dd2b354695041eea1872f139",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/489 - D infinity.png": {
+    "mtime": 1795702866.796736,
+    "seen": 1795704511.20221,
+    "ast_hash": "9b7c8ca88a01a22f539a2709ebd29c61",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/490 - Eden's Soul.png": {
+    "mtime": 1795702866.799734,
+    "seen": 1795704511.202211,
+    "ast_hash": "51d0f2b5abf859972660d6513da2141f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/491 - Acid Baby.png": {
+    "mtime": 1795702866.8037448,
+    "seen": 1795704511.2022114,
+    "ast_hash": "9d431898a7f26a779816683c9e54d394",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/492 - YO LISTEN!.png": {
+    "mtime": 1795702866.8087554,
+    "seen": 1795704511.202212,
+    "ast_hash": "23e741c71177a1d59892efe45b2271ae",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/493 - Adrenaline.png": {
+    "mtime": 1795702866.8118727,
+    "seen": 1795704511.2022128,
+    "ast_hash": "3a14758414835170b0921f025ae1b9c6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/496 - Euthanasia.png": {
+    "mtime": 1795702866.8179138,
+    "seen": 1795704511.2022133,
+    "ast_hash": "532ff0f9afeac8ea45e00089ef7c0816",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/497 - Camo Undies.png": {
+    "mtime": 1795702866.8224251,
+    "seen": 1795704511.2022142,
+    "ast_hash": "c85dcedb441775f9e56d5602d82bfeaa",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/498 - Duality.png": {
+    "mtime": 1795702866.8269598,
+    "seen": 1795704511.202215,
+    "ast_hash": "27d1256aac6ca4d0ff051d01142d5e8c",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/499 - Eucharist.png": {
+    "mtime": 1795702866.8314753,
+    "seen": 1795704511.2022154,
+    "ast_hash": "9dbdec2a4ef07ac910f02f3950b8b0a0",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/502 - Large Zit.png": {
+    "mtime": 1795702866.0092444,
+    "seen": 1795704511.2022161,
+    "ast_hash": "810a9b83aacc5d117ba973437684f9b3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/503 - Little Horn.png": {
+    "mtime": 1795702866.0147698,
+    "seen": 1795704511.2022169,
+    "ast_hash": "c1b55686fd2a991b172d4be96c836138",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/505 - Poke Go.png": {
+    "mtime": 1795702866.019057,
+    "seen": 1795704511.2022178,
+    "ast_hash": "993b40bce863b7465f5b68d88a4b291a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/507 - Sharp Straw.png": {
+    "mtime": 1795702866.0245872,
+    "seen": 1795704511.2022185,
+    "ast_hash": "9dd1ba2bee297b7aed4005353310e97d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/508 - Mom's Razor.png": {
+    "mtime": 1795702866.0293496,
+    "seen": 1795704511.202219,
+    "ast_hash": "eab9bf19096b96fc62e44a994fba508d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/510 - Delirious.png": {
+    "mtime": 1795702866.0338652,
+    "seen": 1795704511.2022197,
+    "ast_hash": "13a284ea1a74ea6cf2b7e7ac40b2de4e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/511 - Angry Fly.png": {
+    "mtime": 1795702866.0383928,
+    "seen": 1795704511.2022204,
+    "ast_hash": "10cd6805a8f48335ff24bd6cae760ef9",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/512 - Black Hole.png": {
+    "mtime": 1795702866.0424125,
+    "seen": 1795704511.2022214,
+    "ast_hash": "63a2806e1dd56e202defb948681093c6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/513 - Bozo.png": {
+    "mtime": 1795702866.0459225,
+    "seen": 1795704511.202222,
+    "ast_hash": "b45b839e8bb935a061bc92d3e02c537e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/516 - Sprinkler.png": {
+    "mtime": 1795702866.050885,
+    "seen": 1795704511.2022226,
+    "ast_hash": "db21e41444c2285ecd46a1769713f5a8",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/517 - Fast Bombs.png": {
+    "mtime": 1795702866.055656,
+    "seen": 1795704511.2022233,
+    "ast_hash": "c1e045a46f617a9778a5f5e19a4fde3d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/518 - Buddy in a Box.png": {
+    "mtime": 1795702866.0596726,
+    "seen": 1795704511.202224,
+    "ast_hash": "88c0ca0601e989afbd3eba49f266b177",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/523 - Moving Box.png": {
+    "mtime": 1795702866.8366356,
+    "seen": 1795704511.2022247,
+    "ast_hash": "387718077e2099a7b48bc9887c3c428e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/525 - Leprosy.png": {
+    "mtime": 1795702866.0656896,
+    "seen": 1795704511.2022254,
+    "ast_hash": "96dfcac3f4226df84528109a1a610eb1",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/526 - 7 Seals.png": {
+    "mtime": 1795702866.0702233,
+    "seen": 1795704511.202226,
+    "ast_hash": "a227ec5de53a03a8090a9bc7886bc566",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/527 - Mr. ME!.png": {
+    "mtime": 1795702866.0737393,
+    "seen": 1795704511.2022266,
+    "ast_hash": "ff522957c8a8d37b2fafb0f31220edb7",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/529 - Pop!.png": {
+    "mtime": 1795702866.0782435,
+    "seen": 1795704511.2022274,
+    "ast_hash": "95b6fb67b775be950a5914374bb64e2f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/530 - Death's List.png": {
+    "mtime": 1795702866.081668,
+    "seen": 1795704511.2022283,
+    "ast_hash": "a27fca55f9175ecfb09906465fcbdf92",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/533 - Trisagion.png": {
+    "mtime": 1795702866.0868912,
+    "seen": 1795704511.2022288,
+    "ast_hash": "95c1ca519102a9eff229d3b7aceae7fe",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/534 - Schoolbag.png": {
+    "mtime": 1795702866.8408012,
+    "seen": 1795704511.2022295,
+    "ast_hash": "b3f56b86a2f92d775dbc1c4acf6cb594",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/535 - Blanket.png": {
+    "mtime": 1795702866.0919068,
+    "seen": 1795704511.2022302,
+    "ast_hash": "dfc6ae1cb47cf8b3c4b08ab524bb1132",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/537 - Lil Spewer.png": {
+    "mtime": 1795702866.0949073,
+    "seen": 1795704511.202231,
+    "ast_hash": "eff3673c19116b0aebfa11b5a6dbae1f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/538 - Marbles.png": {
+    "mtime": 1795702866.099916,
+    "seen": 1795704511.202232,
+    "ast_hash": "ffb1c97964cac234dc5a80c45fde49e4",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/539 - Mystery Egg.png": {
+    "mtime": 1795702866.103423,
+    "seen": 1795704511.2022324,
+    "ast_hash": "9c3c0599c596c7e01b2b3dee41f848b6",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/540 - Flat Stone.png": {
+    "mtime": 1795702866.1074424,
+    "seen": 1795704511.202233,
+    "ast_hash": "35e1b740ee667a14d33c2342d27b5124",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/541 - Marrow.png": {
+    "mtime": 1795702866.1114771,
+    "seen": 1795704511.2022336,
+    "ast_hash": "ad9a150a98e56d33f0b51919f95063a9",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/542 - Slipped Rib.png": {
+    "mtime": 1795702866.116517,
+    "seen": 1795704511.2022343,
+    "ast_hash": "4f19068de60bad453c29e29e6a51cbef",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/544 - Pointy Rib.png": {
+    "mtime": 1795702866.1205688,
+    "seen": 1795704511.202235,
+    "ast_hash": "4f4d82a2379c2e5f4fad58643a5c1ddd",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/546 - Dad's Ring.png": {
+    "mtime": 1795702866.1246157,
+    "seen": 1795704511.2022357,
+    "ast_hash": "549b89f98acc3ab94865bc07aaa8d7df",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/548 - Jaw Bone.png": {
+    "mtime": 1795702866.129585,
+    "seen": 1795704511.2022364,
+    "ast_hash": "475fa4e5c0bf2758e1b5a50ff38e9bad",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/552 - Mom's Shovel.png": {
+    "mtime": 1795702866.133596,
+    "seen": 1795704511.2022371,
+    "ast_hash": "cb7f2d272a69cfb8aa8d0492b024f490",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/554 - 2Spooky.png": {
+    "mtime": 1795702866.1391268,
+    "seen": 1795704511.2022376,
+    "ast_hash": "94b60793193b4addcdfcdbb637e4065b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/556 - Sulfur.png": {
+    "mtime": 1795702866.1426404,
+    "seen": 1795704511.2022386,
+    "ast_hash": "f1f7ee4c05d1e7a87761ce33201c86cf",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/558 - Eye Sore.png": {
+    "mtime": 1795702866.1481643,
+    "seen": 1795704511.2022393,
+    "ast_hash": "b353232af6b93cbad40e5ace4231b4c4",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/559 - 120 Volt.png": {
+    "mtime": 1795702866.1521776,
+    "seen": 1795704511.20224,
+    "ast_hash": "34b9bce39f2252f0fe51bb9f45ae52c3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/560 - It Hurts.png": {
+    "mtime": 1795702866.1567147,
+    "seen": 1795704511.2022405,
+    "ast_hash": "6af8e1529322d9cbb83914e74ea1b872",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/561 - Almond Milk.png": {
+    "mtime": 1795702866.161224,
+    "seen": 1795704511.2022412,
+    "ast_hash": "d128a1c44f0662e67fb873d3531ea287",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/562 - Rock Bottom.png": {
+    "mtime": 1795702866.1647494,
+    "seen": 1795704511.2022421,
+    "ast_hash": "db268366399930c743ed61cf1ccbb60d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/564 - A Bar of Soap.png": {
+    "mtime": 1795702866.169811,
+    "seen": 1795704511.2022429,
+    "ast_hash": "f71b85e5810c6334e3068bbd67ea11e2",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/565 - Blood Puppy.png": {
+    "mtime": 1795702866.1738672,
+    "seen": 1795704511.2022433,
+    "ast_hash": "b67187860ed0c697ed92e103d5d75e60",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/569 - Blood Oath.png": {
+    "mtime": 1795702866.1783977,
+    "seen": 1795704511.202244,
+    "ast_hash": "72cf3d040d3aff06ef83d954840bab63",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/571 - Orphan Socks.png": {
+    "mtime": 1795702866.1823962,
+    "seen": 1795704511.2022448,
+    "ast_hash": "abfd910e380c1ac8ebb669ceb2af1274",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/572 - Eye of the Occult.png": {
+    "mtime": 1795702866.1870027,
+    "seen": 1795704511.2022455,
+    "ast_hash": "88e9c494cb308bbddba400e6cb3eea90",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/574 - Monstrance.png": {
+    "mtime": 1795702866.1915352,
+    "seen": 1795704511.2022462,
+    "ast_hash": "1b70bdb889deb56f5bc252f41043c763",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/576 - Dirty Mind.png": {
+    "mtime": 1795702866.1965482,
+    "seen": 1795704511.202247,
+    "ast_hash": "8f0338b6d9ffc27fe584d75ff376a650",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/577 - Damocles.png": {
+    "mtime": 1795702866.1995559,
+    "seen": 1795704511.2022474,
+    "ast_hash": "d474138f9169ef24ab6abee882140d12",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/580 - Red Key.png": {
+    "mtime": 1795702866.2045724,
+    "seen": 1795704511.202248,
+    "ast_hash": "a286c091ae2cf85f8bc7aaf10e73d00f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/581 - Psy Fly.png": {
+    "mtime": 1795702866.2090826,
+    "seen": 1795704511.202249,
+    "ast_hash": "21b40c87d1f882986f26e8a71c6b62f8",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/582 - Wavy Cap.png": {
+    "mtime": 1795702866.2133536,
+    "seen": 1795704511.2022495,
+    "ast_hash": "5ce3c67d5101b1532c4689422f71226b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/588 - Sol.png": {
+    "mtime": 1795702866.218384,
+    "seen": 1795704511.2022502,
+    "ast_hash": "8ad9f14af6bf83bf6e81260a64ade5e9",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/589 - Luna.png": {
+    "mtime": 1795702866.2229385,
+    "seen": 1795704511.2022507,
+    "ast_hash": "1c4c08daae99c1aa895b35e4368ab226",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/590 - Mercurius.png": {
+    "mtime": 1795702866.2267406,
+    "seen": 1795704511.2022514,
+    "ast_hash": "a16997f2a8b966613d8e3a40a544a021",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/591 - Venus.png": {
+    "mtime": 1795702866.2308042,
+    "seen": 1795704511.2022524,
+    "ast_hash": "798be30b0fc5a3464acf336dc1f7ff17",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/592 - Terra.png": {
+    "mtime": 1795702866.2359674,
+    "seen": 1795704511.2022529,
+    "ast_hash": "e030010e5110239521627ec8b269c4bb",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/593 - Mars.png": {
+    "mtime": 1795702866.2399848,
+    "seen": 1795704511.2022536,
+    "ast_hash": "3f34d06f7ee7383686d6774841bbc658",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/594 - Jupiter.png": {
+    "mtime": 1795702866.2450285,
+    "seen": 1795704511.2022543,
+    "ast_hash": "844653e275fb82f030d2fe4af9120c85",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/595 - Saturnus.png": {
+    "mtime": 1795702866.2490482,
+    "seen": 1795704511.202255,
+    "ast_hash": "8c7cdeec19f3d2372dc209c125f953ce",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/596 - Uranus.png": {
+    "mtime": 1795702866.253813,
+    "seen": 1795704511.2022557,
+    "ast_hash": "7cc94346f1af84eff192ffdcedfddc83",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/597 - Neptunus.png": {
+    "mtime": 1795702866.2570312,
+    "seen": 1795704511.2022564,
+    "ast_hash": "eaad7e8f13a88d5a4f28026e057898bd",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/598 - Pluto.png": {
+    "mtime": 1795702866.2620463,
+    "seen": 1795704511.2022572,
+    "ast_hash": "98d0d2ee6446e6caa100d714c5f7fee8",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/599 - Voodoo Head.png": {
+    "mtime": 1795702866.267064,
+    "seen": 1795704511.2022579,
+    "ast_hash": "a9d6cc54e31ac8c7797370f5f178748a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/600 - Eye Drops.png": {
+    "mtime": 1795702866.271699,
+    "seen": 1795704511.2022583,
+    "ast_hash": "258ec93a5e58ffdcce9c23e86fa47ed1",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/602 - Member Card.png": {
+    "mtime": 1795702866.275706,
+    "seen": 1795704511.2022593,
+    "ast_hash": "7993ea9089fa99181c95e532ba832dea",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/605 - The Scooper.png": {
+    "mtime": 1795702866.2807672,
+    "seen": 1795704511.20226,
+    "ast_hash": "8cdc4a9a9096df91e4b7b5fc6a0c63e3",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/606 - Ocular Rift.png": {
+    "mtime": 1795702866.2854922,
+    "seen": 1795704511.2022605,
+    "ast_hash": "d83208e09fd5bfe569658738c3579589",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/607 - Boiled Baby.png": {
+    "mtime": 1795702866.2896142,
+    "seen": 1795704511.2022612,
+    "ast_hash": "2415d8b32501f2412e8d29977495c66e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/609 - Eternal D6.png": {
+    "mtime": 1795702866.2933838,
+    "seen": 1795704511.202262,
+    "ast_hash": "6376298f19cff73525a32bfcd0777895",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/610 - Bird Cage.png": {
+    "mtime": 1795702866.2992024,
+    "seen": 1795704511.2022629,
+    "ast_hash": "10ba4add911d851871a473964cd695bb",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/611 - Larynx.png": {
+    "mtime": 1795702866.3042178,
+    "seen": 1795704511.2022634,
+    "ast_hash": "8d0550bae8961e7d1c0f9a29b3f346ee",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/612 - Lost Soul.png": {
+    "mtime": 1795702866.3084114,
+    "seen": 1795704511.202264,
+    "ast_hash": "895cbd7d7ddb9f44b59a72d766885ee5",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/614 - Blood Bombs.png": {
+    "mtime": 1795702866.31401,
+    "seen": 1795704511.2022648,
+    "ast_hash": "dc253ac84afb005b64b04cf8bace993a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/615 - Lil Dumpy.png": {
+    "mtime": 1795702866.3195202,
+    "seen": 1795704511.2022655,
+    "ast_hash": "1535f2efb370e56507a348c4b7033770",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/616 - Bird's Eye.png": {
+    "mtime": 1795702866.3242614,
+    "seen": 1795704511.2022662,
+    "ast_hash": "94d5e0a3324299f7ab032864e36f0e56",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/617 - Lodestone.png": {
+    "mtime": 1795702866.3283484,
+    "seen": 1795704511.202267,
+    "ast_hash": "33e470b720219e833e50906c86b78466",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/619 - Birthright.png": {
+    "mtime": 1795702866.3333673,
+    "seen": 1795704511.2022674,
+    "ast_hash": "1d60fd998bc1642314a5be731fdb267d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/621 - Red Stew.png": {
+    "mtime": 1795702866.338413,
+    "seen": 1795704511.2022681,
+    "ast_hash": "6da7e1c83968c7995f37f7c8450a5b3b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/622 - Genesis.png": {
+    "mtime": 1795702866.3429394,
+    "seen": 1795704511.2022688,
+    "ast_hash": "327a87fd5c44f60ff6eca82f547d0cd9",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/623 - Sharp Key.png": {
+    "mtime": 1795702866.346451,
+    "seen": 1795704511.2022696,
+    "ast_hash": "036903633c2eef14bdc220c957ceaf64",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/625 - Mega Mush.png": {
+    "mtime": 1795702866.3513918,
+    "seen": 1795704511.2022703,
+    "ast_hash": "a9d1cd0c82c80b09140798b3a932f27a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/629 - Bot Fly.png": {
+    "mtime": 1795702866.3564186,
+    "seen": 1795704511.2022707,
+    "ast_hash": "4ab05da09fb876322319e6efa56e5bbe",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/632 - Evil Charm.png": {
+    "mtime": 1795702866.3610017,
+    "seen": 1795704511.2022715,
+    "ast_hash": "34f2132c3d7aa046d02dd15233a2b12b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/633 - Dogma.png": {
+    "mtime": 1795702866.3650358,
+    "seen": 1795704511.202272,
+    "ast_hash": "629cec22f26555b5ecc00028c5e82c42",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/634 - Purgatory.png": {
+    "mtime": 1795702866.3696606,
+    "seen": 1795704511.2022731,
+    "ast_hash": "6aa6ef3394f633a68e57e34d568841ac",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/635 - Stitches.png": {
+    "mtime": 1795702866.3731742,
+    "seen": 1795704511.2022736,
+    "ast_hash": "b2c3ff0585823ac9359aea1cd34c5d61",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/636 - R Key.png": {
+    "mtime": 1795702866.3778565,
+    "seen": 1795704511.2022743,
+    "ast_hash": "e5b719e8863adbd15da9934b9c464cd5",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/638 - Eraser.png": {
+    "mtime": 1795702866.3814836,
+    "seen": 1795704511.202275,
+    "ast_hash": "5c0d30dbab2b2eeb77cb6f2b1b5049fa",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/639 - Yuck Heart.png": {
+    "mtime": 1795702866.3856986,
+    "seen": 1795704511.2022755,
+    "ast_hash": "94b67d4265ad9d5e440fc0799b434a77",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/640 - Urn of Souls.png": {
+    "mtime": 1795702866.3897274,
+    "seen": 1795704511.2022765,
+    "ast_hash": "2ce5769b57cf704fadad6ffef7d52ef7",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/641 - Akeldama.png": {
+    "mtime": 1795702866.395132,
+    "seen": 1795704511.2022772,
+    "ast_hash": "003fd53f29ba221a4ae2b0cba56eaae7",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/642 - Magic Skin.png": {
+    "mtime": 1795702866.3991535,
+    "seen": 1795704511.2022777,
+    "ast_hash": "5ad0c1d78dba6b9af819e24a0b7caeb1",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/643 - Revelation.png": {
+    "mtime": 1795702866.404158,
+    "seen": 1795704511.2022784,
+    "ast_hash": "59594dfabc9e39f02a04a03df734185c",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/645 - Tinytoma.png": {
+    "mtime": 1795702866.4076037,
+    "seen": 1795704511.202279,
+    "ast_hash": "85c2f128d314f80bbbb13180495ae450",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/649 - Fruity Plum.png": {
+    "mtime": 1795702866.4132693,
+    "seen": 1795704511.2022796,
+    "ast_hash": "d624f36b17dd3173c8ef3e9938673bb8",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/650 - Plum Flute.png": {
+    "mtime": 1795702866.4182932,
+    "seen": 1795704511.2022805,
+    "ast_hash": "26299e12fc68b67a655c871c8dbe1154",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/652 - Cube Baby.png": {
+    "mtime": 1795702866.422799,
+    "seen": 1795704511.2022812,
+    "ast_hash": "cd8dea1f8eaff318cd319e6e5b91a983",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/653 - Vade Retro.png": {
+    "mtime": 1795702866.4278188,
+    "seen": 1795704511.2022817,
+    "ast_hash": "d782895df654ca151ccd7c1e9e7eaddd",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/654 - False PHD.png": {
+    "mtime": 1795702866.4323273,
+    "seen": 1795704511.2022824,
+    "ast_hash": "39c508ffd054b6e95a30273902e1230f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/655 - Spin to Win.png": {
+    "mtime": 1795702866.4383478,
+    "seen": 1795704511.2022834,
+    "ast_hash": "cec15a459730d95e8318b9bdefbe2355",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/657 - Vasculitis.png": {
+    "mtime": 1795702866.4427946,
+    "seen": 1795704511.2022839,
+    "ast_hash": "2c3e35ca931605cc5704f8d7e79c0450",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/658 - Giant Cell.png": {
+    "mtime": 1795702866.4488568,
+    "seen": 1795704511.2022846,
+    "ast_hash": "e35fb61bf6fcecac1bcc6224b4f8baf8",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/661 - Quints.png": {
+    "mtime": 1795702866.4538815,
+    "seen": 1795704511.2022858,
+    "ast_hash": "ac84e960f8c4f086d48303637b073102",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/664 - Binge Eater.png": {
+    "mtime": 1795702866.4577775,
+    "seen": 1795704511.2022862,
+    "ast_hash": "8d6cb64bdf25de83defee3f302cdcc92",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/665 - Guppy's Eye.png": {
+    "mtime": 1795702866.4618783,
+    "seen": 1795704511.2022872,
+    "ast_hash": "bc5de160ae8cde0164a500c2bf8a7a78",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/667 - Strawman.png": {
+    "mtime": 1795702866.4664078,
+    "seen": 1795704511.202288,
+    "ast_hash": "e6bfa87ed4c0ea70ce4b02c0a4cf086b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/668 - Dad's Note.png": {
+    "mtime": 1795702866.471439,
+    "seen": 1795704511.2022884,
+    "ast_hash": "0b9ecb43752a12d62025f660556fc47c",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/669 - Sausage.png": {
+    "mtime": 1795702866.4748993,
+    "seen": 1795704511.202289,
+    "ast_hash": "8165a4f5cafaf706fda98bb038ca8b7b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/670 - Options.png": {
+    "mtime": 1795702866.4799314,
+    "seen": 1795704511.2022898,
+    "ast_hash": "abb95d5f5e6a42a71e6626c053dcb6dc",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/671 - Candy Heart.png": {
+    "mtime": 1795702866.48396,
+    "seen": 1795704511.2022908,
+    "ast_hash": "777ef4ce5018beb56a915d88fc0727d8",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/673 - Redemption.png": {
+    "mtime": 1795702866.4889736,
+    "seen": 1795704511.2022915,
+    "ast_hash": "e2d92f0585942f631bdd9191a20d42e8",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/675 - Cracked Orb.png": {
+    "mtime": 1795702866.492992,
+    "seen": 1795704511.2022924,
+    "ast_hash": "cb172b1cb39cf139b396a6b535c6b724",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/676 - Empty Heart.png": {
+    "mtime": 1795702866.497652,
+    "seen": 1795704511.202293,
+    "ast_hash": "5fe8b1c86c4132488cbab815723e9b1a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/678 - C Section.png": {
+    "mtime": 1795702866.5031629,
+    "seen": 1795704511.2022939,
+    "ast_hash": "7c07d859329be7fcc9506db74ac3d38d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/679 - Lil Abaddon.png": {
+    "mtime": 1795702866.5074008,
+    "seen": 1795704511.2022946,
+    "ast_hash": "788fd22b6c69e3c4cb852dc8ab7b848e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/681 - Lil Portal.png": {
+    "mtime": 1795702866.5124142,
+    "seen": 1795704511.2022953,
+    "ast_hash": "b63bc55490264ab071abf8273b5d515b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/682 - Worm Friend.png": {
+    "mtime": 1795702866.5169299,
+    "seen": 1795704511.2022958,
+    "ast_hash": "cb701e2d2add1cfde33d40f647c60f08",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/683 - Bone Spurs.png": {
+    "mtime": 1795702866.5215476,
+    "seen": 1795704511.2022965,
+    "ast_hash": "76b57844e5d8d68af5653edd2a16ac7b",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/684 - Hungry Soul.png": {
+    "mtime": 1795702866.5260708,
+    "seen": 1795704511.2022977,
+    "ast_hash": "605d7008e446c958acf906193b532d92",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/685 - Jar of Wisps.png": {
+    "mtime": 1795702866.5295813,
+    "seen": 1795704511.2022984,
+    "ast_hash": "0e60fcd273d24e84b01a17ded4ed4f63",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/686 - Soul Locket.png": {
+    "mtime": 1795702866.5355623,
+    "seen": 1795704511.2022989,
+    "ast_hash": "e4e0c11fb1eac6e76fd967a6527d9b8f",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/688 - Inner Child.png": {
+    "mtime": 1795702866.5396144,
+    "seen": 1795704511.2022996,
+    "ast_hash": "06ec88b54748a2e430613239ba994d99",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/690 - Belly Jelly.png": {
+    "mtime": 1795702866.5446308,
+    "seen": 1795704511.2023003,
+    "ast_hash": "da3f6414c486cb0315e866d7143ad31e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/691 - Sacred Orb.png": {
+    "mtime": 1795702866.5485792,
+    "seen": 1795704511.2023013,
+    "ast_hash": "c499739cb560e8ef02da67b064317d58",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/693 - The Swarm.png": {
+    "mtime": 1795702866.5535994,
+    "seen": 1795704511.202302,
+    "ast_hash": "30e56fb8cc40ebc257036dba77c4df3e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/694 - Heartbreak.png": {
+    "mtime": 1795702866.557228,
+    "seen": 1795704511.2023027,
+    "ast_hash": "e278eebdc8fdf33eee66390e85d132ce",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/695 - Bloody Gust.png": {
+    "mtime": 1795702866.5607603,
+    "seen": 1795704511.2023034,
+    "ast_hash": "8d4a47feeedff4263e823b03a68de521",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/696 - Salvation.png": {
+    "mtime": 1795702866.5656748,
+    "seen": 1795704511.2023044,
+    "ast_hash": "10ce9e567fea82531d3d803798ee973e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/701 - Isaac's Tomb.png": {
+    "mtime": 1795702866.569918,
+    "seen": 1795704511.202305,
+    "ast_hash": "3e62d3f67c661d762712e559c389bce8",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/702 - Vengeful Spirit.png": {
+    "mtime": 1795702866.5739257,
+    "seen": 1795704511.2023058,
+    "ast_hash": "d62b2d3b11755231653e4581f487332d",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/703 - Esau Jr..png": {
+    "mtime": 1795702866.5774307,
+    "seen": 1795704511.2023063,
+    "ast_hash": "58e1b68c48cb24c2f4d63ef170caf7ca",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/704 - Berserk!.png": {
+    "mtime": 1795702866.580944,
+    "seen": 1795704511.202307,
+    "ast_hash": "0c069c7276aaf43b35728823e24175be",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/705 - Dark Arts.png": {
+    "mtime": 1795702866.5855646,
+    "seen": 1795704511.2023082,
+    "ast_hash": "725868fbb5057e99c0a7503550657d51",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/706 - Abyss.png": {
+    "mtime": 1795702866.589577,
+    "seen": 1795704511.2023087,
+    "ast_hash": "715a02aea61849eda9bb2b043373a414",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/707 - Supper.png": {
+    "mtime": 1795702866.5936062,
+    "seen": 1795704511.2023094,
+    "ast_hash": "e4886576af3e189dd03ff2ddcbca7bad",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/708 - Stapler.png": {
+    "mtime": 1795702866.5976093,
+    "seen": 1795704511.20231,
+    "ast_hash": "89d74086cb497cb3b979cebc7d92bc29",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/709 - Suplex!.png": {
+    "mtime": 1795702866.601616,
+    "seen": 1795704511.2023108,
+    "ast_hash": "527870146e0859589be5ec327b1f99a4",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/711 - Flip.png": {
+    "mtime": 1795702866.6068668,
+    "seen": 1795704511.2023115,
+    "ast_hash": "62c672aef9a143df148ba26484142827",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/712 - Lemegeton.png": {
+    "mtime": 1795702866.610078,
+    "seen": 1795704511.2023122,
+    "ast_hash": "832fb46820fb2afd3e0c1683713f6d1a",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/713 - Sumptorium.png": {
+    "mtime": 1795702866.6150966,
+    "seen": 1795704511.202313,
+    "ast_hash": "46d689d701e8fd1db36f1e43cddf1cf7",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/714 - Recall.png": {
+    "mtime": 1795702866.6191208,
+    "seen": 1795704511.2023137,
+    "ast_hash": "1c816bad0f43999823831dda5a5b3962",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/715 - Hold.png": {
+    "mtime": 1795702866.6228213,
+    "seen": 1795704511.2023141,
+    "ast_hash": "fc09da8c957ae372289ced4053653a28",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/717 - Keeper's Kin.png": {
+    "mtime": 1795702866.6278257,
+    "seen": 1795704511.202315,
+    "ast_hash": "7b14492b6e4b222a2752d7d97d8be886",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/719 - Keeper's Box.png": {
+    "mtime": 1795702866.6317637,
+    "seen": 1795704511.2023158,
+    "ast_hash": "98800b86e45b649396073976b797b54e",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/721 - TMTRAINER.png": {
+    "mtime": 1795702866.6357775,
+    "seen": 1795704511.2023163,
+    "ast_hash": "697658beac169645b45af35e88764853",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/722 - Anima Sola.png": {
+    "mtime": 1795702866.6405823,
+    "seen": 1795704511.202317,
+    "ast_hash": "075338a6f9355dba6e547390b0fa3a19",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/725 - IBS.png": {
+    "mtime": 1795702866.6450934,
+    "seen": 1795704511.2023177,
+    "ast_hash": "0fe0dc527b836645f0ec92050dea76eb",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/726 - Hemoptysis.png": {
+    "mtime": 1795702866.6486018,
+    "seen": 1795704511.2023187,
+    "ast_hash": "08b5792e6fec16015c4401c996a64807",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/727 - Ghost Bombs.png": {
+    "mtime": 1795702866.6536167,
+    "seen": 1795704511.2023194,
+    "ast_hash": "d78d9dfc71785bf56600105a869cc627",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/728 - Gello.png": {
+    "mtime": 1795702866.658118,
+    "seen": 1795704511.2023199,
+    "ast_hash": "bb63e1b2d3745d380f08711daa522d28",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/730 - Glass Eye.png": {
+    "mtime": 1795702866.6631508,
+    "seen": 1795704511.2023208,
+    "ast_hash": "4108675ee477855cb88d94131af393b1",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/731 - Stye.png": {
+    "mtime": 1795702866.6668167,
+    "seen": 1795704511.2023218,
+    "ast_hash": "71af65e3667b01001596c2ba98098b08",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/732 - Mom's Ring.png": {
+    "mtime": 1795702866.6713424,
+    "seen": 1795704511.2023222,
+    "ast_hash": "b21e1abca82aaed093d40201a0715989",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/placeholder.png": {
+    "mtime": 1795702866.8455472,
+    "seen": 1795704511.202323,
+    "ast_hash": "f3cb800031fbc6589d5175fb8d235562",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Art/Sprites/Items/questionmark.png": {
+    "mtime": 1795702831.8184252,
+    "seen": 1795704511.2023237,
+    "ast_hash": "44c1151db7b2e4bb4630afbdc6d6a791",
+    "semantic_hash": ""
+  },
+  "ImpfanyGame/Assets/Features/Items/Prefabs/025 - Breakfast.png": {
+    "mtime": 1795702830.9525487,
+    "seen": 1795704511.2024279,
+    "ast_hash": "9073c802979787a291fb1337840e919e",
     "semantic_hash": ""
   }
 }

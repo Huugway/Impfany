@@ -1,4 +1,5 @@
 using Impfany.Modifiers;
+using Impfany.Weapons;
 using UnityEngine;
 
 public class ItemDebugPanel : MonoBehaviour
@@ -6,6 +7,7 @@ public class ItemDebugPanel : MonoBehaviour
     [SerializeField] private GameObject itemPrefab;
     [SerializeField] private float spawnDistance = 2f;
 
+    private GameFlow gameFlow;
     private PlayerMovement player;
     private Rigidbody2D playerBody;
     private IModifiable playerModifiers;
@@ -34,7 +36,7 @@ public class ItemDebugPanel : MonoBehaviour
     private void OnGUI()
     {
         CreateStyles();
-        GUILayout.BeginArea(new Rect(10, Screen.height - 330, 360, 320), GUI.skin.box);
+        GUILayout.BeginArea(new Rect(10, Screen.height - 470, 360, 460), GUI.skin.box);
         GUILayout.Label("Item Debug", labelStyle);
 
         if (player == null)
@@ -42,7 +44,35 @@ public class ItemDebugPanel : MonoBehaviour
         else
             DrawPlayerInfo();
 
+        GUILayout.Space(10);
+        DrawGameFlowButtons();
+
         GUILayout.EndArea();
+    }
+
+    private void DrawGameFlowButtons()
+    {
+        if (gameFlow == null) gameFlow = FindFirstObjectByType<GameFlow>();
+        if (gameFlow == null) return;
+
+        if (GUILayout.Button("Welle skippen", buttonStyle))
+            gameFlow.StartWave();
+
+        if (GUILayout.Button("Level skippen", buttonStyle))
+        {
+            gameFlow.DebugFinishLevel();
+            KillAllEnemies();
+        }
+
+        if (GUILayout.Button("Alle Gegner killen", buttonStyle))
+            KillAllEnemies();
+    }
+
+    private void KillAllEnemies()
+    {
+        EnemyHealth[] enemies = FindObjectsByType<EnemyHealth>(FindObjectsSortMode.None);
+        foreach (EnemyHealth enemy in enemies)
+            enemy.ApplyHit(new WeaponHit(float.MaxValue, 0f, 0f, Vector2.zero));
     }
 
     private void DrawPlayerInfo()

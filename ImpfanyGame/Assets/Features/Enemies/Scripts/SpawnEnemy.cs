@@ -17,23 +17,32 @@ public class SpawnEnemyScript : MonoBehaviour
     }
 
 
+    // Zufälliger Punkt in der Arena, aber mindestens 5 Einheiten vom Spieler weg
+    Vector3 GetSpawnPosition()
+    {
+        Vector3 pos;
+        do
+        {
+            int ranX = UnityEngine.Random.Range(-15, 15);
+            int ranY = UnityEngine.Random.Range(-15, 15);
+            pos = new Vector3(ranX, ranY, 0);
+        }
+        while (Vector3.Distance(pos, GetPlayer().transform.position) < 5);
+        return pos;
+    }
+
     [ContextMenu("Gegner Spawnen")]
-    
     void SpawnImp()
     {
-        int ranX = UnityEngine.Random.Range(-20, 20);
-        int ranY = UnityEngine.Random.Range(-20, 20);
-        EnemyMovement enemy = Instantiate(imp, new Vector3(ranX, ranY, 0), Quaternion.identity);
+        EnemyMovement enemy = Instantiate(imp, GetSpawnPosition(), Quaternion.identity);
         enemy.Init(GetPlayer());
         EnemyTracker.addEnemy(1);
         EnemyTracker.addEnemyToList(enemy.gameObject);
     }
-    
+
     void SpawnBigImp()
     {
-        int ranX = UnityEngine.Random.Range(-20, 20);
-        int ranY = UnityEngine.Random.Range(-20, 20);
-        EnemyMovement enemy = Instantiate(bigimp, new Vector3(ranX, ranY, 0), Quaternion.identity);
+        EnemyMovement enemy = Instantiate(bigimp, GetSpawnPosition(), Quaternion.identity);
         enemy.Init(GetPlayer());
         EnemyTracker.addEnemy(1);
         EnemyTracker.addEnemyToList(enemy.gameObject);
