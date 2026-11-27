@@ -7,7 +7,7 @@ public class CameraZoom : MonoBehaviour
     [SerializeField] private InputActionReference zoomCameraAction;
     private PixelPerfectCamera pixelPerfectCamera;
     private Vector2Int zoomedIn = new Vector2Int(640, 360);
-    private Vector2Int zoomedOut = new Vector2Int(930, 540);
+    private Vector2Int zoomedOut = new Vector2Int(960, 540);
     private bool locked;
     private Vector2Int resolutionBeforeLock;
 
