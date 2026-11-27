@@ -53,7 +53,7 @@ public class ShopItemSpawner : MonoBehaviour
     private void Item_OnPickedUp(ItemBuff pickedItem)
     {
         spawnedItems.Remove(pickedItem);
-        ClearItems();
+        //ClearItems();
     }
 
     private void ClearItems()

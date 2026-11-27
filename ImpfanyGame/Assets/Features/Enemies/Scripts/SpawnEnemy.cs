@@ -81,17 +81,21 @@ public class SpawnEnemyScript : MonoBehaviour
         {
             case 1:
                 SpawnImp();
-                SpawnBigDemon();
-                SpawnDemon();
+                SpawnImp();
+                SpawnImp();
+                SpawnImp();
                 break;
             case 2:
+                SpawnDemon();
                 SpawnDemon();
                 SpawnImp();
                 SpawnImp();
                 break;
             case 3:
                 SpawnDemon();
+                SpawnBigDemon();
                 SpawnDemon();
+                SpawnImp();
                 SpawnImp();
                 SpawnImp();
                 SpawnImp();
@@ -101,7 +105,7 @@ public class SpawnEnemyScript : MonoBehaviour
                 SpawnDemon();
                 SpawnDemon();
                 SpawnDemon();
-                SpawnDemon();
+                SpawnBigDemon();
                 SpawnImp();
                 SpawnImp();
                 SpawnImp();
@@ -115,8 +119,8 @@ public class SpawnEnemyScript : MonoBehaviour
                 SpawnDemon();
                 SpawnDemon();
                 SpawnDemon();
-                SpawnImp();
-                SpawnImp();
+                SpawnBigDemon();
+                SpawnBigDemon();
                 SpawnImp();
                 SpawnImp();
                 SpawnImp();
