@@ -24,4 +24,4 @@
 | Datei | Was | Git |
 |---|---|---|
 | `Impfany EE3 Ergebnisse.xlsx` | Aggregierte Ergebnisse + Boxplots | committed |
-| `lokal/Impfany EE3 Playtest-Auswertung.xlsx` | Zusätzlich Einzelscores + SoSci-Rohdaten (Stand 23.11.) | **nicht** committen (`.gitignore`) |
+| `Rohdaten/Impfany EE3 Playtest-Auswertung.xlsx` | Zusätzlich Einzelscores + SoSci-Rohdaten (Stand 23.11.) | committed |

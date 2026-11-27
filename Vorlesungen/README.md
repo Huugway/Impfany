@@ -24,7 +24,6 @@ Kursweite Lernhilfe mit Lernpfad: [Docs/Impfany/EE-Lerngraph.md](../Docs/Impfany
 ```
 Vorlesungen/
 ├── README.md                       ← diese Datei
-├── .gitignore                      ← ignoriert alle lokal/-Ordner
 ├── 00_Organisation/                ← Vorlesung 00 (Orga + HCI), Zeitplan, Bewertung, Abgabe
 │   ├── Abgabe-Checkliste.md
 │   └── Update_*.png                ← aktualisierte Folien (neue Deadline, Präsentationsslots)
@@ -32,7 +31,7 @@ Vorlesungen/
 ├── EE2_Studie-T1-planen/           ← Vorlesung 02 + Studiendesign, Einwilligungen
 │   └── Kursmaterial/               ← PXI-Vorlage (SoSci-XML), material_eval.zip
 ├── EE3_Auswertung-T1/              ← Vorlesung 03 + Ergebnisse.xlsx
-│   └── lokal/                      ← Rohdaten, NICHT im Git
+│   └── Rohdaten/                   ← Einzelscores + SoSci-Export
 ├── EE4_Interface-Analyse/          ← Vorlesung 04
 ├── EE5_Decision-Walkthrough/       ← Vorlesung 05
 ├── EE6_Feedback-Systeme/           ← Vorlesung 06
@@ -54,7 +53,7 @@ Alle Impulse aus dem Zeitplan (Folie 10 im Orga-PDF) sind als PDF vorhanden: 00 
 - **Sprache:** Deutsch. Folientexte der Aufgaben bleiben englisch (Originalwortlaut).
 - **Status pflegen:** Wenn eine Teilaufgabe erledigt ist, Checkbox in `Aufgabe_EEx.md` abhaken **und** Status-Tabelle oben anpassen. Nur abhaken, wenn ein Nachweis existiert (Datei, Commit, Folie). Bei Unsicherheit offen lassen und eine Notiz dazuschreiben.
 - **Neue Ergebnisse** (Protokolle, Analysen, Folienentwürfe) in den passenden EE-Ordner legen, nicht in den Root.
-- **Datenschutz:** Keine Namen von Testpersonen, keine unterschriebenen Einwilligungen, keine SoSci-Rohdaten ins Git. Rohdaten nach `EEx_.../lokal/` (gitignored).
+- **Datenschutz:** Keine Namen von Testpersonen und keine unterschriebenen Einwilligungen ins Repo. Anonyme SoSci-Exporte sind ok und kommen nach `EEx_.../Rohdaten/`.
 - **Dateinamen für die Abgabe:** Präfix `EE26_group#_` (siehe Abgabe-Checkliste).
 - **PDFs lesen:** `pdftotext -layout` und `pdftoppm -png -r 110 -f N -l N -singlefile` sind installiert. Aufgabenfolie suchen: nach „Task EE“ greppen.
 - **Spielbezug:** Das Spiel liegt in `ImpfanyGame/` (Unity, Testszene `Assets/Scenes/SampleScene.unity`). Für EE4–EE6 passende Commits mit `git log` finden und in der jeweiligen Checkliste verlinken.
