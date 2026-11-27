@@ -15,7 +15,7 @@ Pro Aufgabe EE1–EE7 gibt es einen Ordner mit Vorlesungs-PDF, Screenshot der Au
 | EE4 | Interface: Gulfs, Shneiderman, Gestalt, mentale Modelle | 🔴 offen | [Aufgabe_EE4.md](EE4_Interface-Analyse/Aufgabe_EE4.md) |
 | EE5 | Decision Walkthrough + Information Balancing | 🔴 offen | [Aufgabe_EE5.md](EE5_Decision-Walkthrough/Aufgabe_EE5.md) |
 | EE6 | Feedback-Systeme (4 Linsen, SDT, Motivationseffekte) | 🔴 offen | [Aufgabe_EE6.md](EE6_Feedback-Systeme/Aufgabe_EE6.md) |
-| EE7 | Studie T2 (Prototyp A vs. B) + Reflexion | 🔴 offen | [Aufgabe_EE7.md](EE7_Studie-T2-Reflexion/Aufgabe_EE7.md) |
+| EE7 | Studie T2 (Prototyp A vs. B) + Reflexion | 🟡 geplant (SoSci + Hypothesen), Tests offen | [Aufgabe_EE7.md](EE7_Studie-T2-Reflexion/Aufgabe_EE7.md) |
 
 Kursweite Lernhilfe mit Lernpfad: [Docs/Impfany/EE-Lerngraph.md](../Docs/Impfany/EE-Lerngraph.md)
 
@@ -35,7 +35,7 @@ Vorlesungen/
 ├── EE4_Interface-Analyse/          ← Vorlesung 04
 ├── EE5_Decision-Walkthrough/       ← Vorlesung 05
 ├── EE6_Feedback-Systeme/           ← Vorlesung 06
-├── EE7_Studie-T2-Reflexion/        ← nur Screenshot der neuen Aufgabenfolie
+├── EE7_Studie-T2-Reflexion/        ← Aufgabenfolie (Screenshot), T2-Plan: SoSci-Link, Hypothesen
 └── Quiz/                           ← Quiz-PDF Woche 1 + Quizfragen.md (alle Fragen EE0–EE6)
 ```
 

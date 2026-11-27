@@ -2,15 +2,15 @@
 
 **Quelle:** aktualisierte Folie, nur als Screenshot vorhanden: [Aufgabe_EE7.png](Aufgabe_EE7.png). Das zugehörige PDF fehlt, siehe README.
 Ältere Fassung: `EE_WS26_03_Game User Data Analysis.pdf`, Folie 25 → [Aufgabe_EE7_alte-Version.png](Aufgabe_EE7_alte-Version.png)
-**Status:** 🔴 offen
+**Status:** 🟡 in Arbeit. T2 ist geplant (SoSci-Fragebogen, Hypothesen), Durchführung, Auswertung und Reflexion stehen noch aus.
 
 > Im ursprünglichen Zeitplan (00_Organisation, Folie 10) gab es noch **EE8 „Plan Experiment T2“**. Die neue EE7-Folie fasst EE7 + EE8 zusammen: T2 planen, durchführen, auswerten, reflektieren.
 
 ## Aufgaben (Folientext, aktuelle Fassung)
 
 1. Evaluate the differences between your first (IA) and second (improved by EE4–6) prototypes:
-   - [ ] Make assumptions and formulate hypotheses using H0/H1 schemes, acknowledging measurability
-   - [ ] Plan, conduct and analyze a user study similar to the one you did in EE2+3
+   - [x] Make assumptions and formulate hypotheses using H0/H1 schemes, acknowledging measurability → [Hypothesen T2](#hypothesen-t2-vorschlag-auf-basis-der-commits-im-team-bestätigen) (H1 Progress Feedback, H2 Ease of Control, H3 Clarity of Goals, plus Messbarkeit/Grenzen)
+   - [ ] Plan, conduct and analyze a user study similar to the one you did in EE2+3. *Plan* steht (SoSci `base01`, gleiche Items wie T1), Durchführung und Analyse fehlen.
    - [ ] Analyze differences between the results of the two studies
    - [ ] Discuss results in regard to your hypotheses and to the content of this course
 2. - [ ] Reflect on your work and group organization: how do you plan to use the content of this course in the future?
@@ -18,7 +18,7 @@
 ## Vorbereitung T2
 - [x] Build A (Stand T1) liegt dem Prof bereits vor (an ihn geschickt) → Abgabe „Type A before improvement“
 - [ ] Build B (nach EE4–6) festhalten → Abgabe „Type B after improvement“
-- [ ] Gleiche Aufgabe, Dauer, Instruktion, PXI-Items und Kodierung wie T1 verwenden
+- [ ] Gleiche Aufgabe, Dauer, Instruktion, PXI-Items und Kodierung wie T1 verwenden. PXI-Items und Kodierung sind in SoSci identisch, Aufgabe, Dauer (10 Min.) und Instruktion beim Testen aus `EE2-Studiendesign.docx` übernehmen.
 - [ ] Neue Erstspielende rekrutieren
 - [x] SoSci-Fragebogen für T2 angelegt (27.11.2026), siehe unten
 - [ ] Auswertung T2 + Vergleich T1/T2 (Boxplots nebeneinander)

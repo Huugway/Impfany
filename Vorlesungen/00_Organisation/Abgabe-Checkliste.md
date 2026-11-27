@@ -13,7 +13,7 @@
 
 - [ ] Präsentationsfolien aller Aufgaben, PDF → `EE26_group#_presentation.pdf`
 - [ ] Nutzerdaten, XLSX (T1 + T2) → `EE26_group#_data.xlsx`
-- [ ] SoSci-Fragebögen, XML (tatsächlich eingesetzt) → `EE26_group#_sosci.xml`
+- [ ] SoSci-Fragebögen, XML (tatsächlich eingesetzt: `base` = T1, `base01` = T2) → `EE26_group#_sosci.xml`
 - [ ] Versuchsaufbau + Plan + Einwilligungen + Arbeitsverteilung, PDF → `EE26_group#_report.pdf`
 - [ ] Spielprototyp Type A (vor Verbesserung)
 - [ ] Spielprototyp Type B (nach Verbesserung)
