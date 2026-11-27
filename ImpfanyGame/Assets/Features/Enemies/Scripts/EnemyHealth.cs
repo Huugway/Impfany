@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour, IEnemyDamageable
     [SerializeField] private float deathAnimationDuration = 0.7f;
     private Animator animator;
     private bool isDead;
+    public bool IsDead => isDead;
 
     private void Awake()
     {

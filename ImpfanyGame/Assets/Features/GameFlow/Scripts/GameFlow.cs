@@ -26,6 +26,8 @@ public class GameFlow : MonoBehaviour
 
     public bool IsInShop => isInShop;
     public bool WaitingForShop => waitingForShop;
+    public int CurrentLevel => levelCounter;
+    public int CurrentWave => waveCounter;
 
     private GameStatus currentStatus = GameStatus.StartMenu;
     private int waveCounter = 0;
